@@ -4,6 +4,10 @@
     --octigen-highlighted: #1A1B31;
 }
 
+section {
+    overflow-x: hidden;
+}
+
 main {
     font-family: 'Outfit', sans-serif;
 }
@@ -123,8 +127,8 @@ p {
 
 @media (max-width: 991px) {
     .reporting-box-image {
-        margin-left: 0;
-        margin-top: 0;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
     }
 }
 
@@ -147,9 +151,9 @@ p {
 
 @media (max-width: 991px) {
     .ai-box-image {
-        margin-left: 0;
-        margin-top: 0;
-        margin-bottom: 2rem;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 2rem !important;
     }
 }
 
