@@ -55,6 +55,10 @@ p {
     color: var(--octigen-blue);
 }
 
+.line-height-1and5 {
+    line-height: 1.5;
+}
+
 /* Improve Mobile Experience */
 @media (max-width: 991px) {
     .main-hero {
@@ -97,6 +101,7 @@ p {
 .service-box-title {
     text-transform: uppercase;
     font-size: 1rem;
+    line-height: 1.5;
 }
 
 .data-sources-box {
@@ -116,6 +121,13 @@ p {
     margin-top: -1.5rem;
 }
 
+@media (max-width: 991px) {
+    .reporting-box-image {
+        margin-left: 0;
+        margin-top: 0;
+    }
+}
+
 .quantitative-box {
     background-image: url('images/quant_edge.png');
     background-size: contain;
@@ -131,6 +143,14 @@ p {
     margin-left: -2rem;
     margin-top: -2.5rem;
     opacity: 0.7;
+}
+
+@media (max-width: 991px) {
+    .ai-box-image {
+        margin-left: 0;
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
 }
 
 .who-we-are-section {
