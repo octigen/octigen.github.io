@@ -1,7 +1,7 @@
 /* define colors */
 :root {
     --octigen-blue: rgba(30, 79, 226, 1);
-    --octigen-highlighted: rgb(24, 182, 218);
+    --octigen-highlighted: #1A1B31;
 }
 
 main {
@@ -10,11 +10,14 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
     letter-spacing: 1px;
+    font-weight: 300;
+    line-height: 1.5;
 }
 
 p {
     line-height: 1.8;
     font-weight: 300;
+    font-size: 0.9rem;
 }
 
 .navbar {
@@ -24,6 +27,17 @@ p {
     width: 100%;
     z-index: 10;
     padding: 20px 0;
+}
+
+.nav-highlighted-link {
+    color: var(--octigen-blue);
+    border: 1px solid var(--octigen-blue);
+    padding: 7px;
+}
+.nav-highlighted-link:hover {
+    background-color: var(--octigen-blue);
+    color: white;
+    transition: background-color 0.2s ease-in-out;
 }
 
 .main-hero {
@@ -49,7 +63,7 @@ p {
 }
 
 .btn-primary {
-    font-size: 12px;
+    font-size: 0.9rem;
     font-weight: 400;
     padding: 10px 20px;
     border: none;
@@ -61,6 +75,7 @@ p {
     transition: background-color 0.2s ease-in-out;
     box-shadow: 0px 0px 50px rgba(30, 79, 226, 0.5);
     z-index: 1;
+    font-family: 'Outfit', sans-serif;
 }
 
 .btn-primary:hover {
@@ -68,7 +83,145 @@ p {
     transition: background-color 0.2s ease-in-out;
 }
 
-.service-container {
-    background-color: rgba(26, 27, 49, 1);
+.service-section {
+    background: radial-gradient(circle at top left, #1A1B31 40%, #010101 80%);
     color: white;
+}
+
+.service-box {
+    background-color: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.service-box-title {
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.data-sources-box {
+    background-image: url('images/data_sources.png');
+    background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+.reporting-box-image {
+    max-width: 100%; /* Ensures it scales inside the container */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes extra space under image */
+    object-fit: contain; /* Ensures proper scaling */
+    margin-left: 4rem;
+    margin-bottom: -2rem;
+    margin-top: -1.5rem;
+}
+
+.quantitative-box {
+    background-image: url('images/quant_edge.png');
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.ai-box-image {
+    max-width: 100%; /* Ensures it scales inside the container */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes extra space under image */
+    object-fit: contain; /* Ensures proper scaling */
+    margin-left: -2rem;
+    margin-top: -2.5rem;
+    opacity: 0.7;
+}
+
+.who-we-are-section {
+    background: radial-gradient(circle at top right, rgba(206, 226, 255, 0.5) 10%, #ffffff 40%);
+}
+.founder-image {
+    max-width: 8rem;
+}
+
+.founder-container {
+    box-shadow: 0px 0px 50px rgba(221, 221, 221, 0.5);
+    border: 2px solid rgba(255, 255, 255, 1);
+}
+
+.founder-container h5 {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--octigen-blue);
+}
+
+.founder-container p {
+    text-align: justify;
+}
+
+.contacts-section {
+    background: radial-gradient(circle at bottom right, #1A1B31 40%, #010101 80%);
+    color: white;
+}
+
+.form-container {
+    font-size: 0.9rem;
+    font-weight: 300;
+    font-family: 'Outfit', sans-serif;
+}
+
+.form-container input, .form-container textarea {
+    background-color: transparent;
+    border-radius: 0px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.form-container input::placeholder, .form-container textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.form-container textarea:focus,
+.form-container input:focus,
+.form-container textarea:active,
+.form-container input:active,
+.form-container textarea:hover,
+.form-container input:hover {
+    border: 1px solid var(--octigen-blue);
+    background-color: transparent;
+    color: white;
+    box-shadow: none;
+}
+
+.form-btn {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 0px;
+    transition: border 0.2s ease-in-out;
+    font-weight: 300;
+}
+
+.form-btn:hover {
+    transition: border 0.2s ease-in-out;
+}
+
+.form-control {
+    color: white;
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+
+.highlighted-header {
+    color: var(--octigen-blue);
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.footer-container {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-text {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
 }
