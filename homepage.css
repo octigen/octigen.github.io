@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-    line-height: 1.8;
+    line-height: 2;
     font-weight: 300;
     font-size: 0.9rem;
 }
@@ -268,4 +268,28 @@ p {
     font-size: 0.8rem;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.7);
+}
+
+.free-banner {
+    color: white;
+    margin-bottom: -3rem;
+}
+
+h5.free-banner-text {
+    display: inline-block;
+    background-color: var(--octigen-blue);
+    margin-left: 31rem;
+    font-size: 14px;
+    padding: 2px;
+}
+
+@media (max-width: 991px) {
+    h5.free-banner-text {
+        margin-left: 0 !important;
+    }
+    .free-banner {
+        margin-bottom: -1.5rem;
+        font-size: 12px;
+        margin-top: 1rem;
+    }
 }
