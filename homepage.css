@@ -278,7 +278,7 @@ p {
 h5.free-banner-text {
     display: inline-block;
     background-color: var(--octigen-blue);
-    margin-left: 31rem;
+    margin-left: 30rem;
     font-size: 14px;
     padding: 2px;
 }
