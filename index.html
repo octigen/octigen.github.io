@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Octigen - Data, AI & Reporting Automation</title>
     <script src="main.js" defer></script>
+    <script src="translator.js" defer></script>
     <meta name="description"
           content="Octigen GmbH provides expert consulting in data integration, 
                     transformation, AI, and quantitative analysis across Switzerland, 
@@ -21,22 +22,42 @@
 </head>
 <body class="d-flex flex-column vh-100">
     <main>
-        <!-- Navbar -->
         <nav class="navbar navbar-expand-lg position-absolute w-100">
-            <div class="container">
+            <div class="container d-flex justify-content-between align-items-center">
+                <!-- Logo -->
                 <a class="navbar-brand" href="#">
                     <img src="logo_octigen_black.png" alt="Octigen Logo" style="max-width:170px" class="d-inline-block align-top">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        
+                <!-- Right Section (Hamburger + Nav Links + Language Selector) -->
+                <div class="d-flex align-items-center">
+                    <!-- Hamburger Menu -->
+                    <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item ms-5"><a class="nav-link" href="#services">Our Services</a></li>
-                        <li class="nav-item ms-5"><a class="nav-link" href="#who-we-are">Who We Are</a></li>
-                        <li class="nav-item ms-5"><a class="nav-link nav-highlighted-link" href="#contacts">Contact Us</a></li>
-                    </ul>
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+        
+                    <!-- Navigation Links -->
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item ms-4"><a class="nav-link" href="#services" data-translate="common.nav.services">Our Services</a></li>
+                            <li class="nav-item ms-4"><a class="nav-link" href="#who-we-are" data-translate="common.nav.who_we_are">Who We Are</a></li>
+                            <li class="nav-item ms-4"><a class="nav-link nav-highlighted-link" href="#contacts" data-translate="common.nav.contact_us">Contact Us</a></li>
+                        </ul>
+                    </div>
+        
+                    <!-- Language Dropdown -->
+                    <div class="dropdown language-selector ms-5">
+                        <button class="dropdown-toggle nav-link" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span id="currentLang">EN</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item lang-select" href="#" data-lang="de">DE</a></li>
+                            <li><a class="dropdown-item lang-select" href="#" data-lang="fr">FR</a></li>
+                            <li><a class="dropdown-item lang-select" href="#" data-lang="it">IT</a></li>
+                            <li><a class="dropdown-item lang-select" href="#" data-lang="en">EN</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -45,15 +66,15 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <h3 class="hero-top-header mb-2">AI, Data and Reporting Services</h3>
-                        <h1 class="display-6 mb-3">Harness the Power of your Data.</h1>
+                        <h3 class="hero-top-header mb-2" data-translate="homepage.hero.top_header">AI, Data and Reporting Services</h3>
+                        <h1 class="display-6 mb-3" data-translate="homepage.hero.main_header">Harness the Power of your Data.</h1>
                         <div class="container-fluid hero-text ps-0 pe-lg-5 mb-4">
-                            <p>Take advantage of a partner that knows how to handle your data,
+                            <p data-translate="homepage.hero.description">Take advantage of a partner that knows how to handle your data,
                                 using AI to make your operations run smoothly, and create outstanding client reporting
                                 while using the software you already have. This is Octigen.
                             </p>
                         </div>
-                        <a href="#services" class="btn btn-primary">What we can do for you</a>
+                        <a href="#services" class="btn btn-primary" data-translate="homepage.hero.button">What we can do for you</a>
                     </div>
                 </div>
             </div>
@@ -62,15 +83,15 @@
         <section class="container-fluid p-lg-5 py-5 px-0 service-section" id="services">
             <div class="container">
                 <div class="py-4">
-                    <h2 class="text-center mt-1 mb-5">Our Services</h2>
+                    <h2 class="text-center mt-1 mb-5" data-translate="homepage.services.title">Our Services</h2>
                 </div>
             </div>
             <div class="row g-4 g-lg-3 px-3 px-lg-5 py-0 mb-4">
                 <div class="col-md-5">
                     <div class="data-sources-box service-box p-5 m-2 h-100">
-                        <h3 class="service-box-title mb-4">Your data sources in a
+                        <h3 class="service-box-title mb-4" data-translate="homepage.services.data_integration.title">Your data sources in a
                             coherent landscape</h3>
-                        <p>Data is the raw ore of your business intelligence.
+                        <p data-translate="homepage.services.data_integration.description">Data is the raw ore of your business intelligence.
                             Octigen is highly proficient in refining it into a precious resource for you, by bringing our tools right <b>to your data.</b></p>
                     </div>
                 </div>
@@ -78,8 +99,8 @@
                     <div class="service-box p-5 m-2 h-100">
                         <div class="row">
                             <div class="col-lg-6">
-                                <h3 class="service-box-title mb-4">Automate your client reporting</h3>
-                                <p>Octigen helps you focus on the bottom line rather than spending unnecessary time on reports. From software development & integration to <i>reporting as a service</i>, we offer you à la carte solutions for your needs.</p>
+                                <h3 class="service-box-title mb-4" data-translate="homepage.services.reporting.title">Automate your client reporting</h3>
+                                <p data-translate="homepage.services.reporting.description">Octigen helps you focus on the bottom line rather than spending unnecessary time on reports. From software development & integration to <i>reporting as a service</i>, we offer you à la carte solutions for your needs.</p>
                             </div>
                             <div class="col-lg-6">
                                 <img class="reporting-box-image" src="images/reporting_cycle.png" alt="Reporting">
@@ -91,8 +112,8 @@
             <div class="row g-4 g-lg-3 px-3 px-lg-5 py-0 mb-4">
                 <div class="col-md-6">
                     <div class="quantitative-box service-box p-5 m-2 h-100">
-                        <h3 class="service-box-title mb-4">Elevate your quantitative edge</h3>
-                        <p>Let us supercharge your quant analytics with our expertise, in topics like Machine Learning, data quality, portfolio construction, and time series forecasting.</p>
+                        <h3 class="service-box-title mb-4" data-translate="homepage.services.quant_analysis.title">Elevate your quantitative edge</h3>
+                        <p data-translate="homepage.services.quant_analysis.description">Let us supercharge your quant analytics with our expertise, in topics like Machine Learning, data quality, portfolio construction, and time series forecasting.</p>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -102,8 +123,8 @@
                                 <img class="ai-box-image" src="images/ai_chat.png" alt="AI Chat">
                             </div>
                             <div class="col-lg-7">
-                                <h3 class="service-box-title mb-4">Generative AI, in the real world</h3>
-                                <p>At Octigen we have extensive experience in delivering real business value with clever uses of Large Language Models (LLMs). Have some ideas of potential use cases? <a style="color: white;" href="#contacts">Let's talk.</a></p>
+                                <h3 class="service-box-title mb-4" data-translate="homepage.services.generative_ai.title">Generative AI, in the real world</h3>
+                                <p data-translate="homepage.services.generative_ai.description">At Octigen we have extensive experience in delivering real business value with clever uses of Large Language Models (LLMs). Have some ideas of potential use cases? <a style="color: white;" href="#contacts">Let's talk.</a></p>
                             </div>
                         </div>
                     </div>
@@ -112,11 +133,11 @@
         </section>
         <section class="container-fluid p-lg-5 py-5 who-we-are-section" id="who-we-are">
             <div class="container-fluid py-4">
-                <h2 class="text-center mt-8">Who We Are</h2>
+                <h2 class="text-center mt-8" data-translate="homepage.who_we_are.title">Who We Are</h2>
                 <div class="row px-2 px-lg-0">
                     <div class="col-lg-3"></div>
                     <div class="col-lg-6">
-                        <p class="py-4">We've worked side by side to revolutionize the client reporting of a leading independent asset manager in Zurich. Building on that expertise, we founded Octigen. Our mission? To transform the way you can use data to engage with your clients.</p>
+                        <p class="py-4" data-translate="homepage.who_we_are.description">We've worked side by side to revolutionize the client reporting of a leading independent asset manager in Zurich. Building on that expertise, we founded Octigen. Our mission? To transform the way you can use data to engage with your clients.</p>
                     </div>
                     <div class="col-lg-3"></div>
                 </div>                    
@@ -125,16 +146,16 @@
                         <div class="container-fluid founder-container p-3 p-lg-5 m-0 h-100">
                             <img class="founder-image my-4" src="images/michel_muller.png" alt="Michel Müller, Co-Founder">
                             <h3>Michel Müller</h3>
-                            <h5>Co-Founder</h5>
-                            <p class="px-4">With over 15 years of experience as a software architect and more than 6 years developing cutting-edge data solutions for the finance industry, Michel brings deep expertise across all computing technology. He holds a PhD in High-performance computing and an MSc from ETH Zurich.</p>
+                            <h5 data-translate="homepage.who_we_are.michel_muller.title">Co-Founder</h5>
+                            <p class="px-4" data-translate="homepage.who_we_are.michel_muller.description">With over 15 years of experience as a software architect and more than 6 years developing cutting-edge data solutions for the finance industry, Michel brings deep expertise across all computing technology. He holds a PhD in High-performance computing and an MSc from ETH Zurich.</p>
                         </div>
                     </div>
                     <div class="col-lg-6 d-flex flex-column align-items-center text-center p-3">
                         <div class="container-fluid founder-container p-3 p-lg-5 m-0 h-100">
                             <img class="founder-image my-4" src="images/kevin_graziani.png" alt="Kevin Graziani, Co-Founder">
                             <h3>Kevin Graziani</h3>
-                            <h5>Co-Founder</h5>
-                            <p class="px-4">Bringing experience as front-office quant for some of Europe’s largest financial institutions, Kevin is a seasoned software engineer and marketing expert. He graduated <i>cum laude</i> and holds two MSc degrees, in Quantitative and Corporate Finance.</p>
+                            <h5 data-translate="homepage.who_we_are.kevin_graziani.title">Co-Founder</h5>
+                            <p class="px-4" data-translate="homepage.who_we_are.kevin_graziani.description">Bringing experience as front-office quant for some of Europe’s largest financial institutions, Kevin is a seasoned software engineer and marketing expert. He graduated <i>cum laude</i> and holds two MSc degrees, in Quantitative and Corporate Finance.</p>
                         </div>
                     </div>                   
                 </div>
@@ -143,42 +164,45 @@
         <section class="container-fluid p-lg-5 py-5 contacts-section" id="contacts">
             <div class="container mb-5">
                 <div class="mt-8 text-center free-banner">
-                    <h5 class="free-banner-text">First 1 hour free of charge</h5>
+                    <h5 class="free-banner-text" data-translate="homepage.contact_us.offer">First 1 hour free of charge</h5>
                 </div>
                 <div class="py-4 text-center">
-                    <h2 class="">Get in touch today</h2>
+                    <h2 data-translate="homepage.contact_us.title">Get in touch today</h2>
                 </div>
                 <div class="row d-flex align-items-start px-3 px-lg-5 justify-content-between">
                     <div class="col-lg-5 d-flex flex-column align-items-start py-lg-5 py-3">
-                        <h6 class="highlighted-header">DATA INTEGRATION, AI, REPORTING</h6>
-                        <h4 class="line-height-1and5">Ready to start your next project with us?</h4>
-                        <p>Let's talk and see how we can make a difference — whether it's small tweaks or a total workflow transformation, we've got your back!
+                        <h6 class="highlighted-header" data-translate="homepage.contact_us.top_cta">DATA INTEGRATION, AI, REPORTING</h6>
+                        <h4 class="line-height-1and5" data-translate="homepage.contact_us.cta">Ready to start your next project with us?</h4>
+                        <p data-translate="homepage.contact_us.cta_description">Let's talk and see how we can make a difference — whether it's small tweaks or a total workflow transformation, we've got your back!
                         </p>
                     </div>
                     <form action="https://formspree.io/f/xrbelbzl" id="contact-form" class="form-container col-lg-6 d-flex flex-column align-items-end p-lg-3" method="POST">
                         <div class="row w-100 gx-2 gy-2 gy-lg-0 px-0 mx-0 my-2">
                             <div class="col-md-6 px-1">
-                                <input name="name" type="text" class="form-control" placeholder="Your Name">
+                                <input name="name" type="text" class="form-control" placeholder="Your Name" required
+                                data-translate="homepage.contact_us.form.name">
                             </div>
                             <div class="col-md-6 px-1">
-                                <input name="email" type="email" class="form-control" placeholder="Your Email">
+                                <input name="email" type="email" class="form-control" placeholder="Your Email" required
+                                data-translate="homepage.contact_us.form.email">
                             </div>
                         </div>                        
                         <div class="row w-100 px-0 mx-0">
                             <div class="col-12 px-1">
-                                <textarea name="message" class="form-control" placeholder="Your Message" style="height: 180px;"></textarea>
+                                <textarea name="message" class="form-control" placeholder="Your Message" style="height: 180px;"
+                                data-translate="homepage.contact_us.form.message"></textarea>
                             </div>
                         </div>
                         <div class="row w-100 px-0 mx-0 my-2 d-flex justify-content-between">
                             <div class="col-auto px-1">
                                 <div class="form-check">
                                     <input name="gdpr-consent" type="checkbox" class="form-check-input" id="gdpr-checkbox" required>
-                                    <label class="form-check-label ms-2" for="gdpr-checkbox">I agree to the <a href="privacy_policy.html" target="_blank">privacy policy</a></label>
+                                    <label class="form-check-label ms-2" for="gdpr-checkbox" data-translate="homepage.contact_us.form.privacy_policy">I agree to the <a href="privacy_policy.html" target="_blank">privacy policy</a></label>
                                     <p id="contact-form-status"></p>
                                 </div>
                             </div>
                             <div class="col-auto px-1">
-                                <button id="contact-form-button" class="btn btn-primary form-btn">Send</button>
+                                <button id="contact-form-button" class="btn btn-primary form-btn" data-translate="homepage.contact_us.form.submit">Send</button>
                             </div>
                         </div>
                     </form>

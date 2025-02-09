@@ -38,10 +38,22 @@ p {
     border: 1px solid var(--octigen-blue);
     padding: 7px;
 }
+
 .nav-highlighted-link:hover {
-    background-color: var(--octigen-blue);
-    color: white;
+    color: var(--octigen-blue) !important;
     transition: background-color 0.2s ease-in-out;
+    border-radius: 3px;
+}
+
+.dropdown-menu.show {
+    display: inline-flex !important;
+}
+
+.language-selector {
+    background-color: var(--octigen-blue);
+    padding: 5px 12px;
+    color: white;
+    border-radius: 3px;
 }
 
 .main-hero {
@@ -272,7 +284,7 @@ p {
 
 .free-banner {
     color: white;
-    margin-bottom: -3rem;
+    margin-bottom: -2.2rem;
 }
 
 h5.free-banner-text {
