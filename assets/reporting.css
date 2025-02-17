@@ -1,0 +1,21 @@
+.main-hero {
+    background: radial-gradient(circle at center, #ffffff 20%, rgba(206, 226, 255, 0.5) 50%);
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.hero-top-header {
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: var(--octigen-blue);
+}
+
+/* Improve Mobile Experience */
+@media (max-width: 991px) {
+    .main-hero {
+        text-align: center;
+    }
+}

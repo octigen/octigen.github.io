@@ -1,0 +1,69 @@
+common:
+  title: Octigen - Data, AI & Reporting Automation
+  og_title: Octigen - Data, AI & Reporting Automation
+  description: "Octigen GmbH provides expert consulting in data integration, 
+           transformation, AI, and quantitative analysis, 
+           specializing in Financial Services."
+  nav:
+    services: Our Services
+    who_we_are: Who We Are
+    contact_us: Contact Us
+  footer:
+    copyright: © 2025 Octigen GmbH. All rights reserved.
+
+hero:
+  top_header: AI, Data and Reporting Services
+  main_header: Harness the Power of your Data.
+  description: "Take advantage of a partner that knows how to handle your data,
+  using AI to make your operations run smoothly, and create oustanding client
+  reporting while using the software you already have. This is Octigen."
+  button: What we can do for you
+services:
+  title: Our Services
+  data_integration:
+    title: Your data sources in a coherent landscape
+    description: "Data is the raw ore of your business intelligence. Octigen is highly proficient
+    in refining it into a precious resource for you, by bringing our tools right <b>to your data."
+  reporting:
+    title: Automate your client reporting
+    description: "Octigen helps you focus on the bottom line rather than spending unnecessary time
+    on reports. From software development & integration to <i>reporting as a service</i>, we offer
+    you à la carte solutions for your needs."
+  quant_analysis:
+    title: Elevate your quantitative edge
+    description: "Let us supercharge your quant analytics with our expertise, in topics like Machine
+    Learning, data quality, portfolio construction, and time series forecasting."
+  generative_ai:
+    title: Generative AI, in the real world
+    description: "At Octigen we have extensive experience in delivering real business value with clever
+    uses of Large Language Models (LLMs). Have some ideas of potential use cases?
+    <a style='color: white;' href='#contacts'>Let's talk."
+who_we_are:
+  title: Who We Are
+  description: "We've worked side by side to revolutionize the client reporting of a leading
+  independent asset manager in Zurich. Building on that expertise, we founded Octigen.
+  Our mission? To transform the way you can use data to engage with your clients."
+  michel_muller:
+    title: Co-Founder & CEO
+    description: "With over 15 years of experience as a software architect and more than 6 years
+    developing cutting-edge data solutions for the finance industry, Michel brings deep expertise
+    across all computing technology. He holds a PhD in High-performance computing and an MSc from
+    ETH Zurich."
+  kevin_graziani:
+    title: Co-Founder & CFO
+    description: "Bringing experience as front-office quant for some of Europe's largest financial
+    institutions, Kevin is a seasoned software engineer and marketing expert. He graduated <i>cum laude</i>
+    and holds two MSc degrees, in Quantitative Finance and in Corporate Finance."
+contact_us:
+  offer: First 1 hour free of charge
+  title: Get in touch today
+  top_cta: DATA INTEGRATION, AI, REPORTING
+  cta: Ready to start your next project with us?
+  cta_description: "Let's talk and see how we can make a difference — whether it's small tweaks or a
+  total workflow transformation, we've got your back!"
+  form:
+    name: Your Name
+    email: Your Email
+    message: Your Message
+    submit: Send
+    privacy_policy: "I agree to the <a href='privacy_policy.html' target='_blank'>privacy policy</a>"

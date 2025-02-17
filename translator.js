@@ -16,9 +16,9 @@ async function loadLanguage(lang) {
         if (typeof jsyaml === "undefined") {
             await loadScript("https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js");
         }
-        const response = await fetch(`/translations/${lang}.yaml`);
+        const response = await fetch(`/translations/homepage/${lang}.yaml`);
         const yamlText = await response.text();
-        const translations = jsyaml.load(yamlText); // Parse YAML to JS object
+        const translations = jsyaml.load(yamlText);
         applyTranslations(translations);
     } catch (error) {
         console.error("Error loading translations:", error);
@@ -41,12 +41,11 @@ function applyTranslations(translations) {
     });
 }
 
-
 document.addEventListener("DOMContentLoaded", () => {
     const lang = localStorage.getItem("lang") || "en";
     loadLanguage(lang);
     document.getElementById("currentLang").innerText = lang.toUpperCase();
-
+  
     document.querySelectorAll(".lang-select").forEach(item => {
         item.addEventListener("click", (event) => {
             event.preventDefault();
@@ -55,4 +54,4 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("currentLang").innerText = selectedLang.toUpperCase();
         });
     });
-});
+  });

@@ -1,0 +1,179 @@
+/* define colors */
+:root {
+    --octigen-blue: rgba(30, 79, 226, 1);
+    --octigen-highlighted: #1A1B31;
+}
+
+section {
+    overflow-x: hidden;
+}
+
+main {
+    font-family: 'Outfit', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: 1px;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+p {
+    line-height: 2;
+    font-weight: 300;
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 20px 0;
+}
+
+.nav-highlighted-link {
+    color: var(--octigen-blue);
+    border: 1px solid var(--octigen-blue);
+    padding: 7px;
+    border-radius: 4px;
+    transition: 0.2s ease-in-out;
+}
+
+.nav-highlighted-link:hover {
+    color: var(--octigen-blue) !important;
+    transition: 0.2s ease-in-out;
+    border-radius: 18px;
+}
+
+.lang-dropdown.show {
+    display: inline-flex !important;
+    margin-top: 5px !important;
+}
+
+.dropdown-hamburger {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 50px;
+    background: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.dropdown-hamburger-container:hover .hamburger-menu,
+#hamburgerMenu.active + #menuDropdown {
+    padding: 20px;
+    margin-top: 5px;
+    position: absolute;
+    width: 200px !important;
+    right: -70px;
+    left: auto;
+    display: flex !important;
+    flex-direction: column;
+}
+
+.hamb-item {
+    line-height: 1.5;
+}
+
+.language-selector {
+    background-color: var(--octigen-blue);
+    padding: 5px 12px;
+    color: white;
+    border-radius: 3px;
+}
+
+.line-height-1and5 {
+    line-height: 1.5;
+}
+
+.btn-primary {
+    font-size: 0.9rem;
+    font-weight: 400;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    overflow: hidden;
+    background-color: var(--octigen-blue);
+    transition: background-color 0.2s ease-in-out;
+    box-shadow: 0px 0px 50px rgba(30, 79, 226, 0.5);
+    z-index: 1;
+    font-family: 'Outfit', sans-serif;
+}
+
+.btn-primary:hover {
+    background-color: var(--octigen-highlighted);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.form-container {
+    font-size: 0.9rem;
+    font-weight: 300;
+    font-family: 'Outfit', sans-serif;
+}
+
+.form-container input, .form-container textarea {
+    background-color: transparent;
+    border-radius: 0px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    color: white;
+}
+
+.form-container input::placeholder, .form-container textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.form-container textarea:focus,
+.form-container input:focus,
+.form-container textarea:active,
+.form-container input:active,
+.form-container textarea:hover,
+.form-container input:hover {
+    border: 1px solid var(--octigen-blue);
+    background-color: transparent;
+    color: white;
+    box-shadow: none;
+}
+
+.form-btn {
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 0px;
+    transition: border 0.2s ease-in-out;
+    font-weight: 300;
+}
+
+.form-btn:hover {
+    transition: border 0.2s ease-in-out;
+}
+
+.form-control {
+    color: white;
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+
+.highlighted-header {
+    color: var(--octigen-blue);
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.footer-container {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-text {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+}

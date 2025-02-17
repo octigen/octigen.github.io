@@ -1,0 +1,70 @@
+common:
+  title: Octigen - Automazione dei dati, AI e Reporting
+  og_title: Octigen - Automazione dei dati, AI e Reporting
+  description: "Octigen GmbH fornisce consulenza esperta in integrazione dei dati, 
+           trasformazione, IA e analisi quantitativa, 
+           specializzandosi nei servizi finanziari."
+  nav:
+    services: I nostri servizi
+    who_we_are: Chi siamo
+    contact_us: Contattaci
+  footer:
+    copyright: © 2025 Octigen GmbH. Tutti i diritti riservati.
+
+hero:
+  top_header: Servizi di AI, Dati e Reporting
+  main_header: Sfruttate il potere dei vostri dati.
+  description: "Approfittate di un partner che sa come gestire i vostri dati,
+  utilizzando l'Intelligenza Artificiale per far decollare le vostre operazioni e creare
+  report clienti eccezionali senza dover imparare nuovi software. Questo è Octigen."
+  button: Cosa possiamo fare per voi
+services:
+  title: I nostri servizi
+  data_integration:
+    title: Le vostre fonti di dati in un contesto coerente
+    description: "I dati sono l'oro grezzo della vostra business intelligence. Octigen è in grado
+    nel raffinarlo in una risorsa preziosa, portando i nostri strumenti direttamente <b>ai vostri dati.</b>"
+  reporting:
+    title: Automatizza il vostro reporting clienti
+    description: "Octigen vi aiuta a concentrarvi sul risultato finale piuttosto che spendere tempo
+    inutile sui report. Dallo sviluppo e integrazione del software al <i>reporting as a service</i>, offriamo
+    soluzioni <i>à la carte</i> per le vostre esigenze."
+  quant_analysis:
+    title: Elevate il vostro vantaggio quantitativo
+    description: "Facciamo decollare la vostra analisi quantitativa con la nostra esperienza, in Machine
+    Learning come in data quality, portfolio construction e previsione delle timeseries."
+  generative_ai:
+    title: Generative AI, nel mondo reale
+    description: "Da Octigen abbiamo un'ampia esperienza nella creazione di valore commerciale reale con utilizzi intelligenti
+    dei Large Language Models (LLM). Avete alcune idee di possibili casi d'uso?
+    <a style='color: white;' href='#contacts'>Parliamone."
+who_we_are:
+  title: Chi siamo
+  description: "Abbiamo lavorato fianco a fianco per rivoluzionare il reporting clienti di un importante
+  asset manager indipendente a Zurigo. Basandoci su questa esperienza, abbiamo fondato Octigen.
+  La nostra missione? Trasformare il modo in cui potete utilizzare i dati per coinvolgere i vostri clienti."
+  michel_muller:
+    title: Co-Fondatore & CEO
+    description: "Con oltre 15 anni di esperienza come software architect e più di 6 anni
+    nello sviluppo di soluzioni dati all'avanguardia per l'industria finanziaria, Michel porta una profonda esperienza
+    in tutte le tecnologie informatiche. Ha conseguito un dottorato in High-performance computing e un MSc da
+    ETH Zurich."
+  kevin_graziani:
+    title: Co-Fondatore & CFO
+    description: "Oltre alla sua esperienza come quant front-office per alcune delle più grandi istituzioni finanziarie
+    europee, Kevin è anche un abile software engineer ed esperto di marketing. Si è laureato <i>cum laude</i>
+    e possiede due Master, in Finanza Quantitativa e in Corporate Finance."
+contact_us:
+  offer: Prima ora gratuita
+  title: Parliamone oggi stesso
+  top_cta: INTEGRAZIONE DEI DATI, AI, REPORTING
+  cta: Pronti a cominciare il vostro prossimo progetto con noi?
+  cta_description: "Parliamo e scropiamo insieme come possiamo fare la differenza —
+  che si tratti di piccoli aggiustamenti o di una trasformazione totale del flusso 
+  di lavoro, siamo al vostro fianco!"
+  form:
+    name: Nome
+    email: Email
+    message: Messaggio
+    submit: Invia
+    privacy_policy: "Accetto la <a href='privacy_policy.html' target='_blank'>privacy policy</a>"
