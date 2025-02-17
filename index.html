@@ -32,10 +32,16 @@
                 <!-- Right Section (Hamburger + Nav Links + Language Selector) -->
                 <div class="d-flex align-items-center">
                     <!-- Hamburger Menu -->
-                    <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+                    <div class="dropdown dropdown-hamburger-container">
+                        <button class="navbar-toggler me-lg-2" id="hamburgerMenu" type="button">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="dropdown-hamburger" id="menuDropdown">
+                            <a class="dropdown-item mb-2" href="#services">Our Services</a>
+                            <a class="dropdown-item mb-2" href="#who-we-are">Who We Are</a>
+                            <a class="dropdown-item mb-2" href="#contacts">Contact Us</a>
+                        </div>
+                    </div>
         
                     <!-- Navigation Links -->
                     <div class="collapse navbar-collapse" id="navbarNav">
@@ -47,7 +53,7 @@
                     </div>
         
                     <!-- Language Dropdown -->
-                    <div class="dropdown language-selector ms-5">
+                    <div class="dropdown language-selector ms-2 ms-lg-5">
                         <button class="dropdown-toggle nav-link" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             <span id="currentLang">EN</span>
                         </button>
