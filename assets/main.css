@@ -8,6 +8,10 @@ section {
     overflow-x: hidden;
 }
 
+html {
+    font-family: 'Outfit', sans-serif;
+}
+
 main {
     font-family: 'Outfit', sans-serif;
 }
@@ -32,6 +36,8 @@ p {
     width: 100%;
     z-index: 10;
     padding: 20px 0;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
 }
 
 .nav-highlighted-link {

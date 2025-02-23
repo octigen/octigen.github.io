@@ -16,7 +16,11 @@ async function loadLanguage(lang) {
         if (typeof jsyaml === "undefined") {
             await loadScript("https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js");
         }
-        const response = await fetch(`/translations/homepage/${lang}.yaml`);
+        let page = window.location.pathname.split("/").filter(Boolean).pop() || "homepage";
+        page = page.replace(/\.[^/.]+$/, ""); // Removes the file extension
+
+        const response = await fetch(`/translations/${page}/${lang}.yaml`);
+
         const yamlText = await response.text();
         const translations = jsyaml.load(yamlText);
         applyTranslations(translations);

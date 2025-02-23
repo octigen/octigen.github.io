@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg position-absolute w-100">
+    <div class="container d-flex justify-content-between align-items-center">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+            <img src="assets/images/logo_octigen_black.png" alt="Octigen Logo" style="max-width:170px" class="d-inline-block align-top">
+        </a>
+
+        <!-- Right Section (Hamburger + Nav Links + Language Selector) -->
+        <div class="d-flex align-items-center">
+            <!-- Hamburger Menu -->
+            <div class="dropdown dropdown-hamburger-container">
+                <button class="navbar-toggler me-lg-2" id="hamburgerMenu" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="dropdown-hamburger dropdown-menu dropdown-menu-end" id="menuDropdown">
+                    <a class="dropdown-item mb-2" href="#services">Our Services</a>
+                    <a class="dropdown-item mb-2" href="#who-we-are">Who We Are</a>
+                    <a class="dropdown-item mb-2" href="#contacts">Contact Us</a>
+                </div>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item ms-4"><a class="nav-link" href="#services" data-translate="common.nav.services">Our Services</a></li>
+                    <li class="nav-item ms-4"><a class="nav-link" href="#who-we-are" data-translate="common.nav.who_we_are">Who We Are</a></li>
+                    <li class="nav-item ms-4"><a class="nav-link nav-highlighted-link" href="#contacts" data-translate="common.nav.contact_us">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Language Dropdown -->
+            <div class="dropdown language-selector ms-2 ms-lg-5">
+                <button class="dropdown-toggle nav-link" id="langDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span id="currentLang">EN</span>
+                </button>
+                <ul class="lang-dropdown dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item lang-select" href="#" data-lang="de">DE</a></li>
+                    <li><a class="dropdown-item lang-select" href="#" data-lang="fr">FR</a></li>
+                    <li><a class="dropdown-item lang-select" href="#" data-lang="it">IT</a></li>
+                    <li><a class="dropdown-item lang-select" href="#" data-lang="en">EN</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
