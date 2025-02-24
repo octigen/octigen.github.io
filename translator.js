@@ -9,15 +9,43 @@ function loadScript(src) {
     });
 }
 
+function getLanguageFromHashOrStorage() {
+    const hashLang = window.location.hash.replace("#", "");
+    const storedLang = localStorage.getItem("lang");
+    return hashLang || storedLang || "en";
+}
+
+function applyTranslations(translations) {
+    document.querySelectorAll("[data-translate]").forEach(el => {
+        const key = el.getAttribute("data-translate");
+        const keys = key.split(".");
+        let translation = translations;
+        
+        keys.forEach(k => translation = translation[k] || key); // Fallback if missing
+
+        // Handle placeholders separately for input & textarea elements
+        if (el.hasAttribute("placeholder")) {
+            el.setAttribute("placeholder", translation);
+        } else {
+            el.innerHTML = translation; // Allow HTML formatting like <a> tags
+        }
+    });
+}
+
 async function loadLanguage(lang) {
-    localStorage.setItem('lang', lang);
+    if (!lang) {
+        lang = getLanguageFromHash();
+    }
+
+    localStorage.setItem("lang", lang);
 
     try {
         if (typeof jsyaml === "undefined") {
             await loadScript("https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js");
         }
-        let page = window.location.pathname.split("/").filter(Boolean).pop() || "homepage";
-        page = page.replace(/\.[^/.]+$/, ""); // Removes the file extension
+
+        let page = document.body.getAttribute("data-page") || "homepage";
+        page = page.replace(/\.[^/.]+$/, ""); // Remove file extension if present
 
         const response = await fetch(`/translations/${page}/${lang}.yaml`);
 
@@ -27,35 +55,26 @@ async function loadLanguage(lang) {
     } catch (error) {
         console.error("Error loading translations:", error);
     }
-}
 
-function applyTranslations(translations) {
-    document.querySelectorAll("[data-translate]").forEach(el => {
-        const key = el.getAttribute("data-translate");
-        const keys = key.split(".");
-        let translation = translations;
-        
-        keys.forEach(k => translation = translation[k] || el.innerHTML);
-
-        if (el.hasAttribute("placeholder")) {
-            el.setAttribute("placeholder", translation);
-        } else {
-            el.innerHTML = translation; // Allow HTML formatting like <a> tags
-        }
-    });
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    const lang = localStorage.getItem("lang") || "en";
-    loadLanguage(lang);
     document.getElementById("currentLang").innerText = lang.toUpperCase();
-  
-    document.querySelectorAll(".lang-select").forEach(item => {
-        item.addEventListener("click", (event) => {
-            event.preventDefault();
-            const selectedLang = event.target.getAttribute("data-lang");
-            loadLanguage(selectedLang);
-            document.getElementById("currentLang").innerText = selectedLang.toUpperCase();
-        });
-    });
-  });
+}
+
+// Ensure language is set on page load
+document.addEventListener("DOMContentLoaded", () => {
+    const lang = getLanguageFromHashOrStorage();
+    loadLanguage(lang);
+
+    document.getElementById("currentLang").innerText = lang.toUpperCase();
+});
+
+document.body.addEventListener("click", (event) => {
+    const target = event.target.closest(".lang-select"); // Ensure it is a .lang-select
+    if (target) {
+        event.preventDefault();
+        const selectedLang = target.getAttribute("data-lang");
+
+        // Change URL hash to update language without reloading
+        window.location.hash = selectedLang;
+        loadLanguage(selectedLang);
+    }
+});
