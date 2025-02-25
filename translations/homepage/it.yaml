@@ -68,3 +68,5 @@ contact_us:
     message: Messaggio
     submit: Invia
     privacy_policy: "Accetto la <a href='privacy_policy.html' target='_blank'>privacy policy</a>"
+    thanks: Thanks for your submission!
+    error: Oops! There was a problem submitting your form
