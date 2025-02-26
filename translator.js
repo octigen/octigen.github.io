@@ -9,12 +9,22 @@ function loadScript(src) {
     });
 }
 
-function getLanguageFromHashOrStorage() {
-    const hashLang = window.location.hash.replace("#", "");
+// Function to get the language from the URL parameter or storage
+function getLanguageFromURLOrStorage() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get("lang");
     const storedLang = localStorage.getItem("lang");
-    return hashLang || storedLang || "en";
+    return urlLang || storedLang || "en"; // Default to English
 }
 
+// Function to update the URL without reloading the page
+function updateURLWithLanguage(lang) {
+    const url = new URL(window.location);
+    url.searchParams.set("lang", lang);
+    window.history.pushState({}, "", url); // Update the URL
+}
+
+// Function to apply translations to elements
 function applyTranslations(translations) {
     document.querySelectorAll("[data-translate]").forEach(el => {
         const key = el.getAttribute("data-translate");
@@ -32,12 +42,14 @@ function applyTranslations(translations) {
     });
 }
 
+// Function to load the language file and apply translations
 async function loadLanguage(lang) {
     if (!lang) {
-        lang = getLanguageFromHash();
+        lang = getLanguageFromURLOrStorage();
     }
 
     localStorage.setItem("lang", lang);
+    updateURLWithLanguage(lang); // Update URL with selected language
 
     try {
         if (typeof jsyaml === "undefined") {
@@ -61,20 +73,17 @@ async function loadLanguage(lang) {
 
 // Ensure language is set on page load
 document.addEventListener("DOMContentLoaded", () => {
-    const lang = getLanguageFromHashOrStorage();
+    const lang = getLanguageFromURLOrStorage();
     loadLanguage(lang);
-
-    document.getElementById("currentLang").innerText = lang.toUpperCase();
 });
 
+// Handle language switching with event delegation
 document.body.addEventListener("click", (event) => {
     const target = event.target.closest(".lang-select"); // Ensure it is a .lang-select
     if (target) {
         event.preventDefault();
         const selectedLang = target.getAttribute("data-lang");
 
-        // Change URL hash to update language without reloading
-        window.location.hash = selectedLang;
-        loadLanguage(selectedLang);
+        loadLanguage(selectedLang); // Load the new language
     }
 });
