@@ -15,45 +15,45 @@ hero:
   top_header: Services d'IA, de données et de reporting
   main_header: Exploitez la puissance de vos données.
   description: "Profitez d'un partenaire qui sait comment gérer vos données,
-  en utilisant l'IA pour faire fonctionner vos opérations en douceur, et créer un
-  reporting client exceptionnel tout en utilisant le logiciel que vous avez déjà. C'est Octigen."
+                en utilisant l'IA pour faire fonctionner vos opérations en douceur, et créer un
+                reporting client exceptionnel tout en utilisant le logiciel que vous avez déjà. C'est Octigen."
   button: Ce que nous pouvons faire pour vous
 services:
   title: Nos Services
   data_integration:
     title: Vos sources de données dans un contexte cohérent
-    description: "Les données sont le minerai brut de votre intelligence d'affaires. Octigen est très compétent
-    pour le raffiner en une ressource précieuse pour vous, en apportant nos outils directement <b>à vos données."
+    description: "Les données sont le minerai brut de votre business intelligence. Octigen excelle à
+                  le raffiner en une ressource précieuse pour vous, en apportant nos outils directement <b>à vos données."
   reporting:
     title: Automatisez votre reporting client
-    description: "Octigen vous aide à vous concentrer sur le résultat net plutôt que de passer du temps inutile
-    sur des rapports. Du développement et de l'intégration de logiciels au <i>reporting en tant que service</i>, nous offrons
-    des solutions à la carte pour vos besoins."
+    description: "Octigen vous aide à vous concentrer sur les résultats plutôt que de passer du temps inutile
+                  sur des rapports. Du développement et de l'intégration de logiciels au <i>reporting as a service</i>, nous offrons
+                  des solutions à la carte pour vos besoins."
   quant_analysis:
     title: Élevez votre avantage quantitatif
-    description: "Laissez-nous booster votre analyse quant avec notre expertise, dans des sujets comme le Machine
-    Learning, la qualité des données, la construction de portefeuille et la prévision de séries temporelles."
+    description: "Laissez-nous booster votre analyse quant avec notre expertise, dans des domaines comme le Machine
+                  Learning, la qualité des données, la construction de portefeuille et la prévision de séries temporelles."
   generative_ai:
     title: IA générative, dans le monde réel
-    description: "Chez Octigen, nous avons une vaste expérience dans la fourniture de valeur commerciale réelle avec des utilisations intelligentes
-    des grands modèles de langage (LLMs). Vous avez des idées de cas d'utilisation potentiels?
-    <a style='color: white;' href='#contacts'>Parlons-en."
+    description: "Chez Octigen, nous avons une vaste expérience dans la création de valeur commerciale réelle avec des utilisations intelligentes
+                  des grands modèles de langage (LLMs). Vous avez des idées de cas d'utilisation potentiels?
+                  <a style='color: white;' href='#contacts'>Parlons-en."
 who_we_are:
-  title: Qui Nous Sommes
+  title: Qui Sommes-Nous
   description: "Nous avons travaillé côte à côte pour révolutionner le reporting client d'un important
-  gestionnaire de fortune indépendant à Zurich. Forts de cette expertise, nous avons fondé Octigen.
-  Notre mission? Transformer la façon dont vous pouvez utiliser les données pour engager vos clients."
+                gestionnaire d’actifs indépendant à Zurich. Forts de cette expertise, nous avons fondé Octigen.
+                Notre mission? Transformer la façon dont vous pouvez utiliser les données pour engager vos clients."
   michel_muller:
     title: Co-Fondateur & PDG
     description: "Avec plus de 15 ans d'expérience en tant qu'architecte logiciel et plus de 6 ans
-    à développer des solutions de données de pointe pour l'industrie financière, Michel apporte une expertise approfondie
-    dans toutes les technologies informatiques. Il est titulaire d'un doctorat en informatique haute performance et d'un MSc de
-    l'ETH Zurich."
+                  à développer des solutions de données de pointe pour l'industrie financière, Michel apporte une expertise approfondie
+                  dans toutes les technologies informatiques. Il est titulaire d'un doctorat en informatique haute performance et d'un MSc de
+                  l'ETH Zurich."
   kevin_graziani:
-    title: Co-Fondateur & CFO
+    title: Co-Fondateur & DAF
     description: "Apportant une expérience de quant front-office pour certaines des plus grandes institutions financières d'Europe,
-    Kevin est un ingénieur logiciel chevronné et un expert en marketing. Il est diplômé <i>cum laude</i>
-    et détient deux MSc, en Finance Quantitative et en Finance d'Entreprise."
+                  Kevin est un ingénieur logiciel chevronné et un expert en marketing. Il est diplômé <i>cum laude</i>
+                  et détient deux MSc, en Finance Quantitative et en Finance d'Entreprise."
 contact_us:
   offer: Première heure gratuite
   title: Contactez-nous aujourd'hui
