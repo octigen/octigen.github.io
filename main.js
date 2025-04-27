@@ -1,6 +1,6 @@
 async function loadNavbar() {
   try {
-      const response = await fetch("components/navbar.html");
+      const response = await fetch("/components/navbar.html");
       if (!response.ok) throw new Error("Navbar not found");
       const navbarHTML = await response.text();
       document.body.insertAdjacentHTML("afterbegin", navbarHTML);
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", loadNavbar);
 // we fetch the footer.html and insert it between the footer tags
 async function loadFooter() {
     try {
-        const response = await fetch("components/footer.html");
+        const response = await fetch("/components/footer.html");
         if (!response.ok) throw new Error("Footer not found");
         const footerHTML = await response.text();
         document.querySelector("footer").insertAdjacentHTML("beforeend", footerHTML);
