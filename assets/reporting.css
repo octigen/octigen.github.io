@@ -156,6 +156,15 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 991px) {
+    .feature-section-half {
+        padding: 3rem 2rem;
+    }
+    .highlighted-header {
+        text-align: center;
+    }
+}
+
 .middleware-section {
     background: radial-gradient(circle at bottom right, rgba(206, 226, 255, 0.5) 10%, #ffffff 40%);
 }
