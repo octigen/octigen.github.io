@@ -1,16 +1,16 @@
-// Mouse move effect on the hero section
+(function() {
+  const mobileQP = window.matchMedia("(max-width: 768px)");
+  if (mobileQP.matches) return;
+  window.addEventListener("scroll", () => {
+    const heroSection = document.querySelector(".main-hero");
+    const scrollPosition = window.scrollY;
 
-window.addEventListener("scroll", function () {
-  const heroSection = document.querySelector(".main-hero");
-  const scrollPosition = window.scrollY; // Get the current scroll position
+    const moveX = scrollPosition * 0.1;
+    const moveY = scrollPosition * 0.1;
 
-  // Adjust the background position based on scroll
-  const moveX = scrollPosition * 0.1; // Adjust the horizontal scroll effect (you can change the multiplier)
-  const moveY = scrollPosition * 0.1; // Adjust the vertical scroll effect (you can change the multiplier)
-
-  // Apply the new background position
-  heroSection.style.backgroundPosition = `${50 + moveX}% ${50 + moveY}%`;
-});
+    heroSection.style.backgroundPosition = `${50 + moveX}% ${50 + moveY}%`;
+  });
+})();
 
 // Carousel of messages
 
