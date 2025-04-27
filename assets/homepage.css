@@ -9,6 +9,7 @@
 @media (max-width: 991px) {
     .main-hero {
         background: url('images/hero_bg_mobile.png') center/cover no-repeat !important;
+        text-align: center;
     }
 }
 
@@ -17,13 +18,6 @@
     font-size: 1rem;
     letter-spacing: 2px;
     color: var(--octigen-blue);
-}
-
-/* Improve Mobile Experience */
-@media (max-width: 991px) {
-    .main-hero {
-        text-align: center;
-    }
 }
 
 .service-section {
@@ -126,33 +120,4 @@
 
 .founder-container p {
     text-align: justify;
-}
-
-.contacts-section {
-    background: radial-gradient(circle at bottom right, #1A1B31 40%, #010101 80%);
-    color: white;
-}
-
-.free-banner {
-    color: white;
-    margin-bottom: -2.2rem;
-}
-
-h5.free-banner-text {
-    display: inline-block;
-    background-color: var(--octigen-blue);
-    margin-left: 30rem;
-    font-size: 14px;
-    padding: 2px;
-}
-
-@media (max-width: 991px) {
-    h5.free-banner-text {
-        margin-left: 0 !important;
-    }
-    .free-banner {
-        margin-bottom: -1.5rem;
-        font-size: 12px;
-        margin-top: 1rem;
-    }
 }

@@ -1,6 +1,6 @@
 /* define colors */
 :root {
-    --octigen-blue: rgba(30, 79, 226, 1);
+    --octigen-blue: #1e4fe2;
     --octigen-highlighted: #1A1B31;
 }
 
@@ -182,4 +182,33 @@ p {
     font-size: 0.8rem;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.7);
+}
+
+.contacts-section {
+    background: radial-gradient(circle at bottom right, #1A1B31 40%, #010101 80%);
+    color: white;
+}
+
+.free-banner {
+    color: white;
+    margin-bottom: -2.2rem;
+}
+
+h5.free-banner-text {
+    display: inline-block;
+    background-color: var(--octigen-blue);
+    margin-left: 30rem;
+    font-size: 14px;
+    padding: 2px;
+}
+
+@media (max-width: 991px) {
+    h5.free-banner-text {
+        margin-left: 0 !important;
+    }
+    .free-banner {
+        margin-bottom: -1.5rem;
+        font-size: 12px;
+        margin-top: 1rem;
+    }
 }

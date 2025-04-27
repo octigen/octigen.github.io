@@ -30,7 +30,7 @@ function applyTranslations(translations) {
         const key = el.getAttribute("data-translate");
         const keys = key.split(".");
         let translation = translations;
-        
+
         keys.forEach(k => translation = translation[k] || key); // Fallback if missing
 
         // Handle placeholders separately for input & textarea elements
@@ -44,32 +44,48 @@ function applyTranslations(translations) {
 
 // Function to load the language file and apply translations
 async function loadLanguage(lang) {
-    if (!lang) {
-        lang = getLanguageFromURLOrStorage();
-    }
-
+    if (!lang) lang = getLanguageFromURLOrStorage();
     localStorage.setItem("lang", lang);
-    updateURLWithLanguage(lang); // Update URL with selected language
-
-    try {
-        if (typeof jsyaml === "undefined") {
-            await loadScript("https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js");
-        }
-
-        let page = document.body.getAttribute("data-page") || "homepage";
-        page = page.replace(/\.[^/.]+$/, ""); // Remove file extension if present
-
-        const response = await fetch(`/translations/${page}/${lang}.yaml`);
-
-        const yamlText = await response.text();
-        const translations = jsyaml.load(yamlText);
-        applyTranslations(translations);
-    } catch (error) {
-        console.error("Error loading translations:", error);
+    updateURLWithLanguage(lang);
+  
+    if (typeof jsyaml === "undefined") {
+      await loadScript("https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js");
     }
-
+  
+    const page      = (document.body.getAttribute("data-page") || "homepage").replace(/\.[^/.]+$/, "");
+    const sources   = [ page, "navbar", "footer" ];
+    let translations = {};  // <<-- start with an empty object
+  
+    // A simple recursive merge
+    function mergeDeep(target, src) {
+      for (let key in src) {
+        if (src[key] && typeof src[key] === "object") {
+          if (!target[key] || typeof target[key] !== "object") target[key] = {};
+          mergeDeep(target[key], src[key]);
+        } else {
+          target[key] = src[key];
+        }
+      }
+      return target;
+    }
+  
+    for (let srcName of sources) {
+      try {
+        const res = await fetch(`/translations/${srcName}/${lang}.yaml`);
+        if (!res.ok) throw new Error(res.statusText);
+        const doc = jsyaml.load(await res.text());
+        mergeDeep(translations, doc);
+      }
+      catch (e) {
+        console.warn(`No translations for ${srcName}/${lang} — skipping.`, e);
+      }
+    }
+  
+    applyTranslations(translations);
     document.getElementById("currentLang").innerText = lang.toUpperCase();
-}
+    document.dispatchEvent(new CustomEvent("langChanged", { detail: lang }));
+
+}  
 
 // Ensure language is set on page load
 document.addEventListener("DOMContentLoaded", () => {

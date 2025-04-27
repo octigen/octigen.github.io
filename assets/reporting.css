@@ -1,0 +1,165 @@
+.main-hero {
+    background: url("images/complete_reporting_system/hero_bg_reporting.png") no-repeat;
+    background-size: cover;
+    background-position: center; /* Start at the center */
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    transition: background-position 0.1s ease-out; /* Smooth transition */
+}
+
+.main-hero .container {
+    width: 50%;
+}
+
+@media (max-width: 991px) {
+    .main-hero {
+        background: url('images/complete_reporting_system/hero_bg_mobile_reporting.png') center/cover no-repeat !important;
+        min-height: 100vh;
+    }
+    .container {
+        text-align: center;
+    }
+    .main-hero .container {
+        width: 100% !important;
+    }
+}
+
+.hero-top-header {
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: var(--octigen-blue);
+}
+
+.hero-text p {
+    font-size: 1.1rem; /* Increase font size slightly */
+}
+
+.features-carousel {
+    background-color: var(--octigen-blue);
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    justify-content: center;
+    padding: 0.3rem 0;
+}
+
+#features-carousel-message {
+    margin-bottom: 0rem;
+    font-size: 1rem;
+    display: inline-block;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+  
+#features-carousel-message.fade-out {
+    opacity: 0;
+}
+
+.powerpoint-section {
+    background: radial-gradient(circle at bottom right, #f0f0f0 40%, #fafafa 80%);
+}
+
+.data-connection-section {
+    background: radial-gradient(circle at bottom left, rgba(206, 226, 255, 0.5) 10%, #ffffff 40%);
+}
+
+.data-source-box {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+    padding:0;
+    border: 2px solid rgba(255, 255, 255, 0);
+}
+
+.data-source-box:hover {
+    border: 2px solid var(--octigen-blue);
+    transition: 0.3s ease-in-out;
+}
+
+.data-source-box-image {
+    width: 8.5rem;
+    height: auto;
+    padding: 1rem;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.box-text {
+    font-size: 0.9rem;
+    text-align: center;
+    border-radius: 13px;
+    padding: 8px 0;
+    margin: 20px 30px 0;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.available {
+    background-color: var(--octigen-blue);
+    color: white;
+}
+
+
+.coming-soon {
+    color: #1a1b3182
+}
+
+.distribution-section {
+    background: radial-gradient(circle at top left, #1A1B31 40%, #010101 80%);
+    color: white;
+}
+
+.coming-soon-header {
+    color: var(--octigen-blue);
+    font-size: 1rem;
+}
+
+.feature-section img {
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+@media (max-width: 991px) {
+    .powerpoint-section img {
+        max-width: 70%;
+        height: auto;
+        display: block;
+        margin-top: 20px;
+        object-fit: contain;
+    }
+}
+
+.middleware-raas-section img {
+    max-width: 40%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+.feature-section-half {
+    padding: 5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.middleware-section {
+    background: radial-gradient(circle at bottom right, rgba(206, 226, 255, 0.5) 10%, #ffffff 40%);
+}
+
+.raas-section {
+    background: radial-gradient(circle at top left, rgba(206, 226, 255, 0.5) 10%, #ffffff 40%);
+}
