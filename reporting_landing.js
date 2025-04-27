@@ -2,13 +2,24 @@
   const mobileQP = window.matchMedia("(max-width: 768px)");
   if (mobileQP.matches) return;
   window.addEventListener("scroll", () => {
-    const heroSection = document.querySelector(".main-hero");
-    const scrollPosition = window.scrollY;
+  // 1) if mobile, bail out immediately
+  if (window.innerWidth <= 768) return;
 
-    const moveX = scrollPosition * 0.1;
-    const moveY = scrollPosition * 0.1;
+  // 2) otherwise run your parallax
+  const heroSection   = document.querySelector(".main-hero");
+  const scrollPosition = window.scrollY;
+  const moveX          = scrollPosition * 0.1;
+  const moveY          = scrollPosition * 0.1;
 
-    heroSection.style.backgroundPosition = `${50 + moveX}% ${50 + moveY}%`;
+  heroSection.style.backgroundPosition = `${50 + moveX}% ${50 + moveY}%`;
+  }
+  );
+  // 3) add a listener to the window resize event
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      // remove the scroll event listener
+      window.removeEventListener("scroll", () => {});
+    }
   });
 })();
 
