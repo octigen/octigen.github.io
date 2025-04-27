@@ -1,14 +1,14 @@
 .main-hero {
     background: url("images/complete_reporting_system/hero_bg_reporting.png") no-repeat;
     background-size: cover;
-    background-position: center; /* Start at the center */
+    background-position: center;
     min-height: 90vh;
     display: flex;
     align-items: center;
     text-align: center;
     position: relative;
     justify-content: center;
-    transition: background-position 0.1s ease-out; /* Smooth transition */
+    transition: background-position 0.1s ease-out;
 }
 
 .main-hero .container {
@@ -36,7 +36,7 @@
 }
 
 .hero-text p {
-    font-size: 1.1rem; /* Increase font size slightly */
+    font-size: 1.1rem;
 }
 
 .features-carousel {
