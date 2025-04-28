@@ -10,6 +10,7 @@
     .main-hero {
         background: url('images/hero_bg_mobile.png') center/cover no-repeat !important;
         text-align: center;
+        min-height: 800px;
     }
 }
 
