@@ -18,6 +18,8 @@
 @media (max-width: 991px) {
     .main-hero {
         background: url('images/complete_reporting_system/hero_bg_mobile_reporting.png') center/cover no-repeat !important;
+        max-height: 95vh;
+        min-height: 95vh;
         height: 95vh;
     }
     .container {
