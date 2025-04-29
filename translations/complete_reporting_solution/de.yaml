@@ -1,10 +1,10 @@
 common:
-  title: "Octigen Impress – Komplettlösung für Kundenreports"
-  og_title: "Octigen Impress – Komplettlösung für Kundenreports"
-  description: "Octigen Impress ist eine vollständige Kundenreporting-Lösung basierend auf Microsoft PowerPoint. Es ermöglicht vollautomatisiertes und flexibles Reporting, das verschiedene Datenquellen integriert."
+  title: "Octigen Total Reporting – Komplettlösung für Kundenreports"
+  og_title: "Octigen Total Reporting – Komplettlösung für Kundenreports"
+  description: "Octigen Total Reporting ist eine vollständige Kundenreporting-Lösung basierend auf Microsoft PowerPoint. Es ermöglicht vollautomatisiertes und flexibles Reporting, das verschiedene Datenquellen integriert."
 
 hero:
-  top_header: "Octigen Impress"
+  top_header: "Octigen Total Reporting"
   main_header: "Komplettlösung für Kundenreports"
   description: "Basierend auf PowerPoint, vollständig flexibel und automatisiert. Alles, was Sie brauchen, um Ihr Unternehmen mit erstklassigem Kundenreporting auszustatten."
   button: "Jetzt entdecken"
@@ -14,12 +14,12 @@ features_carousel:
 
 powerpoint_section:
   header: "Eine Lösung, vollständig basierend auf Microsoft PowerPoint®"
-  description: "Damit ein Reporting-System wirklich effektiv ist, <b>muss es einfach sein.</b> Mit Octigen Impress können Sie Ihr bestehendes Wissen über Microsoft PowerPoint® nutzen, um Ihre Berichte zu erstellen und zu pflegen. Mit unserer Templating-Lösung müssen Sie nicht programmieren oder coden: Entwerfen Sie einfach einen Beispielbericht in PowerPoint®, und Octigen Impress erledigt den Rest. Und das Beste? Es wird bis auf das letzte Pixel perfekt sein. Alle Objekte sind nativ: vom ersten Diagramm bis zur letzten Tabelle, nichts ist ein Screenshot. Sie können alles bearbeiten. Genießen Sie die Show."
+  description: "Damit ein Reporting-System wirklich effektiv ist, <b>muss es einfach sein.</b> Mit Octigen Total Reporting können Sie Ihr bestehendes Wissen über Microsoft PowerPoint® nutzen, um Ihre Berichte zu erstellen und zu pflegen. Mit unserer Templating-Lösung müssen Sie nicht programmieren oder coden: Entwerfen Sie einfach einen Beispielbericht in PowerPoint®, und Octigen Total Reporting erledigt den Rest. Und das Beste? Es wird bis auf das letzte Pixel perfekt sein. Alle Objekte sind nativ: vom ersten Diagramm bis zur letzten Tabelle, nichts ist ein Screenshot. Sie können alles bearbeiten. Genießen Sie die Show."
 
 data_connection_section:
   top_header: "INTEGRIERT MIT IHREN DATEN"
   header: "Verbinden Sie Ihre Datenquellen und legen Sie los"
-  description: "Octigen Impress ist darauf ausgelegt, flexibel und anpassungsfähig zu sein. Ihr Reporting ist nur so gut wie Ihre Fähigkeit, alle benötigten Datenquellen anzubinden. Wir haben alles im Griff. Viele Datenquellen sind bereits integriert, und wir können problemlos neue hinzufügen. Von FundsXML bis Factsheets, von Bloomberg bis Produktreports, von Ihrem Portfolio-Management-System bis zum Kundenportal – wir verbinden alle Ihre Datenquellen."
+  description: "Octigen Total Reporting ist darauf ausgelegt, flexibel und anpassungsfähig zu sein. Ihr Reporting ist nur so gut wie Ihre Fähigkeit, alle benötigten Datenquellen anzubinden. Wir haben alles im Griff. Viele Datenquellen sind bereits integriert, und wir können problemlos neue hinzufügen. Von FundsXML bis Factsheets, von Bloomberg bis Produktreports, von Ihrem Portfolio-Management-System bis zum Kundenportal – wir verbinden alle Ihre Datenquellen."
 
 data_source_box:
   available: "Jetzt verfügbar"
@@ -29,12 +29,12 @@ data_source_box:
 distribution_section:
   top_header: "DEMÄCHST VERFÜGBAR"
   header: "Verteilung auf Knopfdruck"
-  description: "Mit Octigen Impress ist Ihr Reporting-Zyklus so schnell und reibungslos wie möglich. Starten Sie den Zyklus mit Batch-Exporten und erzeugen Sie alle Ihre Berichte mit den neuesten Daten. Von Factsheets über Produktreports bis hin zu Präsentationen – alle Ihre Teams haben innerhalb weniger Minuten Zugriff auf die aktualisierten Berichte. Sobald sie fertig sind, können Sie sie an Ihre Kunden verteilen: Senden Sie automatisierte E-Mails, laden Sie sie in Ihr Kundenportal hoch oder alles, was Ihnen einfällt."
+  description: "Mit Octigen Total Reporting ist Ihr Reporting-Zyklus so schnell und reibungslos wie möglich. Starten Sie den Zyklus mit Batch-Exporten und erzeugen Sie alle Ihre Berichte mit den neuesten Daten. Von Factsheets über Produktreports bis hin zu Präsentationen – alle Ihre Teams haben innerhalb weniger Minuten Zugriff auf die aktualisierten Berichte. Sobald sie fertig sind, können Sie sie an Ihre Kunden verteilen: Senden Sie automatisierte E-Mails, laden Sie sie in Ihr Kundenportal hoch oder alles, was Ihnen einfällt."
 
 middleware_section:
   top_header: "AUF ANFRAGE"
   header: "Vollständige Middleware-Integration"
-  description: "Integrieren Sie Ihre Middleware Ihrer Wahl mit Octigen Impress. Sie können dann den Reporting-Zyklus aus Ihrer Middleware starten und die Berichte von dort an Ihre Kunden verteilen."
+  description: "Integrieren Sie Ihre Middleware Ihrer Wahl mit Octigen Total Reporting. Sie können dann den Reporting-Zyklus aus Ihrer Middleware starten und die Berichte von dort an Ihre Kunden verteilen."
 
 raas_section:
   top_header: "DEMÄCHST VERFÜGBAR"
@@ -44,7 +44,7 @@ raas_section:
 contact_us:
   offer: "Die erste Stunde gratis"
   title: "Reporting, auf das nächste Level gehoben."
-  top_cta: "OCTIGEN IMPRESS"
+  top_cta: "OCTIGEN TOTAL REPORTING"
   cta: "Bereit, Ihr Reporting zu optimieren?"
   cta_description: "Lassen Sie uns sprechen und herausfinden, wie wir einen Unterschied machen können – ob kleine Anpassungen oder eine komplette Workflow-Transformation, wir unterstützen Sie!"
   form:

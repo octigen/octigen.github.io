@@ -1,10 +1,10 @@
 common:
-  title: "Octigen Impress – Solution complète de reporting client"
-  og_title: "Octigen Impress – Solution complète de reporting client"
-  description: "Octigen Impress est une solution complète de reporting client basée sur Microsoft PowerPoint. Elle permet un reporting entièrement automatisé et flexible, intégrant diverses sources de données."
+  title: "Octigen Total Reporting – Solution complète de reporting client"
+  og_title: "Octigen Total Reporting – Solution complète de reporting client"
+  description: "Octigen Total Reporting est une solution complète de reporting client basée sur Microsoft PowerPoint. Elle permet un reporting entièrement automatisé et flexible, intégrant diverses sources de données."
 
 hero:
-  top_header: "Octigen Impress"
+  top_header: "Octigen Total Reporting"
   main_header: "Solution complète de reporting client"
   description: "Basé sur PowerPoint, entièrement flexible et automatisé. Tout ce dont vous avez besoin pour doter votre entreprise d'un reporting client de premier ordre."
   button: "Découvrez maintenant"
@@ -14,12 +14,12 @@ features_carousel:
 
 powerpoint_section:
   header: "Une solution entièrement basée sur Microsoft PowerPoint®"
-  description: "Pour qu’un système de reporting soit vraiment efficace, <b>il doit être simple.</b> Avec Octigen Impress, vous pouvez exploiter vos connaissances existantes de Microsoft PowerPoint® pour créer et maintenir vos rapports. Grâce à notre solution de template, il n’est pas nécessaire de programmer : il vous suffit de concevoir un modèle de rapport dans PowerPoint®, et Octigen Impress se charge du reste. Et le meilleur ? Il sera parfait jusqu’au dernier pixel. Tous les objets sont natifs : du premier graphique à la dernière table, rien n’est une capture d’écran. Vous pouvez tout modifier. Profitez du spectacle."
+  description: "Pour qu’un système de reporting soit vraiment efficace, <b>il doit être simple.</b> Avec Octigen Total Reporting, vous pouvez exploiter vos connaissances existantes de Microsoft PowerPoint® pour créer et maintenir vos rapports. Grâce à notre solution de template, il n’est pas nécessaire de programmer : il vous suffit de concevoir un modèle de rapport dans PowerPoint®, et Octigen Total Reporting se charge du reste. Et le meilleur ? Il sera parfait jusqu’au dernier pixel. Tous les objets sont natifs : du premier graphique à la dernière table, rien n’est une capture d’écran. Vous pouvez tout modifier. Profitez du spectacle."
 
 data_connection_section:
   top_header: "INTÉGRÉ AVEC VOS DONNÉES"
   header: "Connectez vos sources de données et partez sereinement"
-  description: "Octigen Impress est conçu pour être flexible et s’adapter à vos besoins. Votre reporting n’est utile que si vous pouvez connecter toutes les sources de données dont vous avez besoin. Nous avons ce qu’il vous faut. De FundsXML aux fiches produits, de Bloomberg aux rapports produits, de votre système de gestion de portefeuille au portail client, nous pouvons connecter toutes vos sources de données."
+  description: "Octigen Total Reporting est conçu pour être flexible et s’adapter à vos besoins. Votre reporting n’est utile que si vous pouvez connecter toutes les sources de données dont vous avez besoin. Nous avons ce qu’il vous faut. De FundsXML aux fiches produits, de Bloomberg aux rapports produits, de votre système de gestion de portefeuille au portail client, nous pouvons connecter toutes vos sources de données."
 
 data_source_box:
   available: "Disponible dès maintenant"
@@ -29,12 +29,12 @@ data_source_box:
 distribution_section:
   top_header: "BIENTÔT DISPONIBLE"
   header: "Diffusion en un clic"
-  description: "Avec Octigen Impress, votre cycle de reporting est aussi rapide et fluide que possible. Lancez-le par un export par lot, produisant tous vos rapports avec les données les plus récentes. Des fiches produits aux rapports et présentations, toutes vos équipes ont accès aux rapports mis à jour en quelques minutes. Une fois prêts, diffusez-les à vos clients : envoyez des e-mails automatisés, téléchargez-les sur votre portail client, ou tout ce que vous imaginez."
+  description: "Avec Octigen Total Reporting, votre cycle de reporting est aussi rapide et fluide que possible. Lancez-le par un export par lot, produisant tous vos rapports avec les données les plus récentes. Des fiches produits aux rapports et présentations, toutes vos équipes ont accès aux rapports mis à jour en quelques minutes. Une fois prêts, diffusez-les à vos clients : envoyez des e-mails automatisés, téléchargez-les sur votre portail client, ou tout ce que vous imaginez."
 
 middleware_section:
   top_header: "SUR DEMANDE"
   header: "Intégration complète du middleware"
-  description: "Intégrez le middleware de votre choix avec Octigen Impress. Vous pourrez alors démarrer le cycle de reporting depuis votre middleware et distribuer les rapports à vos clients depuis là."
+  description: "Intégrez le middleware de votre choix avec Octigen Total Reporting. Vous pourrez alors démarrer le cycle de reporting depuis votre middleware et distribuer les rapports à vos clients depuis là."
 
 raas_section:
   top_header: "BIENTÔT DISPONIBLE"
@@ -44,7 +44,7 @@ raas_section:
 contact_us:
   offer: "Première heure offerte"
   title: "Reporting, passé au niveau supérieur."
-  top_cta: "OCTIGEN IMPRESS"
+  top_cta: "OCTIGEN TOTAL REPORTING"
   cta: "Prêt à dynamiser votre reporting ?"
   cta_description: "Discutons et voyons comment nous pouvons faire la différence — que ce soit par de petits ajustements ou une transformation complète de votre workflow, nous sommes là pour vous !"
   form:

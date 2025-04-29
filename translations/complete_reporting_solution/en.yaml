@@ -1,22 +1,22 @@
 common:
-  title: "Octigen Impress - Complete Client Reporting Solution"
-  og_title: "Octigen Impress - Complete Client Reporting Solution"
-  description: "Octigen Impress is a complete client reporting solution based on Microsoft PowerPoint. It allows for fully automated and flexible reporting, integrating with various data sources."
+  title: "Octigen Total Reporting - Complete Client Reporting Solution"
+  og_title: "Octigen Total Reporting - Complete Client Reporting Solution"
+  description: "Octigen Total Reporting is a complete client reporting solution based on Microsoft PowerPoint. It allows for fully automated and flexible reporting, integrating with various data sources."
 
 hero:
-  top_header: "Octigen Impress"
+  top_header: "Octigen Total Reporting"
   main_header: "Complete Client Reporting Solution"
   description: "Based on PowerPoint, fully flexible, and automated. All you need to empower your company with best-in-class client reporting."
   button: "Discover now"
 
 powerpoint_section:
   header: "A solution fully based on Microsoft PowerPoint®"
-  description: "For a real reporting system to be effective, <b>it needs to be simple.</b> With Octigen Impress, you can leverage your existing knowledge of Microsoft PowerPoint® to create and maintain your reports. With our templating solution, there is no need to program or code: just design a sample report in PowerPoint®, and Octigen Impress will take care of the rest. And the best part? It will be perfect, down to the last pixel. All the objects are native: from the first chart to the last table, nothing is a screenshot. You can edit everything. Enjoy the show."
+  description: "For a real reporting system to be effective, <b>it needs to be simple.</b> With Octigen Total Reporting, you can leverage your existing knowledge of Microsoft PowerPoint® to create and maintain your reports. With our templating solution, there is no need to program or code: just design a sample report in PowerPoint®, and Octigen Total Reporting will take care of the rest. And the best part? It will be perfect, down to the last pixel. All the objects are native: from the first chart to the last table, nothing is a screenshot. You can edit everything. Enjoy the show."
 
 data_connection_section:
   top_header: "INTEGRATED WITH YOUR DATA"
   header: "Connect your data sources, and you're good to go"
-  description: "Octigen Impress is designed to be flexible and adaptable to your needs. Your reporting is only as good as your ability to connect with all the data sources you need. We have you covered. Many data sources are already integrated, and we can easily add new ones. From FundsXML to factsheets, from Bloomberg to product reports, from your Portfolio Management System to the client portal, we can connect to all your data sources."
+  description: "Octigen Total Reporting is designed to be flexible and adaptable to your needs. Your reporting is only as good as your ability to connect with all the data sources you need. We have you covered. Many data sources are already integrated, and we can easily add new ones. From FundsXML to factsheets, from Bloomberg to product reports, from your Portfolio Management System to the client portal, we can connect to all your data sources."
 
 data_source_box:
   available: "Available now"
@@ -26,12 +26,12 @@ data_source_box:
 distribution_section:
   top_header: "COMING SOON"
   header: "Dissemination at the press of a button"
-  description: "With Octigen Impress, your reporting cycle is as fast and smooth as it can be. Start off the cycle with batch exporting, producing all your reports with the latest data. From factsheets to product reports and presentations, all your teams have access to the updated reports in a matter of minutes. Once ready, you can distribute them to your clients: send automated emails, upload to your client portal, or anything else you can think of."
+  description: "With Octigen Total Reporting, your reporting cycle is as fast and smooth as it can be. Start off the cycle with batch exporting, producing all your reports with the latest data. From factsheets to product reports and presentations, all your teams have access to the updated reports in a matter of minutes. Once ready, you can distribute them to your clients: send automated emails, upload to your client portal, or anything else you can think of."
 
 middleware_section:
   top_header: "ON REQUEST"
   header: "Full Middleware integration"
-  description: "Integrate your middleware of choice with Octigen Impress. You can then start the reporting cycle from your middleware, and distribute the reports to your clients from there."
+  description: "Integrate your middleware of choice with Octigen Total Reporting. You can then start the reporting cycle from your middleware, and distribute the reports to your clients from there."
 
 raas_section:
   top_header: "COMING SOON"
@@ -41,7 +41,7 @@ raas_section:
 contact_us:
   offer: "First 1 hour free of charge"
   title: "Reporting, leveled up."
-  top_cta: "OCTIGEN IMPRESS"
+  top_cta: "OCTIGEN TOTAL REPORTING"
   cta: "Ready to supercharge your reporting?"
   cta_description: "Let's talk and see how we can make a difference — whether it's small tweaks or a total workflow transformation, we've got your back!"
   form:
