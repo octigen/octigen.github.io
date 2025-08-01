@@ -46,7 +46,7 @@ async function handleMailerLiteSubmit(event) {
             // Success - User needs to check email for confirmation
             status.innerHTML = '<span data-translate="waiting_list.form.success">🎉 Almost there! Please check your email and click the confirmation link to secure your spot on our waiting list.</span>';
             status.className = "success";
-            form.reset();
+            event.target.reset();
             
             // Optional: Track conversion for analytics
             if (typeof gtag !== 'undefined') {

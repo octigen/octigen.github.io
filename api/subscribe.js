@@ -51,7 +51,8 @@ export default async function handler(req, res) {
       email: email,
       fields: {},
       groups: [], // Will add group ID if provided
-      status: 'unconfirmed' // Set to unconfirmed to trigger double opt-in
+      status: 'active', // Set to unconfirmed to trigger double opt-in
+      resubscribe: false, // Allow resubscribing if email exists
     };
 
     // Add name field if provided
