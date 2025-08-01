@@ -33,7 +33,7 @@ async function handleMailerLiteSubmit(event) {
     try {
         // Call your Vercel API endpoint directly
         // Using your Vercel project URL + /api/subscribe endpoint
-        const response = await fetch('https://octigen-github-io-313n-lb2sbo68y-kevin-grazianis-projects.vercel.app/api/subscribe', {
+        const response = await fetch('https://octigen-github-io.vercel.app/api/subscribe', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
