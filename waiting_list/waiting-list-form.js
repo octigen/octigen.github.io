@@ -31,11 +31,9 @@ async function handleMailerLiteSubmit(event) {
     };
     
     try {
-        // Note: This approach requires a backend endpoint to handle MailerLite API calls
-        // because MailerLite API keys should not be exposed in frontend code
-        
-        // Option 1: Use your own backend endpoint (recommended for production)
-        const response = await fetch('/api/subscribe', {
+        // Call your Vercel API endpoint directly
+        // Using your Vercel project URL + /api/subscribe endpoint
+        const response = await fetch('https://octigen-github-io-313n-lb2sbo68y-kevin-grazianis-projects.vercel.app/api/subscribe', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -44,6 +42,7 @@ async function handleMailerLiteSubmit(event) {
         });
         
         if (response.ok) {
+            const result = await response.json();
             // Success
             status.innerHTML = '<span data-translate="waiting_list.form.success">🎉 Welcome aboard! You\'re now on our waiting list. We\'ll be in touch soon!</span>';
             status.className = "success";
@@ -59,11 +58,15 @@ async function handleMailerLiteSubmit(event) {
             
         } else {
             // Handle error response
-            const errorData = await response.json();
             let errorMessage = '<span data-translate="waiting_list.form.error">Oops! There was a problem. Please try again.</span>';
             
-            if (errorData && errorData.message) {
-                errorMessage = errorData.message;
+            try {
+                const errorData = await response.json();
+                if (errorData && errorData.error) {
+                    errorMessage = errorData.error;
+                }
+            } catch (e) {
+                // If response is not JSON, use default message
             }
             
             status.innerHTML = errorMessage;
@@ -73,24 +76,8 @@ async function handleMailerLiteSubmit(event) {
     } catch (error) {
         // Network or other error
         console.error('Form submission error:', error);
-        
-        // Fallback: Try MailerLite's embedded form submission
-        // This will work if you've set up MailerLite's universal tracking code properly
-        if (typeof window.ml !== 'undefined' && window.ml.form) {
-            try {
-                await window.ml.form.submit(subscriberData);
-                status.innerHTML = '<span data-translate="waiting_list.form.success">🎉 Welcome aboard! You\'re now on our waiting list. We\'ll be in touch soon!</span>';
-                status.className = "success";
-                form.reset();
-            } catch (mlError) {
-                console.error('MailerLite submission error:', mlError);
-                status.innerHTML = '<span data-translate="waiting_list.form.error">Oops! There was a problem. Please try again.</span>';
-                status.className = "error";
-            }
-        } else {
-            status.innerHTML = '<span data-translate="waiting_list.form.error">Oops! There was a problem. Please try again.</span>';
-            status.className = "error";
-        }
+        status.innerHTML = '<span data-translate="waiting_list.form.error">Oops! There was a problem. Please try again.</span>';
+        status.className = "error";
     } finally {
         // Reset button state
         submitButton.disabled = false;
