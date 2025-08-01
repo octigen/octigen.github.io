@@ -6,17 +6,27 @@
 // MAILERLITE_GROUP_ID=your_group_id (optional, for adding to specific group)
 
 export default async function handler(req, res) {
-  // Handle CORS for browser requests
+  // Set CORS headers for all requests
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, Accept');
+  res.setHeader('Access-Control-Max-Age', '86400');
+
+  // Handle CORS preflight request
   if (req.method === 'OPTIONS') {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     return res.status(200).end();
   }
 
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
+
+  // Add some debugging
+  console.log('API Request received:', {
+    method: req.method,
+    headers: req.headers,
+    body: req.body
+  });
 
   try {
     const { email, name, company, gdpr_consent } = req.body;
@@ -28,6 +38,12 @@ export default async function handler(req, res) {
 
     if (!gdpr_consent) {
       return res.status(400).json({ error: 'GDPR consent is required' });
+    }
+
+    // Check if environment variables are set
+    if (!process.env.MAILERLITE_API_TOKEN) {
+      console.error('MAILERLITE_API_TOKEN environment variable not set');
+      return res.status(500).json({ error: 'Server configuration error' });
     }
 
     // Prepare subscriber data for MailerLite (new API format)
@@ -58,6 +74,8 @@ export default async function handler(req, res) {
       subscriberData.groups.push(process.env.MAILERLITE_GROUP_ID);
     }
 
+    console.log('Sending to MailerLite:', subscriberData);
+
     // Call MailerLite API (new API endpoint)
     const response = await fetch('https://connect.mailerlite.com/api/subscribers', {
       method: 'POST',
@@ -70,6 +88,7 @@ export default async function handler(req, res) {
     });
 
     const responseData = await response.json();
+    console.log('MailerLite response:', response.status, responseData);
 
     if (!response.ok) {
       console.error('MailerLite API error:', responseData);
@@ -94,9 +113,6 @@ export default async function handler(req, res) {
 
       throw new Error(`MailerLite API error: ${response.status}`);
     }
-
-    // Set CORS headers
-    res.setHeader('Access-Control-Allow-Origin', '*');
     
     return res.status(200).json({ 
       success: true, 
@@ -107,10 +123,9 @@ export default async function handler(req, res) {
   } catch (error) {
     console.error('Subscription error:', error);
     
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    
     return res.status(500).json({ 
-      error: 'Failed to subscribe. Please try again later.' 
+      error: 'Failed to subscribe. Please try again later.',
+      details: error.message
     });
   }
 }
