@@ -27,7 +27,7 @@ waiting_list:
     privacy_policy: "Ich stimme der Datenschutzrichtlinie zu und möchte Updates über Octigens Dienstleistungen erhalten"
     submit: "Zur Warteliste hinzufügen"
     submitting: "Wird hinzugefügt..."
-    success: "🎉 Willkommen an Bord! Sie stehen jetzt auf unserer Warteliste. Wir werden uns bald bei Ihnen melden!"
+    success: "🎉 Fast geschafft! Bitte überprüfen Sie Ihre E-Mails und klicken Sie auf den Bestätigungslink, um Ihren Platz auf unserer Warteliste zu sichern."
     error: "Hoppla! Es gab ein Problem. Bitte versuchen Sie es erneut."
   
   benefits:

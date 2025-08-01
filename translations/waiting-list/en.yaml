@@ -27,7 +27,7 @@ waiting_list:
     privacy_policy: "I agree to the privacy policy and want to receive updates about Octigen's services"
     submit: "Join Waiting List"
     submitting: "Joining..."
-    success: "🎉 Welcome aboard! You're now on our waiting list. We'll be in touch soon!"
+    success: "🎉 Almost there! Please check your email and click the confirmation link to secure your spot on our waiting list."
     error: "Oops! There was a problem. Please try again."
   
   benefits:

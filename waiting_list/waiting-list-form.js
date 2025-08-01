@@ -43,8 +43,8 @@ async function handleMailerLiteSubmit(event) {
         
         if (response.ok) {
             const result = await response.json();
-            // Success
-            status.innerHTML = '<span data-translate="waiting_list.form.success">🎉 Welcome aboard! You\'re now on our waiting list. We\'ll be in touch soon!</span>';
+            // Success - User needs to check email for confirmation
+            status.innerHTML = '<span data-translate="waiting_list.form.success">🎉 Almost there! Please check your email and click the confirmation link to secure your spot on our waiting list.</span>';
             status.className = "success";
             form.reset();
             

@@ -51,8 +51,7 @@ export default async function handler(req, res) {
       email: email,
       fields: {},
       groups: [], // Will add group ID if provided
-      status: 'active', // Set to active since they've consented
-      subscribed_at: new Date().toISOString()
+      status: 'unconfirmed' // Set to unconfirmed to trigger double opt-in
     };
 
     // Add name field if provided
@@ -67,7 +66,6 @@ export default async function handler(req, res) {
 
     // Add custom fields for waiting list tracking
     subscriberData.fields.source = 'waiting_list';
-    subscriberData.fields.signup_date = new Date().toISOString().split('T')[0]; // Date only
 
     // Add to group if specified
     if (process.env.MAILERLITE_GROUP_ID) {
