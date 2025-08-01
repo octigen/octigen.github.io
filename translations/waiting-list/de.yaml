@@ -1,0 +1,46 @@
+waiting_list:
+  title: "Zur Warteliste hinzufügen"
+  subtitle: "Seien Sie die Ersten, die erfahren, wenn wir unsere neuen Daten- und KI-Lösungen auf den Markt bringen. Erhalten Sie exklusiven Frühzugang und Sonderpreise für Early Adopters."
+  
+  form:
+    title: "Ihren Platz reservieren"
+    description: "Schließen Sie sich Hunderten von zukunftsorientierten Unternehmen an, die bereits auf unserer Warteliste stehen."
+    
+    name_label: "Vollständiger Name"
+    name_placeholder: "Geben Sie Ihren vollständigen Namen ein"
+    
+    email_label: "E-Mail-Adresse"
+    email_placeholder: "Geben Sie Ihre E-Mail-Adresse ein"
+    
+    company_label: "Unternehmen (Optional)"
+    company_placeholder: "Geben Sie Ihren Firmennamen ein"
+    
+    interests_label: "Was interessiert Sie am meisten? (Optional)"
+    interests_default: "Wählen Sie eine Option"
+    interests:
+      data_integration: "Datenintegration"
+      ai_solutions: "KI-Lösungen"
+      automated_reporting: "Automatisierte Berichterstattung"
+      quant_analysis: "Quantitative Analyse"
+      all: "Alle oben genannten"
+    
+    privacy_policy: "Ich stimme der Datenschutzrichtlinie zu und möchte Updates über Octigens Dienstleistungen erhalten"
+    submit: "Zur Warteliste hinzufügen"
+    submitting: "Wird hinzugefügt..."
+    success: "🎉 Willkommen an Bord! Sie stehen jetzt auf unserer Warteliste. Wir werden uns bald bei Ihnen melden!"
+    error: "Hoppla! Es gab ein Problem. Bitte versuchen Sie es erneut."
+  
+  benefits:
+    title: "Warum unserer Warteliste beitreten?"
+    early_access:
+      title: "Frühzugang"
+      description: "Gehören Sie zu den Ersten, die unsere neuen Lösungen vor der allgemeinen Verfügbarkeit testen können."
+    special_pricing:
+      title: "Sonderpreise"
+      description: "Exklusive Rabatte und Sonderpreise für Early Adopters."
+    priority_support:
+      title: "Prioritätssupport"
+      description: "Erhalten Sie bevorzugten Zugang zu unserem Team und personalisiertes Onboarding."
+
+nav:
+  home: "Startseite" 
