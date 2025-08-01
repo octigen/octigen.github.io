@@ -1,7 +1,7 @@
 thank_you:
-  title: "Benvenuto a bordo!"
-  subtitle: "La tua iscrizione è stata confermata"
-  message: "Grazie per aver confermato il tuo indirizzo email! Ora sei ufficialmente nella nostra lista d'attesa e sarai tra i primi a sapere quando lanceremo le nostre nuove soluzioni di dati e AI."
+  title: "🎉 Benvenuto a bordo!"
+  subtitle: "Ora sei nella nostra lista d'attesa"
+  message: "Grazie per esserti iscritto alla nostra lista d'attesa! Ora sei ufficialmente registrato e sarai tra i primi a sapere quando lanceremo le nostre nuove soluzioni di dati e AI."
 
 nav:
   home: "Torna alla home" 

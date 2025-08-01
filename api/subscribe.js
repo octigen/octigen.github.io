@@ -52,7 +52,7 @@ export default async function handler(req, res) {
       fields: {},
       groups: [], // Will add group ID if provided
       status: 'active', // Set to unconfirmed to trigger double opt-in
-      resubscribe: false, // Allow resubscribing if email exists
+      resubscribe: true, // Allow resubscribing if email exists
     };
 
     // Add name field if provided

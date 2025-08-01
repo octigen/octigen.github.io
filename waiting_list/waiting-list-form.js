@@ -43,8 +43,8 @@ async function handleMailerLiteSubmit(event) {
         
         if (response.ok) {
             const result = await response.json();
-            // Success - User needs to check email for confirmation
-            status.innerHTML = '<span data-translate="waiting_list.form.success">🎉 Almost there! Please check your email and click the confirmation link to secure your spot on our waiting list.</span>';
+            // Success - User is immediately subscribed, redirect to thank you page
+            status.innerHTML = '<span data-translate="waiting_list.form.success">🎉 Welcome aboard! You\'re now on our waiting list. Redirecting...</span>';
             status.className = "success";
             event.target.reset();
             
@@ -55,6 +55,11 @@ async function handleMailerLiteSubmit(event) {
                     'value': 1
                 });
             }
+            
+            // Redirect to thank you page after 2 seconds
+            setTimeout(() => {
+                window.location.href = 'thank-you.html' + window.location.search;
+            }, 2000);
             
         } else {
             // Handle error response

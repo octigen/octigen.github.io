@@ -27,7 +27,7 @@ waiting_list:
     privacy_policy: "Accetto la politica sulla privacy e desidero ricevere aggiornamenti sui servizi di Octigen"
     submit: "Unisciti alla lista d'attesa"
     submitting: "Iscrizione in corso..."
-    success: "🎉 Quasi fatto! Controlla la tua email e clicca sul link di conferma per assicurarti il posto nella nostra lista d'attesa."
+    success: "🎉 Benvenuto a bordo! Ora sei nella nostra lista d'attesa. Reindirizzamento..."
     error: "Ops! C'è stato un problema. Riprova."
   
   benefits:
