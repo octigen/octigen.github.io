@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <title>PowerPoint AI Slides Progress - Octigen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Follow our progress to perfectly automated PowerPoint AI Slides. Reinventing the way you create PowerPoint decks with AI automation."
+    />
+    <meta name="author" content="Octigen GmbH" />
+    <meta
+      property="og:title"
+      content="PowerPoint AI Slides Progress - Octigen"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/main.css" />
+    <link rel="stylesheet" href="powerpoint-ai.css" />
+    <script src="particles.js" defer></script>
+    <script src="../waiting_list/waiting-list-form.js" defer></script>
+    <script src="../translator.js" defer></script>
+  </head>
+  <body class="d-flex flex-column vh-100" data-page="powerpoint-ai">
+    <!-- Particle Canvas Background -->
+    <canvas id="particles-canvas" class="particles-background"></canvas>
+    
+    <main>
+      <!-- Main Hero -->
+      <section class="container-fluid powerpoint-hero">
+        <!-- Language Switcher -->
+        <div class="language-switcher-container">
+          <div class="dropdown">
+            <button
+              class="btn language-switcher-btn dropdown-toggle"
+              type="button"
+              id="languageDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span id="currentLang">EN</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end language-dropdown" aria-labelledby="languageDropdown">
+              <li><a class="dropdown-item lang-select" href="#" data-lang="en">English</a></li>
+              <li><a class="dropdown-item lang-select" href="#" data-lang="de">Deutsch</a></li>
+              <li><a class="dropdown-item lang-select" href="#" data-lang="fr">Français</a></li>
+              <li><a class="dropdown-item lang-select" href="#" data-lang="it">Italiano</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Home Button -->
+        <div class="home-button-container">
+          <a href="../index.html" class="btn home-btn">
+            <svg class="home-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+            </svg>
+            <span class="home-text">Home</span>
+          </a>
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 text-center" style="padding: 4rem 0 2rem 0;">
+              <!-- Logo -->
+              <div class="logo-container mb-4">
+                <img
+                  src="../assets/images/logo_octigen_white.png"
+                  alt="Octigen Logo"
+                  class="hero-logo"
+                />
+              </div>
+              
+              <!-- Hero Content -->
+              <div class="hero-content mb-5">
+                <h1 class="display-4 mb-4 text-white hero-title" data-translate="powerpoint_ai.hero.title">
+                  Follow us on our journey to state of the art PowerPoint AI Slides.
+                </h1>
+                <p class="lead mb-5 text-white hero-subtitle" data-translate="powerpoint_ai.hero.subtitle">
+                  We are reinventing the way you create PowerPoint decks.
+                </p>
+              </div>
+                <!-- Call to Action -->
+                <div class="cta-section mb-5">
+                    <a
+                    href="#waiting-list-form"
+                    class="btn btn-primary btn-lg me-3 smooth-scroll"
+                    data-translate="powerpoint_ai.hero.cta"
+                    >Join Our Waiting List</a
+                    >
+                </div>
+              <!-- Video Section -->
+              <div class="video-container mb-5">
+                <div class="video-glass-box p-4">
+                  <div class="ratio ratio-16x9 position-relative">
+                    <iframe 
+                      id="youtube-player"
+                      src="https://www.youtube.com/embed/DF8A2odfG54?enablejsapi=1" 
+                      title="PowerPoint AI Slides Demo" 
+                      allowfullscreen
+                      class="video-frame">
+                    </iframe>
+                    
+                    <!-- Custom Play Button -->
+                    <div id="custom-play-button" class="custom-play-overlay d-flex align-items-center justify-content-center">
+                      <div class="play-button-container">
+                        <!-- Wave rings -->
+                        <div class="wave-ring wave-ring-1"></div>
+                        <div class="wave-ring wave-ring-2"></div>
+                        <div class="wave-ring wave-ring-3"></div>
+                        
+                        <!-- Play button -->
+                        <div class="play-button">
+                          <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z"/>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Timeline Section - Integrated within hero -->
+          <div class="container mt-1">
+            <div class="row justify-content-center">
+              <div class="col-lg-10">
+                <h2 class="text-center mb-5 text-white timeline-title" data-translate="powerpoint_ai.timeline.title">
+                  Our Journey So Far
+                </h2>
+                
+                <div class="timeline-container">
+                  <!-- Timeline Line -->
+                  <div class="timeline-line"></div>
+                  
+                  <!-- April -->
+                  <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-date">
+                      <span class="month">April</span>
+                      <span class="year">2025</span>
+                    </div>
+                    <div class="timeline-content timeline-left">
+                      <div class="timeline-card">
+                        <div class="timeline-icon">🚀</div>
+                        <h4 data-translate="powerpoint_ai.timeline.april.title">The Beginning</h4>
+                        <p data-translate="powerpoint_ai.timeline.april.description">Octigen takes off with the development of our PowerPoint automation library.</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- May -->
+                  <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-date">
+                      <span class="month">May</span>
+                      <span class="year">2025</span>
+                    </div>
+                    <div class="timeline-content timeline-right">
+                      <div class="timeline-card">
+                        <div class="timeline-icon">📎</div>
+                        <h4 data-translate="powerpoint_ai.timeline.may.title">Template Engine</h4>
+                        <p data-translate="powerpoint_ai.timeline.may.description">Octigen can now manage different designs and styles uploaded by the user.</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- June -->
+                  <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-date">
+                      <span class="month">June</span>
+                      <span class="year">2025</span>
+                    </div>
+                    <div class="timeline-content timeline-left">
+                      <div class="timeline-card">
+                        <div class="timeline-icon">📝</div>
+                        <h4 data-translate="powerpoint_ai.timeline.june.title">Content Integration</h4>
+                        <p data-translate="powerpoint_ai.timeline.june.description">Texts are fully integrated, Octi AI can reason over your idea and help you structure your deck.</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- July -->
+                  <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-date">
+                      <span class="month">July</span>
+                      <span class="year">2025</span>
+                    </div>
+                    <div class="timeline-content timeline-right">
+                      <div class="timeline-card">
+                        <div class="timeline-icon">🎯</div>
+                        <h4 data-translate="powerpoint_ai.timeline.july.title">Demo Ready</h4>
+                        <p data-translate="powerpoint_ai.timeline.july.description">Octigen now populates your deck with tables and charts. It's demo time!</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Final Card - To Infinity and Beyond -->
+                <div class="timeline-final-card text-center" data-aos="fade-up">
+                  <div class="timeline-card timeline-card-future">
+                    <div class="timeline-icon">🚀</div>
+                    <h4 data-translate="powerpoint_ai.timeline.future.title">To Infinity and Beyond!</h4>
+                    <p data-translate="powerpoint_ai.timeline.future.description">More and more features are being added to Octigen, stay tuned!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Waiting List Form Section - Integrated within hero -->
+          <div class="container mt-5">
+            <div class="row justify-content-center">
+              <div class="col-lg-10 col-xl-8 text-center" style="margin-top: 4rem;" id="waiting-list-form">
+                <div class="timeline-card timeline-card-future waiting-list-glass-container">
+                  <!-- Hero Content -->
+                  <div class="hero-content mb-4">
+                    <h2 class="display-5 mb-2 text-white" data-translate="waiting_list.title">
+                      Join the Waiting List
+                    </h2>
+                    <p class="mb-4 text-white subtitle-text" data-translate="waiting_list.subtitle">
+                      Be the first to know when we launch our new data and AI solutions. 
+                      Get exclusive early access and special pricing for early adopters.
+                    </p>
+                  </div>
+
+                  <!-- Form -->
+                  <form
+                    id="waiting-list-form"
+                    method="POST"
+                    class="waiting-list-form"
+                    data-mailerlite-form="true"
+                  >
+                    <!-- MailerLite form identifier - will be added when you configure -->
+                    <input type="hidden" name="ml-submit" value="1" />
+                    <input type="hidden" name="anticsrf" value="true" />
+                    
+                    <div class="row g-3">
+                      <div class="col-6">
+                        <label for="name" class="form-label text-white" data-translate="waiting_list.form.name_label">
+                          Full Name
+                        </label>
+                        <input
+                          name="name"
+                          type="text"
+                          class="form-control form-control-lg"
+                          id="name"
+                          placeholder="Enter your full name"
+                          required
+                          data-translate="waiting_list.form.name_placeholder"
+                        />
+                      </div>
+                      
+                      <div class="col-6">
+                        <label for="email" class="form-label text-white" data-translate="waiting_list.form.email_label">
+                          Email Address
+                        </label>
+                        <input
+                          name="email"
+                          type="email"
+                          class="form-control form-control-lg"
+                          id="email"
+                          placeholder="Enter your email address"
+                          required
+                          data-translate="waiting_list.form.email_placeholder"
+                        />
+                      </div>
+                      
+                      <div class="col-12">
+                        <label for="company" class="form-label text-white" data-translate="waiting_list.form.company_label">
+                          Company (Optional)
+                        </label>
+                        <input
+                          name="company"
+                          type="text"
+                          class="form-control form-control-lg"
+                          id="company"
+                          placeholder="Enter your company name"
+                          data-translate="waiting_list.form.company_placeholder"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div class="row g-3 mt-3">
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input
+                            name="gdpr-consent"
+                            type="checkbox"
+                            class="form-check-input"
+                            id="gdpr-checkbox"
+                            required
+                          />
+                          <label
+                            class="form-check-label text-white"
+                            for="gdpr-checkbox"
+                            data-translate="waiting_list.form.privacy_policy"
+                          >
+                            I agree to the
+                            <a href="../privacy_policy.html" target="_blank" class="text-white">privacy policy</a>
+                            and want to receive updates about Octigen's services
+                          </label>
+                        </div>
+                      </div>
+                      
+                      <div class="col-12">
+                        <div class="d-grid">
+                          <button
+                            id="waiting-list-submit"
+                            class="btn btn-primary btn-lg"
+                            data-translate="waiting_list.form.submit"
+                          >
+                            Join Waiting List
+                          </button>
+                        </div>
+                      </div>
+                      
+                      <div class="col-12">
+                        <div id="waiting-list-status" class="text-center text-white"></div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Footer Navigation - Integrated within hero -->
+          <div class="container mt-5 pb-4">
+            <div class="row justify-content-center">
+              <div class="col-auto">
+                <div class="footer-links">
+                  <a href="../index.html" class="text-white text-decoration-none me-4">Home</a>
+                  <a href="../privacy_policy.html" class="text-white text-decoration-none">Privacy Policy</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <!-- Custom Play Button Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const customPlayButton = document.getElementById('custom-play-button');
+        const youtubePlayer = document.getElementById('youtube-player');
+        const videoContainer = youtubePlayer.parentElement;
+        
+        // Handle custom play button click
+        customPlayButton.addEventListener('click', function() {
+          // Hide the custom play button with fade out effect
+          customPlayButton.classList.add('hidden');
+          
+          // Create a new iframe with autoplay enabled
+          const newIframe = document.createElement('iframe');
+          newIframe.src = 'https://www.youtube.com/embed/DF8A2odfG54?autoplay=1&enablejsapi=1';
+          newIframe.title = 'PowerPoint AI Slides Demo';
+          newIframe.allowFullscreen = true;
+          newIframe.className = 'video-frame';
+          newIframe.id = 'youtube-player';
+          newIframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+          
+          // Replace the old iframe
+          videoContainer.replaceChild(newIframe, youtubePlayer);
+        });
+        
+        // Smooth scroll functionality
+        const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
+        smoothScrollLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html> 

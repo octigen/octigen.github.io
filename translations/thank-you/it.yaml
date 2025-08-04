@@ -1,7 +1,11 @@
 thank_you:
-  title: "🎉 Benvenuto a bordo!"
+  title: "Benvenuto a bordo!"
   subtitle: "Ora sei nella nostra lista d'attesa"
   message: "Grazie per esserti iscritto alla nostra lista d'attesa! Ora sei ufficialmente registrato e sarai tra i primi a sapere quando lanceremo le nostre nuove soluzioni di dati e AI."
+  back_to_journey: "← Torna al nostro percorso"
+  explore_solutions: "Esplora altre soluzioni"
+  inbox_message: "Tieni d'occhio la tua casella di posta per aggiornamenti esclusivi e opportunità di accesso anticipato."
 
 nav:
-  home: "Torna alla home" 
+  home: "Torna alla home"
+  privacy_policy: "Informativa sulla privacy" 

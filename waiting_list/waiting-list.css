@@ -45,34 +45,47 @@
     z-index: -1;
 }
 
+/* Transparent Form Field Styling */
 .waiting-list-form .form-control,
 .waiting-list-form .form-select {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 12px;
+    background-color: transparent !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    color: white !important;
+    border-radius: 12px !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
     padding: 14px 18px;
-    color: white;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-}
-
-.waiting-list-form .form-control::placeholder,
-.waiting-list-form .form-select option {
-    color: rgba(255, 255, 255, 0.6);
 }
 
 .waiting-list-form .form-control:focus,
 .waiting-list-form .form-select:focus {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(30, 79, 226, 0.8);
-    box-shadow: 0 0 0 0.2rem rgba(30, 79, 226, 0.25);
-    color: white;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(255, 255, 255, 0.7) !important;
+    color: white !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.15),
+                0 6px 20px rgba(0, 0, 0, 0.15) !important;
+    outline: none !important;
+}
+
+.waiting-list-form .form-control::placeholder,
+.waiting-list-form .form-select option {
+    color: rgba(255, 255, 255, 0.6) !important;
+    opacity: 1 !important;
+}
+
+.waiting-list-form .form-control:hover,
+.waiting-list-form .form-select:hover {
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    background-color: rgba(255, 255, 255, 0.02) !important;
 }
 
 .waiting-list-form .form-label {
-    font-weight: 500;
-    margin-bottom: 8px;
-    font-size: 0.9rem;
+    font-weight: 400 !important;
+    margin-bottom: 0.7rem !important;
+    opacity: 0.9 !important;
+    font-size: 0.95rem !important;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
@@ -95,33 +108,53 @@
     text-decoration: underline !important;
 }
 
-.btn-primary {
-    background: var(--octigen-blue);
-    border: none;
+/* Button Enhancement for Form */
+.waiting-list-form .btn-primary {
+    background: linear-gradient(135deg, rgba(30, 79, 226, 0.8), rgba(26, 69, 199, 0.9)) !important;
+    border: 2px solid rgba(255, 255, 255, 0.2) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    transition: all 0.3s ease !important;
+    border-radius: 12px !important;
+    color: white !important;
+    font-weight: 500 !important;
     padding: 12px 32px;
-    font-weight: 500;
-    border-radius: 8px;
-    transition: all 0.3s ease;
 }
 
-.btn-primary:hover {
-    background: #1a3fb8;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(30, 79, 226, 0.3);
+.waiting-list-form .btn-primary:hover {
+    background: linear-gradient(135deg, rgba(30, 79, 226, 0.9), rgba(26, 69, 199, 1)) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(30, 79, 226, 0.3) !important;
 }
 
-.form-check-input {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+/* Checkbox Styling */
+.waiting-list-form .form-check-input {
+    background-color: transparent !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 6px !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    transition: all 0.3s ease !important;
+    width: 1.2em !important;
+    height: 1.2em !important;
 }
 
-.form-check-input:checked {
-    background-color: var(--octigen-blue);
-    border-color: var(--octigen-blue);
+.waiting-list-form .form-check-input:focus {
+    border-color: rgba(255, 255, 255, 0.7) !important;
+    box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.15) !important;
+    outline: none !important;
 }
 
-.form-check-input:focus {
-    box-shadow: 0 0 0 0.25rem rgba(30, 79, 226, 0.25);
+.waiting-list-form .form-check-input:checked {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-color: rgba(255, 255, 255, 0.9) !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e") !important;
+}
+
+.waiting-list-form .form-check-input:hover {
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    background-color: rgba(255, 255, 255, 0.02) !important;
 }
 
 .form-check-label a {

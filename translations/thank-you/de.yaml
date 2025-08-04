@@ -1,7 +1,11 @@
 thank_you:
-  title: "🎉 Willkommen an Bord!"
+  title: "Willkommen an Bord!"
   subtitle: "Sie stehen jetzt auf unserer Warteliste"
   message: "Vielen Dank, dass Sie sich für unsere Warteliste angemeldet haben! Sie sind jetzt offiziell registriert und werden zu den Ersten gehören, die erfahren, wenn wir unsere neuen Daten- und KI-Lösungen auf den Markt bringen."
+  back_to_journey: "← Zurück zu unserer Reise"
+  explore_solutions: "Weitere Lösungen erkunden"
+  inbox_message: "Behalten Sie Ihr Postfach im Auge für exklusive Updates und frühzeitige Zugriffsmöglichkeiten."
 
 nav:
-  home: "Zurück zur Startseite" 
+  home: "Zurück zur Startseite"
+  privacy_policy: "Datenschutzrichtlinie" 

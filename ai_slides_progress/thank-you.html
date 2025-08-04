@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="/assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <title>Welcome to the Waiting List - PowerPoint AI Slides - Octigen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Thank you for joining our PowerPoint AI Slides waiting list. You'll be the first to know when we launch our revolutionary AI presentation automation."
+    />
+    <meta name="author" content="Octigen GmbH" />
+    <meta
+      property="og:title"
+      content="Welcome to the Waiting List - PowerPoint AI Slides - Octigen"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/main.css" />
+    <link rel="stylesheet" href="powerpoint-ai.css" />
+    <script src="particles.js" defer></script>
+    <script src="../translator.js" defer></script>
+  </head>
+  <body class="d-flex flex-column vh-100" data-page="thank-you">
+    <!-- Particle Canvas Background -->
+    <canvas id="particles-canvas" class="particles-background"></canvas>
+    
+    <main>
+      <!-- Main Hero -->
+      <section class="container-fluid powerpoint-hero">
+        <div class="container">
+          <div class="row justify-content-center min-vh-100 align-items-center">
+            <div class="col-lg-8 text-center">
+              <!-- Logo -->
+              <div class="logo-container mb-4">
+                <img
+                  src="../assets/images/logo_octigen_white.png"
+                  alt="Octigen Logo"
+                  class="hero-logo"
+                />
+              </div>
+              
+              <!-- Success Card -->
+              <div class="timeline-card timeline-card-future waiting-list-glass-container">
+                <!-- Success Content -->
+                <div class="hero-content mb-4">
+                  <!-- Success Icon -->
+                  <div class="mb-4">
+                    <div class="success-icon mb-3">
+                      <svg width="80" height="80" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="50" fill="rgba(30, 79, 226, 0.2)"/>
+                        <circle cx="50" cy="50" r="35" fill="rgba(30, 79, 226, 0.3)"/>
+                        <path d="M30 50L42 62L70 34" stroke="rgba(30, 79, 226, 0.9)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                  
+                  <h1 class="display-4 mb-3 text-white" data-translate="thank_you.title">
+                    Welcome Aboard!
+                  </h1>
+                  <h2 class="h4 mb-4 text-white subtitle-text" data-translate="thank_you.subtitle">
+                    You're now on our waiting list
+                  </h2>
+                  <p class="mb-5 text-white subtitle-text" data-translate="thank_you.message">
+                    Thank you for joining our waiting list! You're now officially signed up and will be among the first to know when we launch our new data and AI solutions.
+                  </p>
+                  
+                  <!-- Call to Action -->
+                  <div class="cta-section mb-4">
+                    <a
+                      href="index.html"
+                      class="btn btn-primary btn-lg me-3"
+                      data-translate="thank_you.back_to_journey"
+                    >
+                      ← Back to Our Journey
+                    </a>
+                  </div>
+                  
+                  <!-- Additional Info -->
+                  <div class="additional-info mt-4">
+                    <p class="text-white-50 small" data-translate="thank_you.inbox_message">
+                      Keep an eye on your inbox for exclusive updates and early access opportunities.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Footer Navigation -->
+              <div class="footer-links mt-5">
+                <a href="../index.html" class="text-white text-decoration-none me-4" data-translate="nav.home">Back to Home</a>
+                <a href="../privacy_policy.html" class="text-white text-decoration-none me-4" data-translate="nav.privacy_policy">Privacy Policy</a>
+                <span id="currentLang" class="text-white-50 small ms-4">EN</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    
+    <style>
+      .success-icon {
+        display: inline-block;
+      }
+      
+      /* Success page specific enhancements */
+      .success-icon svg {
+        filter: drop-shadow(0 4px 20px rgba(30, 79, 226, 0.3));
+      }
+      
+      .additional-info {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 1.5rem;
+      }
+      
+      /* Mobile optimizations for success page */
+      @media (max-width: 576px) {
+        .success-icon svg {
+          width: 60px;
+          height: 60px;
+        }
+        
+        .display-4 {
+          font-size: 1.8rem;
+        }
+        
+        .btn-lg {
+          font-size: 0.95rem;
+          padding: 0.7rem 1.3rem;
+          margin: 0.25rem;
+        }
+        
+        .cta-section .btn {
+          display: block;
+          width: 100%;
+          margin-bottom: 0.75rem;
+        }
+        
+        .cta-section .btn:last-child {
+          margin-bottom: 0;
+        }
+      }
+    </style>
+  </body>
+</html> 
