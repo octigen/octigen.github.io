@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+    <title data-translate="common.title">Octigen - AI Innovation & Expert Consulting</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Octigen GmbH: Building cutting-edge AI solutions for PowerPoint automation and providing expert consulting in data integration, AI, and quantitative analysis."
+      data-translate="common.description"
+    />
+    <meta
+      name="keywords"
+      content="Octigen, AI PowerPoint, Data Consulting, AI Consulting, Data Integration, Quantitative Analysis, Financial Services, Automated Reporting"
+    />
+    <meta name="author" content="Octigen GmbH" />
+    <meta
+      property="og:title"
+      content="Octigen - AI Innovation & Expert Consulting"
+      data-translate="common.og_title"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../ai_slides_progress/particles.js" defer></script>
+    <script src="../translator.js" defer></script>
+    <script src="../form.js" defer></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+        <link rel="stylesheet" href="../assets/main.css" />
+    <link rel="stylesheet" href="../ai_slides_progress/powerpoint-ai.css" />
+    <link rel="stylesheet" href="landing.css" />
+  </head>
+  <body class="d-flex flex-column vh-100" data-page="home_2">
+    <!-- Particle Canvas Background -->
+    <canvas id="particles-canvas" class="particles-background"></canvas>
+    
+    <main>
+      <!-- Landing Hero Section -->
+      <section class="container-fluid landing-hero">
+        <!-- Language Switcher -->
+        <div class="language-switcher-container">
+          <div class="dropdown">
+            <button
+              class="btn language-switcher-btn dropdown-toggle"
+              type="button"
+              id="languageDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span id="currentLang">EN</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end language-dropdown" aria-labelledby="languageDropdown">
+              <li><a class="dropdown-item lang-select" href="#" data-lang="en">English</a></li>
+              <li><a class="dropdown-item lang-select" href="#" data-lang="de">Deutsch</a></li>
+              <li><a class="dropdown-item lang-select" href="#" data-lang="fr">Français</a></li>
+              <li><a class="dropdown-item lang-select" href="#" data-lang="it">Italiano</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="container-fluid px-4">
+          <!-- Header with Logo -->
+          <div class="row justify-content-center">
+            <div class="col-lg-8 text-center" style="padding: 4rem 0 2rem 0;">
+              <div class="logo-container mb-4">
+                <img
+                  src="../assets/images/logo_octigen_white.png"
+                  alt="Octigen Logo"
+                  class="hero-logo"
+                  style="height: 100px; opacity: 0.9;"
+                />
+              </div>
+              
+              <h1 class="display-4 mb-4 text-white" style="font-weight: 300; letter-spacing: 1px; line-height: 1.3; text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);" data-translate="hero.main_header">
+                Building the Future of AI-Powered Business Solutions
+              </h1>
+              <p class="lead mb-5 text-white" style="opacity: 0.85; font-weight: 300; font-size: 1.25rem; letter-spacing: 0.5px;" data-translate="hero.subtitle">
+                Where cutting-edge innovation meets expert consulting
+              </p>
+            </div>
+          </div>
+          
+                     <!-- Two Main Sections -->
+           <div class="row g-4">
+               
+               <!-- Section 1: We're Developing Something Great -->
+               <div class="col-lg-4 col-xl-5">
+                 <div class="section-glass-card h-100 d-flex flex-column">
+                   <div class="section-icon">🚀</div>
+                                     <h2 class="section-title h3" data-translate="sections.ai_development.title">We're Building Something Revolutionary</h2>
+                  <p class="section-description" data-translate="sections.ai_development.description">
+                    We're developing cutting-edge AI technology that will transform how you create PowerPoint presentations. 
+                    Our AI-powered solution understands your content, applies your branding, and generates professional slides 
+                    automatically - saving hours of manual work while maintaining your unique style and quality standards.
+                  </p>
+                                    <div class="text-center mt-4">
+                   <a 
+                     href="../ai_slides_progress" 
+                     class="section-btn section-btn-primary pulse-waves"
+                     target="_blank"
+                     data-translate="sections.ai_development.button"
+                   >
+                     Follow Our Progress
+                   </a>
+                  </div>
+                 </div>
+               </div>
+               
+               <!-- Section 2: Need Help? Here to Help -->
+               <div class="col-lg-8 col-xl-7">
+                 <div class="section-glass-card h-100 d-flex flex-column">
+                   <div class="section-icon">🤝</div>
+                                     <h2 class="section-title h3" data-translate="sections.consulting.title">Need Expert Help? We're Here for You</h2>
+                  <p class="section-description" data-translate="sections.consulting.description">
+                    While we're building the future, we're also here to solve your current challenges. 
+                    Our team brings deep expertise in data integration, AI implementation, and quantitative analysis 
+                    to help transform your business operations today.
+                  </p>
+                   
+                                                                         <div class="consulting-services-grid">
+                   <div class="service-item-grid service-clickable" data-bs-toggle="modal" data-bs-target="#dataIntegrationModal">
+                     <span class="service-icon-small">📊</span> <span data-translate="sections.consulting.services.data_integration">Data Integration & Analytics</span>
+                   </div>
+                   <div class="service-item-grid service-clickable" data-bs-toggle="modal" data-bs-target="#quantAnalysisModal">
+                     <span class="service-icon-small">📈</span> <span data-translate="sections.consulting.services.quant_analysis">Quantitative Analysis</span>
+                   </div>
+                   <div class="service-item-grid service-clickable" data-bs-toggle="modal" data-bs-target="#aiImplementationModal">
+                     <span class="service-icon-small">🤖</span> <span data-translate="sections.consulting.services.ai_implementation">AI Implementation</span>
+                   </div>
+                   <div class="service-item-grid service-clickable" data-bs-toggle="modal" data-bs-target="#reportingAutomationModal">
+                     <span class="service-icon-small">📋</span> <span data-translate="sections.consulting.services.reporting_automation">Reporting Automation</span>
+                   </div>
+                 </div>
+                   
+                   <div class="mt-auto text-center">
+                     <a 
+                       href="#contact" 
+                       class="section-btn section-btn-outline"
+                       data-translate="sections.consulting.button"
+                     >
+                       Let's Work Together
+                     </a>
+                   </div>
+                 </div>
+               </div>
+               
+           </div>
+          
+                                <!-- Who We Are & Contact Section -->
+           <div class="row g-4 mt-1" id="contact">
+             
+                         <!-- Who We Are Section -->
+            <div class="col-lg-8 col-xl-7">
+               <div class="section-glass-card h-100">
+                 <div class="section-icon">👥</div>
+                                 <h3 class="section-title h3" data-translate="who_we_are.title">Who We Are</h3>
+                <p class="section-description" data-translate="who_we_are.description">
+                  We've worked side by side to revolutionize the client reporting
+                  of a leading independent asset manager in Zurich. Building on
+                  that expertise, we founded Octigen. Our mission? To transform
+                  the way you can use data to engage with your clients.
+                </p>
+                 
+                 <div class="founders-grid">
+                   <div class="founder-card">
+                     <img
+                       class="founder-image"
+                       src="../assets/images/michel_muller.png"
+                       alt="Michel Müller, Co-Founder"
+                     />
+                     <h4 class="founder-name" data-translate="who_we_are.michel_muller.name">Michel Müller</h4>
+                     <h6 class="founder-title" data-translate="who_we_are.michel_muller.title">Co-Founder</h6>
+                     <p class="founder-description" data-translate="who_we_are.michel_muller.description">
+                       With over 15 years of experience as a software architect and
+                       more than 6 years developing cutting-edge data solutions for
+                       the finance industry, Michel brings deep expertise across all
+                       computing technology. He holds a PhD in High-performance
+                       computing and an MSc from ETH Zurich.
+                     </p>
+                   </div>
+                   
+                   <div class="founder-card">
+                     <img
+                       class="founder-image"
+                       src="../assets/images/kevin_graziani.png"
+                       alt="Kevin Graziani, Co-Founder"
+                     />
+                     <h4 class="founder-name" data-translate="who_we_are.kevin_graziani.name">Kevin Graziani</h4>
+                     <h6 class="founder-title" data-translate="who_we_are.kevin_graziani.title">Co-Founder</h6>
+                     <p class="founder-description" data-translate="who_we_are.kevin_graziani.description">
+                       Bringing experience as front-office quant for some of Europe's
+                       largest financial institutions, Kevin is a seasoned software
+                       engineer and marketing expert. He graduated
+                       <i>cum laude</i> and holds two MSc degrees, in Quantitative
+                       and Corporate Finance.
+                     </p>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             
+                         <!-- Contact Section -->
+            <div class="col-lg-4 col-xl-5">
+               <div class="section-glass-card h-100" style="position: relative;">
+                 <div style="position: absolute; top: 1rem; right: 1rem; z-index: 10;">
+                   <h5 style="display: inline-block; background-color: var(--octigen-blue); color: white; font-size: 12px; padding: 4px 8px; border-radius: 4px; margin: 0; font-weight: 600;" data-translate="contact.offer">
+                     First 1 hour free
+                   </h5>
+                 </div>
+                 <div class="section-icon">💬</div>
+                 <h3 class="section-title h3" data-translate="contact.title">Ready to Get Started?</h3>
+                 <p class="section-description" data-translate="contact.description">
+                   Whether you're interested in our AI innovation or need expert consulting, 
+                   let's discuss how we can help transform your business.
+                 </p>
+                 
+                 <form
+                   action="https://formspree.io/f/xrbelbzl"
+                   id="contact-form"
+                   method="POST"
+                   class="waiting-list-form"
+                 >
+                   <div class="row g-3">
+                     <div class="col-12">
+                       <input
+                         name="name"
+                         type="text"
+                         class="form-control form-control-lg"
+                         placeholder="Your Name"
+                         data-translate="contact.form.name"
+                         required
+                       />
+                     </div>
+                     <div class="col-12">
+                       <input
+                         name="email"
+                         type="email"
+                         class="form-control form-control-lg"
+                         placeholder="Your Email"
+                         data-translate="contact.form.email"
+                         required
+                       />
+                     </div>
+                     <div class="col-12">
+                       <textarea
+                         name="message"
+                         class="form-control"
+                         placeholder="Tell us about your project or how we can help"
+                         data-translate="contact.form.message"
+                         style="height: 120px"
+                         required
+                       ></textarea>
+                     </div>
+                     <div class="col-12">
+                       <div class="form-check">
+                         <input
+                           name="gdpr-consent"
+                           type="checkbox"
+                           class="form-check-input"
+                           id="gdpr-checkbox"
+                           required
+                         />
+                         <label
+                           class="form-check-label text-white"
+                           for="gdpr-checkbox"
+                           data-translate="contact.form.privacy_policy"
+                         >
+                           I agree to the
+                           <a href="../privacy_policy.html" target="_blank" class="text-white">privacy policy</a>
+                         </label>
+                       </div>
+                     </div>
+                     <div class="col-12">
+                       <div class="d-grid">
+                         <button
+                           id="contact-form-button"
+                           class="section-btn section-btn-primary"
+                           style="width: 100%;"
+                           data-translate="contact.form.submit"
+                         >
+                           Send Message
+                         </button>
+                       </div>
+                     </div>
+                     <div class="col-12">
+                       <div id="contact-form-status" class="text-center text-white"></div>
+                     </div>
+                   </div>
+                 </form>
+               </div>
+             </div>
+             
+           </div>
+          
+           <!-- Footer -->
+           <div class="row justify-content-center mt-5 pb-4">
+             <div class="col-auto">
+                               <div class="footer-links text-center">
+                 <a href="../privacy_policy.html" class="text-white text-decoration-none me-4" style="opacity: 0.7;" data-translate="common.footer.privacy_policy">Privacy Policy</a>
+                 <span class="text-white" style="opacity: 0.7;" data-translate="common.footer.copyright">© 2025 Octigen GmbH</span>
+               </div>
+              </div>
+            </div>
+          
+        </div>
+      </section>
+    </main>
+
+    <!-- Service Modals -->
+    
+    <!-- Data Integration Modal -->
+    <div class="modal fade" id="dataIntegrationModal" tabindex="-1" aria-labelledby="dataIntegrationModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content service-modal">
+          <div class="modal-header">
+            <h4 class="modal-title" id="dataIntegrationModalLabel">
+              <span class="service-modal-icon">📊</span>
+              <span data-translate="modals.data_integration.title">Your data sources in a coherent landscape</span>
+            </h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row align-items-center">
+              <div class="col-md-5">
+                <img src="../assets/images/data_sources.png" alt="Data Integration" class="img-fluid service-modal-image">
+              </div>
+              <div class="col-md-7">
+                <p class="service-modal-description" data-translate="modals.data_integration.description_1">
+                  Data is the raw ore of your business intelligence. Octigen is highly proficient in refining it into a precious resource for you, by bringing our tools right <strong>to your data</strong>.
+                </p>
+                <p class="service-modal-description" data-translate="modals.data_integration.description_2">
+                  We specialize in connecting disparate data sources, creating unified data landscapes, and building robust ETL pipelines that transform your scattered information into actionable insights.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quantitative Analysis Modal -->
+    <div class="modal fade" id="quantAnalysisModal" tabindex="-1" aria-labelledby="quantAnalysisModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content service-modal">
+          <div class="modal-header">
+            <h4 class="modal-title" id="quantAnalysisModalLabel">
+              <span class="service-modal-icon">📈</span>
+              <span data-translate="modals.quant_analysis.title">Elevate your quantitative edge</span>
+            </h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row align-items-center">
+              <div class="col-md-5">
+                <img src="../assets/images/quant_edge.png" alt="Quantitative Analysis" class="img-fluid service-modal-image">
+              </div>
+              <div class="col-md-7">
+                <p class="service-modal-description" data-translate="modals.quant_analysis.description_1">
+                  Let us supercharge your quant analytics with our expertise, in topics like Machine Learning, data quality, portfolio construction, and time series forecasting.
+                </p>
+                <p class="service-modal-description" data-translate="modals.quant_analysis.description_2">
+                  Our team brings deep quantitative finance experience to help you build sophisticated models, optimize portfolios, and develop predictive analytics that give you a competitive advantage.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Implementation Modal -->
+    <div class="modal fade" id="aiImplementationModal" tabindex="-1" aria-labelledby="aiImplementationModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content service-modal">
+          <div class="modal-header">
+            <h4 class="modal-title" id="aiImplementationModalLabel">
+              <span class="service-modal-icon">🤖</span>
+              <span data-translate="modals.ai_implementation.title">Generative AI, in the real world</span>
+            </h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row align-items-center">
+              <div class="col-md-5">
+                <img src="../assets/images/ai_chat.png" alt="AI Implementation" class="img-fluid service-modal-image">
+              </div>
+              <div class="col-md-7">
+                <p class="service-modal-description" data-translate="modals.ai_implementation.description_1">
+                  At Octigen we have extensive experience in delivering real business value with clever uses of Large Language Models (LLMs). Have some ideas of potential use cases? <a href="#contact" class="text-primary">Let's talk</a>.
+                </p>
+                <p class="service-modal-description" data-translate="modals.ai_implementation.description_2">
+                  From document processing and automated content generation to intelligent data analysis and customer service enhancement, we help you implement AI solutions that actually work in production environments.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reporting Automation Modal -->
+    <div class="modal fade" id="reportingAutomationModal" tabindex="-1" aria-labelledby="reportingAutomationModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content service-modal">
+          <div class="modal-header">
+            <h4 class="modal-title" id="reportingAutomationModalLabel">
+              <span class="service-modal-icon">📋</span>
+              <span data-translate="modals.reporting_automation.title">Automate your client reporting</span>
+            </h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row align-items-center">
+              <div class="col-md-5">
+                <img src="../assets/images/reporting_cycle.png" alt="Reporting Automation" class="img-fluid service-modal-image">
+              </div>
+              <div class="col-md-7">
+                <p class="service-modal-description" data-translate="modals.reporting_automation.description_1">
+                  Octigen helps you focus on the bottom line rather than spending unnecessary time on reports. From software development & integration to <em>reporting as a service</em>, we offer you à la carte solutions for your needs.
+                </p>
+                <p class="service-modal-description" data-translate="modals.reporting_automation.description_2">
+                  Transform your manual reporting processes into automated, branded, and professional client communications that save hours of work while maintaining the highest quality standards.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
