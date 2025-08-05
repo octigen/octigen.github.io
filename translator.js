@@ -11,10 +11,8 @@ function loadScript(src) {
 
 // Function to get the language from the URL parameter or storage
 function getLanguageFromURLOrStorage() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get("lang");
-    const storedLang = localStorage.getItem("lang");
-    return urlLang || storedLang || "en"; // Default to English
+    // Always return English - language switching disabled
+    return "en";
 }
 
 // Function to update the URL without reloading the page
@@ -44,9 +42,8 @@ function applyTranslations(translations) {
 
 // Function to load the language file and apply translations
 async function loadLanguage(lang) {
-    if (!lang) lang = getLanguageFromURLOrStorage();
-    localStorage.setItem("lang", lang);
-    updateURLWithLanguage(lang);
+    // Always force English - ignore parameter and don't store/update URL
+    lang = "en";
   
     if (typeof jsyaml === "undefined") {
       await loadScript("https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js");
@@ -93,13 +90,13 @@ document.addEventListener("DOMContentLoaded", () => {
     loadLanguage(lang);
 });
 
-// Handle language switching with event delegation
+// Handle language switching with event delegation - DISABLED
 document.body.addEventListener("click", (event) => {
     const target = event.target.closest(".lang-select"); // Ensure it is a .lang-select
     if (target) {
         event.preventDefault();
-        const selectedLang = target.getAttribute("data-lang");
-
-        loadLanguage(selectedLang); // Load the new language
+        // Language switching disabled - always use English
+        // const selectedLang = target.getAttribute("data-lang");
+        // loadLanguage(selectedLang);
     }
 });

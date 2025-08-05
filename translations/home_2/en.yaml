@@ -7,19 +7,19 @@ common:
     privacy_policy: Privacy Policy
 
 hero:
-  main_header: Building the Future of AI-Powered Business Solutions
-  subtitle: Where cutting-edge innovation meets expert consulting
+  main_header: Building the Future of Presenting Ideas
+  subtitle: Connecting the dots between Artificial Intelligence and human-centric design.
 
 sections:
   ai_development:
     icon: 🚀
-    title: We're Building Something Revolutionary
-    description: "We're developing cutting-edge AI technology that will transform how you create PowerPoint presentations. Our AI-powered solution understands your content, applies your branding, and generates professional slides automatically - saving hours of manual work while maintaining your unique style and quality standards."
+    title: We're building something revolutionary!
+    description: "We're developing cutting-edge AI technology that will transform how you create PowerPoint presentations. Our AI-powered solution understands your content and data, applies your branding, and generates professional slides automatically - saving hours of manual work while maintaining your unique style and quality standards."
     button: Follow Our Progress
   
   consulting:
     icon: 🤝
-    title: Need Expert Help? We're Here for You
+    title: Need expert help? We're here for you.
     description: "While we're building the future, we're also here to solve your current challenges. Our team brings deep expertise in data integration, AI implementation, and quantitative analysis to help transform your business operations today."
     button: Let's Work Together
     services:

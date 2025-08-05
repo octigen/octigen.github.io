@@ -48,6 +48,89 @@
         <link rel="stylesheet" href="../assets/main.css" />
     <link rel="stylesheet" href="../ai_slides_progress/powerpoint-ai.css" />
     <link rel="stylesheet" href="landing.css" />
+    
+    <!-- Custom styles for play button in hero -->
+    <style>
+      .video-play-section {
+        z-index: 10;
+        position: relative;
+      }
+      
+      .btn-play-demo {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        outline: none;
+        transition: all 0.3s ease;
+      }
+      
+      .btn-play-demo:focus {
+        outline: none;
+        box-shadow: none;
+      }
+      
+      .btn-play-demo:hover {
+        transform: scale(1.05);
+      }
+      
+      /* Play Button Particle Canvas */
+      .play-particles-canvas {
+        position: absolute;
+        top: -150px;
+        left: -150px;
+        width: 380px;
+        height: 380px;
+        pointer-events: none;
+        z-index: 1;
+      }
+      
+      .play-button-container {
+        position: relative;
+        width: 80px;
+        height: 80px;
+      }
+      
+      /* Video Modal Frosted Glass Styling */
+      .video-modal-glass {
+        background: rgba(255, 255, 255, 0.08) !important;
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        border-radius: 20px !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.3),
+                    0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
+        transition: all 0.4s ease-in-out !important;
+        position: relative !important;
+        overflow: hidden !important;
+      }
+      
+      .video-modal-glass::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, 
+            rgba(30, 79, 226, 0.2) 0%, 
+            rgba(255, 255, 255, 0.05) 25%, 
+            rgba(30, 79, 226, 0.2) 50%, 
+            rgba(255, 255, 255, 0.05) 75%, 
+            rgba(30, 79, 226, 0.2) 100%);
+        border-radius: 22px;
+        z-index: -1;
+        opacity: 0.3;
+        animation: borderGlow 3s ease-in-out infinite;
+      }
+      
+      .video-modal-glass:hover {
+        border: 1px solid rgba(255, 255, 255, 0.25) !important;
+        box-shadow: 0px 12px 40px rgba(30, 79, 226, 0.2),
+                    0 0 0 1px rgba(255, 255, 255, 0.15) inset !important;
+        transform: translateY(-2px) !important;
+      }
+    </style>
   </head>
   <body class="d-flex flex-column vh-100" data-page="home_2">
     <!-- Particle Canvas Background -->
@@ -56,8 +139,8 @@
     <main>
       <!-- Landing Hero Section -->
       <section class="container-fluid landing-hero">
-        <!-- Language Switcher -->
-        <div class="language-switcher-container">
+        <!-- Language Switcher - Hidden but keeping translation tech -->
+        <div class="language-switcher-container" style="display: none;">
           <div class="dropdown">
             <button
               class="btn language-switcher-btn dropdown-toggle"
@@ -92,9 +175,32 @@
               <h1 class="display-4 mb-4 text-white" style="font-weight: 300; letter-spacing: 1px; line-height: 1.3; text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);" data-translate="hero.main_header">
                 Building the Future of AI-Powered Business Solutions
               </h1>
-              <p class="lead mb-5 text-white" style="opacity: 0.85; font-weight: 300; font-size: 1.25rem; letter-spacing: 0.5px;" data-translate="hero.subtitle">
+              <p class="lead mb-4 text-white" style="opacity: 0.85; font-weight: 300; font-size: 1.25rem; letter-spacing: 0.5px;" data-translate="hero.subtitle">
                 Where cutting-edge innovation meets expert consulting
               </p>
+              
+              <!-- Play Button -->
+              <div class="video-play-section mt-5 mb-5">
+                <button 
+                  type="button" 
+                  class="btn-play-demo" 
+                  data-bs-toggle="modal" 
+                  data-bs-target="#videoModal"
+                  title="Watch Demo Video"
+                >
+                                     <div class="play-button-container" id="play-button-container">
+                     <!-- Particle canvas for play button -->
+                     <canvas id="play-particles-canvas" class="play-particles-canvas"></canvas>
+                     
+                     <!-- Play button -->
+                     <div class="play-button" id="play-button">
+                       <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+                         <path d="M8 5v14l11-7z"/>
+                       </svg>
+                     </div>
+                   </div>
+                </button>
+              </div>
             </div>
           </div>
           
@@ -323,6 +429,29 @@
       </section>
     </main>
 
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content video-modal-glass">
+          <div class="modal-header" style="border: none; padding: 1rem 1rem 0 1rem;">
+            <button type="button" class="btn-close btn-close-white mb-2" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" style="padding: 0 1rem 1rem 1rem;">
+            <div class="ratio ratio-16x9">
+              <iframe 
+                id="video-player"
+                src="about:blank"
+                title="Octigen Demo Video" 
+                allowfullscreen
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                style="border: none; border-radius: 12px;">
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Service Modals -->
     
     <!-- Data Integration Modal -->
@@ -461,6 +590,210 @@
             }, 50);
           }
         }
+      });
+    </script>
+
+    <!-- Video Modal Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const videoModal = document.getElementById('videoModal');
+        const videoPlayer = document.getElementById('video-player');
+        
+        // When modal is shown, load the video
+        videoModal.addEventListener('show.bs.modal', function() {
+          // Load the YouTube video URL
+          videoPlayer.src = 'https://www.youtube.com/embed/ODNM_1y_OzQ?autoplay=1&enablejsapi=1';
+        });
+        
+        // When modal is hidden, stop the video
+        videoModal.addEventListener('hide.bs.modal', function() {
+          videoPlayer.src = 'about:blank';
+        });
+      });
+    </script>
+
+    <!-- Play Button Particle System -->
+    <script>
+      class PlayButtonParticles {
+        constructor() {
+          this.canvas = document.getElementById('play-particles-canvas');
+          this.ctx = this.canvas.getContext('2d');
+          this.particles = [];
+          this.mouse = { x: 190, y: 190 }; // Center of the canvas
+          this.isHovering = false;
+          this.lastSpawnTime = 0;
+          
+          this.init();
+          this.setupEventListeners();
+          this.animate();
+        }
+
+        init() {
+          this.canvas.width = 380;
+          this.canvas.height = 380;
+        }
+
+        setupEventListeners() {
+          const playButton = document.getElementById('play-button');
+          const container = document.getElementById('play-button-container');
+          
+          container.addEventListener('mouseenter', () => {
+            this.isHovering = true;
+          });
+          
+          container.addEventListener('mouseleave', () => {
+            this.isHovering = false;
+          });
+          
+          container.addEventListener('click', () => {
+            // Burst of particles on click - fewer particles
+            for (let i = 0; i < 6; i++) {
+              this.spawnParticle(true);
+            }
+          });
+        }
+
+        spawnParticle(isClick = false) {
+          const centerX = 190;
+          const centerY = 190;
+          const spawnRadius = isClick ? 120 : 80;
+          
+          // Random position around the play button - much further away
+          const angle = Math.random() * Math.PI * 2;
+          const distance = Math.random() * spawnRadius + 60;
+          const x = centerX + Math.cos(angle) * distance;
+          const y = centerY + Math.sin(angle) * distance;
+          
+          this.particles.push({
+            x: x,
+            y: y,
+            vx: (Math.random() - 0.5) * (isClick ? 1.5 : 0.3),
+            vy: (Math.random() - 0.5) * (isClick ? 1.5 : 0.3),
+            radius: Math.random() * 2 + 1.2,
+            opacity: Math.random() * 0.8 + 0.6,
+            life: isClick ? 200 : 150,
+            maxLife: isClick ? 200 : 150,
+            color: {
+              r: 180,
+              g: 200, 
+              b: 255
+            }
+          });
+        }
+
+        updateParticles() {
+          // Spawn new particles continuously - less frequently
+          const now = Date.now();
+          if (now - this.lastSpawnTime > 800) {
+            this.spawnParticle();
+            this.lastSpawnTime = now;
+          }
+          
+          // Update existing particles
+          for (let i = this.particles.length - 1; i >= 0; i--) {
+            const particle = this.particles[i];
+            
+            // Apply velocity
+            particle.x += particle.vx;
+            particle.y += particle.vy;
+            
+            // Apply damping
+            particle.vx *= 0.98;
+            particle.vy *= 0.98;
+            
+            // Decrease life
+            particle.life--;
+            
+            // Remove dead particles
+            if (particle.life <= 0) {
+              this.particles.splice(i, 1);
+            }
+          }
+        }
+
+        drawConnections() {
+          this.ctx.lineWidth = 0.8;
+          const centerX = 190;
+          const centerY = 190;
+          
+          // Draw connections between particles
+          for (let i = 0; i < this.particles.length; i++) {
+            for (let j = i + 1; j < this.particles.length; j++) {
+              const dx = this.particles[i].x - this.particles[j].x;
+              const dy = this.particles[i].y - this.particles[j].y;
+              const distance = Math.sqrt(dx * dx + dy * dy);
+              
+              if (distance < 120) {
+                const opacity = (120 - distance) / 120;
+                const alpha = opacity * 0.3;
+                this.ctx.strokeStyle = `rgba(180, 200, 255, ${alpha})`;
+                this.ctx.beginPath();
+                this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
+                this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
+                this.ctx.stroke();
+              }
+            }
+            
+            // Draw connections from particles to play button center
+            const dx = this.particles[i].x - centerX;
+            const dy = this.particles[i].y - centerY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < 150) {
+              const opacity = (150 - distance) / 150;
+              const alpha = opacity * 0.45;
+              this.ctx.strokeStyle = `rgba(180, 200, 255, ${alpha})`;
+              this.ctx.beginPath();
+              this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
+              this.ctx.lineTo(centerX, centerY);
+              this.ctx.stroke();
+            }
+          }
+        }
+
+        drawParticles() {
+          this.particles.forEach(particle => {
+            const lifeFactor = particle.life / particle.maxLife;
+            const currentOpacity = particle.opacity * lifeFactor;
+            
+            // Create light blue/white gradient
+            const gradient = this.ctx.createRadialGradient(
+              particle.x, particle.y, 0,
+              particle.x, particle.y, particle.radius * 2
+            );
+            gradient.addColorStop(0, `rgba(180, 200, 255, ${currentOpacity})`);
+            gradient.addColorStop(0.5, `rgba(180, 200, 255, ${currentOpacity * 0.4})`);
+            gradient.addColorStop(1, 'rgba(180, 200, 255, 0)');
+            
+            this.ctx.fillStyle = gradient;
+            this.ctx.beginPath();
+            this.ctx.arc(particle.x, particle.y, particle.radius * 1.5, 0, Math.PI * 2);
+            this.ctx.fill();
+            
+            // Add bright center
+            this.ctx.fillStyle = `rgba(200, 220, 255, ${currentOpacity * 0.9})`;
+            this.ctx.beginPath();
+            this.ctx.arc(particle.x, particle.y, particle.radius * 0.3, 0, Math.PI * 2);
+            this.ctx.fill();
+          });
+        }
+
+        animate() {
+          this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+          
+          this.updateParticles();
+          this.drawConnections();
+          this.drawParticles();
+          
+          requestAnimationFrame(() => this.animate());
+        }
+      }
+
+      // Initialize play button particles
+      document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+          new PlayButtonParticles();
+        }, 500);
       });
     </script>
 
