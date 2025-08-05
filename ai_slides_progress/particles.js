@@ -27,9 +27,9 @@ class ParticleSystem {
     createParticles() {
         // More connected particles for elegant effect
         const isMobile = window.innerWidth < 768;
-        const performanceMultiplier = isMobile ? 0.8 : 1.5; // Increased
+        const performanceMultiplier = isMobile ? 0.64 : 1.2; // Reduced by 20%
         const baseCount = Math.floor((this.canvas.width * this.canvas.height) / 12000); // More dense
-        const particleCount = Math.min(baseCount * performanceMultiplier, isMobile ? 50 : 100); // More particles
+        const particleCount = Math.min(baseCount * performanceMultiplier, isMobile ? 40 : 80); // Reduced by 20%
         
         for (let i = 0; i < particleCount; i++) {
             this.particles.push({
@@ -51,7 +51,7 @@ class ParticleSystem {
     createFloatingParticles() {
         // More ambient floating particles for increased activity
         const isMobile = window.innerWidth < 768;
-        const floatingCount = isMobile ? 8 : 15; // Increased for more visual activity
+        const floatingCount = isMobile ? 6 : 12; // Reduced by 20% (8->6, 15->12)
         
         for (let i = 0; i < floatingCount; i++) {
             this.spawnFloatingParticle();

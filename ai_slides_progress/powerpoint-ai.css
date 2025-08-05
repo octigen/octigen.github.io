@@ -1250,6 +1250,13 @@
     opacity: 1 !important;
 }
 
+/* Ensure pulsing effect works on mobile */
+@media (max-width: 768px) {
+    .timeline-card-future {
+        animation: futurePulse 3s ease-in-out infinite !important;
+    }
+}
+
 /* Mobile optimizations for home button */
 @media (max-width: 768px) {
     .home-button-container {

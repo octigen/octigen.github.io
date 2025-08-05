@@ -79,7 +79,7 @@
         <div class="container-fluid px-4">
           <!-- Header with Logo -->
           <div class="row justify-content-center">
-            <div class="col-lg-8 text-center" style="padding: 4rem 0 2rem 0;">
+            <div class="col-lg-8 text-center" style="padding: 1rem 0.5rem 2rem 0.5rem;">
               <div class="logo-container mb-4">
                 <img
                   src="../assets/images/logo_octigen_white.png"
@@ -103,7 +103,7 @@
                
                <!-- Section 1: We're Developing Something Great -->
                <div class="col-lg-4 col-xl-5">
-                 <div class="section-glass-card h-100 d-flex flex-column">
+                 <div class="section-glass-card section-glass-card-future h-100 d-flex flex-column">
                    <div class="section-icon">🚀</div>
                                      <h2 class="section-title h3" data-translate="sections.ai_development.title">We're Building Something Revolutionary</h2>
                   <p class="section-description" data-translate="sections.ai_development.description">
@@ -115,7 +115,6 @@
                    <a 
                      href="../ai_slides_progress" 
                      class="section-btn section-btn-primary pulse-waves"
-                     target="_blank"
                      data-translate="sections.ai_development.button"
                    >
                      Follow Our Progress
@@ -209,8 +208,8 @@
                        Bringing experience as front-office quant for some of Europe's
                        largest financial institutions, Kevin is a seasoned software
                        engineer and marketing expert. He graduated
-                       <i>cum laude</i> and holds two MSc degrees, in Quantitative
-                       and Corporate Finance.
+                       <i>cum laude</i> and holds two MSc degrees, in Quantitative Techniques
+                       and in Corporate Finance.
                      </p>
                    </div>
                  </div>
@@ -445,6 +444,25 @@
         </div>
       </div>
     </div>
+
+    <!-- Auto-close modals when links are clicked -->
+    <script>
+      // Simple approach: click the close button when any modal link is clicked
+      document.addEventListener('click', function(e) {
+        // Check if clicked element is a link inside a modal
+        if (e.target.tagName === 'A' && e.target.href && e.target.closest('.modal')) {
+          const modal = e.target.closest('.modal');
+          const closeBtn = modal.querySelector('.btn-close');
+          
+          // Click the close button to close the modal
+          if (closeBtn) {
+            setTimeout(function() {
+              closeBtn.click();
+            }, 50);
+          }
+        }
+      });
+    </script>
 
   </body>
 </html>
