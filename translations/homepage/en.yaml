@@ -9,7 +9,7 @@ common:
     who_we_are: Who We Are
     contact_us: Contact Us
   footer:
-    copyright: © 2025 Octigen GmbH. All rights reserved.
+    copyright: © 2025 All rights reserved.
 
 hero:
   top_header: AI, Data and Reporting Services
