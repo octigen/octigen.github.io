@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+    <title data-translate="404.title">Page Not Found - Octigen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The page you're looking for doesn't exist. Return to Octigen's AI PowerPoint Slides and Automated Reporting Solutions homepage."
+      data-translate="404.description"
+    />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="canonical" href="https://octigen.com/" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./ai_slides_progress/particles.js" defer></script>
+    <script src="./translator.js" defer></script>
+    <script src="./load-footer.js" defer></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+      rel="preconnect"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="stylesheet" href="./assets/main.css" />
+    <link rel="stylesheet" href="./landing.css" />
+    
+    <!-- Custom 404 styles -->
+    <style>
+      /* Ensure body and html have proper background */
+      html, body {
+        background: #000000;
+        margin: 0;
+        padding: 0;
+        font-family: 'Outfit', sans-serif !important;
+      }
+      
+      .error-404-section {
+        background: 
+          radial-gradient(ellipse at top right, #1A1B31 0%, transparent 50%),
+          radial-gradient(ellipse at bottom left, #1A1B31 0%, transparent 50%),
+          radial-gradient(ellipse at center right, #0F1021 0%, transparent 40%),
+          #000000;
+        min-height: 100vh;
+        position: relative;
+        color: white;
+        display: flex;
+        align-items: center;
+        padding: 2rem 0;
+        z-index: 1;
+      }
+      
+      /* Force dark background for whole page */
+      body {
+        background: 
+          radial-gradient(ellipse at top right, #1A1B31 0%, transparent 50%),
+          radial-gradient(ellipse at bottom left, #1A1B31 0%, transparent 50%),
+          radial-gradient(ellipse at center right, #0F1021 0%, transparent 40%),
+          #000000 !important;
+      }
+      
+      .error-404-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 100% 100%, rgba(30, 79, 226, 0.15) 0%, transparent 40%);
+        pointer-events: none;
+        z-index: 1;
+      }
+      
+      .error-number {
+        font-size: 8rem;
+        font-weight: 200;
+        letter-spacing: 4px;
+        color: rgba(255, 255, 255, 0.3) !important;
+        text-shadow: 0 0 30px rgba(30, 79, 226, 0.3);
+        margin-bottom: 1rem;
+        animation: pulse404 4s ease-in-out infinite;
+      }
+      
+      @keyframes pulse404 {
+        0%, 100% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.6;
+          transform: scale(1.02);
+        }
+      }
+      
+      .error-card {
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 4rem 3rem;
+        transition: all 0.4s ease;
+        position: relative;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      
+      .error-card:hover {
+        border-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+      }
+      
+      .error-icon {
+        font-size: 5rem;
+        margin-bottom: 2rem;
+        opacity: 0.8;
+        animation: float404 6s ease-in-out infinite;
+      }
+      
+      @keyframes float404 {
+        0%, 100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      
+      .error-title {
+        font-size: 2.5rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
+        color: white !important;
+      }
+      
+      .error-description {
+        color: rgba(255, 255, 255, 0.85) !important;
+        line-height: 1.6;
+        font-weight: 300;
+        margin-bottom: 2.5rem;
+        font-size: 1.1rem;
+      }
+      
+      .nav-404 {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        z-index: 100;
+      }
+      
+      .nav-404 .navbar-brand img {
+        max-width: 150px;
+        opacity: 0.9;
+      }
+      
+      @media (max-width: 991px) {
+        .error-number {
+          font-size: 6rem;
+        }
+        
+        .error-card {
+          padding: 2.5rem 2rem;
+          margin: 1rem;
+        }
+        
+        .error-title {
+          font-size: 2rem;
+        }
+        
+        .error-description {
+          font-size: 1rem;
+        }
+        
+        .nav-404 {
+          position: relative;
+          top: 0;
+          left: 0;
+          margin-bottom: 2rem;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body class="d-flex flex-column vh-100" data-page="404">
+    <!-- Particle Canvas Background -->
+    <canvas id="particles-canvas" class="particles-background"></canvas>
+    
+    <!-- Navigation -->
+    <nav class="nav-404">
+      <a class="navbar-brand" href="/">
+        <img
+          src="./assets/images/logo_octigen_white.png"
+          alt="Octigen - AI PowerPoint Slides and Automated Reporting Solutions"
+          class="d-inline-block align-top"
+        />
+      </a>
+    </nav>
+    
+    <!-- 404 Error Section -->
+    <section class="error-404-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="error-card">
+              <div class="error-icon">🔍</div>
+              <h1 class="error-title" data-translate="404.page_title">Page Not Found</h1>
+              <p class="error-description" data-translate="404.page_description">
+                The page you're looking for seems to have wandered off into the digital cosmos. 
+                Don't worry though - our AI-powered navigation can help you find your way back!
+              </p>
+              
+              <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
+                <a 
+                  href="/" 
+                  class="section-btn section-btn-primary"
+                  data-translate="404.home_button"
+                >
+                  Return Home
+                </a>
+                <a 
+                  href="/ai_slides_progress" 
+                  class="section-btn section-btn-outline"
+                  data-translate="404.progress_button"
+                >
+                  View Our AI Progress
+                </a>
+              </div>
+              
+              <div class="mt-4">
+                <p class="text-white" style="opacity: 0.7; font-size: 0.9rem;" data-translate="404.help_text">
+                  Need help? <a href="/#contact" class="text-white" style="text-decoration: underline;">Contact us</a> and we'll get you where you need to go.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Language Switcher (Hidden but keeping translation functionality) -->
+    <div class="language-switcher-container" style="display: none;">
+      <div class="dropdown">
+        <button
+          class="btn language-switcher-btn dropdown-toggle"
+          type="button"
+          id="languageDropdown"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <span id="currentLang">EN</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end language-dropdown" aria-labelledby="languageDropdown">
+          <li><a class="dropdown-item lang-select" href="#" data-lang="en">English</a></li>
+          <li><a class="dropdown-item lang-select" href="#" data-lang="de">Deutsch</a></li>
+          <li><a class="dropdown-item lang-select" href="#" data-lang="fr">Français</a></li>
+          <li><a class="dropdown-item lang-select" href="#" data-lang="it">Italiano</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Custom 404 Translation Script -->
+    <script>
+      // Custom translation loader for 404 page
+      async function load404Translations() {
+        try {
+          // Load js-yaml if not available
+          if (typeof jsyaml === "undefined") {
+            await new Promise((resolve, reject) => {
+              const script = document.createElement("script");
+              script.src = "https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js";
+              script.onload = resolve;
+              script.onerror = reject;
+              document.head.appendChild(script);
+            });
+          }
+
+          // Load 404 translations
+          const response = await fetch('./translations/404/en.yaml');
+          if (response.ok) {
+            const yamlText = await response.text();
+            const translations = jsyaml.load(yamlText);
+            
+            // Apply translations
+            document.querySelectorAll("[data-translate]").forEach(el => {
+              const key = el.getAttribute("data-translate");
+              const keys = key.split(".");
+              let translation = translations;
+
+              keys.forEach(k => translation = translation[k] || key);
+
+              if (el.hasAttribute("placeholder")) {
+                el.setAttribute("placeholder", translation);
+              } else {
+                el.innerHTML = translation;
+              }
+            });
+          } else {
+            console.warn('404 translations not found, using fallback text');
+          }
+        } catch (error) {
+          console.warn('Failed to load 404 translations:', error);
+        }
+      }
+
+      // Load translations when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', load404Translations);
+      } else {
+        load404Translations();
+      }
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,10 @@
+404:
+  title: Page non trouvée - Octigen
+  description: La page que vous recherchez n'existe pas. Retournez à la page d'accueil des solutions de diapositives PowerPoint IA et de rapports automatisés d'Octigen.
+  page_title: Page non trouvée
+  page_description: "La page que vous recherchez semble s'être égarée dans le cosmos numérique. 
+    Ne vous inquiétez pas - notre navigation alimentée par l'IA peut vous aider à retrouver votre chemin !"
+  home_button: Retour à l'accueil
+  progress_button: Voir nos progrès IA
+  help_text: "Besoin d'aide ? <a href='/#contact' class='text-white' style='text-decoration: underline;'>Contactez-nous</a> et nous vous amènerons où vous devez aller."
+

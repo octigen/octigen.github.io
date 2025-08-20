@@ -1,0 +1,10 @@
+404:
+  title: Seite nicht gefunden - Octigen
+  description: Die gesuchte Seite existiert nicht. Kehren Sie zur Startseite von Octigens AI PowerPoint-Folien und automatisierten Berichtslösungen zurück.
+  page_title: Seite nicht gefunden
+  page_description: "Die Seite, die Sie suchen, scheint sich in den digitalen Kosmos verirrt zu haben. 
+    Keine Sorge - unsere KI-gestützte Navigation kann Ihnen dabei helfen, den Weg zurück zu finden!"
+  home_button: Zur Startseite
+  progress_button: Unseren KI-Fortschritt ansehen
+  help_text: "Brauchen Sie Hilfe? <a href='/#contact' class='text-white' style='text-decoration: underline;'>Kontaktieren Sie uns</a> und wir bringen Sie dorthin, wo Sie hinmüssen."
+
