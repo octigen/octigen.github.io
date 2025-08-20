@@ -507,9 +507,10 @@
               <iframe 
                 id="video-player"
                 src="about:blank"
-                title="Octigen Demo Video" 
+                title="Octigen Pitch Video" 
                 allowfullscreen
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
                 style="border: none; border-radius: 12px;">
               </iframe>
             </div>
@@ -665,10 +666,10 @@
         const videoModal = document.getElementById('videoModal');
         const videoPlayer = document.getElementById('video-player');
         
-        // When modal is shown, load the video
+        // When modal is shown, load the Vimeo video
         videoModal.addEventListener('show.bs.modal', function() {
-          // Load the YouTube video URL
-          videoPlayer.src = 'https://www.youtube.com/embed/ODNM_1y_OzQ?autoplay=1&enablejsapi=1&rel=0';
+          // Load the Vimeo video URL with autoplay
+          videoPlayer.src = 'https://player.vimeo.com/video/1110967026?badge=0&autopause=0&autoplay=1&player_id=0&app_id=58479';
         });
         
         // When modal is hidden, stop the video
