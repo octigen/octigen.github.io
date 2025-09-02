@@ -128,34 +128,3 @@ export default async function handler(req, res) {
     });
   }
 }
-
-// For Netlify Functions, use this export instead:
-// exports.handler = async (event, context) => {
-//   const req = {
-//     method: event.httpMethod,
-//     body: JSON.parse(event.body || '{}')
-//   };
-//   
-//   const res = {
-//     setHeader: () => {},
-//     status: (code) => ({
-//       json: (data) => ({
-//         statusCode: code,
-//         headers: {
-//           'Access-Control-Allow-Origin': '*',
-//           'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify(data)
-//       }),
-//       end: () => ({
-//         statusCode: code,
-//         headers: {
-//           'Access-Control-Allow-Origin': '*'
-//         },
-//         body: ''
-//       })
-//     })
-//   };
-//   
-//   return handler(req, res);
-// }; 
