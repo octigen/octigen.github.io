@@ -12,4 +12,3 @@ Allow: /assets/
 
 # Disallow hidden areas and temporary files
 Disallow: /_hidden/
-Disallow: /api/test.js 

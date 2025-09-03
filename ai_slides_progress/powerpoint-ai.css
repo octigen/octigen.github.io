@@ -527,8 +527,8 @@
 @media (max-width: 991px) {
     /* Add padding to hero container to prevent content touching sides */
     .powerpoint-hero .container {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
     
     .hero-title {
@@ -564,8 +564,8 @@
 @media (max-width: 576px) {
     /* Enhanced mobile padding for very small screens */
     .powerpoint-hero .container {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
     }
     
     .hero-title {
@@ -597,7 +597,7 @@
     /* Timeline adjustments for very small screens */
     .timeline-card {
         padding: 1.5rem 1.2rem;
-        max-width: 280px;
+        max-width: 340px;
         border-radius: 15px;
         margin: 0 auto 2rem auto;
         z-index: 10;
@@ -653,7 +653,7 @@
     .waiting-list-glass-container {
         padding: 2rem 1.5rem !important;
         margin: 0 auto !important;
-        max-width: calc(100vw - 1rem) !important;
+        max-width: calc(100vw - 0.5rem) !important;
         width: 100% !important;
     }
     
