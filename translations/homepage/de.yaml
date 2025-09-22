@@ -1,70 +1,75 @@
 common:
-  title: Octigen - Datenmanagement, KI & Reporting
-  og_title: Octigen - Datenmanagement, KI & Reporting
-  description: "Bei Octigen vereinen wir langjährige Expertise in den Bereichen Datenintegration, 
-           Künstlicher Intelligenz und quantitativer Analyse, mit besonderem Fokus auf Finanzdienstleistungen."
-  nav:
-    services: Unsere Services
-    who_we_are: Über uns
-    contact_us: Kontakt
+  title: Octigen - KI-Innovation & Expertberatung
+  og_title: Octigen - KI-Innovation & Expertberatung
+  description: "Octigen GmbH: Entwicklung modernster KI-Lösungen für PowerPoint-Automatisierung und professionelle Beratung in Datenintegration, KI und quantitativer Analyse."
   footer:
-    copyright: © 2025 Octigen GmbH. Alle Rechte vorbehalten.
+    copyright: © 2025 Octigen GmbH
+    privacy_policy: Datenschutzerklärung
 
 hero:
-  top_header: KI, Datenmanagement und Reporting
-  main_header: Nutzen Sie das volle Potenzial Ihrer Daten.
-  description: Profitieren Sie von einem Partner, der weiss, wie er Ihre Daten optimal einsetzt -
-            mit KI, um Ihre Abläufe reibungslos zu gestalten oder um herausragende Kundenberichte zu erstellen -
-            und das alles ohne Umstellung Ihrer Systeme. Das ist Octigen.
-  button: Was wir für Sie tun können
-services:
-  title: Unsere Dienstleistungen
-  data_integration:
-    title: Ihre Datenquellen in einer kohärenten Landschaft
-    description: "Daten sind der Rohstoff Ihrer Geschäftsintelligenz. Octigen ist hochqualifiziert
-    darin, diese in eine wertvolle Ressource zu verwandeln, indem wir unsere Tools direkt <b>zu Ihren Daten</b> bringen."
-  reporting:
-    title: Automatisieren Sie Ihr Kundenreporting
-    description: "Octigen hilft Ihnen, sich auf das Wesentliche zu konzentrieren, anstatt unnötig Zeit
-    mit Berichten zu verbringen. Von Softwareentwicklung & Integration bis hin zu <i>Reporting-as-a-Service</i> 
-    bieten wir massgeschneiderte Lösungen für Ihre Bedürfnisse."
-  quant_analysis:
-    title: Steigern Sie Ihre quantitative Stärke
-    description: "Lassen Sie uns Ihre quantitativen Analysen mit unserer Expertise aufwerten, sei es in 
-    den Bereichen Maschinelles Lernen, Datenqualität, Portfolio-Konstruktion oder Zeitreihenprognosen."
-  generative_ai:
-    title: Generative KI in der realen Welt
-    description: "Bei Octigen verfügen wir über umfangreiche Erfahrung darin, echten Geschäftswert durch 
-    clevere Anwendungen von Large Language Models (LLMs) zu schaffen. Haben Sie Ideen für mögliche Anwendungsfälle?
-    <a style='color: white;' href='#contacts'>Kontaktieren Sie uns.</a>"
+  main_header: Die Zukunft KI-gestützter Geschäftslösungen gestalten
+  subtitle: Wo innovative Spitzentechnologie auf Expertenwissen trifft
+
+sections:
+  ai_development:
+    icon: 🚀
+    title: Wir entwickeln etwas Revolutionäres
+    description: "Wir entwickeln modernste KI-Technologie, die die Art und Weise, wie Sie PowerPoint-Präsentationen erstellen, revolutionieren wird. Unsere KI-gestützte Lösung versteht Ihre Inhalte, wendet Ihr Branding an und generiert automatisch professionelle Folien - wodurch Sie stundenlange manuelle Arbeit sparen und gleichzeitig Ihren einzigartigen Stil und Qualitätsstandards beibehalten."
+    button: Unseren Fortschritt verfolgen
+  
+  consulting:
+    icon: 🤝
+    title: Brauchen Sie Expertenunterstützung? Wir sind für Sie da
+    description: "Während wir die Zukunft gestalten, sind wir auch hier, um Ihre aktuellen Herausforderungen zu lösen. Unser Team bringt tiefgreifende Expertise in Datenintegration, KI-Implementierung und quantitativer Analyse mit, um Ihre Geschäftsabläufe noch heute zu transformieren."
+    button: Lassen Sie uns zusammenarbeiten
+    services:
+      data_integration: Datenintegration & Analytics
+      quant_analysis: Quantitative Analyse
+      ai_implementation: KI-Implementierung
+      reporting_automation: Reporting-Automatisierung
+
 who_we_are:
-  title: "Über uns"
-  description: "Wir haben Seite an Seite daran gearbeitet, die Kundenberichterstattung eines führenden, unabhängigen
-    Vermögensverwalters in Zürich zu revolutionieren. Aufbauend auf dieser Expertise haben wir Octigen gegründet.
-    Unsere Mission? Die Art und Weise zu transformieren, wie Sie Daten nutzen, um mit Ihren Kunden in Kontakt zu treten."
+  icon: 👥
+  title: Über uns
+  description: "Wir haben Seite an Seite daran gearbeitet, die Kundenberichterstattung eines führenden, unabhängigen Vermögensverwalters in Zürich zu revolutionieren. Aufbauend auf dieser Expertise haben wir Octigen gegründet. Unsere Mission? Die Art und Weise zu transformieren, wie Sie Daten nutzen, um mit Ihren Kunden in Kontakt zu treten."
   michel_muller:
-    title: Mitbegründer & CEO
-    description: "Mit über 15 Jahren Erfahrung als Softwarearchitekt und mehr als 6 Jahren in der Entwicklung
-      innovativer Datenlösungen für die Finanzbranche bringt Michel tiefgehende Expertise in allen Bereichen
-      der Computertechnologie mit. Er hat einen Doktortitel in Supercomputing und einen MSc von der ETH Zürich."
+    name: Michel Müller
+    title: Mitbegründer
+    description: "Mit über 15 Jahren Erfahrung als Softwarearchitekt und mehr als 6 Jahren in der Entwicklung innovativer Datenlösungen für die Finanzbranche bringt Michel tiefgehende Expertise in allen Bereichen der Computertechnologie mit. Er hat einen Doktortitel in Supercomputing und einen MSc von der ETH Zürich."
   kevin_graziani:
-    title: Mitbegründer & CFO
-    description: "Neben seiner Erfahrung als Front-Office-Quant bei einigen der grössten Finanzinstitute Europas ist Kevin
-      ein erfahrener Softwareentwickler und Marketing-experte. Er schloss sein Studium <i>cum laude</i> ab und verfügt 
-      über zwei MSc-Abschlüsse - in Quantitative Finance und in Corporate Finance."
-contact_us:
-  offer: Erste Stunde kostenlos!
-  title: Kontaktieren Sie uns noch heute
-  top_cta: DATENINTEGRATION, KI, REPORTING
-  cta: Bereit, Ihr nächstes Projekt mit uns zu starten?
-  cta_description: "Lassen Sie uns sprechen und herausfinden, wie wir einen Unterschied machen können — sei es
-  durch kleine Anpassungen oder eine vollständige Workflow-Transformation. Wir stehen Ihnen zur Seite!"
+    name: Kevin Graziani
+    title: Mitbegründer
+    description: "Neben seiner Erfahrung als Front-Office-Quant bei einigen der grössten Finanzinstitute Europas ist Kevin ein erfahrener Softwareentwickler und Marketing-experte. Er schloss sein Studium cum laude ab und verfügt über zwei MSc-Abschlüsse - in Quantitative Finance und in Corporate Finance."
+
+contact:
+  icon: 💬
+  offer: Erste Stunde kostenlos
+  title: Bereit anzufangen?
+  description: "Ob Sie sich für unsere KI-Innovation interessieren oder Expertberatung benötigen, lassen Sie uns besprechen, wie wir Ihr Unternehmen transformieren können."
   form:
     name: Ihr Name
     email: Ihre E-Mail
-    message: Ihre Nachricht
-    submit: Senden
-    privacy_policy: "Ich stimme der <a href='privacy_policy.html' target='_blank'>Datenschutzerklärung</a> zu."
-    thanks: Vielen Dank für Ihre Nachricht!
-    error: Bitte um Entschuldigung, es gab ein Problem bei der Übermittlung.
-    
+    message: Erzählen Sie uns von Ihrem Projekt oder wie wir helfen können
+    submit: Nachricht senden
+    privacy_policy: "Ich stimme der <a href='../privacy_policy.html' target='_blank' class='text-white'>Datenschutzerklärung</a> zu"
+
+modals:
+  data_integration:
+    title: Ihre Datenquellen in einer kohärenten Landschaft
+    description_1: "Daten sind der Rohstoff Ihrer Geschäftsintelligenz. Octigen ist hochqualifiziert darin, diese in eine wertvolle Ressource zu verwandeln, indem wir unsere Tools direkt zu Ihren Daten bringen."
+    description_2: "Wir spezialisieren uns darauf, unterschiedliche Datenquellen zu verbinden, einheitliche Datenlandschaften zu schaffen und robuste ETL-Pipelines zu erstellen, die Ihre verstreuten Informationen in umsetzbare Erkenntnisse verwandeln."
+  
+  quant_analysis:
+    title: Steigern Sie Ihre quantitative Stärke
+    description_1: "Lassen Sie uns Ihre quantitativen Analysen mit unserer Expertise aufwerten, sei es in den Bereichen Maschinelles Lernen, Datenqualität, Portfolio-Konstruktion oder Zeitreihenprognosen."
+    description_2: "Unser Team bringt tiefgreifende quantitative Finanz-Erfahrung mit, um Ihnen beim Aufbau ausgeklügelter Modelle, der Portfolio-Optimierung und der Entwicklung prädiktiver Analysen zu helfen, die Ihnen einen Wettbewerbsvorteil verschaffen."
+  
+  ai_implementation:
+    title: Generative KI in der realen Welt
+    description_1: "Bei Octigen verfügen wir über umfangreiche Erfahrung darin, echten Geschäftswert durch clevere Anwendungen von Large Language Models (LLMs) zu schaffen. Haben Sie Ideen für mögliche Anwendungsfälle? <a href='#contact' class='text-primary'>Kontaktieren Sie uns</a>."
+    description_2: "Von der Dokumentenverarbeitung und automatisierten Inhaltserstellung bis hin zur intelligenten Datenanalyse und Verbesserung des Kundenservice helfen wir Ihnen bei der Implementierung von KI-Lösungen, die tatsächlich in Produktionsumgebungen funktionieren."
+  
+  reporting_automation:
+    title: Automatisieren Sie Ihr Kundenreporting
+    description_1: "Octigen hilft Ihnen, sich auf das Wesentliche zu konzentrieren, anstatt unnötig Zeit mit Berichten zu verbringen. Von Softwareentwicklung & Integration bis hin zu Reporting-as-a-Service bieten wir massgeschneiderte Lösungen für Ihre Bedürfnisse."
+    description_2: "Transformieren Sie Ihre manuellen Reporting-Prozesse in automatisierte, markengerechte und professionelle Kundenkommunikation, die Stunden der Arbeit spart und gleichzeitig höchste Qualitätsstandards aufrechterhält." 
