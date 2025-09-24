@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+    <title>Cookie Settings - Octigen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Manage your cookie preferences for Octigen's website. Control how we use cookies and tracking technologies.">
+    <meta name="author" content="Octigen GmbH" />
+    <meta name="robots" content="noindex, nofollow" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="translator.js" defer></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/main.css" />
+    <!-- Cookie Consent System -->
+    <link rel="stylesheet" href="assets/cookie-consent.css">
+    <script src="assets/cookie-consent.js" defer></script>
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .cookie-settings-container {
+            padding-top: 120px;
+            padding-bottom: 60px;
+        }
+        
+        .settings-title {
+            color: var(--octigen-highlighted);
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .settings-card {
+            background: white;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+            padding: 2rem;
+        }
+        
+        .settings-card h3 {
+            color: var(--octigen-blue);
+            font-weight: 400;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .cookie-category-compact {
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 1.25rem;
+            background: #f8f9fa;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.2s ease;
+        }
+        
+        .cookie-category-compact:hover {
+            border-color: var(--octigen-blue, #1e4fe2);
+            box-shadow: 0 4px 12px rgba(30, 79, 226, 0.1);
+        }
+        
+        .category-header-compact {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.75rem;
+        }
+        
+        .category-title-compact {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 0;
+        }
+        
+        .category-description-compact {
+            color: #6c757d;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            margin-bottom: 0.75rem;
+            flex-grow: 1;
+        }
+        
+        .cookie-details-compact {
+            margin-top: auto;
+            padding-top: 0.5rem;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .cookie-item {
+            margin-bottom: 0.75rem;
+        }
+        
+        .cookie-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .cookie-name {
+            font-weight: 600;
+            color: #495057;
+        }
+        
+        .cookie-purpose {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-top: 0.25rem;
+        }
+        
+        .action-buttons {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .btn-group-custom {
+            gap: 1rem;
+        }
+        
+        .btn-group-custom .btn {
+            min-width: 140px;
+        }
+        
+        .current-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .status-enabled {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .status-disabled {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .status-required {
+            background-color: #d1ecf1;
+            color: #0c5460;
+        }
+    </style>
+</head>
+<body>
+    <!-- Simple Header -->
+    <header class="position-absolute w-100" style="top: 20px; z-index: 10;">
+      <div class="container d-flex justify-content-between align-items-center">
+        <!-- Logo -->
+        <a href="/">
+          <img
+            src="assets/images/logo_octigen_black.png"
+            alt="Octigen Logo"
+            style="max-width: 170px"
+            class="d-inline-block align-top"
+          />
+        </a>
+        
+        <!-- Back Button -->
+        <a href="/" class="btn btn-outline-primary d-flex align-items-center" style="border: 1px solid var(--octigen-blue); color: var(--octigen-blue); padding: 8px 16px; border-radius: 6px; text-decoration: none; font-weight: 400; transition: all 0.2s ease;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 8px;">
+            <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Back to Home
+        </a>
+      </div>
+    </header>
+    
+    <main class="container cookie-settings-container">
+        <h1 class="text-center settings-title">Cookie Settings</h1>
+        <p class="text-center text-muted mb-4">Manage your cookie preferences and understand how we use tracking technologies.</p>
+        
+        <div class="settings-card">
+            <h3>🔧 Cookie Categories</h3>
+            
+            <div class="row g-3">
+                <!-- Necessary Cookies -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="cookie-category-compact">
+                        <div class="category-header-compact">
+                            <h5 class="category-title-compact">🔒 Necessary</h5>
+                            <span class="current-status status-required">Always Active</span>
+                        </div>
+                        <p class="category-description-compact">
+                            Essential for website functionality. Cannot be disabled.
+                        </p>
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="necessary-cookies" checked disabled>
+                            <label class="form-check-label" for="necessary-cookies">
+                                <small><strong>Essential Functions</strong></small>
+                            </label>
+                        </div>
+                        <div class="cookie-details-compact">
+                            <small class="text-muted">Session storage, consent preferences</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics Cookies -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="cookie-category-compact">
+                        <div class="category-header-compact">
+                            <h5 class="category-title-compact">📊 Analytics</h5>
+                            <span id="analytics-status" class="current-status">Loading...</span>
+                        </div>
+                        <p class="category-description-compact">
+                            Understand visitor interactions anonymously to improve experience.
+                        </p>
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="analytics-cookies">
+                            <label class="form-check-label" for="analytics-cookies">
+                                <small><strong>Google Analytics</strong></small>
+                            </label>
+                        </div>
+                        <div class="cookie-details-compact">
+                            <small class="text-muted">_ga, _gid, _gat (anonymized)</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketing Cookies -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="cookie-category-compact">
+                        <div class="category-header-compact">
+                            <h5 class="category-title-compact">🎯 Marketing</h5>
+                            <span id="marketing-status" class="current-status">Loading...</span>
+                        </div>
+                        <p class="category-description-compact">
+                            Build interest profiles for relevant advertising on other sites.
+                        </p>
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="marketing-cookies">
+                            <label class="form-check-label" for="marketing-cookies">
+                                <small><strong>Advertising</strong></small>
+                            </label>
+                        </div>
+                        <div class="cookie-details-compact">
+                            <small class="text-muted">Third-party advertising cookies</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Preference Cookies -->
+                <div class="col-lg-6 col-xl-3">
+                    <div class="cookie-category-compact">
+                        <div class="category-header-compact">
+                            <h5 class="category-title-compact">⚙️ Preferences</h5>
+                            <span id="preferences-status" class="current-status">Loading...</span>
+                        </div>
+                        <p class="category-description-compact">
+                            Remember your choices for enhanced, personalized features.
+                        </p>
+                        <div class="form-check form-switch mb-2">
+                            <input class="form-check-input" type="checkbox" id="preference-cookies">
+                            <label class="form-check-label" for="preference-cookies">
+                                <small><strong>Personalization</strong></small>
+                            </label>
+                        </div>
+                        <div class="cookie-details-compact">
+                            <small class="text-muted">Language, theme preferences</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="settings-card">
+            <h3>🛠️ Manage Your Preferences</h3>
+            <p>You can change your cookie preferences at any time. Your choices will be saved and applied immediately.</p>
+            
+            <div class="action-buttons">
+                <div class="d-flex justify-content-center btn-group-custom">
+                    <button id="accept-all-cookies" class="btn btn-primary">Accept All Cookies</button>
+                    <button id="save-cookie-preferences" class="btn btn-success">Save My Preferences</button>
+                    <button id="reject-all-cookies" class="btn btn-outline-secondary">Reject All Optional</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="settings-card">
+            <h3>ℹ️ Additional Information</h3>
+            <p>For more information about how we handle your personal data, please read our <a href="/privacy_policy.html">Privacy Policy</a>.</p>
+            <p>If you have questions about our cookie usage, please contact us at <a href="mailto:privacy@octigen.com">privacy@octigen.com</a>.</p>
+            
+            <div class="mt-3">
+                <button id="reset-all-preferences" class="btn btn-outline-danger btn-sm">Reset All Preferences</button>
+                <small class="text-muted d-block mt-2">This will clear all your saved preferences and show the cookie banner again.</small>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="privacy-footer">
+        <div class="container footer-container pt-4">
+            <span class="text-center pt-5 footer-text d-block">© 2025 Octigen GmbH. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script>
+        // Cookie Settings Page JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait for cookie consent system to load
+            setTimeout(initializeCookieSettings, 100);
+            
+            function initializeCookieSettings() {
+                if (!window.octigenCookieConsent) {
+                    setTimeout(initializeCookieSettings, 100);
+                    return;
+                }
+                
+                const consent = window.octigenCookieConsent.getConsent();
+                updateCookieToggles(consent);
+                
+                // Add event listeners
+                document.getElementById('analytics-cookies').addEventListener('change', updatePreview);
+                document.getElementById('marketing-cookies').addEventListener('change', updatePreview);
+                document.getElementById('preference-cookies').addEventListener('change', updatePreview);
+                
+                document.getElementById('accept-all-cookies').addEventListener('click', function() {
+                    window.octigenCookieConsent.acceptAll();
+                    showSuccessMessage('All cookies accepted');
+                    setTimeout(() => location.reload(), 1000);
+                });
+                
+                document.getElementById('save-cookie-preferences').addEventListener('click', function() {
+                    window.octigenCookieConsent.consentData = {
+                        necessary: true,
+                        analytics: document.getElementById('analytics-cookies').checked,
+                        marketing: document.getElementById('marketing-cookies').checked,
+                        preferences: document.getElementById('preference-cookies').checked
+                    };
+                    window.octigenCookieConsent.saveConsent(window.octigenCookieConsent.consentData);
+                    window.octigenCookieConsent.loadServices();
+                    showSuccessMessage('Preferences saved successfully');
+                    setTimeout(() => location.reload(), 1000);
+                });
+                
+                document.getElementById('reject-all-cookies').addEventListener('click', function() {
+                    window.octigenCookieConsent.rejectAll();
+                    showSuccessMessage('Optional cookies rejected');
+                    setTimeout(() => location.reload(), 1000);
+                });
+                
+                document.getElementById('reset-all-preferences').addEventListener('click', function() {
+                    if (confirm('Are you sure you want to reset all cookie preferences? This will clear your saved choices.')) {
+                        window.octigenCookieConsent.resetConsent();
+                    }
+                });
+            }
+            
+            
+            function updateCookieToggles(consent) {
+                document.getElementById('analytics-cookies').checked = consent.analytics;
+                document.getElementById('marketing-cookies').checked = consent.marketing;
+                document.getElementById('preference-cookies').checked = consent.preferences;
+                
+                document.getElementById('analytics-status').textContent = consent.analytics ? 'Enabled' : 'Disabled';
+                document.getElementById('analytics-status').className = `current-status ${consent.analytics ? 'status-enabled' : 'status-disabled'}`;
+                
+                document.getElementById('marketing-status').textContent = consent.marketing ? 'Enabled' : 'Disabled';
+                document.getElementById('marketing-status').className = `current-status ${consent.marketing ? 'status-enabled' : 'status-disabled'}`;
+                
+                document.getElementById('preferences-status').textContent = consent.preferences ? 'Enabled' : 'Disabled';
+                document.getElementById('preferences-status').className = `current-status ${consent.preferences ? 'status-enabled' : 'status-disabled'}`;
+            }
+            
+            function updatePreview() {
+                const analytics = document.getElementById('analytics-cookies').checked;
+                const marketing = document.getElementById('marketing-cookies').checked;
+                const preferences = document.getElementById('preference-cookies').checked;
+                
+                document.getElementById('analytics-status').textContent = analytics ? 'Enabled' : 'Disabled';
+                document.getElementById('analytics-status').className = `current-status ${analytics ? 'status-enabled' : 'status-disabled'}`;
+                
+                document.getElementById('marketing-status').textContent = marketing ? 'Enabled' : 'Disabled';
+                document.getElementById('marketing-status').className = `current-status ${marketing ? 'status-enabled' : 'status-disabled'}`;
+                
+                document.getElementById('preferences-status').textContent = preferences ? 'Enabled' : 'Disabled';
+                document.getElementById('preferences-status').className = `current-status ${preferences ? 'status-enabled' : 'status-disabled'}`;
+            }
+            
+            function showSuccessMessage(message) {
+                const alert = document.createElement('div');
+                alert.className = 'alert alert-success alert-dismissible fade show';
+                alert.innerHTML = `
+                    ${message}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                `;
+                document.querySelector('.container').insertBefore(alert, document.querySelector('.settings-card'));
+            }
+        });
+    </script>
+</body>
+</html>
