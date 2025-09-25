@@ -33,9 +33,17 @@
     <!-- Privacy Policy -->
     <url>
         <loc>https://octigen.com/privacy_policy.html</loc>
-        <lastmod>2025-08-12</lastmod>
+        <lastmod>2025-09-25</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
+    </url>
+
+    <!-- Cookie Settings -->
+    <url>
+        <loc>https://octigen.com/cookie-settings.html</loc>
+        <lastmod>2025-09-25</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.2</priority>
     </url>
 
 </urlset> 

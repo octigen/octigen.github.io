@@ -4,16 +4,15 @@ Allow: /
 # Sitemap location
 Sitemap: https://octigen.com/sitemap.xml
 
-# Allow search engines to crawl all content
+# Allow search engines and AI crawlers to access content
 Allow: /ai_slides_progress/
 Allow: /waiting_list/
 Allow: /assets/
+Allow: /privacy_policy.html
+Allow: /cookie-settings.html
 
 # Disallow hidden areas and temporary files
 Disallow: /_hidden/
 
-# Block specific files and paths from indexing
+# Block specific files from indexing
 Disallow: /octigen_one_pager.pdf
-
-# Note: External domains (gitea.octigen.com) should be blocked 
-# at their server level or with meta noindex tags
