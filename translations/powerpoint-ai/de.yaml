@@ -6,6 +6,8 @@ powerpoint_ai:
   
   timeline:
     title: "Unsere bisherige Reise"
+    sort_newest: "Neueste zuerst"
+    sort_oldest: "Älteste zuerst"
     april:
       title: "Der Anfang"
       description: "Octigen startet mit der Entwicklung unserer PowerPoint-Automatisierungsbibliothek."
