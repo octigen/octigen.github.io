@@ -18,6 +18,15 @@ powerpoint_ai:
     july:
       title: "Prêt pour la démo"
       description: "Octigen remplit maintenant votre présentation avec des tableaux et des graphiques. C'est l'heure de la démo !"
+    august:
+      title: "Révolution des workflows"
+      description: "Introduction de workflows puissants pour vous aider à obtenir des résultats cohérents et reproductibles avec vos rapports PowerPoint à chaque fois."
+    septoct:
+      title: "Prêt pour la production"
+      description: "Construction d'une infrastructure de niveau entreprise : authentification sécurisée, inscription utilisateur transparente et protocoles de sécurité à toute épreuve."
+    november:
+      title: "Lancement Alpha !"
+      description: "Nos premiers utilisateurs sont à bord ! Nous intégrons activement leurs précieux retours pour rendre Octigen encore plus puissant et intuitif."
     future:
       title: "Vers l'infini et au-delà !"
       description: "De plus en plus de fonctionnalités sont ajoutées à Octigen, restez à l'écoute !"
