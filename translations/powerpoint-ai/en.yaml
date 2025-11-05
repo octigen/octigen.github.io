@@ -25,7 +25,7 @@ powerpoint_ai:
       description: "Introducing powerful workflows to help you achieve consistent, repeatable results with your PowerPoint reports every time."
     septoct:
       title: "Octigen's Swiss Cloud"
-      description: "Building enterprise-grade infrastructure: secure authentication, seamless user registration, and bulletproof security protocols."
+      description: "Buildup of our production infrastructure. All data at rest is stored securely on independent Swiss data centers."
     november:
       title: "Alpha Launch!"
       description: "Our first users are onboard! We're actively incorporating their valuable feedback to make Octigen even more powerful and intuitive."
