@@ -15,7 +15,15 @@
     <!-- AI Slides Progress - Key page for target keywords -->
     <url>
         <loc>https://octigen.com/ai_slides_progress/</loc>
-        <lastmod>2025-08-12</lastmod>
+        <lastmod>2025-11-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Alpha Release -->
+    <url>
+        <loc>https://octigen.com/alpha-release/</loc>
+        <lastmod>2025-11-06</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>

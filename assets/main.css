@@ -113,6 +113,18 @@ p {
     font-family: 'Outfit', sans-serif;
 }
 
+.btn-outline-light {
+    font-size: 0.9rem;
+    font-weight: 400;
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    overflow: hidden;
+    background-color: transparent;
+}
+
 .btn-primary:hover {
     background-color: var(--octigen-highlighted);
     transition: background-color 0.2s ease-in-out;
