@@ -239,6 +239,30 @@
   text-decoration: none !important;
 }
 
+.section-btn-orange {
+  background: linear-gradient(135deg, #ff6b35, #f7931e) !important;
+  border: none !important;
+  box-shadow: 0 8px 32px rgba(255, 107, 53, 0.4) !important;
+  color: white !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+}
+
+.section-btn-orange:hover {
+  background: linear-gradient(135deg, #ff7b45, #ff9f2e) !important;
+  box-shadow: 0 12px 40px rgba(255, 107, 53, 0.6) !important;
+  color: white !important;
+  text-decoration: none !important;
+  transform: translateY(-2px) !important;
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  opacity: 0.95;
+}
+
 /* Pulsing waves animation for attention-grabbing button */
 .pulse-waves {
   position: relative;
@@ -616,4 +640,4 @@
 .logo-container {
   position: relative;
   z-index: 12;
-} 
+}

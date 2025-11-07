@@ -75,7 +75,7 @@
 @media (max-width: 991px) {
     .rocket-container {
         left: -20px;
-        top: 10%;
+        top: 2%;
     }
     
     .octi-rocket {
@@ -93,6 +93,86 @@
     .octi-rocket {
         height: 25vh;
         max-height: 200px;
+    }
+}
+
+/* Moon Image - Right of Logo */
+.moon-container {
+    position: absolute;
+    right: 18%;
+    top: 4%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.moon-image {
+    width: auto;
+    height: 200px;
+    max-height: 200px;
+    display: block;
+    opacity: 1.0;
+}
+
+/* Earth Image - Further Down and Right */
+.earth-container {
+    position: absolute;
+    right: 25%;
+    top: 25%;
+    z-index: 10;
+    transform: rotate(30deg);
+    pointer-events: none;
+}
+
+.earth-image {
+    width: auto;
+    height: 90px;
+    max-height: 90px;
+    display: block;
+    opacity: 0.85;
+}
+
+/* Adjust moon and earth size on tablet and mobile */
+@media (max-width: 991px) {
+    .moon-container {
+        right: 0%;
+        top: 3%;
+    }
+    
+    .moon-image {
+        height: 120px;
+        max-height: 120px;
+    }
+    
+    .earth-container {
+        right: -5%;
+        top: 30%;
+    }
+    
+    .earth-image {
+        height: 120px;
+        max-height: 120px;
+    }
+}
+
+@media (max-width: 576px) {
+    .moon-container {
+        right: -10%;
+        top: 5%;
+    }
+    
+    .moon-image {
+        height: 120px;
+        max-height: 120px;
+    }
+    
+    .earth-container {
+        right: -5%;
+        top: 15%;
+    }
+    
+    .earth-image {
+        height: 80px;
+        max-height: 80px;
     }
 }
 
@@ -173,7 +253,7 @@
 
 .badge-text {
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     letter-spacing: 2px;
     background: linear-gradient(90deg, #ffffff, #4a90e2, #ffffff);
     background-size: 200% 100%;
@@ -362,7 +442,8 @@
 
 .feature-icon-special {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
+    margin-top: 0.5rem;
     display: flex;
     justify-content: center;
 }
@@ -668,7 +749,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-logo {
-        height: 50px;
+        height: 80px;
     }
     
     .hero-title {
@@ -783,7 +864,7 @@
     }
     
     .hero-logo {
-        height: 40px;
+        height: 80px;
     }
     
     .hero-title {

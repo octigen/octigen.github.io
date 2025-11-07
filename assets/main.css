@@ -224,3 +224,206 @@ h5.free-banner-text {
         margin-top: 1rem;
     }
 }
+
+/* ===================================
+   Play Button Styles
+   =================================== */
+
+/* Play Button Particle Canvas */
+.play-particles-canvas {
+    position: absolute;
+    top: -150px;
+    left: -150px;
+    width: 380px;
+    height: 380px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.play-button-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Custom Play Button Styles */
+.custom-play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    z-index: 15;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.custom-play-overlay:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Wave Ring Animations */
+.wave-ring {
+    position: absolute;
+    border: 2px solid rgba(30, 79, 226, 0.6);
+    border-radius: 50%;
+    animation: waveRipple 3s ease-out infinite;
+}
+
+.wave-ring-1 {
+    width: 120px;
+    height: 120px;
+    animation-delay: 0s;
+}
+
+.wave-ring-2 {
+    width: 120px;
+    height: 120px;
+    animation-delay: 1s;
+}
+
+.wave-ring-3 {
+    width: 120px;
+    height: 120px;
+    animation-delay: 2s;
+}
+
+@keyframes waveRipple {
+    0% {
+        width: 80px;
+        height: 80px;
+        opacity: 1;
+        border-width: 3px;
+    }
+    50% {
+        width: 140px;
+        height: 140px;
+        opacity: 0.5;
+        border-width: 2px;
+    }
+    100% {
+        width: 180px;
+        height: 180px;
+        opacity: 0;
+        border-width: 1px;
+    }
+}
+
+/* Play Button */
+.play-button {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #1e4fe2, #1a45c7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(30, 79, 226, 0.4);
+    transition: all 0.3s ease;
+    animation: playButtonPulse 2s ease-in-out infinite;
+    position: relative;
+    z-index: 2;
+}
+
+.play-button::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(45deg, rgba(30, 79, 226, 0.4), rgba(255, 255, 255, 0.2));
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.play-button:hover::before {
+    opacity: 1;
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 40px rgba(30, 79, 226, 0.6);
+    border-color: rgba(30, 79, 226, 0.4);
+}
+
+@keyframes playButtonPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 8px 32px rgba(30, 79, 226, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 12px 40px rgba(30, 79, 226, 0.6);
+    }
+}
+
+/* Play Icon */
+.play-icon {
+    width: 32px;
+    height: 32px;
+    color: white;
+    margin-left: 4px; /* Slight offset to center the triangle visually */
+    transition: all 0.3s ease;
+}
+
+.play-button:hover .play-icon {
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Hide custom button when video is playing */
+.custom-play-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Responsive adjustments for play button */
+@media (max-width: 576px) {
+    /* Play button adjustments */
+    .wave-ring-1,
+    .wave-ring-2,
+    .wave-ring-3 {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .play-button {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .play-icon {
+        width: 28px;
+        height: 28px;
+    }
+    
+    @keyframes waveRipple {
+        0% {
+            width: 70px;
+            height: 70px;
+            opacity: 1;
+            border-width: 2px;
+        }
+        50% {
+            width: 120px;
+            height: 120px;
+            opacity: 0.5;
+            border-width: 1px;
+        }
+        100% {
+            width: 160px;
+            height: 160px;
+            opacity: 0;
+            border-width: 1px;
+        }
+    }
+}
