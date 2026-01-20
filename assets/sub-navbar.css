@@ -1,0 +1,142 @@
+/**
+ * Sub Navigation Bar Component
+ * Reusable sticky sub-navigation for use case pages
+ */
+
+/* ============================================
+   Sub Navigation Bar
+   ============================================ */
+
+/* 
+ * Fixed height values matching navbar states:
+ * - Normal: ~90px (72px logo + padding)
+ * - Scrolled: ~58px (50px logo + padding)
+ * Transition timing matches navbar (0.3s ease)
+ */
+
+.sub-navbar {
+  position: fixed;
+  top: 90px; /* Normal navbar height */
+  left: 0;
+  right: 0;
+  z-index: 998;
+  background: var(--theme-glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--theme-glass-border);
+  transition: top 0.3s ease; /* Same timing as navbar */
+  font-family: 'Outfit', sans-serif;
+}
+
+/* When navbar is scrolled (shrunk), move sub-navbar up */
+.sub-navbar.navbar-scrolled {
+  top: 70px; /* Scrolled navbar height */
+}
+
+.sub-navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 0 5%;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.sub-navbar-container::-webkit-scrollbar {
+  display: none;
+}
+
+.sub-nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--theme-text-secondary);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  position: relative;
+  letter-spacing: 0.3px;
+}
+
+.sub-nav-link:hover {
+  color: var(--theme-text-primary);
+}
+
+.sub-nav-link.active {
+  color: var(--octigen-blue);
+  font-weight: 500;
+}
+
+.sub-nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 1.5rem);
+  height: 2px;
+  background: var(--octigen-blue);
+  border-radius: 1px 1px 0 0;
+}
+
+/* Smooth scroll behavior for pages with sub-navbar */
+.has-sub-navbar {
+  scroll-behavior: smooth;
+}
+
+/* Scroll offset for anchors on pages with sub-navbar */
+/* 90px navbar + 40px sub-navbar + 20px buffer = 150px */
+.has-sub-navbar section[id] {
+  scroll-margin-top: 150px;
+}
+
+/* Extra top padding for hero to account for sub-navbar */
+/* 120px base hero padding + 40px for sub-navbar = 160px */
+.has-sub-navbar .hero-section {
+  padding-top: 170px;
+}
+
+/* ============================================
+   Sub Navigation - Responsive
+   ============================================ */
+
+@media (max-width: 991px) {
+  .sub-navbar-container {
+    justify-content: flex-start;
+    padding: 0 4%;
+  }
+  
+  .sub-nav-link {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .sub-nav-link {
+    padding: 0.45rem 0.7rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Hide sub-navbar on mobile */
+@media (max-width: 768px) {
+  .sub-navbar {
+    display: none;
+  }
+  
+  /* Reduced hero padding when sub-navbar is hidden on mobile */
+  .has-sub-navbar .hero-section {
+    padding-top: 70px;
+  }
+  
+  /* Revert scroll margin when sub-navbar is hidden */
+  .has-sub-navbar section[id] {
+    scroll-margin-top: 100px;
+  }
+}

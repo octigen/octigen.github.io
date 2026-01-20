@@ -1,0 +1,340 @@
+/* ===========================================
+   Comparison Slider Component
+   
+   A before/after image comparison slider using
+   the img-comparison-slider web component.
+   Requires: https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css
+   =========================================== */
+
+/* Container wrapper */
+.comparison-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 12;
+}
+
+/* Main slider styles */
+.before-after-slider {
+  /* Divider line - bold and glowing */
+  --divider-width: 3px;
+  --divider-color: #fff;
+  --divider-shadow: 
+    0 0 8px rgba(30, 79, 226, 0.8),
+    0 0 20px rgba(30, 79, 226, 0.5),
+    0 0 40px rgba(30, 79, 226, 0.3);
+  
+  /* Handle styles - hide default, we use custom */
+  --default-handle-opacity: 0;
+  --default-handle-width: 0px;
+  
+  display: block;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: var(--theme-shadow-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Custom handle via ::slotted or direct child */
+.before-after-slider::part(handle) {
+  /* We hide the default and use our custom one */
+  display: none;
+}
+
+/* Remove focus/active border */
+.before-after-slider:focus,
+.before-after-slider:active,
+.before-after-slider:focus-visible {
+  outline: none !important;
+  box-shadow: var(--theme-shadow-lg) !important;
+}
+
+/* Remove any internal margins/padding from component */
+.before-after-slider > div,
+.before-after-slider [slot] {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Target slotted content inside shadow DOM */
+.before-after-slider::part(first),
+.before-after-slider::part(second) {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Slot container styling */
+.before-after-slider .comparison-slot,
+.before-after-slider .comparison-figure,
+.before-after-slider figure,
+.comparison-wrapper figure {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  line-height: 0; /* Remove any line-height gap */
+}
+
+/* Image styling - full width, no gaps */
+/* Using high specificity to override .feature-image-container styles */
+.comparison-wrapper img,
+.before-after-slider .comparison-slot img,
+.before-after-slider .comparison-figure img,
+.before-after-slider figure img,
+.before-after-slider img,
+.feature-image-container .comparison-wrapper img,
+.feature-image-container.align-right .comparison-wrapper img,
+.feature-image-container.align-left .comparison-wrapper img {
+  display: block;
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  /* Remove internal border-radius since container has it */
+  border-radius: 0 !important;
+  /* Ensure image covers the full width */
+  object-fit: cover;
+}
+
+/* Labels - inside slots, will clip with slider */
+.comparison-label {
+  position: absolute;
+  bottom: 16px;
+  padding: 8px 16px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-radius: 6px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.comparison-label-before {
+  left: 12px;
+  background: var(--theme-bg-tertiary);
+  color: var(--theme-text-primary);
+}
+
+.comparison-label-after {
+  right: 12px;
+  background: var(--octigen-blue);
+  color: #fff;
+}
+
+/* ===========================================
+   Custom Handle Styling
+   =========================================== */
+
+/* Custom handle container */
+.comparison-handle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #1e4fe2 0%, #3a6bff 50%, #1e4fe2 100%);
+  border-radius: 50%;
+  box-shadow: 
+    0 4px 20px rgba(30, 79, 226, 0.5),
+    0 0 0 3px rgba(255, 255, 255, 0.9),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  cursor: ew-resize;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.comparison-handle:hover {
+  transform: scale(1.08);
+  box-shadow: 
+    0 6px 28px rgba(30, 79, 226, 0.6),
+    0 0 0 4px rgba(255, 255, 255, 1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.comparison-handle:active {
+  transform: scale(0.95);
+}
+
+/* Arrows inside handle */
+.comparison-handle-arrows {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.comparison-handle-arrows svg {
+  width: 10px;
+  height: 16px;
+  fill: #fff;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
+}
+
+/* Continuous subtle pulse for idle state */
+@keyframes handleIdlePulse {
+  0%, 100% {
+    box-shadow: 
+      0 4px 20px rgba(30, 79, 226, 0.5),
+      0 0 0 3px rgba(255, 255, 255, 0.9),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 
+      0 4px 26px rgba(30, 79, 226, 0.65),
+      0 0 0 4px rgba(255, 255, 255, 0.95),
+      0 0 0 8px rgba(30, 79, 226, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  }
+}
+
+/* Subtle idle pulse - starts after auto-demo completes */
+.comparison-handle {
+  animation: none;
+}
+
+/* During auto-demo, add subtle glow emphasis */
+.comparison-wrapper.auto-demo .comparison-handle {
+  box-shadow: 
+    0 6px 28px rgba(30, 79, 226, 0.65),
+    0 0 0 4px rgba(255, 255, 255, 1),
+    0 0 0 10px rgba(30, 79, 226, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* After demo, subtle continuous pulse */
+.comparison-wrapper.demo-complete .comparison-handle {
+  animation: handleIdlePulse 2.5s ease-in-out infinite;
+}
+
+/* Stop all animations on user interaction */
+.comparison-wrapper.user-interacted .comparison-handle {
+  animation: none !important;
+}
+
+/* Drag instruction tooltip */
+.comparison-tooltip {
+  position: absolute;
+  bottom: calc(100% + 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.88);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.comparison-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid rgba(0, 0, 0, 0.88);
+}
+
+/* Tooltip fade animation - controlled by JS class */
+.comparison-tooltip.show-tooltip {
+  animation: tooltipFadeOnce 3s ease-in-out forwards;
+}
+
+@keyframes tooltipFadeOnce {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(4px);
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(4px);
+  }
+}
+
+/* Hide tooltip on interaction */
+.comparison-wrapper.user-interacted .comparison-tooltip {
+  animation: none !important;
+  opacity: 0 !important;
+}
+
+/* ===========================================
+   Responsive Styles
+   =========================================== */
+@media (max-width: 768px) {
+  .comparison-handle {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .comparison-handle-arrows svg {
+    width: 8px;
+    height: 14px;
+  }
+  
+  .comparison-handle-arrows {
+    gap: 4px;
+  }
+  
+  .comparison-tooltip {
+    bottom: calc(100% + 12px);
+    font-size: 0.7rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .comparison-label {
+    font-size: 0.6rem;
+    padding: 6px 12px;
+    bottom: 10px;
+  }
+  
+  .comparison-label-before {
+    left: 8px;
+  }
+  
+  .comparison-label-after {
+    right: 8px;
+  }
+  
+  .comparison-handle {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .comparison-handle-arrows svg {
+    width: 7px;
+    height: 12px;
+  }
+  
+  .comparison-tooltip {
+    display: none; /* Too small on mobile */
+  }
+}

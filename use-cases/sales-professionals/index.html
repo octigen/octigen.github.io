@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- Theme Initialization (must be first to prevent flash of wrong theme) -->
+    <script>
+      (function() {
+        var stored = localStorage.getItem('octigen-theme');
+        var theme = stored || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+    
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <title>Octigen for Sales Professionals - Close Faster, Present Better</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Create winning sales presentations in minutes. Octigen helps sales teams generate personalized, on-brand pitch decks that close deals faster." />
+    <meta name="keywords" content="sales presentations, pitch decks, sales enablement, client presentations, deal closing, sales automation, branded decks, CRM integration" />
+    <link rel="canonical" href="https://octigen.com/use-cases/sales-professionals/" />
+    <meta name="author" content="Octigen GmbH" />
+    <meta property="og:title" content="Octigen for Sales Professionals - Close Faster, Present Better" />
+    <meta property="og:description" content="Create winning sales presentations in minutes. Personalized, on-brand pitch decks that close deals faster." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://octigen.com/use-cases/sales-professionals/" />
+    <meta property="og:site_name" content="Octigen" />
+    <meta property="og:image" content="https://octigen.com/assets/images/octigen.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://octigen.com/assets/images/octigen.png" />
+    <meta name="twitter:title" content="Octigen for Sales Professionals - Close Faster, Present Better" />
+    <meta name="twitter:description" content="Create winning sales presentations in minutes. Personalized, on-brand pitch decks that close deals faster." />
+    
+    <!-- External Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/ai_slides_progress/particles.js" defer></script>
+    <script src="/translator.js" defer></script>
+    <script src="/form.js" defer></script>
+    <script src="/assets/mobile-nav.js" defer></script>
+    <script src="/main.js" defer></script>
+    <script src="/load-footer.js" defer></script>
+    <script src="/assets/effects.js" defer></script>
+    
+    <!-- External Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" rel="preconnect" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    
+    <!-- Theme CSS must be loaded FIRST (defines CSS custom properties) -->
+    <link rel="stylesheet" href="/assets/theme.css" />
+    <link rel="stylesheet" href="/assets/main.css" />
+    <link rel="stylesheet" href="/assets/form.css" />
+    <link rel="stylesheet" href="/landing.css" />
+    <link rel="stylesheet" href="/assets/homepage.css" />
+    <link rel="stylesheet" href="/assets/footer.css" />
+    
+    <!-- Sub-navbar component -->
+    <link rel="stylesheet" href="/assets/sub-navbar.css" />
+    <script src="/assets/sub-navbar.js" defer></script>
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="sales-professionals.css" />
+    
+    <!-- Page-specific scripts -->
+    <script src="sales-professionals.js" defer></script>
+    
+    <!-- Cookie Consent System -->
+    <link rel="stylesheet" href="/assets/cookie-consent.css">
+    <script src="/assets/cookie-consent.js" defer></script>
+  </head>
+  <body class="d-flex flex-column" data-page="sales-professionals">
+    <!-- Particle Canvas Background -->
+    <canvas id="particles-canvas" class="particles-background"></canvas>
+    
+    <!-- Navigation -->
+    <div id="navbar-container"></div>
+    
+    <!-- Sub Navigation for Sections -->
+    <nav class="sub-navbar" id="sub-navbar">
+      <div class="sub-navbar-container">
+        <a href="#hero" class="sub-nav-link active" data-section="hero">Overview</a>
+        <a href="#speed" class="sub-nav-link" data-section="speed">Speed</a>
+        <a href="#personalization" class="sub-nav-link" data-section="personalization">Personalization</a>
+        <a href="#team" class="sub-nav-link" data-section="team">Team</a>
+        <a href="#enterprise" class="sub-nav-link" data-section="enterprise">Enterprise</a>
+        <a href="#contact" class="sub-nav-link" data-section="contact">Contact</a>
+      </div>
+    </nav>
+    
+    <main class="landing-hero">
+      
+      <!-- SECTION 1: Hero - Deal Pipeline -->
+      <section class="section-container hero-section has-edge-image" id="hero">
+        <div class="container-fluid section-padding">
+          <div class="row align-items-center g-5">
+            <!-- Left: Heading + Text + Buttons -->
+            <div class="col-12 col-lg-6">
+              <div class="hero-content">
+                <span class="pill-badge pill-badge-orange">Sales Enablement</span>
+                <h1>Close Faster.<br>Present Better.</h1>
+                <p>
+                  Your prospects won't wait. Neither should your presentations.
+                  <br><br>
+                  Octigen generates personalized, on-brand pitch decks in minutes, not hours.
+                  Walk into every meeting with a tailored story that speaks directly to your client's needs.
+                </p>
+                <div class="hero-buttons">
+                  <a href="#contact" class="section-btn section-btn-primary pulse-waves">
+                    Start Closing More Deals
+                  </a>
+                  <a href="#speed" class="section-btn section-btn-outline">
+                    See the Difference
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Right: Deck Generation Visual -->
+            <div class="col-12 col-lg-6">
+              <div class="hero-edge-image-wrapper" style="position: relative; transform: none; width: 100%; max-width: none;">
+                <div class="deck-generator-visual">
+                  <!-- Input: Client Brief -->
+                  <div class="client-brief-card">
+                    <div class="brief-header">
+                      <span class="brief-icon">📝</span>
+                      <span class="brief-title">Client Brief</span>
+                    </div>
+                    <div class="brief-content">
+                      <div class="brief-field">
+                        <span class="field-label">Client</span>
+                        <span class="field-value">Acme Manufacturing</span>
+                      </div>
+                      <div class="brief-field">
+                        <span class="field-label">Industry</span>
+                        <span class="field-value">Industrial Automation</span>
+                      </div>
+                      <div class="brief-field">
+                        <span class="field-label">Pain Point</span>
+                        <span class="field-value">Manual reporting bottlenecks</span>
+                      </div>
+                      <div class="brief-field">
+                        <span class="field-label">Deal Size</span>
+                        <span class="field-value">€85,000 ARR</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Flow Arrow with Octigen -->
+                  <div class="generation-flow">
+                    <div class="flow-line-vertical"></div>
+                    <div class="octigen-processor">
+                      <span class="processor-text">OCTI AI</span>
+                    </div>
+                    <div class="flow-line-vertical"></div>
+                    <div class="flow-arrow-down"></div>
+                  </div>
+                  
+                  <!-- Output: Generated Slide -->
+                  <div class="generated-slide-card">
+                    <div class="slide-window">
+                      <div class="slide-chrome">
+                        <span class="chrome-dot red"></span>
+                        <span class="chrome-dot yellow"></span>
+                        <span class="chrome-dot green"></span>
+                        <span class="chrome-filename">Acme_Proposal.pptx</span>
+                      </div>
+                      <div class="slide-preview">
+                        <div class="slide-accent-bar"></div>
+                        <div class="slide-header-row">
+                          <span class="slide-subtitle">Prepared for Acme Manufacturing</span>
+                          <span class="slide-logo">A</span>
+                        </div>
+                        <div class="slide-title-text">Eliminating Manual Reporting Bottlenecks</div>
+                        <div class="slide-body">
+                          <div class="slide-bullet">Reduce reporting time by 90%</div>
+                          <div class="slide-bullet">Native PowerPoint integration</div>
+                          <div class="slide-bullet">Industrial automation case studies</div>
+                        </div>
+                        <div class="slide-footer-row">
+                          <span class="slide-brand-mark">Your Brand</span>
+                          <span class="slide-page">1 / 12</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slide-output-badge">
+                      <span class="badge-icon">✓</span>
+                      <span class="badge-text">Personalized • On-Brand • 5 min</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 2: The Problem Statement -->
+      <section class="section-container feature-section" style="padding-top: 3rem; padding-bottom: 3rem;">
+        <div class="container-fluid section-padding">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="section-glass-card" style="text-align: center;">
+                <h2 style="font-size: 2rem; font-weight: 300; color: var(--theme-text-primary); margin-bottom: 1.5rem;">
+                  Every hour on slides is an hour not selling.
+                </h2>
+                <p style="font-size: 1.15rem; color: var(--theme-text-secondary); line-height: 1.8; max-width: 800px; margin: 0 auto;">
+                  The best salespeople spend their time building relationships, not formatting PowerPoints.
+                  Yet most sales teams waste <strong style="color: var(--octigen-orange);">5+ hours per week</strong> on presentation creation. Time that could be spent closing deals.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 3: Speed - Minutes Not Hours -->
+      <section class="section-container feature-section" id="speed" style="padding-top: 3rem; padding-bottom: 4rem;">
+        <div class="container-fluid section-padding">
+          <div class="row align-items-center g-5">
+            <!-- Left: Speed Showcase -->
+            <div class="col-lg-5 order-2 order-lg-1">
+              <div class="speed-showcase">
+                <div class="speed-counter">
+                  <span class="counter-number" data-counter="5">0</span>
+                  <span class="counter-unit">minutes</span>
+                </div>
+                <div class="speed-label">From client brief to complete presentation</div>
+                <div class="speed-comparison">
+                  <div class="comparison-item">
+                    <span class="comparison-value">3 hrs</span>
+                    <span class="comparison-label">Before</span>
+                  </div>
+                  <span class="speed-arrow">→</span>
+                  <div class="comparison-item">
+                    <span class="comparison-value highlight">5 min</span>
+                    <span class="comparison-label">With Octigen</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Right: Content -->
+            <div class="col-lg-7 order-1 order-lg-2">
+              <div class="feature-content">
+                <span class="pill-badge pill-badge-blue">Speed to Close</span>
+                <h2>From Request to Ready<br>in Minutes</h2>
+                <p>
+                  A prospect asks for a custom proposal. Instead of scrambling, you tell Octigen who they are and what they need.
+                  <br><br>
+                  <strong style="color: var(--octigen-blue);">Instant personalization.</strong> The AI pulls from your approved content library, product specs, and pricing to generate a tailored deck that hits their pain points.
+                  <br><br>
+                  <strong style="color: var(--octigen-blue);">Review and refine.</strong> Adjust any slide, swap a case study, update a number. Then export as native PowerPoint and hit send.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 4: Personalization for Every Prospect -->
+      <section class="section-container feature-section" id="personalization" style="padding-top: 4rem; padding-bottom: 4rem;">
+        <div class="container-fluid section-padding">
+          <div class="row align-items-center g-5">
+            <!-- Left: Content -->
+            <div class="col-lg-5 order-1">
+              <div class="feature-content">
+                <span class="pill-badge pill-badge-orange">Tailored Storytelling</span>
+                <h2>One Template.<br>Infinite Variations.</h2>
+                <p>
+                  Generic decks don't close deals. Your prospects need to see themselves in your solution.
+                  <br><br>
+                  Octigen adapts your messaging to each client's <strong style="color: var(--octigen-blue);">industry, company size, pain points, and decision criteria</strong>. Same core product. Different winning narratives.
+                  <br><br>
+                  Whether it's a Fortune 500 CFO or a startup founder, the deck speaks their language.
+                </p>
+              </div>
+            </div>
+            <!-- Right: Template Library Visual -->
+            <div class="col-lg-7 order-2">
+              <div class="template-library-visual">
+                <!-- Template Library -->
+                <div class="template-library-section">
+                  <div class="library-header">
+                    <span class="library-label">Template Library</span>
+                    <span class="library-count">3 templates</span>
+                  </div>
+                  <div class="template-thumbnails">
+                    <div class="template-thumb">
+                      <div class="thumb-bar color-blue"></div>
+                      <div class="thumb-lines">
+                        <div class="thumb-line"></div>
+                        <div class="thumb-line short"></div>
+                      </div>
+                      <span class="thumb-label">Equity Fund</span>
+                    </div>
+                    <div class="template-thumb active">
+                      <div class="thumb-bar color-green"></div>
+                      <div class="thumb-lines">
+                        <div class="thumb-line"></div>
+                        <div class="thumb-line short"></div>
+                      </div>
+                      <span class="thumb-label">Fixed Income</span>
+                      <span class="thumb-selected">Selected</span>
+                    </div>
+                    <div class="template-thumb">
+                      <div class="thumb-bar color-orange"></div>
+                      <div class="thumb-lines">
+                        <div class="thumb-line"></div>
+                        <div class="thumb-line short"></div>
+                      </div>
+                      <span class="thumb-label">Multi-Asset</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Flow Indicator -->
+                <div class="library-flow">
+                  <svg width="32" height="20" viewBox="0 0 32 20" fill="none">
+                    <path d="M0 10H28M28 10L20 2M28 10L20 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                
+                <!-- Personalized Outputs for Investors -->
+                <div class="investor-outputs-section">
+                  <div class="outputs-header">
+                    <span class="outputs-label">Investor Presentations</span>
+                  </div>
+                  <div class="investor-outputs">
+                    <!-- Institutional Investor -->
+                    <div class="investor-output output-1">
+                      <div class="output-bar"></div>
+                      <div class="output-badge">Institutional</div>
+                      <div class="output-title">Swiss Bond Opportunities</div>
+                      <div class="output-meta">
+                        <span class="meta-item">FINMA compliant</span>
+                        <span class="meta-sep">•</span>
+                        <span class="meta-item">CHF hedged</span>
+                      </div>
+                    </div>
+                    
+                    <!-- Private Bank -->
+                    <div class="investor-output output-2">
+                      <div class="output-bar"></div>
+                      <div class="output-badge">Private Bank</div>
+                      <div class="output-title">Fixed Income Solutions</div>
+                      <div class="output-meta">
+                        <span class="meta-item">White-label ready</span>
+                        <span class="meta-sep">•</span>
+                        <span class="meta-item">Custom branding</span>
+                      </div>
+                    </div>
+                    
+                    <!-- Family Office -->
+                    <div class="investor-output output-3">
+                      <div class="output-bar"></div>
+                      <div class="output-badge">Family Office</div>
+                      <div class="output-title">Conservative Yield Strategy</div>
+                      <div class="output-meta">
+                        <span class="meta-item">ESG integration</span>
+                        <span class="meta-sep">•</span>
+                        <span class="meta-item">Low volatility</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 5: Metrics Bar - Impact Stats -->
+      <section class="section-container" style="padding-top: 2rem; padding-bottom: 2rem;">
+        <div class="container-fluid section-padding">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="metrics-bar">
+                <div class="metric-item">
+                  <div class="metric-value">36<span>x</span></div>
+                  <div class="metric-label">Faster deck creation vs. manual</div>
+                </div>
+                <div class="metric-item">
+                  <div class="metric-value">100<span>%</span></div>
+                  <div class="metric-label">On-brand, every time</div>
+                </div>
+                <div class="metric-item">
+                  <div class="metric-value">5<span>hrs</span></div>
+                  <div class="metric-label">Saved per rep, per week</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 6: Team Consistency -->
+      <section class="section-container feature-section" id="team" style="padding-top: 4rem; padding-bottom: 4rem;">
+        <div class="container-fluid section-padding">
+          <div class="row align-items-center g-5">
+            <!-- Left: Team Visual -->
+            <div class="col-lg-6 order-2 order-lg-1">
+              <div class="team-visual">
+                <div class="team-header">
+                  <span class="team-window-dot red"></span>
+                  <span class="team-window-dot yellow"></span>
+                  <span class="team-window-dot green"></span>
+                  <span class="team-title">Sales Team • Brand Compliance</span>
+                </div>
+                <div class="team-grid">
+                  <div class="team-member">
+                    <div class="member-avatar">JD</div>
+                    <div class="member-info">
+                      <div class="member-name">James Davis</div>
+                      <div class="member-role">Senior AE</div>
+                    </div>
+                    <span class="member-badge">On-Brand</span>
+                  </div>
+                  <div class="team-member">
+                    <div class="member-avatar">LM</div>
+                    <div class="member-info">
+                      <div class="member-name">Lisa Mueller</div>
+                      <div class="member-role">Account Manager</div>
+                    </div>
+                    <span class="member-badge">On-Brand</span>
+                  </div>
+                  <div class="team-member">
+                    <div class="member-avatar">TK</div>
+                    <div class="member-info">
+                      <div class="member-name">Tom Kim</div>
+                      <div class="member-role">Sales Rep</div>
+                    </div>
+                    <span class="member-badge">On-Brand</span>
+                  </div>
+                </div>
+                <div class="team-template-preview">
+                  <div class="template-preview-header">
+                    <span class="template-preview-title">Master Template</span>
+                    <span class="template-preview-badge">Locked</span>
+                  </div>
+                  <div class="template-slides">
+                    <div class="template-slide">
+                      <div class="slide-content-mock">
+                        <div class="mock-line short"></div>
+                        <div class="mock-line long"></div>
+                        <div class="mock-line medium"></div>
+                      </div>
+                    </div>
+                    <div class="template-slide">
+                      <div class="slide-content-mock">
+                        <div class="mock-line medium"></div>
+                        <div class="mock-line short"></div>
+                        <div class="mock-line long"></div>
+                      </div>
+                    </div>
+                    <div class="template-slide">
+                      <div class="slide-content-mock">
+                        <div class="mock-line long"></div>
+                        <div class="mock-line medium"></div>
+                        <div class="mock-line short"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Right: Content -->
+            <div class="col-lg-6 order-1 order-lg-2">
+              <div class="feature-content">
+                <span class="pill-badge pill-badge-blue">Team Alignment</span>
+                <h2>Every Rep. Same Brand.<br>Zero Chaos.</h2>
+                <p>
+                  No more rogue slides with the wrong logo. No more outdated pricing in customer hands. No more "creative interpretations" of your value prop.
+                  <br><br>
+                  <strong style="color: var(--octigen-blue);">Centralized control.</strong> Marketing locks down the master template. Fonts, colors, approved messaging, all enforced automatically.
+                  <br><br>
+                  <strong style="color: var(--octigen-blue);">Sales freedom.</strong> Reps personalize content within guardrails. The result? Professional decks that look like they came from one team, because they did.
+                </p>
+                <div class="feature-buttons">
+                  <a href="#contact" class="section-btn section-btn-primary">
+                    Enable Your Team
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 7: Enterprise & Integration -->
+      <section class="section-container feature-section" id="enterprise" style="padding-bottom: 5rem; padding-top: 4rem;">
+        <div class="container-fluid section-padding">
+          <!-- Section Header -->
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+              <span class="pill-badge pill-badge-orange">Enterprise Ready</span>
+              <h2 style="color: var(--theme-text-primary); font-weight: 300; font-size: 2.5rem; margin-bottom: 1.5rem;">Built for Sales Teams That Scale</h2>
+              <p style="color: var(--theme-text-secondary); font-size: 1.1rem;">
+                Whether you're a team of 5 or 500, Octigen adapts to your workflow, not the other way around.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Two Cards -->
+          <div class="row g-4">
+            <!-- Left: Integration Card -->
+            <div class="col-lg-6">
+              <div class="section-glass-card h-100" style="text-align: left;">
+                <span class="section-badge section-badge-blue" style="margin-bottom: 1.5rem;">Seamless Integration</span>
+                <h3 style="font-size: 1.6rem; font-weight: 400; margin-bottom: 1rem; text-align: left; color: var(--theme-text-primary);">Fits Your Existing Stack</h3>
+                <p style="color: var(--theme-text-secondary); line-height: 1.7; margin-bottom: 1.5rem; text-align: left;">
+                  Connect Octigen to your CRM, content libraries, and data sources. Pull client data directly into presentations.
+                </p>
+                <div class="consulting-services-grid" style="margin-bottom: 1.5rem;">
+                  <div class="service-item-grid">Salesforce & HubSpot</div>
+                  <div class="service-item-grid">Content libraries</div>
+                  <div class="service-item-grid">Pricing databases</div>
+                  <div class="service-item-grid">RESTful API</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Right: Security Card -->
+            <div class="col-lg-6">
+              <div class="section-glass-card h-100" style="text-align: left;">
+                <span class="section-badge" style="margin-bottom: 1.5rem;">Enterprise Security</span>
+                <h3 style="font-size: 1.6rem; font-weight: 400; margin-bottom: 1rem; text-align: left; color: var(--theme-text-primary);">Deploy Your Way</h3>
+                <p style="color: var(--theme-text-secondary); line-height: 1.7; margin-bottom: 1.5rem; text-align: left;">
+                  Your client data stays where you want it. Private cloud, on-premise, or our secure SaaS. You choose the deployment model.
+                </p>
+                <div class="consulting-services-grid" style="margin-bottom: 1.5rem;">
+                  <div class="service-item-grid">SSO & SAML</div>
+                  <div class="service-item-grid">SOC 2 compliant</div>
+                  <div class="service-item-grid">On-premise option</div>
+                  <div class="service-item-grid">Data sovereignty</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 9: Contact -->
+      <section class="section-container contact-section" id="contact">
+        <div class="container-fluid section-padding">
+          <div class="contact-wrapper">
+            <div class="row g-0">
+              <!-- Left: Content & Value Props -->
+              <div class="col-lg-5">
+                <div class="contact-info-side">
+                  <span class="pill-badge pill-badge-orange">Let's Talk</span>
+                  <h2>Ready to Close More Deals?</h2>
+                  <p class="contact-intro">
+                    Join sales teams who've reclaimed hours each week and increased their close rates. Tell us about your challenges and we'll show you what's possible.
+                  </p>
+                  
+                  <div class="contact-benefits">
+                    <div class="contact-benefit">
+                      <div class="benefit-icon">⚡</div>
+                      <div class="benefit-text">
+                        <strong>15-Minute Demo</strong>
+                        <span>See Octigen in action with your use case</span>
+                      </div>
+                    </div>
+                    <div class="contact-benefit">
+                      <div class="benefit-icon">🎯</div>
+                      <div class="benefit-text">
+                        <strong>Custom Pilot</strong>
+                        <span>Test with your templates & client data</span>
+                      </div>
+                    </div>
+                    <div class="contact-benefit">
+                      <div class="benefit-icon">📈</div>
+                      <div class="benefit-text">
+                        <strong>Proven Results</strong>
+                        <span>36x faster deck creation on average</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="contact-trust">
+                    <div class="trust-label">Octigen's team is trusted by</div>
+                    <div class="trust-logos">
+                      <span class="trust-logo-placeholder">Enterprise Sales Teams</span>
+                      <span class="trust-logo-placeholder">SaaS Companies</span>
+                      <span class="trust-logo-placeholder">Financial Services</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Right: Form -->
+              <div class="col-lg-7">
+                <div class="contact-form-side">
+                  <form
+                    action="https://formspree.io/f/xrbelbzl"
+                    id="contact-form"
+                    method="POST"
+                    class="contact-form-enhanced"
+                  >
+                    <div class="form-row-2col">
+                      <div class="form-group">
+                        <label for="contact-name">Name</label>
+                        <input
+                          name="name"
+                          id="contact-name"
+                          type="text"
+                          placeholder="John Smith"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="contact-email">Work Email</label>
+                        <input
+                          name="email"
+                          id="contact-email"
+                          type="email"
+                          placeholder="john@company.com"
+                          required
+                        />
+                      </div>
+                    </div>
+                    
+                    <div class="form-row-2col">
+                      <div class="form-group">
+                        <label for="contact-company">Company</label>
+                        <input
+                          name="company"
+                          id="contact-company"
+                          type="text"
+                          placeholder="Acme Inc."
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="contact-team-size">Team Size</label>
+                        <select name="team-size" id="contact-team-size">
+                          <option value="">Select...</option>
+                          <option value="1-5">1-5 reps</option>
+                          <option value="6-20">6-20 reps</option>
+                          <option value="21-50">21-50 reps</option>
+                          <option value="50+">50+ reps</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="contact-message">What's your biggest challenge?</label>
+                      <textarea
+                        name="message"
+                        id="contact-message"
+                        placeholder="E.g., We spend 3+ hours per deck on client proposals. Looking to personalize at scale..."
+                        rows="4"
+                        required
+                      ></textarea>
+                    </div>
+                    
+                    <input type="hidden" name="source" value="sales-professionals-page" />
+                    
+                    <div class="form-footer">
+                      <div class="form-consent">
+                        <input
+                          name="gdpr-consent"
+                          type="checkbox"
+                          id="gdpr-checkbox"
+                          required
+                        />
+                        <label for="gdpr-checkbox">
+                          I agree to the <a href="/privacy_policy.html" target="_blank">privacy policy</a>
+                        </label>
+                      </div>
+                      
+                      <button type="submit" id="contact-form-button" class="contact-submit-btn">
+                        <span class="btn-text">Request Demo</span>
+                        <span class="btn-arrow">→</span>
+                      </button>
+                    </div>
+                    
+                    <div id="contact-form-status" class="form-status"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Footer -->
+      <div id="footer-container"></div>
+      
+    </main>
+
+  </body>
+</html>
