@@ -11,9 +11,9 @@
   left: 2rem;
   width: 320px;
   max-width: calc(100vw - 4rem);
-  background: var(--cookie-banner-bg, linear-gradient(135deg, rgba(26, 27, 49, 0.98) 0%, rgba(30, 79, 226, 0.15) 25%, rgba(26, 27, 49, 0.98) 100%));
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: var(--cookie-banner-bg, linear-gradient(135deg, rgba(26, 27, 49, 1) 0%, rgba(30, 79, 226, 0.25) 25%, rgba(26, 27, 49, 1) 100%));
+  backdrop-filter: blur(80px);
+  -webkit-backdrop-filter: blur(80px);
   border: 1px solid var(--cookie-banner-border, rgba(255, 255, 255, 0.15));
   border-radius: 20px;
   box-shadow: var(--cookie-banner-shadow, 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) inset, 0 4px 16px rgba(30, 79, 226, 0.1));
@@ -26,7 +26,7 @@
 
 /* Dark mode (default) cookie banner variables */
 :root {
-  --cookie-banner-bg: linear-gradient(135deg, rgba(26, 27, 49, 0.98) 0%, rgba(30, 79, 226, 0.15) 25%, rgba(26, 27, 49, 0.98) 100%);
+  --cookie-banner-bg: linear-gradient(135deg, rgba(26, 27, 49, 1) 0%, rgba(30, 79, 226, 0.25) 25%, rgba(26, 27, 49, 1) 100%);
   --cookie-banner-border: rgba(255, 255, 255, 0.15);
   --cookie-banner-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1) inset, 0 4px 16px rgba(30, 79, 226, 0.1);
   --cookie-text-primary: #ffffff;
@@ -43,7 +43,7 @@
 
 /* Light mode cookie banner variables */
 [data-theme="light"] {
-  --cookie-banner-bg: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(30, 79, 226, 0.08) 25%, rgba(255, 255, 255, 0.98) 100%);
+  --cookie-banner-bg: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(30, 79, 226, 0.03) 25%, rgba(255, 255, 255, 1) 100%);
   --cookie-banner-border: rgba(0, 0, 0, 0.1);
   --cookie-banner-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(0, 0, 0, 0.05) inset, 0 4px 16px rgba(30, 79, 226, 0.08);
   --cookie-text-primary: #1a1a2e;

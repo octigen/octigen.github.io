@@ -69,7 +69,7 @@
     
     /* ===== Navbar ===== */
     --theme-navbar-bg: rgba(0, 0, 0, 0.2);
-    --theme-navbar-bg-scrolled: rgba(0, 0, 0, 0.85);
+    --theme-navbar-bg-scrolled: rgba(0, 0, 0, 0.25);
     --theme-navbar-border: rgba(255, 255, 255, 0.08);
     --theme-navbar-border-scrolled: rgba(255, 255, 255, 0.12);
     --theme-navbar-link: rgba(255, 255, 255, 0.85);
@@ -164,7 +164,7 @@
     
     /* ===== Navbar ===== */
     --theme-navbar-bg: rgba(255, 255, 255, 0.105);
-    --theme-navbar-bg-scrolled: rgba(255, 255, 255, 0.395);
+    --theme-navbar-bg-scrolled: rgba(255, 255, 255, 0.25);
     --theme-navbar-border: rgba(0, 0, 0, 0.08);
     --theme-navbar-border-scrolled: rgba(0, 0, 0, 0.12);
     --theme-navbar-link: rgba(26, 26, 46, 0.85);
