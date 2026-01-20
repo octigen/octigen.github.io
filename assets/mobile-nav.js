@@ -292,6 +292,17 @@ const MobileNav = {
     
     // Focus management (use preventScroll to avoid scroll jump)
     this.elements.closeBtn?.focus({ preventScroll: true });
+    
+    // Fallback: Ensure menu items are visible even if CSS animations fail
+    // (handles content blockers, reduced motion, or other edge cases)
+    setTimeout(() => {
+      if (this.isOpen && this.elements.nav) {
+        this.elements.nav.querySelectorAll('.mobile-nav-item, .mobile-nav-footer').forEach(el => {
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+        });
+      }
+    }, 500);
   },
   
   /**

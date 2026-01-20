@@ -435,4 +435,11 @@ body.mobile-nav-open {
     animation: none !important;
     transition-duration: 0.01ms !important;
   }
+  
+  /* CRITICAL: Ensure menu items are visible when animations are disabled */
+  .mobile-nav.is-open .mobile-nav-item,
+  .mobile-nav.is-open .mobile-nav-footer {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
