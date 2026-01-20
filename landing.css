@@ -1,4 +1,5 @@
 /* Landing Page Styles */
+/* Note: Theme variables are defined in theme.css which should be imported BEFORE this file. */
 
 /* Particle Canvas - should be above background but below cards */
 .particles-background {
@@ -18,15 +19,19 @@
 
 /* Additional styles for the new landing page */
 .landing-hero {
-  background: 
-    radial-gradient(ellipse at top right, #1A1B31 0%, transparent 50%),
-    radial-gradient(ellipse at bottom left, #1A1B31 0%, transparent 50%),
-    radial-gradient(ellipse at center right, #0F1021 0%, transparent 40%),
-    #000000;
+  background: var(--theme-bg-gradient);
   min-height: 100vh;
   position: relative;
-  color: white;
+  color: var(--theme-text-primary);
   padding: 2rem 0;
+}
+
+/* Page Section - for inner pages with navbar */
+.page-section {
+  background: var(--theme-bg-gradient);
+  min-height: 100vh;
+  position: relative;
+  color: var(--theme-text-primary);
 }
 
 .landing-hero::before {
@@ -36,28 +41,28 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 100% 100%, rgba(30, 79, 226, 0.15) 0%, transparent 40%);
+  background: var(--theme-bg-gradient-overlay);
   pointer-events: none;
   z-index: 1;
 }
 
 .section-glass-card {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: var(--theme-glass-bg);
+  backdrop-filter: var(--theme-glass-blur);
+  -webkit-backdrop-filter: var(--theme-glass-blur);
+  border: 1px solid var(--theme-glass-border);
   border-radius: 20px;
   padding: 3rem;
   transition: all 0.4s ease;
   position: relative;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--theme-shadow-md);
   margin-bottom: 3rem;
   z-index: 10;
 }
 
 .section-glass-card:hover {
-  border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  border-color: var(--theme-glass-border-hover);
+  box-shadow: var(--theme-shadow-lg);
 }
 
 .section-icon {
@@ -76,7 +81,7 @@
 }
 
 .section-description {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--theme-text-secondary);
   line-height: 1.6;
   text-align: center;
   font-weight: 300;
@@ -104,10 +109,10 @@
 
 .service-item-grid {
   padding: 0.8rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--theme-text-secondary);
   font-weight: 400;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--theme-bg-elevated);
+  border: 1px solid var(--theme-border-secondary);
   border-radius: 8px;
   transition: all 0.3s ease;
   display: flex;
@@ -116,9 +121,9 @@
 }
 
 .service-item-grid:hover {
-  color: white;
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--theme-text-primary);
+  background: var(--theme-glass-bg-hover);
+  border-color: var(--theme-border-primary);
 }
 
 .service-clickable {
@@ -126,9 +131,9 @@
 }
 
 .service-clickable:hover {
-  color: white !important;
-  background: rgba(255, 255, 255, 0.12) !important;
-  border-color: rgba(255, 255, 255, 0.4) !important;
+  color: var(--theme-text-primary) !important;
+  background: var(--theme-glass-bg-hover) !important;
+  border-color: var(--theme-border-hover) !important;
 }
 
 .service-icon-small {
@@ -149,16 +154,12 @@
 .founder-card {
   text-align: center;
   padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--theme-bg-elevated);
+  border: 1px solid var(--theme-border-secondary);
   border-radius: 15px;
   transition: all 0.3s ease;
 }
 
-.founder-card:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.15);
-}
 
 .founder-image {
   width: 80px;
@@ -166,34 +167,56 @@
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1rem;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid var(--theme-border-primary);
   transition: all 0.3s ease;
 }
 
 .founder-image:hover {
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: var(--theme-border-hover);
   transform: scale(1.05);
 }
 
 .founder-name {
-  color: white;
+  color: var(--theme-text-primary);
   font-size: 1.1rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
 
 .founder-title {
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--theme-text-tertiary);
   font-size: 0.9rem;
   margin-bottom: 1rem;
   font-weight: 400;
 }
 
 .founder-description {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--theme-text-secondary);
   font-size: 0.95rem;
   line-height: 1.6;
   margin: 0;
+}
+
+/* Pill Badge */
+.pill-badge {
+    display: inline-block;
+    color: white;
+    font-size: 0.9rem;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    align-self: flex-start;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.pill-badge-blue {
+    background: linear-gradient(135deg, #1e4fe2, #1a45c7);
+}
+
+.pill-badge-orange {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
 }
 
 /* Button Consistency */
@@ -226,16 +249,16 @@
 }
 
 .section-btn-outline {
-  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  border: 2px solid var(--theme-btn-outline-border) !important;
   backdrop-filter: blur(10px) !important;
   background: transparent !important;
-  color: white !important;
+  color: var(--theme-btn-outline-text) !important;
 }
 
 .section-btn-outline:hover {
-  border-color: rgba(255, 255, 255, 0.6) !important;
-  background: rgba(255, 255, 255, 0.1) !important;
-  color: white !important;
+  border-color: var(--theme-btn-outline-border-hover) !important;
+  background: var(--theme-btn-outline-bg-hover) !important;
+  color: var(--theme-btn-outline-text) !important;
   text-decoration: none !important;
 }
 
@@ -378,16 +401,13 @@
 .modal-content.service-modal,
 .service-modal {
   font-family: 'Outfit', sans-serif;
-  background: rgba(255, 255, 255, 0.03) !important;
-  backdrop-filter: blur(40px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(40px) saturate(180%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  background: var(--theme-modal-bg) !important;
+  backdrop-filter: var(--theme-modal-blur) !important;
+  -webkit-backdrop-filter: var(--theme-modal-blur) !important;
+  border: 1px solid var(--theme-glass-border) !important;
   border-radius: 25px !important;
-  color: white !important;
-  box-shadow: 
-    0 25px 50px -12px rgba(0, 0, 0, 0.4),
-    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
-    0 1px 0 0 rgba(255, 255, 255, 0.1) inset !important;
+  color: var(--theme-text-primary) !important;
+  box-shadow: var(--theme-shadow-xl) !important;
   position: relative;
   overflow: hidden;
   transition: none !important;
@@ -432,7 +452,8 @@
   align-items: center;
   gap: 1.2rem;
   margin: 0;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  text-shadow: var(--theme-shadow-sm);
+  color: var(--theme-text-primary);
 }
 
 .service-modal-icon {
@@ -452,7 +473,7 @@
 
 .service-modal-description {
   font-family: 'Outfit', sans-serif;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--theme-text-secondary);
   line-height: 1.7;
   margin-bottom: 1.5rem;
   font-size: 1.05rem;
@@ -473,9 +494,9 @@
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: var(--theme-glass-bg);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid var(--theme-border-primary);
   transition: all 0.3s ease;
   opacity: 0.9;
   position: relative;
@@ -488,15 +509,15 @@
 
 .service-modal .btn-close::before {
   content: '×';
-  color: white;
+  color: var(--theme-text-primary);
   font-size: 24px;
   font-weight: 300;
   line-height: 1;
 }
 
 .service-modal .btn-close:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.5);
+  background-color: var(--theme-glass-bg-hover);
+  border-color: var(--theme-border-hover);
   transform: scale(1.1);
   opacity: 1;
 }

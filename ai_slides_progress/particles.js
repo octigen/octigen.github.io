@@ -1,16 +1,57 @@
 // Particle System for PowerPoint AI Slides Landing Page
+// Theme-aware: Reads colors from CSS custom properties and responds to theme changes
 class ParticleSystem {
     constructor() {
         this.canvas = document.getElementById('particles-canvas');
+        if (!this.canvas) return; // Exit if no canvas found
+        
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
         this.floatingParticles = []; // New floating particles system
         this.mouse = { x: 0, y: 0 };
         this.connections = [];
         
+        // Theme-related properties
+        this.themeColors = this.getThemeColors();
+        
         this.init();
         this.setupEventListeners();
         this.animate();
+    }
+    
+    /**
+     * Get particle colors from CSS custom properties
+     * Falls back to white (dark mode default) if variables not found
+     */
+    getThemeColors() {
+        const computedStyle = getComputedStyle(document.documentElement);
+        
+        // Get the RGB values from CSS variable (format: "r, g, b")
+        const particleColorRaw = computedStyle.getPropertyValue('--theme-particle-color').trim();
+        const connectionOpacity = parseFloat(computedStyle.getPropertyValue('--theme-particle-connection-opacity').trim()) || 0.15;
+        const particleOpacity = parseFloat(computedStyle.getPropertyValue('--theme-particle-opacity').trim()) || 0.4;
+        
+        // Parse the RGB string or use defaults
+        let r = 255, g = 255, b = 255;
+        if (particleColorRaw) {
+            const parts = particleColorRaw.split(',').map(p => parseInt(p.trim()));
+            if (parts.length === 3 && parts.every(p => !isNaN(p))) {
+                [r, g, b] = parts;
+            }
+        }
+        
+        return {
+            r, g, b,
+            connectionOpacity,
+            particleOpacity
+        };
+    }
+    
+    /**
+     * Update colors when theme changes
+     */
+    updateThemeColors() {
+        this.themeColors = this.getThemeColors();
     }
 
     init() {
@@ -31,16 +72,18 @@ class ParticleSystem {
         const baseCount = Math.floor((this.canvas.width * this.canvas.height) / 12000); // More dense
         const particleCount = Math.min(baseCount * performanceMultiplier, isMobile ? 40 : 80); // Reduced by 20%
         
+        const { r, g, b, particleOpacity } = this.themeColors;
+        
         for (let i = 0; i < particleCount; i++) {
+            const opacity = Math.random() * particleOpacity + (particleOpacity * 0.75);
             this.particles.push({
                 x: Math.random() * this.canvas.width,
                 y: Math.random() * this.canvas.height,
                 vx: (Math.random() - 0.5) * 0.15, // Slightly slower
                 vy: (Math.random() - 0.5) * 0.15,
                 radius: Math.random() * 1.2 + 0.6, // Small, elegant particles
-                opacity: Math.random() * 0.4 + 0.3, // More visible for connections
-                originalOpacity: Math.random() * 0.4 + 0.3,
-                color: `rgba(255, 255, 255, ${Math.random() * 0.3 + 0.2})`, // White particles
+                opacity: opacity, // Theme-aware opacity
+                originalOpacity: opacity,
                 life: Math.random() * 300 + 200, // Longer, more stable life
                 maxLife: Math.random() * 300 + 200,
                 pulseSpeed: Math.random() * 0.008 + 0.003 // Gentler pulse
@@ -99,6 +142,8 @@ class ParticleSystem {
                     break;
             }
         }
+        
+        const { particleOpacity } = this.themeColors;
 
         this.floatingParticles.push({
             x: x,
@@ -106,8 +151,7 @@ class ParticleSystem {
             vx: vx,
             vy: vy,
             radius: Math.random() * 1.5 + 0.8, // Smaller particles
-            opacity: Math.random() * 0.3 + 0.2, // More transparent
-            color: 'white', // Only white
+            opacity: Math.random() * (particleOpacity * 0.75) + (particleOpacity * 0.5), // Theme-aware opacity
             life: Math.random() * 500 + 400,
             maxLife: Math.random() * 500 + 400,
             rotationSpeed: (Math.random() - 0.5) * 0.01, // Slower rotation
@@ -140,6 +184,11 @@ class ParticleSystem {
                 this.mouse.x = e.touches[0].clientX;
                 this.mouse.y = e.touches[0].clientY;
             }
+        });
+        
+        // Listen for theme changes to update particle colors
+        window.addEventListener('themechange', () => {
+            this.updateThemeColors();
         });
     }
 
@@ -227,7 +276,8 @@ class ParticleSystem {
     }
 
     drawConnections() {
-        this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
+        const { r, g, b, connectionOpacity } = this.themeColors;
+        this.ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${connectionOpacity})`;
         this.ctx.lineWidth = 1;
 
         for (let i = 0; i < this.particles.length; i++) {
@@ -238,7 +288,7 @@ class ParticleSystem {
 
                 if (distance < 100) {
                     const opacity = (100 - distance) / 100;
-                    this.ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.15})`;
+                    this.ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${opacity * connectionOpacity})`;
                     this.ctx.beginPath();
                     this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
                     this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
@@ -249,7 +299,8 @@ class ParticleSystem {
     }
 
     drawMouseConnections() {
-        this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+        const { r, g, b } = this.themeColors;
+        this.ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, 0.2)`;
         this.ctx.lineWidth = 1;
 
         this.particles.forEach(particle => {
@@ -259,7 +310,7 @@ class ParticleSystem {
 
             if (distance < 120) {
                 const opacity = (120 - distance) / 120;
-                this.ctx.strokeStyle = `rgba(255, 255, 255, ${opacity * 0.25})`;
+                this.ctx.strokeStyle = `rgba(${r}, ${g}, ${b}, ${opacity * 0.25})`;
                 this.ctx.beginPath();
                 this.ctx.moveTo(particle.x, particle.y);
                 this.ctx.lineTo(this.mouse.x, this.mouse.y);
@@ -269,6 +320,8 @@ class ParticleSystem {
     }
 
     drawParticles() {
+        const { r, g, b } = this.themeColors;
+        
         this.particles.forEach(particle => {
             // Add subtle pulsing effect
             const pulseScale = 1 + Math.sin(Date.now() * particle.pulseSpeed) * 0.2;
@@ -278,14 +331,14 @@ class ParticleSystem {
             const lifeFactor = particle.life / particle.maxLife;
             const currentOpacity = particle.opacity * lifeFactor;
 
-            // Create gradient for particles - white theme
+            // Create gradient for particles - theme-aware
             const gradient = this.ctx.createRadialGradient(
                 particle.x, particle.y, 0,
                 particle.x, particle.y, currentRadius * 2
             );
-            gradient.addColorStop(0, `rgba(255, 255, 255, ${currentOpacity})`);
-            gradient.addColorStop(0.5, `rgba(255, 255, 255, ${currentOpacity * 0.4})`);
-            gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+            gradient.addColorStop(0, `rgba(${r}, ${g}, ${b}, ${currentOpacity})`);
+            gradient.addColorStop(0.5, `rgba(${r}, ${g}, ${b}, ${currentOpacity * 0.4})`);
+            gradient.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`);
 
             this.ctx.fillStyle = gradient;
             this.ctx.beginPath();
@@ -293,7 +346,7 @@ class ParticleSystem {
             this.ctx.fill();
 
             // Add subtle inner glow
-            this.ctx.fillStyle = `rgba(255, 255, 255, ${currentOpacity * 0.6})`;
+            this.ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${currentOpacity * 0.6})`;
             this.ctx.beginPath();
             this.ctx.arc(particle.x, particle.y, currentRadius * 0.3, 0, Math.PI * 2);
             this.ctx.fill();
@@ -312,6 +365,8 @@ class ParticleSystem {
     }
 
     drawFloatingParticles() {
+        const { r, g, b } = this.themeColors;
+        
         this.floatingParticles.forEach(particle => {
             const lifeFactor = particle.life / particle.maxLife;
             const currentOpacity = Math.max(particle.opacity * lifeFactor, 0.1); // Lower minimum for subtlety
@@ -321,19 +376,19 @@ class ParticleSystem {
             this.ctx.rotate(particle.rotation);
             this.ctx.scale(particle.scale, particle.scale);
             
-            // Simple white particles - elegant and subtle
+            // Theme-aware particles - elegant and subtle
             const gradient = this.ctx.createRadialGradient(0, 0, 0, 0, 0, particle.radius * 2.5);
-            gradient.addColorStop(0, `rgba(255, 255, 255, ${currentOpacity})`);
-            gradient.addColorStop(0.4, `rgba(255, 255, 255, ${currentOpacity * 0.6})`);
-            gradient.addColorStop(1, 'rgba(255, 255, 255, 0)');
+            gradient.addColorStop(0, `rgba(${r}, ${g}, ${b}, ${currentOpacity})`);
+            gradient.addColorStop(0.4, `rgba(${r}, ${g}, ${b}, ${currentOpacity * 0.6})`);
+            gradient.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`);
             
             this.ctx.fillStyle = gradient;
             this.ctx.beginPath();
             this.ctx.arc(0, 0, particle.radius * 2, 0, Math.PI * 2);
             this.ctx.fill();
             
-            // Subtle white center
-            this.ctx.fillStyle = `rgba(255, 255, 255, ${Math.min(currentOpacity * 1.2, 0.8)})`;
+            // Subtle center
+            this.ctx.fillStyle = `rgba(${r}, ${g}, ${b}, ${Math.min(currentOpacity * 1.2, 0.8)})`;
             this.ctx.beginPath();
             this.ctx.arc(0, 0, particle.radius * 0.5, 0, Math.PI * 2);
             this.ctx.fill();

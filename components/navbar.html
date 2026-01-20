@@ -1,89 +1,91 @@
-<nav class="navbar navbar-expand-lg position-absolute w-100">
-  <div class="container d-flex justify-content-between align-items-center">
+<!-- Navigation Header -->
+<nav class="navbar navbar-expand-xl fixed-top">
+  <div class="container-fluid navbar-padding">
     <!-- Logo -->
-    <a
-      class="navbar-brand"
-      href="/"
-    >
+    <a class="navbar-brand" href="/">
       <img
-        src="/assets/images/logo_octigen_black.png"
+        src="/assets/images/logo_octigen_white.png"
         alt="Octigen Logo"
-        style="max-width: 170px"
-        class="d-inline-block align-top"
+        class="navbar-logo"
       />
     </a>
 
-    <!-- Right Section (Hamburger + Nav Links + Language Selector) -->
-    <div class="d-flex align-items-center">
-      <!-- Hamburger Menu -->
-      <div class="dropdown dropdown-hamburger-container">
-        <button class="navbar-toggler me-lg-2" id="hamburgerMenu" type="button">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="dropdown-hamburger dropdown-menu dropdown-menu-end"
-          id="menuDropdown"
-        >
-          <a
-            class="dropdown-item mb-2"
-            href="/"
-            data-translate="common.nav.home"
-            >Home</a
-          >
-          <a
-            class="dropdown-item mb-2"
-            href="/#contacts"
-            data-translate="common.nav.contact_us"
-            >Contact Us</a
-          >
+    <!-- Mobile Toggle Button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarMain"
+      aria-controls="navbarMain"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-bar"></span>
+      <span class="navbar-toggler-bar"></span>
+      <span class="navbar-toggler-bar"></span>
+    </button>
+
+    <!-- Navigation Links -->
+    <div class="collapse navbar-collapse" id="navbarMain">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Product
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/features/">Features</a></li>
+            <li><a class="dropdown-item" href="https://cloud.octigen.com/docs" target="_blank">Documentation</a></li>
+            <li><a class="dropdown-item" href="/alpha-release/">Get Access</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Use Cases
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/use-cases/fund-reporting/">Octigen for Fund Reporting</a></li>
+            <li><a class="dropdown-item" href="/use-cases/financial-professionals/">Octigen for Financial Professionals</a></li>
+            <li><a class="dropdown-item" href="/use-cases/sales-professionals/">Octigen for Sales Professionals</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            About
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/about/">Who We Are</a></li>
+            <li><a class="dropdown-item" href="/ai_slides_progress/">Our Progress</a></li>
+          </ul>
+        </li>
+        <li class="nav-item nav-item-cta">
+          <a class="nav-cta-btn" href="/#contact" onclick="return handleContactClick();">
+            <svg class="nav-cta-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            <span>Contact</span>
+          </a>
+        </li>
+        <!-- Theme Toggle -->
+        <li class="nav-item ms-4 d-none d-xl-block">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode" style="position: relative; right: auto; top: auto; transform: none;">
+            <div class="theme-toggle-track">
+              <div class="theme-toggle-thumb" id="theme-toggle-thumb">
+              </div>
+            </div>
+          </button>
+        </li>
+      </ul>
+    </div>
+    
+    <!-- Theme Toggle for Mobile (visible when menu collapsed) -->
+    <button class="theme-toggle d-xl-none" id="theme-toggle-mobile" aria-label="Toggle dark/light mode" style="position: relative; right: auto; top: auto; transform: none; margin-right: 1rem;">
+      <div class="theme-toggle-track">
+        <div class="theme-toggle-thumb">
         </div>
       </div>
-
-      <!-- Navigation Links -->
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item ms-4">
-            <a class="nav-link" href="/" data-translate="common.nav.home"
-              >Home</a
-            >
-          </li>
-          <li class="nav-item ms-4">
-            <a
-              class="nav-link nav-highlighted-link"
-              href="/#contacts"
-              data-translate="common.nav.contact_us"
-            >
-              Contact Us
-            </a>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Language Dropdown -->
-      <div class="dropdown language-selector ms-2 ms-lg-5">
-        <button
-          class="dropdown-toggle nav-link"
-          id="langDropdown"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          <span id="currentLang">EN</span>
-        </button>
-        <ul class="lang-dropdown dropdown-menu dropdown-menu-end">
-          <li>
-            <a class="dropdown-item lang-select" href="#" data-lang="de">DE</a>
-          </li>
-          <li>
-            <a class="dropdown-item lang-select" href="#" data-lang="fr">FR</a>
-          </li>
-          <li>
-            <a class="dropdown-item lang-select" href="#" data-lang="it">IT</a>
-          </li>
-          <li>
-            <a class="dropdown-item lang-select" href="#" data-lang="en">EN</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    </button>
   </div>
 </nav>
