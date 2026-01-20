@@ -214,11 +214,13 @@
    Applied to common elements for smooth switching
    =========================================== */
 html {
-    color-scheme: light;
+    color-scheme: dark;
+    background-color: #000000;
 }
 
-[data-theme="dark"] {
-    color-scheme: dark;
+[data-theme="light"] {
+    color-scheme: light;
+    background-color: #f8f9fc;
 }
 
 /* Smooth transition for theme changes */
