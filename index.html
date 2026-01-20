@@ -1,21 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
+    
+    <!-- Theme Initialization (must be first to prevent flash of wrong theme) -->
+    <script>
+      (function() {
+        var stored = localStorage.getItem('octigen-theme');
+        var theme = stored || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+    
     <link
       rel="icon"
       type="image/png"
-      href="../assets/favicon/favicon-96x96.png"
+      href="/assets/favicon/favicon-96x96.png"
       sizes="96x96"
     />
-    <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="../assets/favicon/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="../assets/favicon/apple-touch-icon.png"
+      href="/assets/favicon/apple-touch-icon.png"
     />
-    <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
     <title>Octigen - AI Innovation & Expert Consulting</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -100,10 +110,14 @@
     </script>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../ai_slides_progress/particles.js" defer></script>
-    <script src="../translator.js" defer></script>
-    <script src="../form.js" defer></script>
-    <script src="../load-footer.js" defer></script>
+    <script src="https://player.vimeo.com/api/player.js"></script>
+    <script src="/ai_slides_progress/particles.js" defer></script>
+    <script src="/translator.js" defer></script>
+    <script src="/form.js" defer></script>
+    <script src="/assets/mobile-nav.js" defer></script>
+    <script src="/main.js" defer></script>
+    <script src="/load-footer.js" defer></script>
+    <script src="/assets/effects.js" defer></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -116,431 +130,646 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
-        <link rel="stylesheet" href="../assets/main.css" />
-    <link rel="stylesheet" href="../ai_slides_progress/powerpoint-ai.css" />
-    <link rel="stylesheet" href="../assets/form.css" />
-    <link rel="stylesheet" href="../assets/alpha_release_button.css" />
-    <link rel="stylesheet" href="landing.css" />
-    
-    <!-- Custom styles for play button in hero -->
-    <style>
-      .video-play-section {
-        z-index: 10;
-        position: relative;
-      }
-      
-      .btn-play-demo {
-        background: none;
-        border: none;
-        padding: 0;
-        cursor: pointer;
-        outline: none;
-        transition: all 0.3s ease;
-      }
-      
-      .btn-play-demo:focus {
-        outline: none;
-        box-shadow: none;
-      }
-      
-      .btn-play-demo:hover {
-        transform: scale(1.05);
-      }
-      
-      /* Play Button Particle Canvas */
-      .play-particles-canvas {
-        position: absolute;
-        top: -150px;
-        left: -150px;
-        width: 380px;
-        height: 380px;
-        pointer-events: none;
-        z-index: 1;
-      }
-      
-      .play-button-container {
-        position: relative;
-        width: 80px;
-        height: 80px;
-      }
-      
-      /* Video Modal Frosted Glass Styling */
-      .video-modal-glass {
-        background: rgba(255, 255, 255, 0.08) !important;
-        border: 1px solid rgba(255, 255, 255, 0.15) !important;
-        border-radius: 20px !important;
-        backdrop-filter: blur(20px) !important;
-        -webkit-backdrop-filter: blur(20px) !important;
-        box-shadow: 0px 8px 32px rgba(0, 0, 0, 0.3),
-                    0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
-        transition: all 0.4s ease-in-out !important;
-        position: relative !important;
-        overflow: hidden !important;
-      }
-      
-      .video-modal-glass::before {
-        content: '';
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        right: -2px;
-        bottom: -2px;
-        background: linear-gradient(45deg, 
-            rgba(30, 79, 226, 0.2) 0%, 
-            rgba(255, 255, 255, 0.05) 25%, 
-            rgba(30, 79, 226, 0.2) 50%, 
-            rgba(255, 255, 255, 0.05) 75%, 
-            rgba(30, 79, 226, 0.2) 100%);
-        border-radius: 22px;
-        z-index: -1;
-        opacity: 0.3;
-        animation: borderGlow 3s ease-in-out infinite;
-      }
-      
-      .video-modal-glass:hover {
-        border: 1px solid rgba(255, 255, 255, 0.25) !important;
-        box-shadow: 0px 12px 40px rgba(30, 79, 226, 0.2),
-                    0 0 0 1px rgba(255, 255, 255, 0.15) inset !important;
-        transform: translateY(-2px) !important;
-      }
-    </style>
+    <!-- Theme CSS must be loaded FIRST (defines CSS custom properties) -->
+    <link rel="stylesheet" href="/assets/theme.css" />
+    <link rel="stylesheet" href="/assets/main.css" />
+    <link rel="stylesheet" href="/ai_slides_progress/powerpoint-ai.css" />
+    <link rel="stylesheet" href="/assets/form.css" />
+    <link rel="stylesheet" href="/landing.css" />
+    <link rel="stylesheet" href="/assets/homepage.css" />
+    <link rel="stylesheet" href="/assets/footer.css" />
   </head>
-    <!-- Cookie Consent System -->
-    <link rel="stylesheet" href="assets/cookie-consent.css">
-    <script src="assets/cookie-consent.js" defer></script>
-  <body class="d-flex flex-column vh-100" data-page="homepage">
+  <!-- Cookie Consent System -->
+  <link rel="stylesheet" href="assets/cookie-consent.css">
+  <script src="assets/cookie-consent.js" defer></script>
+  <body class="d-flex flex-column" data-page="homepage">
     <!-- Particle Canvas Background -->
     <canvas id="particles-canvas" class="particles-background"></canvas>
     
-    <main>
-      <!-- Landing Hero Section -->
-      <section class="container-fluid landing-hero">
-        <!-- Language Switcher - Hidden but keeping translation tech -->
-        <div class="language-switcher-container" style="display: none;">
-          <div class="dropdown">
-            <button
-              class="btn language-switcher-btn dropdown-toggle"
-              type="button"
-              id="languageDropdown"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <span id="currentLang">EN</span>
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end language-dropdown" aria-labelledby="languageDropdown">
-              <li><a class="dropdown-item lang-select" href="#" data-lang="en">English</a></li>
-              <li><a class="dropdown-item lang-select" href="#" data-lang="de">Deutsch</a></li>
-              <li><a class="dropdown-item lang-select" href="#" data-lang="fr">Français</a></li>
-              <li><a class="dropdown-item lang-select" href="#" data-lang="it">Italiano</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Alpha Release Button -->
-        <div class="alpha-release-button-container">
-          <!-- Animated Arrow Pointer -->
-          <div class="arrow-pointer">
-            <svg class="arrow-svg" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
-            </svg>
-          </div>
-          
-          <!-- Pulsing Ring -->
-          <div class="attention-ring"></div>
-          
-          <!-- Button -->
-          <a href="../alpha-release/" class="btn alpha-release-btn" title="Try Alpha Release">
-            <span class="alpha-release-badge">NEW</span>
-            <svg class="alpha-release-icon" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C12 2 6 8 6 13c0 3.31 2.69 6 6 6s6-2.69 6-6c0-5-6-11-6-11zm0 16c-1.66 0-3-1.34-3-3 0-1.95 1.6-4.47 3-6.39 1.4 1.92 3 4.44 3 6.39 0 1.66-1.34 3-3 3z"/>
-            </svg>
-            <span class="alpha-release-text">Alpha Release</span>
-          </a>
-        </div>
-        <div class="container-fluid px-4">
-          <!-- Header with Logo -->
-          <div class="row justify-content-center">
-            <div class="col-lg-8 text-center" style="padding: 1rem 0.5rem 2rem 0.5rem;">
-              <div class="logo-container mb-4">
-                <img
-                  src="../assets/images/logo_octigen_white.png"
-                  alt="Octigen - AI PowerPoint Slides and Automated Reporting Solutions Company Logo"
-                  class="hero-logo"
-                  style="height: 100px; opacity: 0.9;"
-                />
+    <!-- Navigation -->
+    <div id="navbar-container"></div>
+    
+    <main class="landing-hero">
+      
+      <!-- SECTION 1: Hero - Heading + Video -->
+      <section class="section-container hero-section">
+        <div class="container-fluid section-padding">
+          <div class="row align-items-center g-5">
+            <!-- Left: Heading + Text + Buttons -->
+            <div class="col-lg-6">
+              <div class="hero-content">
+                <span class="pill-badge pill-badge-blue">Deck Creation, Reimagined</span>
+                <h1>From idea to<br>deck <span style="color: var(--octigen-blue);">in minutes</span></h1>
+                <p>
+                  Stop wrestling with slides. Octigen connects your data sources to PowerPoint templates and generates polished, branded reports automatically.
+                  <br><br>
+                  AI assists where it matters. You stay in control.
+                </p>
+                <div class="hero-buttons">
+                  <a href="#use-cases" class="section-btn section-btn-primary pulse-waves">
+                    Explore Use Cases
+                  </a>
+                  <a href="#contact" class="section-btn section-btn-outline">
+                    Book a Demo
+                  </a>
+                </div>
               </div>
-              
-              <h1 class="display-4 mb-4 text-white" style="font-weight: 300; letter-spacing: 1px; line-height: 1.3; text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);">
-                Building the Future of Presenting Ideas
-              </h1>
-              <p class="lead mb-4 text-white" style="opacity: 0.85; font-weight: 300; font-size: 1.25rem; letter-spacing: 0.5px;">
-                Connecting the dots between Artificial Intelligence and human-centric design.
-              </p>
-              
-              <!-- Play Button -->
-              <div class="video-play-section mt-5 mb-5">
-                <button 
-                  type="button" 
-                  class="btn-play-demo" 
-                  data-bs-toggle="modal" 
-                  data-bs-target="#videoModal"
-                  title="Watch Demo Video"
-                >
-                                     <div class="play-button-container" id="play-button-container">
-                     <!-- Particle canvas for play button -->
-                     <canvas id="play-particles-canvas" class="play-particles-canvas"></canvas>
-                     
-                     <!-- Play button -->
-                     <div class="play-button" id="play-button">
-                       <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
-                         <path d="M8 5v14l11-7z"/>
-                       </svg>
-                     </div>
-                   </div>
+            </div>
+            <!-- Right: Video -->
+            <div class="col-lg-6">
+              <div class="video-container" id="video-wrapper">
+                <!-- Thumbnail with Play Button -->
+                <div class="video-thumbnail" id="video-thumbnail">
+                  <img src="https://vumbnail.com/1110967026.jpg" alt="Watch Demo Video">
+                  <button class="video-play-btn" id="play-video-btn" aria-label="Play video">
+                    <div class="play-btn-circle">
+                      <svg class="play-btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </div>
+                  </button>
+                </div>
+                <!-- Video iframe (hidden initially) -->
+                <iframe 
+                  id="video-player"
+                  src="about:blank"
+                  title="Octigen Demo Video" 
+                  allowfullscreen
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  style="display: none;">
+                </iframe>
+                <!-- Expand Button -->
+                <button class="video-expand-btn" id="expand-video-btn" aria-label="Expand video" title="Watch larger">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
+                  </svg>
                 </button>
               </div>
             </div>
           </div>
-          
-                     <!-- Two Main Sections -->
-           <div class="row g-4">
-               
-               <!-- Section 1: We're Developing Something Great -->
-               <div class="col-lg-4 col-xl-5">
-                 <div class="section-glass-card section-glass-card-future h-100 d-flex flex-column">
-                  <div><a href="../alpha-release/" style="position: absolute; top: 1rem; right: 1rem; z-index: 10;">
-                    <h5 style="display: inline-block; background-color: #ff6b35; color: white; font-size: 12px; padding: 4px 8px; border-radius: 4px; margin: 0; font-weight: 600;">
-                      The alpha release is live!
-                    </h5>
-                  </a></div>
-                  <div class="section-icon"><img src="../assets/images/octi_still_noshadow.png" alt="Octigen" style="width: 100px; height: 100px;"/></div>
-                                   <h2 class="section-title h3">We're building something revolutionary!</h2>
-                 <p class="section-description">
-                    We're developing cutting-edge AI technology that will transform how you create PowerPoint presentations. 
-                    Our AI-powered solution understands your content and data, applies your branding, and generates professional slides 
-                    automatically - saving hours of manual work while maintaining your unique style and quality standards.
-                  </p>
-                                    <div class="text-center mt-4">
-                                     <a 
-                    href="../ai_slides_progress" 
-                    class="section-btn section-btn-primary pulse-waves"
-                    title="Follow AI PowerPoint Slides Development Progress - Revolutionary PowerPoint Automation"
-                  >
-                    Follow Our Progress
-                  </a>
-                  </div>
-                 </div>
-               </div>
-               
-               <!-- Section 2: Need Help? Here to Help -->
-               <div class="col-lg-8 col-xl-7">
-                 <div class="section-glass-card h-100 d-flex flex-column">
-                   <div class="section-icon">🤝</div>
-                                    <h2 class="section-title h3">Need expert help? We're here for you.</h2>
-                 <p class="section-description">
-                    While we're building the future, we're also here to solve your current challenges. 
-                    Our team brings deep expertise in data integration, AI implementation, and quantitative analysis 
-                    to help transform your business operations today.
-                  </p>
-                   
-                                                                         <div class="consulting-services-grid">
-                   <div class="service-item-grid service-clickable" data-bs-toggle="modal" data-bs-target="#dataIntegrationModal">
-                     <span class="service-icon-small">📊</span> <span>Data Integration & Analytics</span>
-                   </div>
-                   <div class="service-item-grid service-clickable" data-bs-toggle="modal" data-bs-target="#quantAnalysisModal">
-                     <span class="service-icon-small">📈</span> <span>Quantitative Analysis</span>
-                   </div>
-                   <div class="service-item-grid service-clickable" data-bs-toggle="modal" data-bs-target="#aiImplementationModal">
-                     <span class="service-icon-small">🤖</span> <span>AI Implementation</span>
-                   </div>
-                   <div class="service-item-grid service-clickable" data-bs-toggle="modal" data-bs-target="#reportingAutomationModal">
-                     <span class="service-icon-small">📋</span> <span>Reporting Automation</span>
-                   </div>
-                 </div>
-                   
-                   <div class="mt-auto text-center">
-                     <a 
-                       href="#contact" 
-                       class="section-btn section-btn-outline"
-                     >
-                       Let's Work Together
-                     </a>
-                   </div>
-                 </div>
-               </div>
-               
-           </div>
-          
-                                <!-- Who We Are & Contact Section -->
-           <div class="row g-4 mt-1" id="contact">
-             
-                         <!-- Who We Are Section -->
-            <div class="col-lg-8 col-xl-7">
-               <div class="section-glass-card h-100">
-                 <div class="section-icon">👥</div>
-                                <h3 class="section-title h3">Who We Are</h3>
-               <p class="section-description">
-                  We've worked side by side to revolutionize the client reporting
-                  of a leading independent asset manager in Zurich. Building on
-                  that expertise, we founded Octigen. Our mission? To transform
-                  the way you can use data to engage with your clients.
-                </p>
-                 
-                 <div class="founders-grid">
-                   <div class="founder-card">
-                     <img
-                       class="founder-image"
-                       src="../assets/images/michel_muller.png"
-                       alt="Michel Müller, Co-Founder"
-                     />
-                     <h4 class="founder-name">Michel Müller</h4>
-                     <h6 class="founder-title">Co-Founder</h6>
-                     <p class="founder-description">
-                       With over 15 years of experience as a software architect and
-                       more than 6 years developing cutting-edge data solutions for
-                       the finance industry, Michel brings deep expertise across all
-                       computing technology. He holds a PhD in High-performance
-                       computing and an MSc from ETH Zurich.
-                     </p>
-                   </div>
-                   
-                   <div class="founder-card">
-                     <img
-                       class="founder-image"
-                       src="../assets/images/kevin_graziani.png"
-                       alt="Kevin Graziani, Co-Founder"
-                     />
-                     <h4 class="founder-name">Kevin Graziani</h4>
-                     <h6 class="founder-title">Co-Founder</h6>
-                     <p class="founder-description">
-                       Bringing experience as front-office quant analyst for some of Europe's
-                       largest financial institutions, Kevin is also a seasoned coder and finance expert.
-                       He graduated <i>cum laude</i> and holds two MSc degrees, one in Quantitative Techniques
-                       and one in Corporate Finance.
-                     </p>
-                   </div>
-                 </div>
-               </div>
-             </div>
-             
-                         <!-- Contact Section -->
-            <div class="col-lg-4 col-xl-5">
-               <div class="section-glass-card h-100" style="position: relative;">
-                 <div style="position: absolute; top: 1rem; right: 1rem; z-index: 10;">
-                   <h5 style="display: inline-block; background-color: var(--octigen-blue); color: white; font-size: 12px; padding: 4px 8px; border-radius: 4px; margin: 0; font-weight: 600;">
-                     First 1 hour free
-                   </h5>
-                 </div>
-                 <div class="section-icon">💬</div>
-                 <h3 class="section-title h3">Ready to Get Started?</h3>
-                 <p class="section-description">
-                   Whether you're interested in our AI innovation or need expert consulting, 
-                   let's discuss how we can help transform your business.
-                 </p>
-                 
-                 <form
-                   action="https://formspree.io/f/xrbelbzl"
-                   id="contact-form"
-                   method="POST"
-                   class="waiting-list-form"
-                 >
-                   <div class="row g-3">
-                     <div class="col-12">
-                       <input
-                         name="name"
-                         type="text"
-                         class="form-control form-control-lg"
-                         placeholder="Your Name"
-                         required
-                       />
-                     </div>
-                     <div class="col-12">
-                       <input
-                         name="email"
-                         type="email"
-                         class="form-control form-control-lg"
-                         placeholder="Your Email"
-                         required
-                       />
-                     </div>
-                     <div class="col-12">
-                       <textarea
-                         name="message"
-                         class="form-control"
-                         placeholder="Tell us about your project or how we can help"
-                         style="height: 120px"
-                         required
-                       ></textarea>
-                     </div>
-                     <div class="col-12">
-                       <div class="form-check">
-                         <input
-                           name="gdpr-consent"
-                           type="checkbox"
-                           class="form-check-input"
-                           id="gdpr-checkbox"
-                           required
-                         />
-                         <label
-                           class="form-check-label text-white"
-                           for="gdpr-checkbox"
-                         >
-                           I agree to the
-                           <a href="../privacy_policy.html" target="_blank" class="text-white">privacy policy</a>
-                         </label>
-                       </div>
-                     </div>
-                     <div class="col-12">
-                       <div class="d-grid">
-                         <button
-                           id="contact-form-button"
-                           class="section-btn section-btn-primary"
-                           style="width: 100%;"
-                         >
-                           Send Message
-                         </button>
-                       </div>
-                     </div>
-                     <div class="col-12">
-                       <div id="contact-form-status" class="text-center text-white"></div>
-                     </div>
-                   </div>
-                 </form>
-               </div>
-             </div>
-             
-           </div>
-          
-                               <!-- Footer -->
-          <div id="footer-container"></div>
-          
         </div>
       </section>
-    </main>
-
-    <!-- Video Modal -->
-    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content video-modal-glass">
-          <div class="modal-header" style="border: none; padding: 1rem 1rem 0 1rem;">
-            <button type="button" class="btn-close btn-close-white mb-2" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body" style="padding: 0 1rem 1rem 1rem;">
-            <div class="ratio ratio-16x9">
-              <iframe 
-                id="video-player"
-                src="about:blank"
-                title="Octigen Pitch Video" 
-                allowfullscreen
-                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                style="border: none; border-radius: 12px;">
-              </iframe>
+      
+      <!-- SECTION 2: Feature 1 - Template to Data Injection -->
+      <section class="section-container feature-section" id="automation">
+        <div class="container-fluid section-padding">
+          <div class="row align-items-center g-5">
+            <!-- Left: Custom Visual - Template to Data Injection -->
+            <div class="col-lg-6 order-2 order-lg-1">
+              <div class="template-injection-visual">
+                <!-- Top Row: Template + Data Sources -->
+                <div class="injection-top-row">
+                  <!-- Source Template -->
+                  <div class="injection-source">
+                    <div class="source-header">
+                      <span class="source-dot red"></span>
+                      <span class="source-dot yellow"></span>
+                      <span class="source-dot green"></span>
+                      <span class="source-title">template.pptx</span>
+                    </div>
+                    <div class="source-slide">
+                      <div class="slide-accent"></div>
+                      <div class="placeholder-box title">
+                        <span class="placeholder-label">{{fund_name}}</span>
+                      </div>
+                      <div class="placeholder-row">
+                        <div class="placeholder-box small">
+                          <span class="placeholder-label">{{nav}}</span>
+                        </div>
+                        <div class="placeholder-box small">
+                          <span class="placeholder-label">{{ytd}}</span>
+                        </div>
+                      </div>
+                      <div class="placeholder-box chart">
+                        <span class="placeholder-label">{{chart}}</span>
+                        <div class="chart-placeholder-bars">
+                          <div class="bar"></div>
+                          <div class="bar"></div>
+                          <div class="bar"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Plus Sign -->
+                  <div class="injection-plus">+</div>
+                  
+                  <!-- Data Sources -->
+                  <div class="data-sources-panel">
+                    <div class="data-panel-header">Data Sources</div>
+                    <div class="data-source-item">
+                      <span class="data-icon">📊</span>
+                      <span class="data-name">portfolio_data.xlsx</span>
+                    </div>
+                    <div class="data-source-item">
+                      <span class="data-icon">🔗</span>
+                      <span class="data-name">Bloomberg API</span>
+                    </div>
+                    <div class="data-source-item">
+                      <span class="data-icon">🗄️</span>
+                      <span class="data-name">Fund Database</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <!-- Middle: Octigen Processor -->
+                <div class="injection-processor">
+                  <div class="processor-line-in"></div>
+                  <div class="processor-badge">
+                    <span class="processor-icon">⚡</span>
+                    <span class="processor-text">OCTIGEN</span>
+                  </div>
+                  <div class="processor-line-out"></div>
+                  <div class="processor-arrow"></div>
+                </div>
+                
+                <!-- Bottom: Output Result -->
+                <div class="injection-result">
+                  <div class="result-header">
+                    <span class="result-dot red"></span>
+                    <span class="result-dot yellow"></span>
+                    <span class="result-dot green"></span>
+                    <span class="result-title">Global_Equity_Q4.pptx</span>
+                  </div>
+                  <div class="result-slide">
+                    <div class="slide-accent"></div>
+                    <div class="filled-box title">
+                      <span class="filled-value">Global Equity Fund</span>
+                    </div>
+                    <div class="filled-row">
+                      <div class="filled-box small">
+                        <span class="filled-label">NAV</span>
+                        <span class="filled-value">$142.85</span>
+                      </div>
+                      <div class="filled-box small highlight">
+                        <span class="filled-label">YTD</span>
+                        <span class="filled-value">+18.4%</span>
+                      </div>
+                    </div>
+                    <div class="filled-box chart">
+                      <div class="filled-chart-bars">
+                        <div class="bar" style="height: 45%;"></div>
+                        <div class="bar" style="height: 65%;"></div>
+                        <div class="bar" style="height: 85%;"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="result-badge">
+                    <span>✓</span> Native PPTX
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Right: Content -->
+            <div class="col-lg-6 order-1 order-lg-2">
+              <div class="feature-content">
+                <span class="pill-badge pill-badge-orange">Data-Driven Automation</span>
+                <h2>Your templates.<br>Your data.<br>Automated.</h2>
+                <p>
+                  Connect <strong style="color: var(--octigen-blue);">Excel, APIs, databases, or SFTP feeds</strong> directly to your PowerPoint placeholders. Octigen injects values into native shapes (text boxes, charts, tables), preserving your exact formatting.
+                  <br><br>
+                  Schedule production, distribute automatically.<br>The output is a <strong style="color: var(--octigen-blue);">100% native .pptx file</strong> you can further edit if needed.
+                </p>
+                <div class="feature-buttons">
+                  <a href="/alpha-release/" class="section-btn section-btn-primary", target="_blank">
+                    Apply for Alpha Access
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+      
+      <!-- SECTION 3: Feature 2 - AI Content Assistant -->
+      <section class="section-container feature-section" id="ai-assistant">
+        <div class="container-fluid section-padding">
+          <div class="row align-items-center g-5">
+            <!-- Left: Content -->
+            <div class="col-lg-6 order-lg-1 order-1">
+              <div class="feature-content">
+                <span class="pill-badge pill-badge-blue">AI Content Assistant</span>
+                <h2>AI that understands<br>your data</h2>
+                <p>
+                  Need a market commentary? Portfolio analysis summary? Investment thesis?
+                  <br><br>
+                  <strong style="color: var(--octigen-blue);">Octigen's AI reads your data</strong>, understands context, and generates professional content that fits your brand voice. Review, refine, approve. You're always in control.
+                  <br><br>
+                  From structured tables to narrative paragraphs, the AI adapts to what each slide needs.
+                </p>
+                <div class="feature-buttons">
+                  <a href="#contact" class="section-btn section-btn-primary">
+                    Request Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Right: AI Chat Visual -->
+            <div class="col-lg-6 order-lg-2 order-2">
+              <div class="ai-chat-visual">
+                <div class="chat-container">
+                  <!-- AI Message 1 -->
+                  <div class="chat-message ai">
+                    <div class="message-header">
+                      <span class="message-avatar ai">🤖</span>
+                      <span class="message-sender">Octi AI</span>
+                    </div>
+                    <div class="message-bubble ai">
+                      <p>I've analyzed your portfolio data. Would you like me to generate a Q4 performance summary for your investor presentation?</p>
+                    </div>
+                  </div>
+                  
+                  <!-- User Message -->
+                  <div class="chat-message user">
+                    <div class="message-header">
+                      <span class="message-sender">You</span>
+                      <span class="message-avatar user">👤</span>
+                    </div>
+                    <div class="message-bubble user">
+                      <p>Yes, create a table showing top 5 holdings with sector allocation and quarterly returns.</p>
+                    </div>
+                  </div>
+                  
+                  <!-- AI Message 2 with Table -->
+                  <div class="chat-message ai">
+                    <div class="message-header">
+                      <span class="message-avatar ai">🤖</span>
+                      <span class="message-sender">Octi AI</span>
+                    </div>
+                    <div class="message-bubble ai">
+                      <p>Here's your top holdings table:</p>
+                      <div class="ai-generated-table">
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Holding</th>
+                              <th>Sector</th>
+                              <th>Weight</th>
+                              <th>Q4 Return</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Nestlé SA</td>
+                              <td>Consumer Staples</td>
+                              <td>8.2%</td>
+                              <td class="positive">+12.4%</td>
+                            </tr>
+                            <tr>
+                              <td>Novartis AG</td>
+                              <td>Healthcare</td>
+                              <td>7.5%</td>
+                              <td class="positive">+8.7%</td>
+                            </tr>
+                            <tr>
+                              <td>UBS Group</td>
+                              <td>Financials</td>
+                              <td>6.8%</td>
+                              <td class="positive">+15.2%</td>
+                            </tr>
+                            <tr>
+                              <td>ABB Ltd</td>
+                              <td>Industrials</td>
+                              <td>5.4%</td>
+                              <td class="positive">+9.1%</td>
+                            </tr>
+                            <tr>
+                              <td>Zurich Insurance</td>
+                              <td>Financials</td>
+                              <td>4.9%</td>
+                              <td class="negative">-2.3%</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <!-- Success indicator -->
+                  <div class="content-added-indicator">
+                    <span class="indicator-icon">✓</span>
+                    <span class="indicator-text">Content added successfully</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 4: Use Cases -->
+      <section class="section-container use-cases-section" id="use-cases">
+        <div class="container-fluid section-padding">
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+              <span class="pill-badge pill-badge-blue">Built For Your Workflow</span>
+              <h2 style="color: var(--theme-text-primary); font-weight: 300; font-size: 2.5rem; margin-bottom: 1rem;">Find your use case</h2>
+              <p style="color: var(--theme-text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
+                Whether you're producing fund reports, crafting research presentations, or closing sales deals, Octigen adapts to your workflow.
+              </p>
+            </div>
+          </div>
+          
+          <div class="row g-4 justify-content-center">
+            <!-- Fund Reporting Card -->
+            <div class="col-lg-4 col-md-6">
+              <a href="/use-cases/fund-reporting/" class="use-case-card">
+                <div class="use-case-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                  </svg>
+                </div>
+                <div class="use-case-badge">Asset Managers & Fund Admins</div>
+                <h3 class="use-case-title">Fund Reporting</h3>
+                <p class="use-case-description">
+                  Automate factsheets, investor presentations, and quarterly reports. Connect your portfolio data, schedule production, and let Octigen handle the rest.
+                </p>
+                <div class="use-case-features">
+                  <span class="use-case-feature">Factsheet automation</span>
+                  <span class="use-case-feature">Multi-fund support</span>
+                  <span class="use-case-feature">Scheduled reports</span>
+                </div>
+                <span class="use-case-link">
+                  Explore Fund Reporting
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+            
+            <!-- Financial Professionals Card -->
+            <div class="col-lg-4 col-md-6">
+              <a href="/use-cases/financial-professionals/" class="use-case-card featured">
+                <div class="use-case-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                  </svg>
+                </div>
+                <div class="use-case-badge">Analysts & Consultants</div>
+                <h3 class="use-case-title">Financial Professionals</h3>
+                <p class="use-case-description">
+                  Transform research, PDFs, and spreadsheets into client-ready presentations in minutes. AI proposes the narrative—you stay in control.
+                </p>
+                <div class="use-case-features">
+                  <span class="use-case-feature">Research to deck</span>
+                  <span class="use-case-feature">AI commentary</span>
+                  <span class="use-case-feature">Brand compliance</span>
+                </div>
+                <span class="use-case-link">
+                  Explore for Analysts
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+            
+            <!-- Sales Professionals Card -->
+            <div class="col-lg-4 col-md-6">
+              <a href="/use-cases/sales-professionals/" class="use-case-card">
+                <div class="use-case-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                  </svg>
+                </div>
+                <div class="use-case-badge">Sales Teams</div>
+                <h3 class="use-case-title">Sales Professionals</h3>
+                <p class="use-case-description">
+                  Generate personalized, on-brand pitch decks in minutes. Walk into every meeting with a tailored story that speaks to your client's needs.
+                </p>
+                <div class="use-case-features">
+                  <span class="use-case-feature">Personalized decks</span>
+                  <span class="use-case-feature">CRM integration</span>
+                  <span class="use-case-feature">Deal acceleration</span>
+                </div>
+                <span class="use-case-link">
+                  Explore for Sales
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 5: Who We Are -->
+      <section class="section-container about-section">
+        <div class="container-fluid section-padding">
+          <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 text-center">
+              <span class="pill-badge pill-badge-orange">The Team Behind Octigen</span>
+              <h2 style="color: var(--theme-text-primary); font-weight: 300; font-size: 2.5rem; margin-bottom: 1rem;">Built by practitioners, for practitioners</h2>
+              <p style="color: var(--theme-text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
+                We've spent years building data solutions, writing quant models, and creating reports for demanding clients. Octigen is the tool we wished we had.
+              </p>
+            </div>
+          </div>
+          
+          <div class="row g-4 justify-content-center">
+            <div class="col-lg-5">
+              <div class="founder-card-enhanced">
+                <div class="founder-header">
+                  <img
+                    class="founder-image-enhanced"
+                    src="/assets/images/michel_muller.png"
+                    alt="Michel Müller, Co-Founder"
+                  />
+                  <div class="founder-info">
+                    <h4 class="founder-name-enhanced">Michel Müller</h4>
+                    <span class="founder-title-enhanced">Co-Founder & CEO</span>
+                    <div class="founder-credentials">
+                      <span class="credential-badge">PhD, MSc ETH Zurich</span>
+                      <span class="credential-badge">15+ Years in Software</span>
+                    </div>
+                  </div>
+                </div>
+                <p class="founder-bio">
+                  Architect of enterprise-grade systems with deep expertise in high-performance computing.
+                  Michel has spent 6+ years building data infrastructure for the finance industry,
+                  and now he is the man behind Octigen's core engine.
+                </p>
+              </div>
+            </div>
+            
+            <div class="col-lg-5">
+              <div class="founder-card-enhanced">
+                <div class="founder-header">
+                  <img
+                    class="founder-image-enhanced"
+                    src="/assets/images/kevin_graziani.png"
+                    alt="Kevin Graziani, Co-Founder"
+                  />
+                  <div class="founder-info">
+                    <h4 class="founder-name-enhanced">Kevin Graziani</h4>
+                    <span class="founder-title-enhanced">Co-Founder & CFO</span>
+                    <div class="founder-credentials">
+                      <span class="credential-badge">Dual MSc, Cum Laude</span>
+                      <span class="credential-badge">Quant Finance</span>
+                    </div>
+                  </div>
+                </div>
+                <p class="founder-bio">
+                  Former front-office analyst at Credit Suisse Investment Bank & UBS Asset Management. Kevin combines quantitative rigor with a passion for elegant solutions, leading Octigen's vision to transform how professionals present data.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 6: Contact -->
+      <section class="section-container contact-section" id="contact">
+        <div class="container-fluid section-padding">
+          <div class="contact-wrapper">
+            <div class="row g-0">
+              <!-- Left: Content & Value Props -->
+              <div class="col-lg-5">
+                <div class="contact-info-side">
+                  <span class="pill-badge pill-badge-blue">Let's Talk</span>
+                  <h2>Ready to transform your presentations?</h2>
+                  <p class="contact-intro">
+                    Whether you're automating fund reports or creating AI-powered pitch decks, we're here to help. Tell us your challenge and we'll show you what's possible.
+                  </p>
+                  
+                  <div class="contact-benefits">
+                    <div class="contact-benefit">
+                      <div class="benefit-icon">⚡</div>
+                      <div class="benefit-text">
+                        <strong>15-Minute Demo</strong>
+                        <span>See Octigen in action with your use case</span>
+                      </div>
+                    </div>
+                    <div class="contact-benefit">
+                      <div class="benefit-icon">🎯</div>
+                      <div class="benefit-text">
+                        <strong>Custom Pilot</strong>
+                        <span>Test with your templates & data sources</span>
+                      </div>
+                    </div>
+                    <div class="contact-benefit">
+                      <div class="benefit-icon">💬</div>
+                      <div class="benefit-text">
+                        <strong>Expert Consulting</strong>
+                        <span>First hour free, no strings attached</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="contact-trust">
+                    <div class="trust-label">Octigen's team is trusted by</div>
+                    <div class="trust-logos">
+                      <span class="trust-logo-placeholder">Asset Managers</span>
+                      <span class="trust-logo-placeholder">Fund Administrators</span>
+                      <span class="trust-logo-placeholder">Consulting Firms</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Right: Form -->
+              <div class="col-lg-7">
+                <div class="contact-form-side">
+                  <form
+                    action="https://formspree.io/f/xrbelbzl"
+                    id="contact-form"
+                    method="POST"
+                    class="contact-form-enhanced"
+                  >
+                    <div class="form-row-2col">
+                      <div class="form-group">
+                        <label for="contact-name">Name</label>
+                        <input
+                          name="name"
+                          id="contact-name"
+                          type="text"
+                          placeholder="John Smith"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="contact-email">Work Email</label>
+                        <input
+                          name="email"
+                          id="contact-email"
+                          type="email"
+                          placeholder="john@company.com"
+                          required
+                        />
+                      </div>
+                    </div>
+                    
+                    <div class="form-row-2col">
+                      <div class="form-group">
+                        <label for="contact-company">Company</label>
+                        <input
+                          name="company"
+                          id="contact-company"
+                          type="text"
+                          placeholder="Acme Capital"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="contact-interest">I'm interested in...</label>
+                        <select name="interest" id="contact-interest">
+                          <option value="">Select...</option>
+                          <option value="reporting-automation">Reporting Automation</option>
+                          <option value="ai-presentations">AI-Powered Presentations</option>
+                          <option value="consulting">Expert Consulting</option>
+                          <option value="api-integration">API Integration</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="contact-message">Tell us about your project</label>
+                      <textarea
+                        name="message"
+                        id="contact-message"
+                        placeholder="E.g., We produce 100+ client reports monthly and want to automate the process..."
+                        rows="4"
+                        required
+                      ></textarea>
+                    </div>
+                    
+                    <input type="hidden" name="source" value="homepage" />
+                    
+                    <div class="form-footer">
+                      <div class="form-consent">
+                        <input
+                          name="gdpr-consent"
+                          type="checkbox"
+                          id="gdpr-checkbox"
+                          required
+                        />
+                        <label for="gdpr-checkbox">
+                          I agree to the <a href="/privacy_policy.html" target="_blank">privacy policy</a>
+                        </label>
+                      </div>
+                      
+                      <button type="submit" id="contact-form-button" class="contact-submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-arrow">→</span>
+                      </button>
+                    </div>
+                    
+                    <div id="contact-form-status" class="form-status"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Footer -->
+      <div id="footer-container"></div>
+      
+    </main>
 
     <!-- Service Modals -->
     
@@ -558,7 +787,7 @@
           <div class="modal-body">
             <div class="row align-items-center">
               <div class="col-md-5">
-                <img src="../assets/images/data_sources.png" alt="Data Integration" class="img-fluid service-modal-image">
+                <img src="/assets/images/data_sources.png" alt="Data Integration" class="img-fluid service-modal-image">
               </div>
               <div class="col-md-7">
                 <p class="service-modal-description">
@@ -588,7 +817,7 @@
           <div class="modal-body">
             <div class="row align-items-center">
               <div class="col-md-5">
-                <img src="../assets/images/quant_edge.png" alt="Quantitative Analysis" class="img-fluid service-modal-image">
+                <img src="/assets/images/quant_edge.png" alt="Quantitative Analysis" class="img-fluid service-modal-image">
               </div>
               <div class="col-md-7">
                 <p class="service-modal-description">
@@ -618,7 +847,7 @@
           <div class="modal-body">
             <div class="row align-items-center">
               <div class="col-md-5">
-                <img src="../assets/images/ai_chat.png" alt="AI Implementation" class="img-fluid service-modal-image">
+                <img src="/assets/images/ai_chat.png" alt="AI Implementation" class="img-fluid service-modal-image">
               </div>
               <div class="col-md-7">
                 <p class="service-modal-description">
@@ -648,7 +877,7 @@
           <div class="modal-body">
             <div class="row align-items-center">
               <div class="col-md-5">
-                <img src="../assets/images/reporting_cycle.png" alt="Reporting Automation" class="img-fluid service-modal-image">
+                <img src="/assets/images/reporting_cycle.png" alt="Reporting Automation" class="img-fluid service-modal-image">
               </div>
               <div class="col-md-7">
                 <p class="service-modal-description">
@@ -664,16 +893,33 @@
       </div>
     </div>
 
+    <!-- Expanded Video Modal -->
+    <div class="video-modal-overlay" id="video-modal">
+      <div class="video-modal-content">
+        <button class="video-modal-close" id="close-video-modal" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+        <div class="video-modal-wrapper">
+          <iframe 
+            id="modal-video-player"
+            src="about:blank"
+            title="Octigen Demo Video" 
+            allowfullscreen
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+            referrerpolicy="strict-origin-when-cross-origin">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
     <!-- Auto-close modals when links are clicked -->
     <script>
-      // Simple approach: click the close button when any modal link is clicked
       document.addEventListener('click', function(e) {
-        // Check if clicked element is a link inside a modal
         if (e.target.tagName === 'A' && e.target.href && e.target.closest('.modal')) {
           const modal = e.target.closest('.modal');
           const closeBtn = modal.querySelector('.btn-close');
-          
-          // Click the close button to close the modal
           if (closeBtn) {
             setTimeout(function() {
               closeBtn.click();
@@ -683,209 +929,119 @@
       });
     </script>
 
-    <!-- Video Modal Script -->
+    <!-- Video Play & Expand Script -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        const videoModal = document.getElementById('videoModal');
-        const videoPlayer = document.getElementById('video-player');
+        const thumbnail = document.getElementById('video-thumbnail');
+        const videoPlayerEl = document.getElementById('video-player');
+        const playBtn = document.getElementById('play-video-btn');
+        const expandBtn = document.getElementById('expand-video-btn');
+        const videoModal = document.getElementById('video-modal');
+        const modalPlayerEl = document.getElementById('modal-video-player');
+        const closeModalBtn = document.getElementById('close-video-modal');
         
-        // When modal is shown, load the Vimeo video
-        videoModal.addEventListener('show.bs.modal', function() {
-          // Load the Vimeo video URL with autoplay
-          videoPlayer.src = 'https://player.vimeo.com/video/1110967026?badge=0&autopause=0&autoplay=1&player_id=0&app_id=58479';
-        });
+        const videoId = '1110967026';
+        const baseUrl = `https://player.vimeo.com/video/${videoId}?badge=0&autopause=0&player_id=0&app_id=58479`;
         
-        // When modal is hidden, stop the video
-        videoModal.addEventListener('hide.bs.modal', function() {
-          videoPlayer.src = 'about:blank';
+        let inlinePlayer = null;
+        let modalPlayer = null;
+        let currentTime = 0;
+        
+        // Play inline video
+        if (thumbnail && videoPlayerEl && playBtn) {
+          playBtn.addEventListener('click', function() {
+            thumbnail.classList.add('hidden');
+            videoPlayerEl.src = baseUrl + '&autoplay=1';
+            videoPlayerEl.style.display = 'block';
+            
+            // Initialize Vimeo player after iframe loads
+            setTimeout(() => {
+              inlinePlayer = new Vimeo.Player(videoPlayerEl);
+              // Track time continuously
+              inlinePlayer.on('timeupdate', function(data) {
+                currentTime = data.seconds;
+              });
+            }, 500);
+          });
+        }
+        
+        // Expand video to modal
+        if (expandBtn && videoModal && modalPlayerEl) {
+          expandBtn.addEventListener('click', async function() {
+            // Get current time from inline player
+            if (inlinePlayer) {
+              try {
+                currentTime = await inlinePlayer.getCurrentTime();
+                inlinePlayer.pause();
+              } catch (e) {}
+            }
+            
+            // Show modal and load video at current time
+            videoModal.classList.add('active');
+            modalPlayerEl.src = baseUrl + '&autoplay=1#t=' + currentTime + 's';
+            document.body.style.overflow = 'hidden';
+            
+            // Initialize modal player
+            setTimeout(() => {
+              modalPlayer = new Vimeo.Player(modalPlayerEl);
+              modalPlayer.setCurrentTime(currentTime);
+              modalPlayer.on('timeupdate', function(data) {
+                currentTime = data.seconds;
+              });
+            }, 500);
+          });
+        }
+        
+        // Close modal
+        async function closeModal() {
+          // Get current time from modal player
+          if (modalPlayer) {
+            try {
+              currentTime = await modalPlayer.getCurrentTime();
+              modalPlayer.pause();
+            } catch (e) {}
+          }
+          
+          videoModal.classList.remove('active');
+          modalPlayerEl.src = 'about:blank';
+          document.body.style.overflow = '';
+          
+          // Resume inline video at current time
+          if (thumbnail && thumbnail.classList.contains('hidden')) {
+            videoPlayerEl.src = baseUrl + '&autoplay=1#t=' + currentTime + 's';
+            videoPlayerEl.style.display = 'block';
+            
+            setTimeout(() => {
+              inlinePlayer = new Vimeo.Player(videoPlayerEl);
+              inlinePlayer.setCurrentTime(currentTime);
+              inlinePlayer.on('timeupdate', function(data) {
+                currentTime = data.seconds;
+              });
+            }, 500);
+          }
+        }
+        
+        if (closeModalBtn) {
+          closeModalBtn.addEventListener('click', closeModal);
+        }
+        
+        // Close on overlay click
+        if (videoModal) {
+          videoModal.addEventListener('click', function(e) {
+            if (e.target === videoModal) {
+              closeModal();
+            }
+          });
+        }
+        
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+            closeModal();
+          }
         });
       });
     </script>
 
-    <!-- Play Button Particle System -->
-    <script>
-      class PlayButtonParticles {
-        constructor() {
-          this.canvas = document.getElementById('play-particles-canvas');
-          this.ctx = this.canvas.getContext('2d');
-          this.particles = [];
-          this.mouse = { x: 190, y: 190 }; // Center of the canvas
-          this.isHovering = false;
-          this.lastSpawnTime = 0;
-          
-          this.init();
-          this.setupEventListeners();
-          this.animate();
-        }
-
-        init() {
-          this.canvas.width = 380;
-          this.canvas.height = 380;
-        }
-
-        setupEventListeners() {
-          const playButton = document.getElementById('play-button');
-          const container = document.getElementById('play-button-container');
-          
-          container.addEventListener('mouseenter', () => {
-            this.isHovering = true;
-          });
-          
-          container.addEventListener('mouseleave', () => {
-            this.isHovering = false;
-          });
-          
-          container.addEventListener('click', () => {
-            // Burst of particles on click - fewer particles
-            for (let i = 0; i < 6; i++) {
-              this.spawnParticle(true);
-            }
-          });
-        }
-
-        spawnParticle(isClick = false) {
-          const centerX = 190;
-          const centerY = 190;
-          const spawnRadius = isClick ? 120 : 80;
-          
-          // Random position around the play button - much further away
-          const angle = Math.random() * Math.PI * 2;
-          const distance = Math.random() * spawnRadius + 60;
-          const x = centerX + Math.cos(angle) * distance;
-          const y = centerY + Math.sin(angle) * distance;
-          
-          this.particles.push({
-            x: x,
-            y: y,
-            vx: (Math.random() - 0.5) * (isClick ? 1.5 : 0.3),
-            vy: (Math.random() - 0.5) * (isClick ? 1.5 : 0.3),
-            radius: Math.random() * 2 + 1.2,
-            opacity: Math.random() * 0.8 + 0.6,
-            life: isClick ? 200 : 150,
-            maxLife: isClick ? 200 : 150,
-            color: {
-              r: 180,
-              g: 200, 
-              b: 255
-            }
-          });
-        }
-
-        updateParticles() {
-          // Spawn new particles continuously - less frequently
-          const now = Date.now();
-          if (now - this.lastSpawnTime > 800) {
-            this.spawnParticle();
-            this.lastSpawnTime = now;
-          }
-          
-          // Update existing particles
-          for (let i = this.particles.length - 1; i >= 0; i--) {
-            const particle = this.particles[i];
-            
-            // Apply velocity
-            particle.x += particle.vx;
-            particle.y += particle.vy;
-            
-            // Apply damping
-            particle.vx *= 0.98;
-            particle.vy *= 0.98;
-            
-            // Decrease life
-            particle.life--;
-            
-            // Remove dead particles
-            if (particle.life <= 0) {
-              this.particles.splice(i, 1);
-            }
-          }
-        }
-
-        drawConnections() {
-          this.ctx.lineWidth = 0.8;
-          const centerX = 190;
-          const centerY = 190;
-          
-          // Draw connections between particles
-          for (let i = 0; i < this.particles.length; i++) {
-            for (let j = i + 1; j < this.particles.length; j++) {
-              const dx = this.particles[i].x - this.particles[j].x;
-              const dy = this.particles[i].y - this.particles[j].y;
-              const distance = Math.sqrt(dx * dx + dy * dy);
-              
-              if (distance < 120) {
-                const opacity = (120 - distance) / 120;
-                const alpha = opacity * 0.3;
-                this.ctx.strokeStyle = `rgba(180, 200, 255, ${alpha})`;
-                this.ctx.beginPath();
-                this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
-                this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
-                this.ctx.stroke();
-              }
-            }
-            
-            // Draw connections from particles to play button center
-            const dx = this.particles[i].x - centerX;
-            const dy = this.particles[i].y - centerY;
-            const distance = Math.sqrt(dx * dx + dy * dy);
-            
-            if (distance < 150) {
-              const opacity = (150 - distance) / 150;
-              const alpha = opacity * 0.45;
-              this.ctx.strokeStyle = `rgba(180, 200, 255, ${alpha})`;
-              this.ctx.beginPath();
-              this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
-              this.ctx.lineTo(centerX, centerY);
-              this.ctx.stroke();
-            }
-          }
-        }
-
-        drawParticles() {
-          this.particles.forEach(particle => {
-            const lifeFactor = particle.life / particle.maxLife;
-            const currentOpacity = particle.opacity * lifeFactor;
-            
-            // Create light blue/white gradient
-            const gradient = this.ctx.createRadialGradient(
-              particle.x, particle.y, 0,
-              particle.x, particle.y, particle.radius * 2
-            );
-            gradient.addColorStop(0, `rgba(180, 200, 255, ${currentOpacity})`);
-            gradient.addColorStop(0.5, `rgba(180, 200, 255, ${currentOpacity * 0.4})`);
-            gradient.addColorStop(1, 'rgba(180, 200, 255, 0)');
-            
-            this.ctx.fillStyle = gradient;
-            this.ctx.beginPath();
-            this.ctx.arc(particle.x, particle.y, particle.radius * 1.5, 0, Math.PI * 2);
-            this.ctx.fill();
-            
-            // Add bright center
-            this.ctx.fillStyle = `rgba(200, 220, 255, ${currentOpacity * 0.9})`;
-            this.ctx.beginPath();
-            this.ctx.arc(particle.x, particle.y, particle.radius * 0.3, 0, Math.PI * 2);
-            this.ctx.fill();
-          });
-        }
-
-        animate() {
-          this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-          
-          this.updateParticles();
-          this.drawConnections();
-          this.drawParticles();
-          
-          requestAnimationFrame(() => this.animate());
-        }
-      }
-
-      // Initialize play button particles
-      document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(() => {
-          new PlayButtonParticles();
-        }, 500);
-      });
-    </script>
-
-  </body>
+      </body>
 </html>

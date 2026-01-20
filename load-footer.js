@@ -1,28 +1,30 @@
-// Footer component loader
+// ===========================================
+// Footer Component Loader (Single Source of Truth)
+// ===========================================
+// This is the ONLY file that should load the footer.
+// Do NOT duplicate this functionality elsewhere!
+
 async function loadFooter() {
   try {
-    // Get the current path to determine the correct relative path for components
-    const currentPath = window.location.pathname;
-    let componentsPath = '/components/footer.html';
-    
-    // Adjust path based on current directory depth
-    if (currentPath.includes('/ai_slides_progress/') || currentPath.includes('/waiting_list/')) {
-      componentsPath = '../components/footer.html';
-    }
-    
-    const response = await fetch(componentsPath);
-    if (!response.ok) throw new Error("Footer not found");
+    const cacheBuster = '?v=' + Date.now();
+    const response = await fetch('/components/footer.html' + cacheBuster);
+    if (!response.ok) throw new Error("Footer not found: " + response.status);
     
     const footerHTML = await response.text();
     const footerContainer = document.getElementById('footer-container');
     
     if (footerContainer) {
       footerContainer.innerHTML = footerHTML;
+      
+      // Ensure translations work after footer is loaded
+      if (typeof loadLanguage === 'function') {
+        const lang = localStorage.getItem("lang") || "en";
+        loadLanguage(lang);
+      }
     }
   } catch (error) {
-    console.error("Error loading footer:", error);
+    console.error("[Footer] Error:", error);
   }
 }
 
-// Load the footer once the DOM is ready
-document.addEventListener("DOMContentLoaded", loadFooter); 
+document.addEventListener("DOMContentLoaded", loadFooter);

@@ -1,24 +1,61 @@
-<!-- Footer -->
-<div class="row justify-content-center mt-5 pt-5">
-  <div class="col-auto">
-    <div class="footer-content text-center">
-      <div class="footer-navigation mb-5">
-        <a href="/" class="text-white text-decoration-none me-3" style="opacity: 0.7;">Home</a>
-        <a href="/ai_slides_progress" class="text-white text-decoration-none me-3" style="opacity: 0.7;">Our AI Progress</a>
-        <a href="/waiting_list" class="text-white text-decoration-none me-3" style="opacity: 0.7;">Join the Waiting List</a>
-        <a href="/privacy_policy.html" class="text-white text-decoration-none me-3" style="opacity: 0.7;">Privacy Policy</a>
-        <a href="/cookie-settings.html" class="text-white text-decoration-none" style="opacity: 0.7;">Cookie Settings</a>
+<!-- Footer Component -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <!-- Footer Grid - Main Content -->
+    <div class="footer-grid">
+      <!-- Brand Column -->
+      <div class="footer-brand">
+        <a href="/">
+          <img src="/assets/images/logo_octigen_white.png" alt="Octigen" class="footer-logo" />
+        </a>
+        <p class="footer-tagline">AI-powered document generation for financial professionals. Transform data into beautiful reports.</p>
       </div>
-      <div class="footer-copyright mb-2">
-        <span class="text-white" style="opacity: 0.7;">© 2025 Octigen GmbH. All rights reserved.</span>
+      <!-- Product Column -->
+      <div class="footer-column">
+        <h4 class="footer-column-title">Product</h4>
+        <nav class="footer-nav">
+          <a href="/features/" class="footer-nav-link">Features</a>
+          <a href="https://cloud.octigen.com/docs" target="_blank" class="footer-nav-link">Documentation</a>
+          <a href="/alpha-release/" class="footer-nav-link">Alpha Release</a>
+        </nav>
       </div>
-      <div class="footer-company mb-2">
-        <div class="text-white" style="opacity: 0.9; font-weight: 500;">Octigen GmbH</div>
-        <div class="text-white" style="opacity: 0.7; font-size: 0.9rem;">Riedpark 17, Zug</div>
+      <!-- Use Cases Column -->
+      <div class="footer-column">
+        <h4 class="footer-column-title">Use Cases</h4>
+        <nav class="footer-nav">
+          <a href="/use-cases/fund-reporting/" class="footer-nav-link">Fund Reporting</a>
+          <a href="/use-cases/financial-professionals/" class="footer-nav-link">Financial Professionals</a>
+          <a href="/use-cases/sales-professionals/" class="footer-nav-link">Sales Professionals</a>
+        </nav>
       </div>
-      <div class="footer-made-in mt-5 mb-0">
-        <span class="text-white" style="opacity: 0.8; font-size: 0.9rem;">Proudly made in <span style="font-size: 1.2em;">🇨🇭</span></span>
+      <!-- Social Column -->
+      <div class="footer-social-column">
+        <div class="footer-social">
+          <a href="https://linkedin.com/company/octigen" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="LinkedIn">in</a>
+          <a href="https://twitter.com/octigen_ai" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="X (Twitter)">𝕏</a>
+        </div>
+      </div>
+      <!-- Partner Badge - Positioned via grid -->
+      <div class="footer-partner">
+        <span class="partner-label">Supported by</span>
+        <a href="https://startup.ovhcloud.com/" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/images/ovh_startup_program.png" alt="OVHcloud Startup Program" class="partner-logo ovh-logo" />
+        </a>
+      </div>
+    </div>
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-copyright">© 2026 Octigen GmbH. All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="/privacy_policy.html" class="footer-legal-link">Privacy Policy</a>
+        <span class="footer-legal-divider">·</span>
+        <a href="/cookie-settings.html" class="footer-legal-link">Cookie Settings</a>
+      </div>
+      <div class="footer-company-info">
+        <span class="footer-address">Riedpark 17, Zug, Switzerland</span>
+        <span class="footer-made-in">Proudly made in <span class="swiss-flag">🇨🇭</span></span>
       </div>
     </div>
   </div>
-</div>
+  <div class="footer-glow"></div>
+</footer>

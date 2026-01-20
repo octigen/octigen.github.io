@@ -1,0 +1,245 @@
+/* ===========================================
+   Theme System - CSS Custom Properties
+   
+   This file defines all theme-related CSS variables.
+   Dark mode is the default. Light mode is activated
+   via [data-theme="light"] on the <html> element.
+   
+   Usage:
+   - Import this file BEFORE other CSS files
+   - Use var(--variable-name) in your styles
+   - Add new variables here when extending the theme
+   =========================================== */
+
+/* ===========================================
+   Dark Mode (Default)
+   =========================================== */
+:root {
+    /* Brand Colors - These don't change between themes */
+    --octigen-blue: #1e4fe2;
+    --octigen-blue-light: #3a6bff;
+    --octigen-blue-dark: #1a45c7;
+    --octigen-highlighted: #1A1B31;
+    --octigen-orange: #ff6b35;
+    --octigen-orange-light: #f7931e;
+    
+    /* ===== Background Colors ===== */
+    --theme-bg-primary: #000000;
+    --theme-bg-secondary: #0F1021;
+    --theme-bg-tertiary: #1A1B31;
+    --theme-bg-elevated: rgba(255, 255, 255, 0.04);
+    
+    /* Gradient backgrounds */
+    --theme-bg-gradient: 
+        radial-gradient(ellipse at top right, #1A1B31 0%, transparent 50%),
+        radial-gradient(ellipse at bottom left, #1A1B31 0%, transparent 50%),
+        radial-gradient(ellipse at center right, #0F1021 0%, transparent 40%),
+        #000000;
+    --theme-bg-gradient-overlay: radial-gradient(circle at 100% 100%, rgba(30, 79, 226, 0.15) 0%, transparent 40%);
+    
+    /* ===== Text Colors ===== */
+    --theme-text-primary: #ffffff;
+    --theme-text-secondary: rgba(255, 255, 255, 0.85);
+    --theme-text-tertiary: rgba(255, 255, 255, 0.7);
+    --theme-text-muted: rgba(255, 255, 255, 0.5);
+    
+    /* ===== Border Colors ===== */
+    --theme-border-primary: rgba(255, 255, 255, 0.2);
+    --theme-border-secondary: rgba(255, 255, 255, 0.1);
+    --theme-border-hover: rgba(255, 255, 255, 0.4);
+    --theme-border-active: rgba(255, 255, 255, 0.6);
+    
+    /* ===== Shadow Colors ===== */
+    --theme-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --theme-shadow-md: 0 8px 32px rgba(0, 0, 0, 0.2);
+    --theme-shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.3);
+    --theme-shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.4);
+    
+    /* ===== Glass/Card Effects ===== */
+    --theme-glass-bg: rgba(255, 255, 255, 0.04);
+    --theme-glass-bg-hover: rgba(255, 255, 255, 0.08);
+    --theme-glass-border: rgba(255, 255, 255, 0.2);
+    --theme-glass-border-hover: rgba(255, 255, 255, 0.4);
+    --theme-glass-blur: blur(2px);
+    
+    /* Modal glass effect */
+    --theme-modal-bg: rgba(255, 255, 255, 0.03);
+    --theme-modal-blur: blur(40px) saturate(180%);
+    --theme-modal-overlay: rgba(0, 0, 0, 0.85);
+    
+    /* ===== Navbar ===== */
+    --theme-navbar-bg: rgba(0, 0, 0, 0.2);
+    --theme-navbar-bg-scrolled: rgba(0, 0, 0, 0.25);
+    --theme-navbar-border: rgba(255, 255, 255, 0.08);
+    --theme-navbar-border-scrolled: rgba(255, 255, 255, 0.12);
+    --theme-navbar-link: rgba(255, 255, 255, 0.85);
+    --theme-navbar-link-hover: rgba(255, 255, 255, 1);
+    --theme-navbar-link-bg-hover: rgba(255, 255, 255, 0.1);
+    --theme-navbar-link-bg-active: rgba(255, 255, 255, 0.12);
+    --theme-navbar-toggler-bar: #ffffff;
+    
+    /* Logo - used for switching between dark/light logo variants */
+    --theme-logo-filter: none;
+    
+    /* ===== Form Elements ===== */
+    --theme-input-bg: transparent;
+    --theme-input-border: rgba(255, 255, 255, 0.7);
+    --theme-input-border-focus: var(--octigen-blue);
+    --theme-input-text: #ffffff;
+    --theme-input-placeholder: rgba(255, 255, 255, 0.7);
+    
+    /* ===== Buttons ===== */
+    --theme-btn-outline-border: rgba(255, 255, 255, 0.3);
+    --theme-btn-outline-border-hover: rgba(255, 255, 255, 0.6);
+    --theme-btn-outline-bg-hover: rgba(255, 255, 255, 0.1);
+    --theme-btn-outline-text: #ffffff;
+    
+    /* ===== Video Container ===== */
+    --theme-video-border: rgba(255, 255, 255, 0.1);
+    --theme-video-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    --theme-video-expand-bg: rgba(0, 0, 0, 0.6);
+    --theme-video-expand-bg-hover: rgba(30, 79, 226, 0.8);
+    
+    /* ===== Particles (for JS to read) ===== */
+    --theme-particle-color: 255, 255, 255;
+    --theme-particle-connection-opacity: 0.15;
+    --theme-particle-opacity: 0.4;
+    
+    /* ===== Footer ===== */
+    --theme-footer-border: rgba(255, 255, 255, 0.1);
+    --theme-footer-text: rgba(255, 255, 255, 0.7);
+    
+    /* ===== Misc ===== */
+    --theme-divider: rgba(255, 255, 255, 0.1);
+    --theme-highlight-glow: rgba(30, 79, 226, 0.4);
+}
+
+/* ===========================================
+   Light Mode
+   =========================================== */
+[data-theme="light"] {
+    /* ===== Background Colors ===== */
+    --theme-bg-primary: #f8f9fc;
+    --theme-bg-secondary: #ffffff;
+    --theme-bg-tertiary: #e8ecf4;
+    --theme-bg-elevated: rgba(0, 0, 0, 0.02);
+    
+    /* Gradient backgrounds - softer for light mode */
+    --theme-bg-gradient: 
+        radial-gradient(ellipse at top right, #e8ecf4 0%, transparent 50%),
+        radial-gradient(ellipse at bottom left, #e8ecf4 0%, transparent 50%),
+        radial-gradient(ellipse at center right, #f0f4ff 0%, transparent 40%),
+        #f8f9fc;
+    --theme-bg-gradient-overlay: radial-gradient(circle at 100% 100%, rgba(30, 79, 226, 0.08) 0%, transparent 40%);
+    
+    /* ===== Text Colors ===== */
+    --theme-text-primary: #1a1a2e;
+    --theme-text-secondary: rgba(26, 26, 46, 0.85);
+    --theme-text-tertiary: rgba(26, 26, 46, 0.7);
+    --theme-text-muted: rgba(26, 26, 46, 0.5);
+    
+    /* ===== Border Colors ===== */
+    --theme-border-primary: rgba(0, 0, 0, 0.12);
+    --theme-border-secondary: rgba(0, 0, 0, 0.08);
+    --theme-border-hover: rgba(0, 0, 0, 0.2);
+    --theme-border-active: rgba(0, 0, 0, 0.3);
+    
+    /* ===== Shadow Colors ===== */
+    --theme-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --theme-shadow-md: 0 8px 32px rgba(0, 0, 0, 0.08);
+    --theme-shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.1);
+    --theme-shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.12);
+    
+    /* ===== Glass/Card Effects ===== */
+    --theme-glass-bg: rgba(194, 194, 194, 0.1);
+    --theme-glass-bg-hover: rgba(248, 249, 252, 0.2);
+    --theme-glass-border: rgba(0, 0, 0, 0.08);
+    --theme-glass-border-hover: rgba(0, 0, 0, 0.15);
+    --theme-glass-blur: blur(2px);
+    
+    /* Modal glass effect */
+    --theme-modal-bg: rgba(255, 255, 255, 0.9);
+    --theme-modal-blur: blur(20px) saturate(180%);
+    --theme-modal-overlay: rgba(0, 0, 0, 0.5);
+    
+    /* ===== Navbar ===== */
+    --theme-navbar-bg: rgba(255, 255, 255, 0.105);
+    --theme-navbar-bg-scrolled: rgba(255, 255, 255, 0.25);
+    --theme-navbar-border: rgba(0, 0, 0, 0.08);
+    --theme-navbar-border-scrolled: rgba(0, 0, 0, 0.12);
+    --theme-navbar-link: rgba(26, 26, 46, 0.85);
+    --theme-navbar-link-hover: rgba(26, 26, 46, 1);
+    --theme-navbar-link-bg-hover: rgba(0, 0, 0, 0.05);
+    --theme-navbar-link-bg-active: rgba(0, 0, 0, 0.08);
+    --theme-navbar-toggler-bar: #1a1a2e;
+    
+    /* Logo - invert for light mode (or use a different logo) */
+    --theme-logo-filter: brightness(0) invert(0.15);
+    
+    /* ===== Form Elements ===== */
+    --theme-input-bg: rgba(255, 255, 255, 0.8);
+    --theme-input-border: rgba(0, 0, 0, 0.2);
+    --theme-input-border-focus: var(--octigen-blue);
+    --theme-input-text: #1a1a2e;
+    --theme-input-placeholder: rgba(26, 26, 46, 0.5);
+    
+    /* ===== Buttons ===== */
+    --theme-btn-outline-border: rgba(26, 26, 46, 0.3);
+    --theme-btn-outline-border-hover: rgba(26, 26, 46, 0.5);
+    --theme-btn-outline-bg-hover: rgba(0, 0, 0, 0.05);
+    --theme-btn-outline-text: #1a1a2e;
+    
+    /* ===== Video Container ===== */
+    --theme-video-border: rgba(0, 0, 0, 0.1);
+    --theme-video-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    --theme-video-expand-bg: rgba(255, 255, 255, 0.8);
+    --theme-video-expand-bg-hover: rgba(30, 79, 226, 0.9);
+    
+    /* ===== Particles (for JS to read) - Light grey for visibility ===== */
+    --theme-particle-color: 100, 110, 140;
+    --theme-particle-connection-opacity: 0.12;
+    --theme-particle-opacity: 0.35;
+    
+    /* ===== Footer ===== */
+    --theme-footer-border: rgba(0, 0, 0, 0.1);
+    --theme-footer-text: rgba(26, 26, 46, 0.7);
+    
+    /* ===== Misc ===== */
+    --theme-divider: rgba(0, 0, 0, 0.1);
+    --theme-highlight-glow: rgba(30, 79, 226, 0.2);
+}
+
+/* ===========================================
+   Transition for Theme Changes
+   Applied to common elements for smooth switching
+   =========================================== */
+html {
+    color-scheme: dark;
+    background-color: #000000;
+}
+
+[data-theme="light"] {
+    color-scheme: light;
+    background-color: #f8f9fc;
+}
+
+/* Smooth transition for theme changes */
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+    transition: 
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease,
+        opacity 0.3s ease,
+        transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Preserve theme toggle's own transitions */
+html.theme-transition .theme-toggle-thumb,
+html.theme-transition .theme-icon {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+

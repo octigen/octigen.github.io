@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- Theme Initialization (must be first to prevent flash of wrong theme) -->
+    <script>
+      (function() {
+        var stored = localStorage.getItem('octigen-theme');
+        var theme = stored || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+    
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <title>Fund Reporting Automation - Octigen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Automate your fund reporting with Octigen. Generate professional factsheets, investor presentations, and quarterly reports from your data in minutes." />
+    <meta name="keywords" content="fund reporting, factsheet automation, investor presentations, quarterly reports, fund management, asset management, automated reporting" />
+    <link rel="canonical" href="https://octigen.com/use-cases/fund-reporting/" />
+    <meta name="author" content="Octigen GmbH" />
+    <meta property="og:title" content="Fund Reporting Automation - Octigen" />
+    <meta property="og:description" content="Automate your fund reporting with Octigen. Generate professional factsheets and investor presentations in minutes." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://octigen.com/use-cases/fund-reporting/" />
+    <meta property="og:site_name" content="Octigen" />
+    <meta property="og:image" content="https://octigen.com/assets/images/octigen.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://octigen.com/assets/images/octigen.png" />
+    <meta name="twitter:title" content="Fund Reporting Automation - Octigen" />
+    <meta name="twitter:description" content="Automate your fund reporting with Octigen. Generate professional factsheets and investor presentations in minutes." />
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/ai_slides_progress/particles.js" defer></script>
+    <script src="/translator.js" defer></script>
+    <script src="/form.js" defer></script>
+    <script src="/assets/mobile-nav.js" defer></script>
+    <script src="/main.js" defer></script>
+    <script src="/load-footer.js" defer></script>
+    <script src="/assets/effects.js" defer></script>
+    <!-- Image Comparison Slider -->
+    <script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" rel="preconnect" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <!-- Theme CSS must be loaded FIRST (defines CSS custom properties) -->
+    <link rel="stylesheet" href="/assets/theme.css" />
+    <link rel="stylesheet" href="/assets/main.css" />
+    <link rel="stylesheet" href="/assets/form.css" />
+    <link rel="stylesheet" href="/landing.css" />
+    <link rel="stylesheet" href="/assets/homepage.css" />
+    <link rel="stylesheet" href="/assets/footer.css" />
+    <!-- Image Comparison Slider -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css">
+    <link rel="stylesheet" href="/assets/comparison-slider.css" />
+    <link rel="stylesheet" href="/assets/comparison-section.css" />
+    <!-- Sub-navbar component -->
+    <link rel="stylesheet" href="/assets/sub-navbar.css" />
+    <script src="/assets/sub-navbar.js" defer></script>
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="fund-reporting.css" />
+    <script src="/assets/comparison-data.js" defer></script>
+  </head>
+  <!-- Cookie Consent System -->
+  <link rel="stylesheet" href="/assets/cookie-consent.css">
+  <script src="/assets/cookie-consent.js" defer></script>
+  <body class="d-flex flex-column" data-page="fund-reporting">
+    <!-- Particle Canvas Background -->
+    <canvas id="particles-canvas" class="particles-background"></canvas>
+    
+    <!-- Navigation -->
+    <div id="navbar-container"></div>
+    
+    <!-- Sub Navigation for Sections -->
+    <nav class="sub-navbar" id="sub-navbar">
+      <div class="sub-navbar-container">
+        <a href="#hero" class="sub-nav-link active" data-section="hero">Overview</a>
+        <a href="#features" class="sub-nav-link" data-section="features">Connect Data</a>
+        <a href="#templates" class="sub-nav-link" data-section="templates">Manage Templates</a>
+        <a href="#comparison" class="sub-nav-link" data-section="comparison">Comparison Table</a>
+        <a href="#enterprise" class="sub-nav-link" data-section="enterprise">Built for Scale</a>
+        <a href="#contact" class="sub-nav-link" data-section="contact">Let's Talk</a>
+      </div>
+    </nav>
+    
+    <main class="landing-hero">
+      
+      <!-- SECTION 1: Hero -->
+      <section class="section-container hero-section has-edge-image" id="hero">
+        <div class="container-fluid section-padding">
+          <div class="row align-items-center g-5">
+            <!-- Left: Heading + Text + Buttons -->
+            <div class="col-12 col-lg-7">
+              <div class="hero-content">
+                <span class="pill-badge pill-badge-blue">Octigen for Fund Reporting</span>
+                <h1>The final answer to your<br> fund reporting needs</h1>
+                <p>
+                  Ever struggled with reporting tools?
+                  <br>
+                  Octigen <span style="font-weight: 600">just leverages PowerPoint</span>, a tool you might know well.<br>
+                  Connect your data in a secure environment, use AI for commentaries, schedule and produce
+                  systematized reports, and much more.
+                  <br>
+                  All in one place.
+                </p>
+                <div class="hero-buttons">
+                  <a href="#contact" class="section-btn section-btn-primary pulse-waves">
+                    Request Demo
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Edge Image with Parallax -->
+        <div class="hero-edge-image-wrapper" id="hero-parallax-image">
+          <img src="/assets/images/macbook_octigen.png" alt="Fund Reporting Automation" class="hero-edge-image">
+        </div>
+      </section>
+      
+      <!-- SECTION 2: Feature 1 - Connect Your Data -->
+      <section class="section-container feature-section" id="features" style="padding-top: 4rem; padding-bottom: 4rem;">
+        <div class="container-fluid section-padding">
+          <div class="row align-items-center g-5">
+            <!-- Left: Image -->
+            <div class="col-lg-6 order-2 order-lg-1">
+              <div class="feature-image-container align-left" style="overflow: visible; padding: 1rem;">
+                <div style="border-radius: 12px; overflow: hidden; display: inline-block; box-shadow: var(--theme-shadow-lg); max-width: 80%; margin: 0 auto;">
+                  <img
+                  src="/assets/images/data_fund_reporting.gif"
+                  alt="Connect Your Data Sources"
+                  style="display: block; padding: 0 !important;"
+                  class="img-fluid"
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Right: Content -->
+            <div class="col-lg-6 order-1 order-lg-2">
+              <div class="feature-content">
+                <span class="pill-badge pill-badge-blue">Data Connectivity</span>
+                <h2>Connect your data sources</h2>
+                <p>
+                  Deterministic reporting made easy.<br>
+                  Connect your data sources via <span style="font-weight: 600">Excel, CSV, SFTP</span>, and more. Visualize the connections with your PowerPoint templates in a few clicks.<br>
+                  The output is a <span style="font-weight: 600">native PowerPoint file</span>, open to be customized if needed.<br>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 3: Feature 2 - Templates -->
+      <section class="section-container feature-section" id="templates">
+        <div class="container-fluid section-padding">
+          <div class="row align-items-center g-5">
+            <!-- Left: Content -->
+            <div class="col-lg-6 order-lg-1 order-1">
+              <div class="feature-content">
+                <span class="pill-badge pill-badge-orange">Templating by Example</span>
+                <h2>Start with your branded PowerPoint templates</h2>
+                <p>
+                  Octigen makes creating a new automated report a breeze.<br>
+                  Create a sample report in PowerPoint and upload it to your workspace.
+                  From there, you can go to a
+                  <span style="font-weight: 600">full systematic report</span>
+                  with injected data. For the narrative parts of your report, the
+                  <span style="font-weight: 600">AI is ready to assist you</span>.
+                  <br><br>
+                  It's your choice, you are in control.
+                </p>
+              </div>
+            </div>
+            <!-- Right: Image -->
+            <div class="col-lg-6 order-lg-2 order-1">
+              <div class="feature-image-container align-right">
+                <div class="comparison-wrapper">
+                  <img-comparison-slider class="before-after-slider" value="35">
+                    <div slot="first" class="comparison-slot">
+                      <img src="/assets/images/template_fund_reporting.png" alt="Your Template" />
+                      <span class="comparison-label comparison-label-before">Your Template</span>
+                    </div>
+                    <div slot="second" class="comparison-slot">
+                      <img src="/assets/images/injected_fund_reporting.png" alt="Final Result" />
+                      <span class="comparison-label comparison-label-after">Final Result</span>
+                    </div>
+                    <!-- Custom Handle with Arrows -->
+                    <div slot="handle" class="comparison-handle">
+                      <span class="comparison-tooltip">Drag to compare</span>
+                      <div class="comparison-handle-arrows">
+                        <svg viewBox="0 0 10 18" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M9 1L1 9L9 17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                        <svg viewBox="0 0 10 18" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1 1L9 9L1 17" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </img-comparison-slider>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION: Comparison - Octigen vs Other Tools -->
+      <section class="section-container comparison-section" id="comparison" style="padding-top: 4rem; padding-bottom: 4rem; overflow: hidden;">
+        <div class="container-fluid section-padding">
+          <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 text-center">
+              <span class="pill-badge pill-badge-orange">Why Octigen</span>
+              <h2 style="color: var(--theme-text-primary); font-weight: 300; font-size: 2.5rem; margin-bottom: 1rem;">Octigen vs other tools</h2>
+              <p style="color: var(--theme-text-secondary); font-size: 1.1rem;">
+                Automate the last mile of financial reporting, without the compromises.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comparison Table -->
+        <div class="comparison-table-container">
+          <div class="container-fluid section-padding">
+            <div class="comparison-table-wrapper">
+              <table class="comparison-table">
+                <thead>
+                  <tr>
+                    <th class="comparison-th-feature"></th>
+                    <th class="comparison-th-octigen">
+                      <span class="table-header-badge table-header-octigen">OCTIGEN</span>
+                    </th>
+                    <th class="comparison-th-others">
+                      <span class="table-header-badge table-header-others">OTHER TOOLS</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Content populated by comparison-data.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 4: Developer API & Enterprise Architecture -->
+      <section class="section-container feature-section" id="enterprise" style="padding-bottom: 5rem; padding-top: 5rem;">
+        <div class="container-fluid section-padding">
+          <!-- Section Header -->
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+              <h2 style="color: var(--theme-text-primary); font-weight: 300; font-size: 2.5rem; margin-bottom: 1.5rem;">Built for scale, designed for compliance</h2>
+              <p style="color: var(--theme-text-secondary); font-size: 1.1rem;">
+                Whether you need API-driven automation or strict data sovereignty, Octigen adapts to your technical and regulatory requirements.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Two Cards -->
+          <div class="row g-4">
+            <!-- Left: Developer API Card -->
+            <div class="col-lg-6">
+              <div class="section-glass-card h-100" style="text-align: left;">
+                <span class="section-badge section-badge-blue" style="margin-bottom: 1.5rem;">For Developers</span>
+                <h3 style="font-size: 1.6rem; font-weight: 400; margin-bottom: 1rem; text-align: left; color: var(--theme-text-primary);">JSON-to-PowerPoint API</h3>
+                <p style="color: var(--theme-text-secondary); line-height: 1.7; margin-bottom: 1.5rem; text-align: left;">
+                  Integrate reporting into your existing systems. Octigen exposes a RESTful API that treats PowerPoint templates as programmable objects.
+                </p>
+                <div class="consulting-services-grid" style="margin-bottom: 1.5rem;">
+                  <div class="service-item-grid">Direct JSON injection</div>
+                  <div class="service-item-grid">Auto slide replication</div>
+                  <div class="service-item-grid">Smart pagination</div>
+                  <div class="service-item-grid">Dry-run validation</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Right: Enterprise Architecture Card -->
+            <div class="col-lg-6">
+              <div class="section-glass-card h-100" style="text-align: left;">
+                <span class="section-badge" style="margin-bottom: 1.5rem;">Enterprise Ready</span>
+                <h3 style="font-size: 1.6rem; font-weight: 400; margin-bottom: 1rem; text-align: left; color: var(--theme-text-primary);">Cloud-Agnostic Architecture</h3>
+                <p style="color: var(--theme-text-secondary); line-height: 1.7; margin-bottom: 1.5rem; text-align: left;">
+                  Deploy where your compliance requirements dictate. Your data never leaves your chosen environment in self-hosted scenarios.
+                </p>
+                <div class="consulting-services-grid" style="margin-bottom: 1.5rem;">
+                  <div class="service-item-grid">AWS / Azure / GCP</div>
+                  <div class="service-item-grid">On-premise support</div>
+                  <div class="service-item-grid">Docker & Kubernetes</div>
+                  <div class="service-item-grid">Private Cloud SaaS</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION 7: Contact -->
+      <section class="section-container contact-section" id="contact">
+        <div class="container-fluid section-padding">
+          <div class="contact-wrapper">
+            <div class="row g-0">
+              <!-- Left: Content & Value Props -->
+              <div class="col-lg-5">
+                <div class="contact-info-side">
+                  <span class="pill-badge pill-badge-blue">Let's Talk</span>
+                  <h2>Ready to automate your reporting?</h2>
+                  <p class="contact-intro">
+                    Join fund managers and asset managers who've eliminated manual reporting bottlenecks. Tell us about your challenges and we'll show you what's possible.
+                  </p>
+                  
+                  <div class="contact-benefits">
+                    <div class="contact-benefit">
+                      <div class="benefit-icon">⚡</div>
+                      <div class="benefit-text">
+                        <strong>15-Minute Demo</strong>
+                        <span>See Octigen in action with your use case</span>
+                      </div>
+                    </div>
+                    <div class="contact-benefit">
+                      <div class="benefit-icon">📊</div>
+                      <div class="benefit-text">
+                        <strong>Custom Pilot</strong>
+                        <span>Test with your templates & data sources</span>
+                      </div>
+                    </div>
+                    <div class="contact-benefit">
+                      <div class="benefit-icon">🔒</div>
+                      <div class="benefit-text">
+                        <strong>Enterprise Ready</strong>
+                        <span>SSO, compliance, on-premise options</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="contact-trust">
+                    <div class="trust-label">Octigen's team is trusted by</div>
+                    <div class="trust-logos">
+                      <span class="trust-logo-placeholder">Asset Managers</span>
+                      <span class="trust-logo-placeholder">Fund Administrators</span>
+                      <span class="trust-logo-placeholder">Major Banks</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Right: Form -->
+              <div class="col-lg-7">
+                <div class="contact-form-side">
+                  <form
+                    action="https://formspree.io/f/xrbelbzl"
+                    id="contact-form"
+                    method="POST"
+                    class="contact-form-enhanced"
+                  >
+                    <div class="form-row-2col">
+                      <div class="form-group">
+                        <label for="contact-name">Name</label>
+                        <input
+                          name="name"
+                          id="contact-name"
+                          type="text"
+                          placeholder="John Smith"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="contact-email">Work Email</label>
+                        <input
+                          name="email"
+                          id="contact-email"
+                          type="email"
+                          placeholder="john@company.com"
+                          required
+                        />
+                      </div>
+                    </div>
+                    
+                    <div class="form-row-2col">
+                      <div class="form-group">
+                        <label for="contact-company">Company</label>
+                        <input
+                          name="company"
+                          id="contact-company"
+                          type="text"
+                          placeholder="Acme Asset Management"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="contact-role">Your Role</label>
+                        <select name="role" id="contact-role">
+                          <option value="">Select...</option>
+                          <option value="fund-manager">Fund Manager</option>
+                          <option value="portfolio-manager">Portfolio Manager</option>
+                          <option value="operations">Operations / Middle Office</option>
+                          <option value="marketing-ir">Marketing / IR</option>
+                          <option value="it">IT / Technology</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="contact-message">Tell us about your reporting needs</label>
+                      <textarea
+                        name="message"
+                        id="contact-message"
+                        placeholder="E.g., We produce 50+ factsheets monthly. Looking to automate data injection and commentary..."
+                        rows="4"
+                        required
+                      ></textarea>
+                    </div>
+                    
+                    <input type="hidden" name="source" value="fund-reporting-page" />
+                    
+                    <div class="form-footer">
+                      <div class="form-consent">
+                        <input
+                          name="gdpr-consent"
+                          type="checkbox"
+                          id="gdpr-checkbox"
+                          required
+                        />
+                        <label for="gdpr-checkbox">
+                          I agree to the <a href="/privacy_policy.html" target="_blank">privacy policy</a>
+                        </label>
+                      </div>
+                      
+                      <button type="submit" id="contact-form-button" class="contact-submit-btn">
+                        <span class="btn-text">Request Demo</span>
+                        <span class="btn-arrow">→</span>
+                      </button>
+                    </div>
+                    
+                    <div id="contact-form-status" class="form-status"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Footer -->
+      <div id="footer-container"></div>
+      
+    </main>
+
+    <!-- Auto-Demo Script for Comparison Slider -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const slider = document.querySelector('.before-after-slider');
+        const wrapper = document.querySelector('.comparison-wrapper');
+        const tooltip = document.querySelector('.comparison-tooltip');
+        
+        if (!slider || !wrapper) return;
+        
+        let hasInteracted = false;
+        let hasDemoRun = false;
+        
+        // Mark as interacted on any user input
+        const markInteracted = () => {
+          if (!hasInteracted) {
+            hasInteracted = true;
+            wrapper.classList.add('user-interacted');
+            wrapper.classList.remove('auto-demo', 'demo-complete');
+          }
+        };
+        
+        slider.addEventListener('mousedown', markInteracted);
+        slider.addEventListener('touchstart', markInteracted);
+        
+        // Auto-demo animation
+        const runAutoDemo = () => {
+          if (hasInteracted || hasDemoRun) return;
+          hasDemoRun = true;
+          
+          wrapper.classList.add('auto-demo');
+          
+          // Show tooltip
+          if (tooltip) {
+            tooltip.classList.add('show-tooltip');
+          }
+          
+          const startValue = 35;
+          const peakValue = 75;
+          const endValue = 35;
+          const duration = 1800; // Total animation time in ms
+          const startTime = performance.now();
+          
+          const easeInOutCubic = (t) => {
+            return t < 0.5 
+              ? 4 * t * t * t 
+              : 1 - Math.pow(-2 * t + 2, 3) / 2;
+          };
+          
+          const animate = (currentTime) => {
+            if (hasInteracted) {
+              wrapper.classList.remove('auto-demo');
+              return;
+            }
+            
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            let value;
+            if (progress < 0.5) {
+              // First half: go from start to peak
+              const t = easeInOutCubic(progress * 2);
+              value = startValue + (peakValue - startValue) * t;
+            } else {
+              // Second half: return from peak to end
+              const t = easeInOutCubic((progress - 0.5) * 2);
+              value = peakValue + (endValue - peakValue) * t;
+            }
+            
+            slider.value = value;
+            
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            } else {
+              // Demo complete
+              wrapper.classList.remove('auto-demo');
+              wrapper.classList.add('demo-complete');
+            }
+          };
+          
+          requestAnimationFrame(animate);
+        };
+        
+        // Use Intersection Observer to trigger demo when slider is visible
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !hasDemoRun && !hasInteracted) {
+              // Small delay after becoming visible for better UX
+              setTimeout(runAutoDemo, 400);
+              observer.disconnect(); // Only run once
+            }
+          });
+        }, {
+          threshold: 0.5 // Trigger when 50% of the slider is visible
+        });
+        
+        observer.observe(wrapper);
+      });
+    </script>
+
+      </body>
+</html>

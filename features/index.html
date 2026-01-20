@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- Theme Initialization (must be first to prevent flash of wrong theme) -->
+    <script>
+      (function() {
+        var stored = localStorage.getItem('octigen-theme');
+        var theme = stored || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+    
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <title>Features - AI-Powered Presentation Platform | Octigen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore Octigen's powerful features: intelligent templates, reusable workflows, seamless data integration, AI assistants, and automated presentation generation." />
+    <meta name="keywords" content="Octigen features, AI presentation, PowerPoint automation, templates, workflows, data integration, AI assistants, slide deck generation" />
+    <link rel="canonical" href="https://octigen.com/features/" />
+    <meta name="author" content="Octigen GmbH" />
+    <meta property="og:title" content="Features - AI-Powered Presentation Platform | Octigen" />
+    <meta property="og:description" content="Discover how Octigen transforms presentation creation with intelligent templates, AI assistants, and seamless data integration." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://octigen.com/features/" />
+    <meta property="og:site_name" content="Octigen" />
+    <meta property="og:image" content="https://octigen.com/assets/images/octigen.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://octigen.com/assets/images/octigen.png" />
+    <meta name="twitter:title" content="Features - AI-Powered Presentation Platform | Octigen" />
+    <meta name="twitter:description" content="Discover how Octigen transforms presentation creation with intelligent templates, AI assistants, and seamless data integration." />
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/ai_slides_progress/particles.js" defer></script>
+    <script src="/translator.js" defer></script>
+    <script src="/form.js" defer></script>
+    <script src="/assets/mobile-nav.js" defer></script>
+    <script src="/main.js" defer></script>
+    <script src="/load-footer.js" defer></script>
+    <script src="/assets/effects.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" rel="preconnect" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <!-- Theme CSS must be loaded FIRST (defines CSS custom properties) -->
+    <link rel="stylesheet" href="/assets/theme.css" />
+    <link rel="stylesheet" href="/assets/main.css" />
+    <link rel="stylesheet" href="/assets/form.css" />
+    <link rel="stylesheet" href="/landing.css" />
+    <link rel="stylesheet" href="/assets/homepage.css" />
+    <link rel="stylesheet" href="/assets/footer.css" />
+    <!-- Sub-navbar component -->
+    <link rel="stylesheet" href="/assets/sub-navbar.css" />
+    <script src="/assets/sub-navbar.js" defer></script>
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="features.css" />
+    <!-- Cookie Consent System -->
+    <link rel="stylesheet" href="/assets/cookie-consent.css">
+    <script src="/assets/cookie-consent.js" defer></script>
+  </head>
+  <body class="d-flex flex-column" data-page="features">
+    <!-- Particle Canvas Background -->
+    <canvas id="particles-canvas" class="particles-background"></canvas>
+    
+    <!-- Navigation -->
+    <div id="navbar-container"></div>
+    
+    <!-- Sub Navigation for Sections -->
+    <nav class="sub-navbar" id="sub-navbar">
+      <div class="sub-navbar-container">
+        <a href="#hero" class="sub-nav-link active" data-section="hero">Overview</a>
+        <a href="#templates" class="sub-nav-link" data-section="templates">Templates</a>
+        <a href="#workflows" class="sub-nav-link" data-section="workflows">Workflows</a>
+        <a href="#data" class="sub-nav-link" data-section="data">Data Integration</a>
+        <a href="#ai-assistants" class="sub-nav-link" data-section="ai-assistants">AI Assistants</a>
+        <a href="#creation" class="sub-nav-link" data-section="creation">Creating Decks</a>
+        <a href="#contact" class="sub-nav-link" data-section="contact">Get Started</a>
+      </div>
+    </nav>
+    
+    <main class="landing-hero">
+      
+      <!-- SECTION 1: Hero - What is Octigen -->
+      <section class="section-container hero-section" id="hero">
+        <div class="container-fluid section-padding">
+          <div class="row align-items-center g-5">
+            <!-- Left: Heading + Text -->
+            <div class="col-lg-6">
+              <div class="hero-content">
+                <span class="pill-badge pill-badge-blue">Platform Overview</span>
+                <h1>The complete platform<br>for <span style="color: var(--octigen-blue);">AI-powered</span> presentations</h1>
+                <p>
+                  Octigen combines your PowerPoint templates with your data and AI assistants to create professional presentations automatically.
+                  <br>
+                  <strong style="color: var(--octigen-blue);">Content first, design later.</strong> Focus on your message while AI handles the mechanics.
+                </p>
+                <div class="hero-buttons">
+                  <a href="#templates" class="section-btn section-btn-primary pulse-waves">
+                    Explore Features
+                  </a>
+                  <a href="https://cloud.octigen.com/docs" target="_blank" class="section-btn section-btn-outline">
+                    Read Documentation
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Right: Platform Visual -->
+            <div class="col-lg-6">
+              <div class="platform-visual">
+                <div class="platform-hub">
+                  <div class="hub-center">
+                    <img src="/assets/images/octopus_only_white.png" alt="Octigen" class="hub-logo-img" />
+                  </div>
+                  <!-- Orbiting Elements -->
+                  <div class="orbit orbit-1">
+                    <div class="orbit-item" data-label="Templates">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M3 9h18M9 21V9"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="orbit orbit-2">
+                    <div class="orbit-item" data-label="Workflows">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M4 5h16M4 12h16M4 19h10"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="orbit orbit-3">
+                    <div class="orbit-item" data-label="Data">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <ellipse cx="12" cy="5" rx="9" ry="3"/>
+                        <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+                        <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="orbit orbit-4">
+                    <div class="orbit-item" data-label="AI">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 2v2m0 16v2M2 12h2m16 0h2"/>
+                        <path d="M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 2: The Octigen Model - Philosophy -->
+      <section class="section-container feature-section" style="padding-top: 3rem; padding-bottom: 3rem;">
+        <div class="container-fluid section-padding">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="section-glass-card" style="text-align: center;">
+                <h2 style="font-size: 2rem; font-weight: 300; color: var(--theme-text-primary); margin-bottom: 1.5rem;">
+                  The Octigen Model
+                </h2>
+                <p style="font-size: 1.15rem; color: var(--theme-text-secondary); line-height: 1.8; max-width: 800px; margin: 0 auto 2rem;">
+                  We separate <strong style="color: var(--octigen-blue);">visual design</strong> (templates), 
+                  <strong style="color: var(--octigen-blue);">content structure</strong> (workflows), and 
+                  <strong style="color: var(--octigen-blue);">presentation content</strong> (slide decks).
+                  This separation enables reusable templates, consistent branding, and creative freedom when needed.
+                </p>
+                <div class="model-cards">
+                  <div class="model-card">
+                    <div class="model-card-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M3 9h18M9 21V9"/>
+                      </svg>
+                    </div>
+                    <h4>Templates</h4>
+                    <p>Visual design & layout</p>
+                  </div>
+                  <div class="model-card-connector">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </div>
+                  <div class="model-card">
+                    <div class="model-card-icon workflows">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M4 5h16M4 12h16M4 19h10"/>
+                      </svg>
+                    </div>
+                    <h4>Workflows</h4>
+                    <p>Structure & approach</p>
+                  </div>
+                  <div class="model-card-connector">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </div>
+                  <div class="model-card">
+                    <div class="model-card-icon decks">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="2" y="6" width="16" height="12" rx="2"/>
+                        <rect x="6" y="2" width="16" height="12" rx="2"/>
+                      </svg>
+                    </div>
+                    <h4>Slide Decks</h4>
+                    <p>Unique content</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 3: Templates -->
+      <section class="section-container feature-section" id="templates" style="padding-top: 4rem; padding-bottom: 4rem;">
+        <div class="container-fluid section-padding">
+          <div class="row align-items-center g-5">
+            <!-- Left: Content -->
+            <div class="col-lg-6 order-lg-1 order-1">
+              <div class="feature-content">
+                <span class="pill-badge pill-badge-orange">Smart Templates</span>
+                <h2>Your PowerPoint,<br>supercharged</h2>
+                <p>
+                  Templates are your design files that serve as the foundation for all generated presentations. Upload any PowerPoint and Octigen makes it "smart."
+                  <br><br>
+                  <strong style="color: var(--octigen-blue);">Slides are categorized</strong> by purpose (title, data, content). 
+                  <strong style="color: var(--octigen-blue);">Shapes are named</strong> and classified. The AI knows what to update and what to preserve.
+                </p>
+                <div class="highlight-card">
+                  <h4>Template Assistant</h4>
+                  <p>AI helps you categorize slides, name placeholders, and validate brand compliance automatically.</p>
+                </div>
+              </div>
+            </div>
+            <!-- Right: Template Visual -->
+            <div class="col-lg-6 order-lg-2 order-2">
+              <div class="template-visual">
+                <div class="template-preview">
+                  <div class="template-header">
+                    <span class="template-dot red"></span>
+                    <span class="template-dot yellow"></span>
+                    <span class="template-dot green"></span>
+                    <span class="template-title">corporate_template.pptx</span>
+                  </div>
+                  <div class="template-body">
+                    <!-- Slide Categories -->
+                    <div class="template-categories">
+                      <div class="template-category active">
+                        <div class="category-badge">Title Slides</div>
+                        <div class="category-slide title">
+                          <div class="slide-shape title-shape">{{title}}</div>
+                          <div class="slide-shape subtitle-shape">{{subtitle}}</div>
+                        </div>
+                      </div>
+                      <div class="template-category">
+                        <div class="category-badge">Data Slides</div>
+                        <div class="category-slide data">
+                          <div class="slide-shape header-shape">{{header}}</div>
+                          <div class="slide-shape chart-shape">
+                            <span>{{chart}}</span>
+                            <div class="mini-bars">
+                              <div class="bar"></div>
+                              <div class="bar"></div>
+                              <div class="bar"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="template-category">
+                        <div class="category-badge">Content Slides</div>
+                        <div class="category-slide content">
+                          <div class="slide-shape header-shape">{{header}}</div>
+                          <div class="slide-shape text-shape">{{body}}</div>
+                          <div class="slide-shape text-shape small">{{footnote}}</div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Analysis Badge -->
+                    <div class="template-analysis">
+                      <span class="analysis-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                          <path d="M9 12l2 2 4-4"/>
+                          <circle cx="12" cy="12" r="10"/>
+                        </svg>
+                      </span>
+                      <span class="analysis-text">24 slides analyzed</span>
+                      <span class="analysis-status">Ready</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 4: Workflows -->
+      <section class="section-container feature-section" id="workflows" style="padding-top: 4rem; padding-bottom: 4rem;">
+        <div class="container-fluid section-padding">
+          <div class="row align-items-center g-5">
+            <!-- Left: Workflow Visual -->
+            <div class="col-lg-6 order-2 order-lg-1">
+              <div class="workflow-visual">
+                <div class="workflow-preview">
+                  <div class="workflow-header">
+                    <span class="workflow-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="3" width="7" height="7" rx="1"/>
+                        <rect x="14" y="3" width="7" height="7" rx="1"/>
+                        <rect x="3" y="14" width="7" height="7" rx="1"/>
+                        <rect x="14" y="14" width="7" height="7" rx="1"/>
+                      </svg>
+                    </span>
+                    <span class="workflow-name">Quarterly Business Review</span>
+                    <span class="workflow-badge">Active</span>
+                  </div>
+                  <div class="workflow-body">
+                    <!-- Structure Section -->
+                    <div class="workflow-section">
+                      <div class="workflow-section-title">Deck Structure</div>
+                      <div class="workflow-items">
+                        <div class="workflow-item"><span class="item-num">1</span> Title Slide <span class="item-tag">once</span></div>
+                        <div class="workflow-item"><span class="item-num">2</span> Executive Summary <span class="item-tag">once</span></div>
+                        <div class="workflow-item"><span class="item-num">3</span> Performance Charts <span class="item-tag multi">1-3</span></div>
+                        <div class="workflow-item"><span class="item-num">4</span> Key Metrics Table <span class="item-tag multi">1-2</span></div>
+                        <div class="workflow-item"><span class="item-num">5</span> Outlook & Actions <span class="item-tag">once</span></div>
+                      </div>
+                    </div>
+                    <!-- Style Section -->
+                    <div class="workflow-section">
+                      <div class="workflow-section-title">Tone & Style</div>
+                      <div class="workflow-tags">
+                        <span class="workflow-tag">Professional</span>
+                        <span class="workflow-tag">Data-driven</span>
+                        <span class="workflow-tag">Concise</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Right: Content -->
+            <div class="col-lg-6 order-1 order-lg-2">
+              <div class="feature-content">
+                <span class="pill-badge pill-badge-blue">Reusable Workflows</span>
+                <h2>Define once,<br>use forever</h2>
+                <p>
+                  Workflows are pre-configured blueprints that guide AI in creating specific types of presentations. They define the overall tone, slide categories to use, and specific instructions for each section.
+                  <br><br>
+                  Perfect for <strong style="color: var(--octigen-blue);">quarterly reviews</strong>, <strong style="color: var(--octigen-blue);">product launches</strong>, <strong style="color: var(--octigen-blue);">investment pitches</strong>, or any recurring deliverable.
+                </p>
+                <div class="feature-list">
+                  <div class="feature-list-item">
+                    <span class="feature-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 6L9 17l-5-5"/>
+                      </svg>
+                    </span>
+                    <span>Define deck structure and slide order</span>
+                  </div>
+                  <div class="feature-list-item">
+                    <span class="feature-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 6L9 17l-5-5"/>
+                      </svg>
+                    </span>
+                    <span>Set tone, style, and AI instructions</span>
+                  </div>
+                  <div class="feature-list-item">
+                    <span class="feature-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 6L9 17l-5-5"/>
+                      </svg>
+                    </span>
+                    <span>Pre-configure data connections</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 5: Data Integration -->
+      <section class="section-container feature-section" id="data" style="padding-top: 4rem; padding-bottom: 4rem;">
+        <div class="container-fluid section-padding">
+          <div class="row align-items-center g-5">
+            <!-- Left: Content -->
+            <div class="col-lg-6 order-lg-1 order-1">
+              <div class="feature-content">
+                <span class="pill-badge pill-badge-orange">Seamless Data Integration</span>
+                <h2>Connect any<br>data source</h2>
+                <p>
+                  Bring your own data. Octigen connects to <strong style="color: var(--octigen-blue);">Excel files, CSV, databases, APIs, and SFTP feeds</strong>. 
+                  Data flows directly into charts, tables, and text placeholders.
+                  <br><br>
+                  Define <strong style="color: var(--octigen-blue);">Data Collections</strong> to organize and transform your data. 
+                  Configure how data maps to specific slides for deterministic, repeatable results.
+                </p>
+                <div class="feature-list">
+                  <div class="feature-list-item">
+                    <span class="feature-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 6L9 17l-5-5"/>
+                      </svg>
+                    </span>
+                    <span>Direct injection into native PowerPoint shapes</span>
+                  </div>
+                  <div class="feature-list-item">
+                    <span class="feature-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 6L9 17l-5-5"/>
+                      </svg>
+                    </span>
+                    <span>Charts, tables, and text boxes supported</span>
+                  </div>
+                  <div class="feature-list-item">
+                    <span class="feature-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 6L9 17l-5-5"/>
+                      </svg>
+                    </span>
+                    <span>Schedule automated data refreshes</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Right: Data Visual -->
+            <div class="col-lg-6 order-lg-2 order-2">
+              <div class="data-visual">
+                <div class="data-sources-container">
+                  <!-- Data Sources -->
+                  <div class="data-source-row">
+                    <div class="data-source">
+                      <span class="source-icon">📊</span>
+                      <div class="source-info">
+                        <span class="source-name">portfolio_data.xlsx</span>
+                        <span class="source-type">Excel File</span>
+                      </div>
+                      <span class="source-status connected"></span>
+                    </div>
+                    <div class="data-source">
+                      <span class="source-icon">🔗</span>
+                      <div class="source-info">
+                        <span class="source-name">Bloomberg API</span>
+                        <span class="source-type">REST API</span>
+                      </div>
+                      <span class="source-status connected"></span>
+                    </div>
+                    <div class="data-source">
+                      <span class="source-icon">🗄️</span>
+                      <div class="source-info">
+                        <span class="source-name">Fund Database</span>
+                        <span class="source-type">PostgreSQL</span>
+                      </div>
+                      <span class="source-status connected"></span>
+                    </div>
+                  </div>
+                  <!-- Flow Arrow -->
+                  <div class="data-flow-arrow">
+                    <div class="flow-line"></div>
+                    <div class="flow-badge">Transform</div>
+                    <div class="flow-line"></div>
+                  </div>
+                  <!-- Data Collection -->
+                  <div class="data-collection">
+                    <div class="collection-header">
+                      <span class="collection-icon">📁</span>
+                      <span class="collection-name">Q4 Performance Data</span>
+                    </div>
+                    <div class="collection-fields">
+                      <div class="field"><span class="field-name">fund_name</span><span class="field-type">string</span></div>
+                      <div class="field"><span class="field-name">nav_value</span><span class="field-type">number</span></div>
+                      <div class="field"><span class="field-name">ytd_return</span><span class="field-type">percent</span></div>
+                      <div class="field"><span class="field-name">holdings[]</span><span class="field-type">array</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 6: AI Assistants -->
+      <section class="section-container feature-section" id="ai-assistants" style="padding-top: 4rem; padding-bottom: 4rem;">
+        <div class="container-fluid section-padding">
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+              <span class="pill-badge pill-badge-blue">AI as Collaborator</span>
+              <h2 style="color: var(--theme-text-primary); font-weight: 300; font-size: 2.5rem; margin-bottom: 1rem;">Specialized AI assistants<br>for every step</h2>
+              <p style="color: var(--theme-text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
+                Think of AI as a junior colleague: you provide strategy, key messages, and priorities. AI provides structure, phrasing, and formatting. You review and refine.
+              </p>
+            </div>
+          </div>
+          
+          <div class="row g-4">
+            <!-- Template Assistant -->
+            <div class="col-lg-4 col-md-6">
+              <div class="assistant-card">
+                <div class="assistant-icon template">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <path d="M3 9h18M9 21V9"/>
+                  </svg>
+                </div>
+                <h3>Template Assistant</h3>
+                <p>Analyzes your PowerPoint templates, categorizes slides, names shapes, and validates brand compliance.</p>
+                <div class="assistant-tasks">
+                  <span class="task">Slide categorization</span>
+                  <span class="task">Shape naming</span>
+                  <span class="task">Brand validation</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Content Assistant -->
+            <div class="col-lg-4 col-md-6">
+              <div class="assistant-card featured">
+                <div class="assistant-icon content">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                  </svg>
+                </div>
+                <h3>Content Assistant</h3>
+                <p>Helps create engaging presentation content from your research, data, and notes. Adapts to your brand voice.</p>
+                <div class="assistant-tasks">
+                  <span class="task">Content generation</span>
+                  <span class="task">Tone adaptation</span>
+                  <span class="task">Research synthesis</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Structure Analysis -->
+            <div class="col-lg-4 col-md-6">
+              <div class="assistant-card">
+                <div class="assistant-icon structure">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="3" width="7" height="7" rx="1"/>
+                    <rect x="14" y="3" width="7" height="7" rx="1"/>
+                    <rect x="3" y="14" width="7" height="7" rx="1"/>
+                    <rect x="14" y="14" width="7" height="7" rx="1"/>
+                  </svg>
+                </div>
+                <h3>Structure Bot</h3>
+                <p>Organizes your content into a logical slide structure based on your workflow and presentation goals.</p>
+                <div class="assistant-tasks">
+                  <span class="task">Content organization</span>
+                  <span class="task">Slide sequencing</span>
+                  <span class="task">Flow optimization</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Slide Population Bot -->
+            <div class="col-lg-4 col-md-6">
+              <div class="assistant-card">
+                <div class="assistant-icon populate">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                    <path d="M2 17l10 5 10-5"/>
+                    <path d="M2 12l10 5 10-5"/>
+                  </svg>
+                </div>
+                <h3>Population Bot</h3>
+                <p>Fills slides with appropriate content, fitting text to placeholders and data to charts automatically.</p>
+                <div class="assistant-tasks">
+                  <span class="task">Content fitting</span>
+                  <span class="task">Data mapping</span>
+                  <span class="task">Smart truncation</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Refinement Assistant -->
+            <div class="col-lg-4 col-md-6">
+              <div class="assistant-card">
+                <div class="assistant-icon refine">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M12 2v2m0 16v2M2 12h2m16 0h2"/>
+                    <path d="M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"/>
+                  </svg>
+                </div>
+                <h3>Refinement Assistant</h3>
+                <p>Makes adjustments to generated slides: shorten text, expand bullets, improve phrasing, or swap data points.</p>
+                <div class="assistant-tasks">
+                  <span class="task">Text editing</span>
+                  <span class="task">Improvements</span>
+                  <span class="task">Final polish</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- You -->
+            <div class="col-lg-4 col-md-6">
+              <div class="assistant-card user-card">
+                <div class="assistant-icon user">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                  </svg>
+                </div>
+                <h3>You</h3>
+                <p>Review, approve, and refine. You provide strategy, key messages, and priorities. The final decision is always yours.</p>
+                <div class="assistant-tasks">
+                  <span class="task user-task">Strategy</span>
+                  <span class="task user-task">Review</span>
+                  <span class="task user-task">Approval</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 7: Creating Presentations -->
+      <section class="section-container feature-section" id="creation" style="padding-top: 4rem; padding-bottom: 4rem;">
+        <div class="container-fluid section-padding">
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+              <span class="pill-badge pill-badge-orange">The Creation Process</span>
+              <h2 style="color: var(--theme-text-primary); font-weight: 300; font-size: 2.5rem; margin-bottom: 1rem;">Five phases to<br>a perfect deck</h2>
+              <p style="color: var(--theme-text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
+                The creation process flows through distinct phases, each with its own AI assistance. You stay in control at every step.
+              </p>
+            </div>
+          </div>
+          
+          <div class="row justify-content-center">
+            <div class="col-lg-11">
+              <div class="creation-phases-grid">
+                <div class="phase-card">
+                  <div class="phase-card-header">
+                    <div class="phase-number">1</div>
+                    <div class="phase-icon build">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="phase-card-body">
+                    <h4>Build</h4>
+                    <p>Create your content: text, data, research. Import from URLs, PDFs, or write directly.</p>
+                    <div class="phase-features">
+                      <span>URL import</span>
+                      <span>PDF upload</span>
+                      <span>Data connect</span>
+                    </div>
+                  </div>
+                  <div class="phase-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </div>
+                </div>
+                
+                <div class="phase-card">
+                  <div class="phase-card-header">
+                    <div class="phase-number">2</div>
+                    <div class="phase-icon structure">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="3" width="7" height="7" rx="1"/>
+                        <rect x="14" y="3" width="7" height="7" rx="1"/>
+                        <rect x="3" y="14" width="7" height="7" rx="1"/>
+                        <rect x="14" y="14" width="7" height="7" rx="1"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="phase-card-body">
+                    <h4>Structure</h4>
+                    <p>AI organizes content into a logical slide sequence based on your workflow blueprint.</p>
+                    <div class="phase-features">
+                      <span>Auto-organize</span>
+                      <span>Slide mapping</span>
+                      <span>Flow logic</span>
+                    </div>
+                  </div>
+                  <div class="phase-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </div>
+                </div>
+                
+                <div class="phase-card">
+                  <div class="phase-card-header">
+                    <div class="phase-number">3</div>
+                    <div class="phase-icon populate">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                        <path d="M3 9h18M9 21V9"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="phase-card-body">
+                    <h4>Populate</h4>
+                    <p>AI fills slide placeholders with content, fitting text and mapping data automatically.</p>
+                    <div class="phase-features">
+                      <span>Smart fitting</span>
+                      <span>Data injection</span>
+                      <span>Chart fill</span>
+                    </div>
+                  </div>
+                  <div class="phase-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </div>
+                </div>
+                
+                <div class="phase-card">
+                  <div class="phase-card-header">
+                    <div class="phase-number">4</div>
+                    <div class="phase-icon refine">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="3"/>
+                        <path d="M12 2v2m0 16v2M2 12h2m16 0h2"/>
+                        <path d="M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="phase-card-body">
+                    <h4>Refine</h4>
+                    <p>Review each slide. Make adjustments, improvements, and final polish with AI help.</p>
+                    <div class="phase-features">
+                      <span>AI edits</span>
+                      <span>Manual tweaks</span>
+                      <span>Review</span>
+                    </div>
+                  </div>
+                  <div class="phase-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                  </div>
+                </div>
+                
+                <div class="phase-card final">
+                  <div class="phase-card-header">
+                    <div class="phase-number">5</div>
+                    <div class="phase-icon generate">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                        <polyline points="7,10 12,15 17,10"/>
+                        <line x1="12" y1="15" x2="12" y2="3"/>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="phase-card-body">
+                    <h4>Generate</h4>
+                    <p>Download your final PowerPoint file. 100% native .pptx, fully editable.</p>
+                    <div class="phase-features final-features">
+                      <span>Native PPTX</span>
+                      <span>Fully editable</span>
+                      <span>Brand perfect</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 8: Enterprise & Developer -->
+      <section class="section-container feature-section" style="padding-bottom: 5rem; padding-top: 5rem;">
+        <div class="container-fluid section-padding">
+          <!-- Section Header -->
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+              <h2 style="color: var(--theme-text-primary); font-weight: 300; font-size: 2.5rem; margin-bottom: 1.5rem;">Built for scale, designed for compliance</h2>
+              <p style="color: var(--theme-text-secondary); font-size: 1.1rem;">
+                Whether you need API-driven automation or strict data sovereignty, Octigen adapts to your technical and regulatory requirements.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Two Cards -->
+          <div class="row g-4">
+            <!-- Left: Developer API Card -->
+            <div class="col-lg-6">
+              <div class="section-glass-card h-100" style="text-align: left;">
+                <span class="section-badge section-badge-blue" style="margin-bottom: 1.5rem;">For Developers</span>
+                <h3 style="font-size: 1.6rem; font-weight: 400; margin-bottom: 1rem; text-align: left; color: var(--theme-text-primary);">JSON-to-PowerPoint API</h3>
+                <p style="color: var(--theme-text-secondary); line-height: 1.7; margin-bottom: 1.5rem; text-align: left;">
+                  Integrate presentation generation into your existing workflows. Build custom tools on top of Octigen's engine.
+                </p>
+                <div class="consulting-services-grid" style="margin-bottom: 1.5rem;">
+                  <div class="service-item-grid">Direct JSON injection</div>
+                  <div class="service-item-grid">Auto slide replication</div>
+                  <div class="service-item-grid">Smart pagination</div>
+                  <div class="service-item-grid">Dry-run validation</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Right: Enterprise Architecture Card -->
+            <div class="col-lg-6">
+              <div class="section-glass-card h-100" style="text-align: left;">
+                <span class="section-badge" style="margin-bottom: 1.5rem;">Enterprise Ready</span>
+                <h3 style="font-size: 1.6rem; font-weight: 400; margin-bottom: 1rem; text-align: left; color: var(--theme-text-primary);">Cloud-Agnostic Architecture</h3>
+                <p style="color: var(--theme-text-secondary); line-height: 1.7; margin-bottom: 1.5rem; text-align: left;">
+                  Deploy where your compliance requirements dictate. Your data never leaves your chosen environment in self-hosted scenarios.
+                </p>
+                <div class="consulting-services-grid" style="margin-bottom: 1.5rem;">
+                  <div class="service-item-grid">AWS / Azure / GCP</div>
+                  <div class="service-item-grid">On-premise support</div>
+                  <div class="service-item-grid">Docker & Kubernetes</div>
+                  <div class="service-item-grid">Private Cloud SaaS</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 9: Contact -->
+      <section class="section-container contact-section" id="contact">
+        <div class="container-fluid section-padding">
+          <div class="contact-wrapper">
+            <div class="row g-0">
+              <!-- Left: Content & Value Props -->
+              <div class="col-lg-5">
+                <div class="contact-info-side">
+                  <span class="pill-badge pill-badge-blue">Get Started</span>
+                  <h2>Ready to transform your presentations?</h2>
+                  <p class="contact-intro">
+                    Whether you're automating fund reports or creating AI-powered pitch decks, we're here to help. Tell us your challenge and we'll show you what's possible.
+                  </p>
+                  
+                  <div class="contact-benefits">
+                    <div class="contact-benefit">
+                      <div class="benefit-icon">⚡</div>
+                      <div class="benefit-text">
+                        <strong>15-Minute Demo</strong>
+                        <span>See Octigen in action with your use case</span>
+                      </div>
+                    </div>
+                    <div class="contact-benefit">
+                      <div class="benefit-icon">🎯</div>
+                      <div class="benefit-text">
+                        <strong>Custom Pilot</strong>
+                        <span>Test with your templates & data sources</span>
+                      </div>
+                    </div>
+                    <div class="contact-benefit">
+                      <div class="benefit-icon">📚</div>
+                      <div class="benefit-text">
+                        <strong>Full Documentation</strong>
+                        <span>Explore our comprehensive docs</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="contact-trust">
+                    <div class="trust-label">Octigen's team is trusted by</div>
+                    <div class="trust-logos">
+                      <span class="trust-logo-placeholder">Asset Managers</span>
+                      <span class="trust-logo-placeholder">Fund Administrators</span>
+                      <span class="trust-logo-placeholder">Consulting Firms</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Right: Form -->
+              <div class="col-lg-7">
+                <div class="contact-form-side">
+                  <form
+                    action="https://formspree.io/f/xrbelbzl"
+                    id="contact-form"
+                    method="POST"
+                    class="contact-form-enhanced"
+                  >
+                    <div class="form-row-2col">
+                      <div class="form-group">
+                        <label for="contact-name">Name</label>
+                        <input
+                          name="name"
+                          id="contact-name"
+                          type="text"
+                          placeholder="John Smith"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="contact-email">Work Email</label>
+                        <input
+                          name="email"
+                          id="contact-email"
+                          type="email"
+                          placeholder="john@company.com"
+                          required
+                        />
+                      </div>
+                    </div>
+                    
+                    <div class="form-row-2col">
+                      <div class="form-group">
+                        <label for="contact-company">Company</label>
+                        <input
+                          name="company"
+                          id="contact-company"
+                          type="text"
+                          placeholder="Acme Capital"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="contact-interest">I'm interested in...</label>
+                        <select name="interest" id="contact-interest">
+                          <option value="">Select...</option>
+                          <option value="reporting-automation">Reporting Automation</option>
+                          <option value="ai-presentations">AI-Powered Presentations</option>
+                          <option value="api-integration">API Integration</option>
+                          <option value="enterprise">Enterprise Deployment</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="contact-message">Tell us about your project</label>
+                      <textarea
+                        name="message"
+                        id="contact-message"
+                        placeholder="E.g., We want to automate our quarterly reporting process..."
+                        rows="4"
+                        required
+                      ></textarea>
+                    </div>
+                    
+                    <input type="hidden" name="source" value="features-page" />
+                    
+                    <div class="form-footer">
+                      <div class="form-consent">
+                        <input
+                          name="gdpr-consent"
+                          type="checkbox"
+                          id="gdpr-checkbox"
+                          required
+                        />
+                        <label for="gdpr-checkbox">
+                          I agree to the <a href="/privacy_policy.html" target="_blank">privacy policy</a>
+                        </label>
+                      </div>
+                      
+                      <button type="submit" id="contact-form-button" class="contact-submit-btn">
+                        <span class="btn-text">Get Started</span>
+                        <span class="btn-arrow">→</span>
+                      </button>
+                    </div>
+                    
+                    <div id="contact-form-status" class="form-status"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Footer -->
+      <div id="footer-container"></div>
+      
+    </main>
+
+  </body>
+</html>

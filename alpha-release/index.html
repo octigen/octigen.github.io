@@ -1,7 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
+    
+    <!-- Theme Initialization (must be first to prevent flash of wrong theme) -->
+    <script>
+      (function() {
+        var stored = localStorage.getItem('octigen-theme');
+        var theme = stored || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+    
     <link
       rel="icon"
       type="image/png"
@@ -80,347 +90,340 @@
     </script>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/ai_slides_progress/particles.js" defer></script>
+    <script src="confetti.js" defer></script>
+    <script src="/translator.js" defer></script>
+    <script src="/form.js" defer></script>
+    <script src="/assets/mobile-nav.js" defer></script>
+    <script src="/main.js" defer></script>
+    <script src="/load-footer.js" defer></script>
+    <script src="/assets/effects.js" defer></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
       rel="preconnect"
     />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="../assets/main.css" />
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <!-- Theme CSS must be loaded FIRST (defines CSS custom properties) -->
+    <link rel="stylesheet" href="/assets/theme.css" />
+    <link rel="stylesheet" href="/assets/main.css" />
     <link rel="stylesheet" href="alpha-release.css" />
-    <script src="../ai_slides_progress/particles.js" defer></script>
-    <script src="confetti.js" defer></script>
-    <script src="../translator.js" defer></script>
-    <script src="../form.js" defer></script>
-    <script src="../load-footer.js" defer></script>
+    <link rel="stylesheet" href="/assets/form.css" />
+    <link rel="stylesheet" href="/landing.css" />
+    <link rel="stylesheet" href="/assets/homepage.css" />
+    <link rel="stylesheet" href="/assets/footer.css" />
+    <!-- Page-specific styles -->
+    <style>
+      /* Extra hero padding for this page only */
+      .alpha-hero-section {
+        padding-top: 8rem !important;
+        padding-bottom: 4rem !important;
+      }
+      
+      /* Extra button gap for this page */
+      .alpha-hero-section .hero-buttons {
+        gap: 1.5rem !important;
+      }
+      
+      @media (max-width: 576px) {
+        .alpha-hero-section {
+          padding-top: 7rem !important;
+        }
+        .alpha-hero-section .hero-buttons {
+          gap: 1rem !important;
+        }
+      }
+    </style>
   </head>
-    <!-- Cookie Consent System -->
-    <link rel="stylesheet" href="../assets/cookie-consent.css">
-    <script src="../assets/cookie-consent.js" defer></script>
-  <body class="d-flex flex-column vh-100">
+  <!-- Cookie Consent System -->
+  <link rel="stylesheet" href="/assets/cookie-consent.css">
+  <script src="/assets/cookie-consent.js" defer></script>
+  <body class="d-flex flex-column" data-page="alpha-release">
     <!-- Particle Canvas Background -->
     <canvas id="particles-canvas" class="particles-background"></canvas>
     
     <!-- Confetti Container -->
     <canvas id="confetti-canvas"></canvas>
     
-    <main>
-      <!-- Hero Section -->
-      <section class="alpha-hero">
-        <!-- Home Button -->
-        <div class="home-button-container">
-          <a href="../index.html" class="btn home-btn" title="Back to Octigen Homepage">
-            <svg class="home-icon" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-            </svg>
-            <span class="home-text">Home</span>
-          </a>
-        </div>
-
-        <!-- Rocket Image - Absolute Position on Left -->
-        <div class="rocket-container">
-          <img
-            src="octi_rocket.png"
-            alt="Octi Rocket - Alpha Launch"
-            class="octi-rocket"
-          />
-        </div>
-        
-        <!-- Moon Image - Right of Logo -->
-        <div class="moon-container">
-          <img
-            src="../assets/images/moon.png"
-            alt="Moon"
-            class="moon-image"
-          />
-        </div>
-        
-        <!-- Earth Image - Further Down and Right -->
-        <div class="earth-container">
-          <img
-            src="../assets/images/earth.png"
-            alt="Earth"
-            class="earth-image"
-          />
-        </div>
-        
-        <div class="container">
+    <!-- Navigation -->
+    <div id="navbar-container"></div>
+    
+    <main class="landing-hero">
+      
+      <!-- SECTION 1: Hero -->
+      <section class="section-container hero-section alpha-hero-section">
+        <div class="container-fluid section-padding">
           <div class="row justify-content-center">
-            <div class="col-lg-10 text-center" style="padding: 4rem 0 2rem 0;">
-              <!-- Logo -->
-              <div class="logo-container mb-4">
-                <img
-                  src="../assets/images/logo_octigen_white.png"
-                  alt="Octigen AI PowerPoint Generator"
-                  class="hero-logo pulse-glow"
-                />
-              </div>
-              
-              <!-- Celebration Badge -->
-              <div class="celebration-badge mb-4">
-                <span class="badge-text">ALPHA RELEASE</span>
-              </div>
-              
-              <!-- Hero Content -->
-              <div class="hero-content mb-5">
-                <h1 class="display-1 mb-4 text-white hero-title">
-                  We have launched.
-                </h1>
-                <p class="lead mb-4 text-white hero-subtitle">
+            <div class="col-lg-10 text-center">
+              <div class="hero-content" style="text-align: center;">
+                <!-- Celebration Badge -->
+                <div class="celebration-badge mb-4" style="align-self: center; margin: 0 auto 1.5rem auto;">
+                  <span class="badge-text">🚀 ALPHA RELEASE</span>
+                </div>
+                
+                <h1 style="text-align: center; font-size: 3.5rem; font-weight: 600;">We have <span style="color: var(--octigen-blue);">launched</span>.</h1>
+                <p class="lead mb-4" style="text-align: center; max-width: 700px; margin: 0 auto; font-size: 1.3rem;">
                   The future of PowerPoint automation is here.<br>Our alpha version is now available for early adopters.
                 </p>
-                <p class="text-white hero-description mb-5">
-                  We're excited to welcome our first users on this revolutionary journey to transform how presentations are created. From your own <span style="font-weight:800; color:#f7931e;">corporate templates</span> to repeatable workflows, experience the future of PowerPoint automation.
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem auto;">
+                  We're excited to welcome our first users on this revolutionary journey to transform how presentations are created. From your own <span style="font-weight:600; color: var(--octigen-orange);">corporate templates</span> to repeatable workflows, experience the future of PowerPoint automation.
                 </p>
-              </div>
-                
-              <!-- Call to Action -->
-              <div class="cta-section mb-5">
-                <a
-                  href="#early-access"
-                  class="btn btn-primary btn-lg me-3 mb-3 smooth-scroll cta-pulse"
-                >Apply for Early Access</a>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Features Showcase -->
-          <div class="container mt-0 mb-5">
-            <div class="row justify-content-center">
-              <div class="col-lg-12">
-                <h2 class="text-center text-white section-title mb-5">
-                  About the Alpha Release
-                </h2>
-                
-                <div class="row g-4">
-                  <!-- Feature 1 -->
-                  <div class="col-lg-3 col-md-6">
-                    <div class="feature-card">
-                      <div class="feature-icon">📎</div>
-                      <h4 class="feature-title">Template Engine</h4>
-                      <p class="feature-description">
-                        Upload your own PowerPoint templates and let Octigen work on them intelligently. Maintain your brand identity while saving hours of work.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <!-- Feature 2 -->
-                  <div class="col-lg-3 col-md-6">
-                    <div class="feature-card">
-                      <div class="feature-icon">🎯</div>
-                      <h4 class="feature-title">AI Slides Generator</h4>
-                      <p class="feature-description">
-                        AI-powered slide creation that understands your content and automatically structures your presentation for maximum impact.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <!-- Feature 3 -->
-                  <div class="col-lg-3 col-md-6">
-                    <div class="feature-card">
-                      <div class="feature-icon">⚡</div>
-                      <h4 class="feature-title">Workflow Automation</h4>
-                      <p class="feature-description">
-                        Create repeatable workflows for consistent results. Perfect for regular reports and recurring presentations.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <!-- Feature 4 -->
-                  <div class="col-lg-3 col-md-6">
-                    <div class="feature-card">
-                      <div class="feature-icon-special">
-                        <img src="../assets/images/swiss_lock.png" alt="Swiss Security" style="width: 54px; height: 54px;">
-                      </div>
-                      <h4 class="feature-title">Swiss Data Protection</h4>
-                      <p class="feature-description">
-                        Your data stays secure in independent Swiss data centers. Achieve data-sovereignty where it matters.
-                      </p>
-                    </div>
-                  </div>
+                <div class="hero-buttons" style="justify-content: center;">
+                  <a href="#contact" class="section-btn section-btn-primary pulse-waves smooth-scroll">
+                    Apply for Early Access
+                  </a>
+                  <a href="https://cloud.octigen.com/login" target="_blank" class="section-btn section-btn-outline">
+                    Go To Alpha
+                  </a>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 2: Features Showcase -->
+      <section class="section-container feature-section" style="padding-top: 4rem; padding-bottom: 4rem;">
+        <div class="container-fluid section-padding">
+          <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+              <span class="pill-badge pill-badge-orange">What's Included</span>
+              <h2 style="color: var(--theme-text-primary); font-weight: 300; font-size: 2.5rem; margin-bottom: 1rem;">About the Alpha Release</h2>
+            </div>
+          </div>
           
-          <!-- Early Access Form Section -->
-          <div class="container mt-5 mb-5 px-0">
-            <div class="row justify-content-center">
-              <div class="col-lg-12" id="early-access">
-                <div class="access-form-container">
-                  <div class="text-center mb-4">
-                    <h2 class="display-5 mb-3 text-white">Apply for Early Access</h2>
-                    <p class="text-white lead mb-4">
-                      Be among the first to experience the future of PowerPoint automation.
-                    </p>
-                    <p class="text-white opacity-85 mb-4">
-                      <span style="font-weight:800; color:#f7931e;">Alpha users</span> get exclusive access, priority support, and the opportunity to shape the future of Octigen with their feedbacks.
-                    </p>
-                  </div>
-
-                  <!-- Benefits List -->
-                  <div class="benefits-list mb-4">
-                    <div class="row g-3">
-                      <div class="col-lg-3 col-md-6 col-6">
-                        <div class="benefit-item">
-                          <span class="benefit-icon">✓</span>
-                          <span class="benefit-text">Priority access to all new features</span>
-                        </div>
+          <div class="row g-4 justify-content-center">
+            <!-- Feature 1 -->
+            <div class="col-lg-3 col-md-6">
+              <div class="feature-card">
+                <div class="feature-icon">📎</div>
+                <h4 class="feature-title">Template Engine</h4>
+                <p class="feature-description">
+                  Upload your own PowerPoint templates and let Octigen work on them intelligently. Maintain your brand identity while saving hours of work.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="col-lg-3 col-md-6">
+              <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h4 class="feature-title">AI Slides Generator</h4>
+                <p class="feature-description">
+                  AI-powered slide creation that understands your content and automatically structures your presentation for maximum impact.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="col-lg-3 col-md-6">
+              <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h4 class="feature-title">Workflow Automation</h4>
+                <p class="feature-description">
+                  Create repeatable workflows for consistent results. Perfect for regular reports and recurring presentations.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Feature 4 -->
+            <div class="col-lg-3 col-md-6">
+              <div class="feature-card">
+                <div class="feature-icon-special">
+                  <img src="/assets/images/swiss_lock.png" alt="Swiss Security" style="width: 54px; height: 54px;">
+                </div>
+                <h4 class="feature-title">Swiss Data Protection</h4>
+                <p class="feature-description">
+                  Your data stays secure in independent Swiss data centers. Achieve data-sovereignty where it matters.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 3: Contact / Early Access Form -->
+      <section class="section-container contact-section" id="contact">
+        <div class="container-fluid section-padding">
+          <div class="contact-wrapper">
+            <div class="row g-0">
+              <!-- Left: Content & Value Props -->
+              <div class="col-lg-5">
+                <div class="contact-info-side">
+                  <span class="pill-badge pill-badge-blue">Join the Alpha</span>
+                  <h2>Apply for Early Access</h2>
+                  <p class="contact-intro">
+                    Be among the first to experience the future of PowerPoint automation.
+                    <span style="font-weight:600; color: var(--octigen-orange);">Alpha users</span> get exclusive access, priority support, and the opportunity to shape the future of Octigen with their feedback.
+                  </p>
+                  
+                  <div class="contact-benefits">
+                    <div class="contact-benefit">
+                      <div class="benefit-icon">✓</div>
+                      <div class="benefit-text">
+                        <strong>Priority Access</strong>
+                        <span>First access to all new features</span>
                       </div>
-                      <div class="col-lg-3 col-md-6 col-6">
-                        <div class="benefit-item">
-                          <span class="benefit-icon">✓</span>
-                          <span class="benefit-text">Special early adopter's gifts and discounts</span>
-                        </div>
+                    </div>
+                    <div class="contact-benefit">
+                      <div class="benefit-icon">✓</div>
+                      <div class="benefit-text">
+                        <strong>Special Gifts</strong>
+                        <span>Early adopter discounts & perks</span>
                       </div>
-                      <div class="col-lg-3 col-md-6 col-6">
-                        <div class="benefit-item">
-                          <span class="benefit-icon">✓</span>
-                          <span class="benefit-text">Direct line to our development team</span>
-                        </div>
+                    </div>
+                    <div class="contact-benefit">
+                      <div class="benefit-icon">✓</div>
+                      <div class="benefit-text">
+                        <strong>Direct Line</strong>
+                        <span>Direct access to our dev team</span>
                       </div>
-                      <div class="col-lg-3 col-md-6 col-6">
-                        <div class="benefit-item">
-                          <span class="benefit-icon">✓</span>
-                          <span class="benefit-text">Shape the product with feedbacks</span>
-                        </div>
+                    </div>
+                    <div class="contact-benefit">
+                      <div class="benefit-icon">✓</div>
+                      <div class="benefit-text">
+                        <strong>Shape the Product</strong>
+                        <span>Your feedback drives development</span>
                       </div>
                     </div>
                   </div>
-
-                  <!-- Form -->
+                </div>
+              </div>
+              
+              <!-- Right: Form -->
+              <div class="col-lg-7">
+                <div class="contact-form-side">
                   <form
                     id="contact-form"
                     method="POST"
-                    class="alpha-form"
+                    class="contact-form-enhanced"
                     action="https://formspree.io/f/mgvpgjoq"
                   >
-                    <div class="row g-3">
-                      <div class="col-12 col-md-6">
-                        <label for="name" class="form-label text-white">
-                          Full Name
-                        </label>
+                    <div class="form-row-2col">
+                      <div class="form-group">
+                        <label for="contact-name">Full Name</label>
                         <input
                           name="name"
                           type="text"
-                          class="form-control form-control-lg"
-                          id="name"
-                          placeholder="Enter your full name"
+                          id="contact-name"
+                          placeholder="John Smith"
                           required
                         />
                       </div>
-                      
-                      <div class="col-12 col-md-6">
-                        <label for="email" class="form-label text-white">
-                          Email Address
-                        </label>
+                      <div class="form-group">
+                        <label for="contact-email">Work Email</label>
                         <input
                           name="email"
                           type="email"
-                          class="form-control form-control-lg"
-                          id="email"
-                          placeholder="Enter your email address"
+                          id="contact-email"
+                          placeholder="john@company.com"
                           required
                         />
-                      </div>
-                      
-                      <div class="col-12">
-                        <label for="company" class="form-label text-white">
-                          Company (Optional)
-                        </label>
-                        <input
-                          name="company"
-                          type="text"
-                          class="form-control form-control-lg"
-                          id="company"
-                          placeholder="Enter your company name"
-                        />
-                      </div>
-                      
-                      <div class="col-12">
-                        <label for="message" class="form-label text-white">
-                          Why are you interested in an early access?
-                        </label>
-                        <textarea
-                          name="message"
-                          class="form-control"
-                          id="message"
-                          placeholder="Tell us about your use case and how Octigen could help you improve your presentations and reporting..."
-                          style="height: 120px"
-                          required
-                        ></textarea>
                       </div>
                     </div>
                     
-                    <div class="row g-3 mt-3">
-                      <div class="col-12">
-                        <div class="form-check">
-                          <input
-                            name="gdpr-consent"
-                            type="checkbox"
-                            class="form-check-input"
-                            id="gdpr-checkbox"
-                            required
-                          />
-                          <label
-                            class="form-check-label text-white"
-                            for="gdpr-checkbox"
-                          >
-                            I agree to the
-                            <a href="../privacy_policy.html" target="_blank" class="text-white">privacy policy</a>
-                            and want to receive updates about Octigen's services
-                          </label>
-                        </div>
-                      </div>
-                      
-                      <div class="col-12">
-                        <div class="d-grid">
-                          <button
-                            id="contact-form-button"
-                            class="btn btn-primary btn-lg"
-                            type="submit"
-                          >
-                            Apply for Alpha Access
-                          </button>
-                        </div>
-                      </div>
-                      
-                      <div class="col-12">
-                        <div id="contact-form-status" class="text-center text-white"></div>
-                      </div>
+                    <div class="form-group">
+                      <label for="contact-company">Company (Optional)</label>
+                      <input
+                        name="company"
+                        type="text"
+                        id="contact-company"
+                        placeholder="Acme Capital"
+                      />
                     </div>
+                    
+                    <div class="form-group">
+                      <label for="contact-message">Why are you interested in early access?</label>
+                      <textarea
+                        name="message"
+                        id="contact-message"
+                        placeholder="Tell us about your use case and how Octigen could help you improve your presentations and reporting..."
+                        rows="4"
+                        required
+                      ></textarea>
+                    </div>
+                    
+                    <input type="hidden" name="source" value="alpha-release-page" />
+                    
+                    <div class="form-footer">
+                      <div class="form-consent">
+                        <input
+                          name="gdpr-consent"
+                          type="checkbox"
+                          id="gdpr-checkbox"
+                          required
+                        />
+                        <label for="gdpr-checkbox">
+                          I agree to the <a href="/privacy_policy.html" target="_blank">privacy policy</a>
+                          and want to receive updates about Octigen's services
+                        </label>
+                      </div>
+                      
+                      <button type="submit" id="contact-form-button" class="contact-submit-btn">
+                        <span class="btn-text">Apply for Alpha Access</span>
+                        <span class="btn-arrow">→</span>
+                      </button>
+                    </div>
+                    
+                    <div id="contact-form-status" class="form-status"></div>
                   </form>
                 </div>
               </div>
             </div>
           </div>
-          
-          <!-- Thank You Section -->
-          <div class="container mt-5 mb-5">
-            <div class="row justify-content-center">
-              <div class="col-lg-8">
-                <div class="thank-you-card">
-                  <h3 class="thank-you-title">Thank You.</h3>
-                  <p class="thank-you-text">
-                    To everyone who has supported us on this journey—from our early believers to our first alpha users—thank you for being part of this revolution.
-                  </p>
-                  <a
-                  href="https://cloud.octigen.com/login" target="_blank"
-                  class="btn btn-outline-light btn-lg mt-3 mb-3"
-                >Go To Alpha</a>
-                </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 4: Thank You -->
+      <section class="section-container feature-section" style="padding-top: 3rem; padding-bottom: 5rem;">
+        <div class="container-fluid section-padding">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="section-glass-card text-center" style="padding: 3rem;">
+                <h3 style="color: var(--theme-text-primary); font-weight: 400; font-size: 2rem; margin-bottom: 1.5rem;">Thank You.</h3>
+                <p style="color: var(--theme-text-secondary); font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">
+                  To everyone who has supported us on this journey—from our early believers to our first alpha users—thank you for being part of this revolution.
+                </p>
+                <a href="https://cloud.octigen.com/login" target="_blank" class="section-btn section-btn-primary">
+                  Go To Alpha Platform
+                </a>
               </div>
             </div>
           </div>
-          
-          <!-- Footer -->
-          <div id="footer-container"></div>
         </div>
       </section>
+      
+      <!-- Footer -->
+      <div id="footer-container"></div>
+      
     </main>
+    
+    <!-- Smooth Scroll Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Smooth scroll functionality
+        const smoothScrollLinks = document.querySelectorAll('.smooth-scroll');
+        smoothScrollLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+              targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
