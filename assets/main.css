@@ -825,3 +825,36 @@ h5.free-banner-text {
         }
     }
 }
+
+/* ===========================================
+   Mobile Text Alignment - Justified
+   Applied globally on mobile devices only
+   =========================================== */
+
+@media (max-width: 991px) {
+    /* Justify paragraph text on mobile (both edges aligned) */
+    p,
+    .hero-content p,
+    .feature-content p,
+    .split-card p,
+    .founder-bio,
+    .founder-bio-full,
+    .founder-bio-full p,
+    .contact-intro,
+    .about-hero .lead,
+    .origin-quote p,
+    .origin-narrative p,
+    .founders-section-header p,
+    .value-card p,
+    .about-cta-card p,
+    .use-case-description,
+    .assistant-card p,
+    .phase-card-body p,
+    .highlight-card p,
+    .cta-subtitle,
+    .speed-label,
+    .metric-label,
+    .model-card p {
+        text-align: justify !important;
+    }
+}
