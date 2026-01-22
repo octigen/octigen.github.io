@@ -150,9 +150,11 @@
   z-index: 10;
 }
 
-.section-glass-card:hover {
-  border-color: var(--theme-glass-border-hover);
-  box-shadow: var(--theme-shadow-lg);
+@media (hover: hover) {
+  .section-glass-card:hover {
+    border-color: var(--theme-glass-border-hover);
+    box-shadow: var(--theme-shadow-lg);
+  }
 }
 
 .section-icon {
@@ -210,20 +212,24 @@
   font-size: 0.9rem;
 }
 
-.service-item-grid:hover {
-  color: var(--theme-text-primary);
-  background: var(--theme-glass-bg-hover);
-  border-color: var(--theme-border-primary);
+@media (hover: hover) {
+  .service-item-grid:hover {
+    color: var(--theme-text-primary);
+    background: var(--theme-glass-bg-hover);
+    border-color: var(--theme-border-primary);
+  }
 }
 
 .service-clickable {
   cursor: pointer;
 }
 
-.service-clickable:hover {
-  color: var(--theme-text-primary) !important;
-  background: var(--theme-glass-bg-hover) !important;
-  border-color: var(--theme-border-hover) !important;
+@media (hover: hover) {
+  .service-clickable:hover {
+    color: var(--theme-text-primary) !important;
+    background: var(--theme-glass-bg-hover) !important;
+    border-color: var(--theme-border-hover) !important;
+  }
 }
 
 .service-icon-small {
@@ -261,9 +267,11 @@
   transition: all 0.3s ease;
 }
 
-.founder-image:hover {
-  border-color: var(--theme-border-hover);
-  transform: scale(1.05);
+@media (hover: hover) {
+  .founder-image:hover {
+    border-color: var(--theme-border-hover);
+    transform: scale(1.05);
+  }
 }
 
 .founder-name {
@@ -557,8 +565,10 @@
   transition: transform 0.3s ease;
 }
 
-.service-modal-image:hover {
-  transform: scale(1.02);
+@media (hover: hover) {
+  .service-modal-image:hover {
+    transform: scale(1.02);
+  }
 }
 
 .service-modal-description {

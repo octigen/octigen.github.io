@@ -38,8 +38,10 @@
 }
 
 /* Pause animation on hover for readability */
-.comparison-ticker-track:hover {
-    animation-play-state: paused;
+@media (hover: hover) {
+    .comparison-ticker-track:hover {
+        animation-play-state: paused;
+    }
 }
 
 .ticker-item {
@@ -53,8 +55,10 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.ticker-item:hover {
-    transform: scale(1.02);
+@media (hover: hover) {
+    .ticker-item:hover {
+        transform: scale(1.02);
+    }
 }
 
 .ticker-octigen-item {
@@ -62,8 +66,10 @@
     border: 1px solid rgba(30, 79, 226, 0.3);
 }
 
-.ticker-octigen-item:hover {
-    box-shadow: 0 8px 32px rgba(30, 79, 226, 0.2);
+@media (hover: hover) {
+    .ticker-octigen-item:hover {
+        box-shadow: 0 8px 32px rgba(30, 79, 226, 0.2);
+    }
 }
 
 .ticker-other-item {
@@ -71,8 +77,10 @@
     border: 1px solid var(--theme-border-secondary);
 }
 
-.ticker-other-item:hover {
-    box-shadow: var(--theme-shadow-md);
+@media (hover: hover) {
+    .ticker-other-item:hover {
+        box-shadow: var(--theme-shadow-md);
+    }
 }
 
 .ticker-icon {
@@ -245,8 +253,10 @@
     transition: background 0.2s ease;
 }
 
-.comparison-table tbody tr:hover {
-    background: var(--theme-glass-bg-hover);
+@media (hover: hover) {
+    .comparison-table tbody tr:hover {
+        background: var(--theme-glass-bg-hover);
+    }
 }
 
 .comparison-table tbody tr:last-child td {

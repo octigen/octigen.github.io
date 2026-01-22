@@ -158,10 +158,12 @@
     height: 100%;
 }
 
-.founder-card-full:hover {
-    border-color: var(--octigen-blue);
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(30, 79, 226, 0.15);
+@media (hover: hover) {
+    .founder-card-full:hover {
+        border-color: var(--octigen-blue);
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(30, 79, 226, 0.15);
+    }
 }
 
 .founder-top {
@@ -307,9 +309,11 @@
     transition: all 0.3s ease;
 }
 
-.value-card:hover {
-    border-color: var(--theme-border-hover);
-    transform: translateY(-4px);
+@media (hover: hover) {
+    .value-card:hover {
+        border-color: var(--theme-border-hover);
+        transform: translateY(-4px);
+    }
 }
 
 .value-icon {

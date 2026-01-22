@@ -148,14 +148,16 @@
     color: var(--theme-text-tertiary);
 }
 
-.orbit-item:hover {
-    background: var(--theme-glass-bg-hover);
-    border-color: var(--octigen-blue);
-    box-shadow: 0 4px 16px rgba(30, 79, 226, 0.3);
-}
+@media (hover: hover) {
+    .orbit-item:hover {
+        background: var(--theme-glass-bg-hover);
+        border-color: var(--octigen-blue);
+        box-shadow: 0 4px 16px rgba(30, 79, 226, 0.3);
+    }
 
-.orbit-item:hover svg {
-    color: var(--octigen-blue);
+    .orbit-item:hover svg {
+        color: var(--octigen-blue);
+    }
 }
 
 /* ===========================================
@@ -183,10 +185,12 @@
     transition: all 0.3s ease;
 }
 
-.model-card:hover {
-    border-color: var(--octigen-blue);
-    transform: translateY(-4px);
-    box-shadow: var(--theme-shadow-md);
+@media (hover: hover) {
+    .model-card:hover {
+        border-color: var(--octigen-blue);
+        transform: translateY(-4px);
+        box-shadow: var(--theme-shadow-md);
+    }
 }
 
 .model-card-icon {
@@ -269,10 +273,12 @@
     
     .model-card h4 {
         font-size: 0.85rem;
+        text-align: center !important;
     }
     
     .model-card p {
         font-size: 0.7rem;
+        text-align: center !important; /* Override justified text on mobile */
     }
     
     .model-card-connector {
@@ -626,8 +632,10 @@
     transition: all 0.3s ease;
 }
 
-.data-source:hover {
-    border-color: var(--octigen-blue);
+@media (hover: hover) {
+    .data-source:hover {
+        border-color: var(--octigen-blue);
+    }
 }
 
 .source-icon {
@@ -754,10 +762,12 @@
     transition: all 0.3s ease;
 }
 
-.assistant-card:hover {
-    border-color: var(--theme-border-hover);
-    transform: translateY(-4px);
-    box-shadow: var(--theme-shadow-lg);
+@media (hover: hover) {
+    .assistant-card:hover {
+        border-color: var(--theme-border-hover);
+        transform: translateY(-4px);
+        box-shadow: var(--theme-shadow-lg);
+    }
 }
 
 .assistant-card.featured {
@@ -852,10 +862,12 @@
     flex-direction: column;
 }
 
-.phase-card:hover {
-    border-color: var(--theme-border-hover);
-    transform: translateY(-4px);
-    box-shadow: var(--theme-shadow-lg);
+@media (hover: hover) {
+    .phase-card:hover {
+        border-color: var(--theme-border-hover);
+        transform: translateY(-4px);
+        box-shadow: var(--theme-shadow-lg);
+    }
 }
 
 .phase-card.final {
@@ -863,8 +875,10 @@
     border-color: rgba(16, 185, 129, 0.3);
 }
 
-.phase-card.final:hover {
-    border-color: rgba(16, 185, 129, 0.5);
+@media (hover: hover) {
+    .phase-card.final:hover {
+        border-color: rgba(16, 185, 129, 0.5);
+    }
 }
 
 .phase-card-header {
@@ -904,14 +918,16 @@
     transition: all 0.3s ease;
 }
 
-.phase-card:hover .phase-icon {
-    border-color: var(--octigen-blue);
-    background: rgba(30, 79, 226, 0.1);
-}
+@media (hover: hover) {
+    .phase-card:hover .phase-icon {
+        border-color: var(--octigen-blue);
+        background: rgba(30, 79, 226, 0.1);
+    }
 
-.phase-card.final:hover .phase-icon {
-    border-color: rgba(16, 185, 129, 0.5);
-    background: rgba(16, 185, 129, 0.1);
+    .phase-card.final:hover .phase-icon {
+        border-color: rgba(16, 185, 129, 0.5);
+        background: rgba(16, 185, 129, 0.1);
+    }
 }
 
 .phase-icon svg {
@@ -921,12 +937,14 @@
     transition: color 0.3s ease;
 }
 
-.phase-card:hover .phase-icon svg {
-    color: var(--octigen-blue);
-}
+@media (hover: hover) {
+    .phase-card:hover .phase-icon svg {
+        color: var(--octigen-blue);
+    }
 
-.phase-card.final:hover .phase-icon svg {
-    color: #10b981;
+    .phase-card.final:hover .phase-icon svg {
+        color: #10b981;
+    }
 }
 
 .phase-card-body {
@@ -1272,6 +1290,17 @@
         padding: 1rem;
     }
     
+    /* Remove highlighted styling for featured/user cards on mobile */
+    .assistant-card.featured {
+        border-color: var(--theme-glass-border);
+        background: var(--theme-glass-bg);
+    }
+    
+    .assistant-card.user-card {
+        border-color: var(--theme-glass-border);
+        background: var(--theme-glass-bg);
+    }
+    
     /* 2-column grid for assistant cards on mobile */
     #ai-assistants .row.g-4 {
         display: grid;
@@ -1344,9 +1373,11 @@
     transition: all 0.3s ease;
 }
 
-.alpha-cta-banner:hover {
-    border-color: rgba(30, 79, 226, 0.3);
-    box-shadow: 0 4px 20px rgba(30, 79, 226, 0.08);
+@media (hover: hover) {
+    .alpha-cta-banner:hover {
+        border-color: rgba(30, 79, 226, 0.3);
+        box-shadow: 0 4px 20px rgba(30, 79, 226, 0.08);
+    }
 }
 
 .alpha-cta-content {
@@ -1472,9 +1503,11 @@
     transition: all 0.3s ease;
 }
 
-.sovereignty-banner:hover {
-    border-color: rgba(16, 185, 129, 0.35);
-    box-shadow: 0 4px 24px rgba(16, 185, 129, 0.1);
+@media (hover: hover) {
+    .sovereignty-banner:hover {
+        border-color: rgba(16, 185, 129, 0.35);
+        box-shadow: 0 4px 24px rgba(16, 185, 129, 0.1);
+    }
 }
 
 .sovereignty-header {

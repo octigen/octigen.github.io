@@ -81,9 +81,11 @@
     border: 2px solid rgba(255, 255, 255, 0);
 }
 
-.data-source-box:hover {
-    border: 2px solid var(--octigen-blue);
-    transition: 0.3s ease-in-out;
+@media (hover: hover) {
+    .data-source-box:hover {
+        border: 2px solid var(--octigen-blue);
+        transition: 0.3s ease-in-out;
+    }
 }
 
 .data-source-box-image {

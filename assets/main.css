@@ -79,6 +79,7 @@ p {
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--theme-navbar-border);
     transition: all 0.3s ease;
+    box-shadow: 0 15px 50px rgba(30, 79, 226, 0.15);
 }
 
 .navbar.scrolled {
@@ -380,16 +381,18 @@ body.has-navbar {
 }
 
 /* Hover effects */
-.theme-toggle:hover .theme-toggle-track {
-    box-shadow: 
-        inset 0 2px 4px rgba(0, 0, 0, 0.3),
-        0 0 12px rgba(99, 102, 241, 0.4);
-}
+@media (hover: hover) {
+    .theme-toggle:hover .theme-toggle-track {
+        box-shadow: 
+            inset 0 2px 4px rgba(0, 0, 0, 0.3),
+            0 0 12px rgba(99, 102, 241, 0.4);
+    }
 
-[data-theme="light"] .theme-toggle:hover .theme-toggle-track {
-    box-shadow: 
-        inset 0 2px 4px rgba(0, 0, 0, 0.08),
-        0 0 8px rgba(0, 0, 0, 0.1);
+    [data-theme="light"] .theme-toggle:hover .theme-toggle-track {
+        box-shadow: 
+            inset 0 2px 4px rgba(0, 0, 0, 0.08),
+            0 0 8px rgba(0, 0, 0, 0.1);
+    }
 }
 
 .theme-toggle:focus {
@@ -661,8 +664,10 @@ h5.free-banner-text {
     transition: all 0.3s ease;
 }
 
-.custom-play-overlay:hover {
-    background-color: rgba(0, 0, 0, 0.4);
+@media (hover: hover) {
+    .custom-play-overlay:hover {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
 }
 
 /* Wave Ring Animations */
@@ -742,14 +747,16 @@ h5.free-banner-text {
     transition: opacity 0.3s ease;
 }
 
-.play-button:hover::before {
-    opacity: 1;
-}
+@media (hover: hover) {
+    .play-button:hover::before {
+        opacity: 1;
+    }
 
-.play-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 12px 40px rgba(30, 79, 226, 0.6);
-    border-color: rgba(30, 79, 226, 0.4);
+    .play-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 12px 40px rgba(30, 79, 226, 0.6);
+        border-color: rgba(30, 79, 226, 0.4);
+    }
 }
 
 @keyframes playButtonPulse {
@@ -772,9 +779,11 @@ h5.free-banner-text {
     transition: all 0.3s ease;
 }
 
-.play-button:hover .play-icon {
-    color: white;
-    transform: scale(1.1);
+@media (hover: hover) {
+    .play-button:hover .play-icon {
+        color: white;
+        transform: scale(1.1);
+    }
 }
 
 /* Hide custom button when video is playing */
@@ -833,6 +842,7 @@ h5.free-banner-text {
 
 @media (max-width: 991px) {
     /* Justify paragraph text on mobile (both edges aligned) */
+    /* Note: Excluded short-text elements like model-card, value-card */
     p,
     .hero-content p,
     .feature-content p,
@@ -845,16 +855,27 @@ h5.free-banner-text {
     .origin-quote p,
     .origin-narrative p,
     .founders-section-header p,
-    .value-card p,
     .about-cta-card p,
     .use-case-description,
-    .assistant-card p,
     .phase-card-body p,
     .highlight-card p,
-    .cta-subtitle,
-    .speed-label,
-    .metric-label,
-    .model-card p {
+    .cta-subtitle {
         text-align: justify !important;
+    }
+    
+    /* Center short-text card elements on mobile */
+    .model-card p,
+    .model-card h4,
+    .value-card p,
+    .value-card h4,
+    .speed-label,
+    .metric-label {
+        text-align: center !important;
+    }
+    
+    /* Left-align assistant cards (icon and badges are left-aligned) */
+    .assistant-card p,
+    .assistant-card h3 {
+        text-align: left !important;
     }
 }
