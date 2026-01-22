@@ -165,8 +165,8 @@
     /* ===== Navbar ===== */
     --theme-navbar-bg: rgba(255, 255, 255, 0.105);
     --theme-navbar-bg-scrolled: rgba(255, 255, 255, 0.25);
-    --theme-navbar-border: rgba(0, 0, 0, 0.08);
-    --theme-navbar-border-scrolled: rgba(0, 0, 0, 0.12);
+    --theme-navbar-border: rgba(0, 0, 0, 0.00);
+    --theme-navbar-border-scrolled: rgba(0, 0, 0, 0.00);
     --theme-navbar-link: rgba(26, 26, 46, 0.85);
     --theme-navbar-link-hover: rgba(26, 26, 46, 1);
     --theme-navbar-link-bg-hover: rgba(0, 0, 0, 0.05);
