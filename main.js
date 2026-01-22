@@ -215,3 +215,24 @@ window.handleContactClick = function() {
   }
   return true; // Allow default navigation to /#contact
 };
+
+// ===========================================
+// Light Mode Background (Wavy Lines)
+// ===========================================
+(function() {
+  const wavyLinesSVG = `
+    <!-- <svg viewBox="0 0 200 1000" preserveAspectRatio="none">
+      <path class="wavy-line wavy-line-1" d="M30,0 Q50,50 30,100 Q10,150 30,200 Q50,250 30,300 Q10,350 30,400 Q50,450 30,500 Q10,550 30,600 Q50,650 30,700 Q10,750 30,800 Q50,850 30,900 Q10,950 30,1000 Q50,1050 30,1100 Q10,1150 30,1200 Q50,1250 30,1300 Q10,1350 30,1400 Q50,1450 30,1500 Q10,1550 30,1600 Q50,1650 30,1700 Q10,1750 30,1800 Q50,1850 30,1900 Q10,1950 30,2000"/>
+      <path class="wavy-line wavy-line-2" d="M100,0 Q120,50 100,100 Q80,150 100,200 Q120,250 100,300 Q80,350 100,400 Q120,450 100,500 Q80,550 100,600 Q120,650 100,700 Q80,750 100,800 Q120,850 100,900 Q80,950 100,1000 Q120,1050 100,1100 Q80,1150 100,1200 Q120,1250 100,1300 Q80,1350 100,1400 Q120,1450 100,1500 Q80,1550 100,1600 Q120,1650 100,1700 Q80,1750 100,1800 Q120,1850 100,1900 Q80,1950 100,2000"/>
+      <path class="wavy-line wavy-line-3" d="M170,0 Q190,50 170,100 Q150,150 170,200 Q190,250 170,300 Q150,350 170,400 Q190,450 170,500 Q150,550 170,600 Q190,650 170,700 Q150,750 170,800 Q190,850 170,900 Q150,950 170,1000 Q190,1050 170,1100 Q150,1150 170,1200 Q190,1250 170,1300 Q150,1350 170,1400 Q190,1450 170,1500 Q150,1550 170,1600 Q190,1650 170,1700 Q150,1750 170,1800 Q190,1850 170,1900 Q150,1950 170,2000"/>
+    </svg> -->
+  `;
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const container = document.createElement('div');
+    container.className = 'wavy-lines-background';
+    container.innerHTML = wavyLinesSVG;
+    document.body.insertBefore(container, document.body.firstChild);
+  });
+})();
+

@@ -14,6 +14,10 @@ class ParticleSystem {
         // Theme-related properties
         this.themeColors = this.getThemeColors();
         
+        // Track dimensions to prevent unnecessary resizes (mobile address bar fix)
+        this.lastWidth = 0;
+        this.resizeTimeout = null;
+        
         this.init();
         this.setupEventListeners();
         this.animate();
@@ -61,8 +65,18 @@ class ParticleSystem {
     }
 
     resizeCanvas() {
-        this.canvas.width = window.innerWidth;
-        this.canvas.height = window.innerHeight;
+        // Use the larger of innerHeight and documentElement.clientHeight 
+        // to prevent flickering when mobile address bar shows/hides
+        const width = window.innerWidth;
+        const height = Math.max(
+            window.innerHeight,
+            document.documentElement.clientHeight,
+            // Add extra buffer for mobile address bar (typically ~56-100px)
+            window.innerHeight * 1.1
+        );
+        
+        this.canvas.width = width;
+        this.canvas.height = height;
     }
 
     createParticles() {
@@ -166,12 +180,33 @@ class ParticleSystem {
 
     setupEventListeners() {
         window.addEventListener('resize', () => {
-            this.resizeCanvas();
-            this.particles = [];
-            this.floatingParticles = [];
-            this.createParticles();
-            this.createFloatingParticles();
+            // Debounce resize events to prevent flickering on mobile
+            if (this.resizeTimeout) {
+                clearTimeout(this.resizeTimeout);
+            }
+            
+            // Only do a full particle recreation if width changed significantly
+            // Height changes (from mobile address bar) shouldn't trigger recreation
+            const newWidth = window.innerWidth;
+            const widthChanged = Math.abs(newWidth - this.lastWidth) > 50;
+            
+            if (widthChanged) {
+                this.resizeTimeout = setTimeout(() => {
+                    this.lastWidth = newWidth;
+                    this.resizeCanvas();
+                    this.particles = [];
+                    this.floatingParticles = [];
+                    this.createParticles();
+                    this.createFloatingParticles();
+                }, 150); // Debounce delay
+            } else {
+                // Just resize canvas without recreating particles
+                this.resizeCanvas();
+            }
         });
+        
+        // Store initial width
+        this.lastWidth = window.innerWidth;
 
         window.addEventListener('mousemove', (e) => {
             this.mouse.x = e.clientX;
