@@ -79,7 +79,7 @@ p {
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--theme-navbar-border);
     transition: all 0.3s ease;
-    box-shadow: 0 15px 50px rgba(30, 79, 226, 0.25);
+    box-shadow: 0 15px 50px rgba(30, 79, 226, 0.15);
 }
 
 .navbar.scrolled {
