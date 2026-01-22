@@ -72,10 +72,12 @@
     height: 100%;
 }
 
-.feature-card:hover {
-    border-color: var(--theme-glass-border-hover);
-    transform: translateY(-8px);
-    box-shadow: var(--theme-shadow-lg);
+@media (hover: hover) {
+    .feature-card:hover {
+        border-color: var(--theme-glass-border-hover);
+        transform: translateY(-8px);
+        box-shadow: var(--theme-shadow-lg);
+    }
 }
 
 .feature-icon {

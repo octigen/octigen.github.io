@@ -381,16 +381,18 @@ body.has-navbar {
 }
 
 /* Hover effects */
-.theme-toggle:hover .theme-toggle-track {
-    box-shadow: 
-        inset 0 2px 4px rgba(0, 0, 0, 0.3),
-        0 0 12px rgba(99, 102, 241, 0.4);
-}
+@media (hover: hover) {
+    .theme-toggle:hover .theme-toggle-track {
+        box-shadow: 
+            inset 0 2px 4px rgba(0, 0, 0, 0.3),
+            0 0 12px rgba(99, 102, 241, 0.4);
+    }
 
-[data-theme="light"] .theme-toggle:hover .theme-toggle-track {
-    box-shadow: 
-        inset 0 2px 4px rgba(0, 0, 0, 0.08),
-        0 0 8px rgba(0, 0, 0, 0.1);
+    [data-theme="light"] .theme-toggle:hover .theme-toggle-track {
+        box-shadow: 
+            inset 0 2px 4px rgba(0, 0, 0, 0.08),
+            0 0 8px rgba(0, 0, 0, 0.1);
+    }
 }
 
 .theme-toggle:focus {
@@ -662,8 +664,10 @@ h5.free-banner-text {
     transition: all 0.3s ease;
 }
 
-.custom-play-overlay:hover {
-    background-color: rgba(0, 0, 0, 0.4);
+@media (hover: hover) {
+    .custom-play-overlay:hover {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
 }
 
 /* Wave Ring Animations */
@@ -743,14 +747,16 @@ h5.free-banner-text {
     transition: opacity 0.3s ease;
 }
 
-.play-button:hover::before {
-    opacity: 1;
-}
+@media (hover: hover) {
+    .play-button:hover::before {
+        opacity: 1;
+    }
 
-.play-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 12px 40px rgba(30, 79, 226, 0.6);
-    border-color: rgba(30, 79, 226, 0.4);
+    .play-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 12px 40px rgba(30, 79, 226, 0.6);
+        border-color: rgba(30, 79, 226, 0.4);
+    }
 }
 
 @keyframes playButtonPulse {
@@ -773,9 +779,11 @@ h5.free-banner-text {
     transition: all 0.3s ease;
 }
 
-.play-button:hover .play-icon {
-    color: white;
-    transform: scale(1.1);
+@media (hover: hover) {
+    .play-button:hover .play-icon {
+        color: white;
+        transform: scale(1.1);
+    }
 }
 
 /* Hide custom button when video is playing */

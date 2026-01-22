@@ -21,11 +21,13 @@
     color: white;
 }
 
-.timeline-sort-btn:hover {
-    background: linear-gradient(135deg, var(--octigen-blue-light) 0%, var(--octigen-blue) 100%);
-    border-color: var(--theme-border-hover);
-    transform: translateY(-3px) scale(1.1);
-    box-shadow: 0 8px 25px rgba(30, 79, 226, 0.4);
+@media (hover: hover) {
+    .timeline-sort-btn:hover {
+        background: linear-gradient(135deg, var(--octigen-blue-light) 0%, var(--octigen-blue) 100%);
+        border-color: var(--theme-border-hover);
+        transform: translateY(-3px) scale(1.1);
+        box-shadow: 0 8px 25px rgba(30, 79, 226, 0.4);
+    }
 }
 
 .timeline-sort-btn:active {
@@ -145,14 +147,16 @@ button.timeline-sort-btn:hover .sort-modal {
     animation: borderGlow 3s ease-in-out infinite;
 }
 
-.video-glass-box:hover::before {
-    opacity: 0.6;
-}
+@media (hover: hover) {
+    .video-glass-box:hover::before {
+        opacity: 0.6;
+    }
 
-.video-glass-box:hover {
-    border-color: var(--theme-glass-border-hover);
-    box-shadow: var(--theme-shadow-xl);
-    transform: translateY(-2px);
+    .video-glass-box:hover {
+        border-color: var(--theme-glass-border-hover);
+        box-shadow: var(--theme-shadow-xl);
+        transform: translateY(-2px);
+    }
 }
 
 @keyframes borderGlow {
@@ -291,14 +295,16 @@ button.timeline-sort-btn:hover .sort-modal {
     transition: left 0.6s ease;
 }
 
-.timeline-card:hover::before {
-    left: 100%;
-}
+@media (hover: hover) {
+    .timeline-card:hover::before {
+        left: 100%;
+    }
 
-.timeline-card:hover {
-    border-color: var(--theme-glass-border-hover);
-    transform: translateY(-5px);
-    box-shadow: var(--theme-shadow-lg);
+    .timeline-card:hover {
+        border-color: var(--theme-glass-border-hover);
+        transform: translateY(-5px);
+        box-shadow: var(--theme-shadow-lg);
+    }
 }
 
 /* Timeline Icons */

@@ -14,12 +14,14 @@
     z-index: 10 !important;
 }
 
-.waiting-list-glass-container:hover {
-    border-color: rgba(255, 255, 255, 0.5) !important;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), 
-                0 0 0 1px rgba(255, 255, 255, 0.15) inset,
-                0 0 80px rgba(255, 255, 255, 0.08) inset !important;
-    transform: translateY(-3px) !important;
+@media (hover: hover) {
+    .waiting-list-glass-container:hover {
+        border-color: rgba(255, 255, 255, 0.5) !important;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), 
+                    0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+                    0 0 80px rgba(255, 255, 255, 0.08) inset !important;
+        transform: translateY(-3px) !important;
+    }
 }
 
 /* Transparent Form Field Styling */
