@@ -273,10 +273,12 @@
     
     .model-card h4 {
         font-size: 0.85rem;
+        text-align: center !important;
     }
     
     .model-card p {
         font-size: 0.7rem;
+        text-align: center !important; /* Override justified text on mobile */
     }
     
     .model-card-connector {
@@ -1286,6 +1288,17 @@
     
     .assistant-card {
         padding: 1rem;
+    }
+    
+    /* Remove highlighted styling for featured/user cards on mobile */
+    .assistant-card.featured {
+        border-color: var(--theme-glass-border);
+        background: var(--theme-glass-bg);
+    }
+    
+    .assistant-card.user-card {
+        border-color: var(--theme-glass-border);
+        background: var(--theme-glass-bg);
     }
     
     /* 2-column grid for assistant cards on mobile */
