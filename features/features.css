@@ -1321,3 +1321,321 @@
         padding: 0.2rem 0.4rem;
     }
 }
+
+/* ===========================================
+   Alpha Release CTA Banner
+   A lightweight, reusable CTA section
+   =========================================== */
+
+.alpha-cta-section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+}
+
+.alpha-cta-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1.25rem 2rem;
+    background: linear-gradient(135deg, rgba(30, 79, 226, 0.06), rgba(30, 79, 226, 0.02));
+    border: 1px solid rgba(30, 79, 226, 0.15);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.alpha-cta-banner:hover {
+    border-color: rgba(30, 79, 226, 0.3);
+    box-shadow: 0 4px 20px rgba(30, 79, 226, 0.08);
+}
+
+.alpha-cta-content {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex: 1;
+}
+
+.alpha-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.9rem;
+    background: linear-gradient(135deg, var(--octigen-blue), #1a45c7);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(30, 79, 226, 0.3);
+}
+
+.alpha-cta-text {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--theme-text-secondary);
+    line-height: 1.5;
+}
+
+.alpha-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.25rem;
+    background: transparent;
+    color: var(--octigen-blue);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1.5px solid var(--octigen-blue);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.alpha-cta-btn:hover {
+    background: var(--octigen-blue);
+    color: white;
+    transform: translateX(2px);
+}
+
+.alpha-cta-btn svg {
+    transition: transform 0.2s ease;
+}
+
+.alpha-cta-btn:hover svg {
+    transform: translateX(3px);
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .alpha-cta-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.25rem 1.5rem;
+    }
+    
+    .alpha-cta-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+    
+    .alpha-cta-btn {
+        align-self: flex-start;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .alpha-cta-section {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+    
+    .alpha-cta-banner {
+        padding: 1rem 1.25rem;
+        border-radius: 12px;
+    }
+    
+    .alpha-badge {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.75rem;
+    }
+    
+    .alpha-cta-text {
+        font-size: 0.85rem;
+    }
+    
+    .alpha-cta-btn {
+        padding: 0.55rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* ===========================================
+   Data Sovereignty & Security Section
+   =========================================== */
+
+.data-sovereignty-section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+.sovereignty-banner {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.06), rgba(16, 185, 129, 0.02));
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 20px;
+    padding: 2rem 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.sovereignty-banner:hover {
+    border-color: rgba(16, 185, 129, 0.35);
+    box-shadow: 0 4px 24px rgba(16, 185, 129, 0.1);
+}
+
+.sovereignty-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(16, 185, 129, 0.15);
+}
+
+.sovereignty-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.sovereignty-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--theme-text-primary);
+}
+
+.sovereignty-points {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.sovereignty-point {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.point-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.point-icon svg {
+    width: 20px;
+    height: 20px;
+    color: #10b981;
+}
+
+.point-content {
+    flex: 1;
+}
+
+.point-content strong {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--theme-text-primary);
+    margin-bottom: 0.35rem;
+}
+
+.point-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--theme-text-secondary);
+    line-height: 1.6;
+}
+
+.sovereignty-divider {
+    width: 1px;
+    align-self: stretch;
+    background: rgba(16, 185, 129, 0.2);
+    margin: 0 0.5rem;
+}
+
+.sovereignty-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #10b981;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.sovereignty-link:hover {
+    color: #059669;
+    transform: translateX(3px);
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+    .sovereignty-banner {
+        padding: 1.75rem 2rem;
+    }
+    
+    .sovereignty-points {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .sovereignty-divider {
+        width: 100%;
+        height: 1px;
+        margin: 0;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .data-sovereignty-section {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    .sovereignty-banner {
+        padding: 1.25rem 1.25rem;
+        border-radius: 16px;
+    }
+    
+    .sovereignty-header {
+        gap: 0.75rem;
+        margin-bottom: 1.25rem;
+        padding-bottom: 1rem;
+    }
+    
+    .sovereignty-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .sovereignty-header h3 {
+        font-size: 1.25rem;
+    }
+    
+    .sovereignty-point {
+        gap: 0.75rem;
+    }
+    
+    .point-icon {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+    }
+    
+    .point-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .point-content strong {
+        font-size: 0.9rem;
+    }
+    
+    .point-content p {
+        font-size: 0.85rem;
+    }
+}
