@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <!-- Theme Initialization (must be first to prevent flash of wrong theme) -->
+    <script>
+      (function() {
+        var stored = localStorage.getItem('octigen-theme');
+        var theme = stored || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+    
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+    <title>Pricing - Octigen | AI-Powered Presentation Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore Octigen's flexible pricing plans. From pay-as-you-go to business plans, find the right option for your AI-powered presentation automation needs." />
+    <meta name="keywords" content="Octigen pricing, AI presentation pricing, PowerPoint automation cost, slide deck automation pricing" />
+    <link rel="canonical" href="https://octigen.com/pricing/" />
+    <meta name="author" content="Octigen GmbH" />
+    <meta property="og:title" content="Pricing - Octigen | AI-Powered Presentation Platform" />
+    <meta property="og:description" content="Flexible pricing plans for AI-powered presentation automation. Pay-as-you-go, Personal, and Business plans available." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://octigen.com/pricing/" />
+    <meta property="og:site_name" content="Octigen" />
+    <meta property="og:image" content="https://octigen.com/assets/images/octigen.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://octigen.com/assets/images/octigen.png" />
+    <meta name="twitter:title" content="Pricing - Octigen | AI-Powered Presentation Platform" />
+    <meta name="twitter:description" content="Flexible pricing plans for AI-powered presentation automation." />
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/ai_slides_progress/particles.js" defer></script>
+    <script src="/translator.js" defer></script>
+    <script src="/form.js" defer></script>
+    <script src="/assets/mobile-nav.js" defer></script>
+    <script src="/main.js" defer></script>
+    <script src="/load-footer.js" defer></script>
+    <script src="/assets/effects.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" rel="preconnect" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <!-- Theme CSS must be loaded FIRST (defines CSS custom properties) -->
+    <link rel="stylesheet" href="/assets/theme.css" />
+    <link rel="stylesheet" href="/assets/main.css" />
+    <link rel="stylesheet" href="/assets/form.css" />
+    <link rel="stylesheet" href="/landing.css" />
+    <link rel="stylesheet" href="/assets/homepage.css" />
+    <link rel="stylesheet" href="/assets/footer.css" />
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="pricing.css" />
+    <!-- Cookie Consent System -->
+    <link rel="stylesheet" href="/assets/cookie-consent.css">
+    <script src="/assets/cookie-consent.js" defer></script>
+  </head>
+  <body class="d-flex flex-column" data-page="pricing">
+    <!-- Particle Canvas Background -->
+    <canvas id="particles-canvas" class="particles-background"></canvas>
+    
+    <!-- Navigation -->
+    <div id="navbar-container"></div>
+    
+    <main class="landing-hero">
+      
+      <!-- SECTION 1: Hero -->
+      <section class="section-container hero-section" id="hero">
+        <div class="container-fluid section-padding">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+              <span class="pill-badge pill-badge-blue">SERVICES COMING SOON</span>
+              <h1>Simple, transparent <span style="color: var(--octigen-blue);">pricing</span></h1>
+              <p class="pricing-hero-subtitle">
+                Choose the plan that fits your workflow. Start free with pay-as-you-go, or unlock more with our subscription plans.
+              </p>
+              <div class="currency-toggle-container">
+                <span class="currency-label">Display prices in:</span>
+                <div class="currency-toggle">
+                  <button class="currency-btn active" data-currency="eur">EUR</button>
+                  <button class="currency-btn" data-currency="chf">CHF</button>
+                  <div class="currency-toggle-slider"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 2: Pricing Table -->
+      <section class="section-container pricing-table-section" id="plans">
+        <div class="container-fluid section-padding">
+          <div class="pricing-table-wrapper">
+            <div class="pricing-table">
+              
+              <!-- Table Header -->
+              <div class="pricing-table-header">
+                <div class="pricing-col feature-col">
+                  <div class="coming-soon-notice mb-4">
+                    <span class="notice-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+                      </svg>
+                    </span>
+                    <span>Services coming soon. Prices are indicative and subject to change.</span>
+                  </div>
+                  <h3>Features</h3>
+                </div>
+                <div class="pricing-col plan-col">
+                  <div class="plan-header">
+                    <h3>Pay-As-You-Go</h3>
+                    <p class="plan-tagline">Occasional use</p>
+                    <div class="plan-price">
+                      <span class="price-main">Free</span>
+                      <span class="price-period">to start</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="pricing-col plan-col">
+                  <div class="plan-header">
+                    <span class="early-adopter-badge">-50% EARLY ADOPTERS</span>
+                    <h3>Personal</h3>
+                    <p class="plan-tagline">For Private Use</p>
+                    <div class="plan-price has-discount">
+                      <span class="price-original price-value" data-eur="22" data-chf="20">22</span>
+                      <span class="price-main price-value" data-eur="11" data-chf="10">11</span>
+                      <span class="price-currency price-value" data-eur="EUR" data-chf="CHF">EUR</span>
+                      <span class="price-period">/ month</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="pricing-col plan-col plan-col-featured">
+                  <div class="featured-label">Best for Teams</div>
+                  <div class="plan-header">
+                    <span class="early-adopter-badge">-50% EARLY ADOPTERS</span>
+                    <h3>Business</h3>
+                    <p class="plan-tagline">For teams & enterprises</p>
+                    <div class="plan-price has-discount">
+                      <span class="price-original price-value" data-eur="110" data-chf="100">110</span>
+                      <span class="price-main price-value" data-eur="55" data-chf="50">55</span>
+                      <span class="price-currency price-value" data-eur="EUR" data-chf="CHF">EUR</span>
+                      <span class="price-period">/ month per user</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Section: Slide Services -->
+              <div class="pricing-section">
+                <div class="section-title-row">
+                  <div class="section-title-content">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+                    <span>Slide Services</span>
+                  </div>
+                </div>
+                
+                <div class="pricing-row">
+                  <div class="pricing-col feature-col">
+                    <span class="feature-name">Slide Diffing</span>
+                    <span class="feature-desc">Compare two PowerPoint presentations</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-value price-value" data-eur="5 EUR / deck" data-chf="5 CHF / deck">5 EUR / deck</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                      Included
+                    </span>
+                  </div>
+                  <div class="pricing-col plan-col plan-col-featured">
+                    <span class="cell-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                      Included
+                    </span>
+                  </div>
+                </div>
+                
+                <div class="pricing-row">
+                  <div class="pricing-col feature-col">
+                    <span class="feature-name">Slide Deck Translations</span>
+                    <span class="feature-desc">Translate PowerPoint presentations to any language</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-value price-value" data-eur="5 EUR (up to 10 slides)" data-chf="5 CHF (up to 10 slides)">5 EUR (up to 10 slides)</span>
+                    <span class="cell-sub price-value" data-eur="+0.50 EUR / extra slide" data-chf="+0.50 CHF / extra slide">+0.50 EUR / extra slide</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                      Included
+                    </span>
+                  </div>
+                  <div class="pricing-col plan-col plan-col-featured">
+                    <span class="cell-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                      Included
+                    </span>
+                  </div>
+                </div>
+                
+                <div class="pricing-row">
+                  <div class="pricing-col feature-col">
+                    <span class="feature-name">Update Branding of Deck</span>
+                    <span class="feature-desc">Update the branding of a PowerPoint deck to your company's brand</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-value price-value" data-eur="5 EUR (up to 10 slides)" data-chf="5 CHF (up to 10 slides)">5 EUR (up to 10 slides)</span>
+                    <span class="cell-sub price-value" data-eur="+0.50 EUR / extra slide" data-chf="+0.50 CHF / extra slide">+0.50 EUR / extra slide</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                      Included
+                    </span>
+                  </div>
+                  <div class="pricing-col plan-col plan-col-featured">
+                    <span class="cell-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                      Included
+                    </span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Section: AI Features -->
+              <div class="pricing-section">
+                <div class="section-title-row">
+                  <div class="section-title-content">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2"/><path d="M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"/></svg>
+                    <span>AI-Powered Creation</span>
+                  </div>
+                </div>
+                
+                <div class="pricing-row">
+                  <div class="pricing-col feature-col">
+                    <span class="feature-name">AI Slide Creation</span>
+                    <span class="feature-desc">Generate slides from templates with AI</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-x">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    </span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-value">100 slides / month</span>
+                    <span class="cell-sub price-value" data-eur="+0.11 EUR / extra" data-chf="+0.10 CHF / extra">+0.11 EUR / extra</span>
+                  </div>
+                  <div class="pricing-col plan-col plan-col-featured">
+                    <span class="cell-value">500 slides / month</span>
+                    <span class="cell-sub price-value" data-eur="+0.11 EUR / extra" data-chf="+0.10 CHF / extra">+0.11 EUR / extra</span>
+                  </div>
+                </div>
+                
+                <div class="pricing-row">
+                  <div class="pricing-col feature-col">
+                    <span class="feature-name">AI Content Tokens</span>
+                    <span class="feature-desc">For AI-generated content creation</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-x">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    </span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-value">1M tokens / month</span>
+                    <span class="cell-sub price-value" data-eur="+11 EUR / 1M extra" data-chf="+10 CHF / 1M extra">+11 EUR / 1M extra</span>
+                  </div>
+                  <div class="pricing-col plan-col plan-col-featured">
+                    <span class="cell-value">5M tokens / month</span>
+                    <span class="cell-sub price-value" data-eur="+11 EUR / 1M extra" data-chf="+10 CHF / 1M extra">+11 EUR / 1M extra</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Section: Collaboration -->
+              <div class="pricing-section">
+                <div class="section-title-row">
+                  <div class="section-title-content">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                    <span>Workspaces & Collaboration</span>
+                  </div>
+                </div>
+                
+                <div class="pricing-row">
+                  <div class="pricing-col feature-col">
+                    <span class="feature-name">Workspaces</span>
+                    <span class="feature-desc">Organize templates and workflows</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-x">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    </span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-value">1 workspace</span>
+                  </div>
+                  <div class="pricing-col plan-col plan-col-featured">
+                    <span class="cell-value">1 workspace included</span>
+                    <span class="cell-sub price-value" data-eur="+110 EUR / extra" data-chf="+100 CHF / extra">+110 EUR / extra</span>
+                  </div>
+                </div>
+                
+                <div class="pricing-row">
+                  <div class="pricing-col feature-col">
+                    <span class="feature-name">Team Sharing</span>
+                    <span class="feature-desc">Share workspaces with team members</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-x">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    </span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-x">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    </span>
+                  </div>
+                  <div class="pricing-col plan-col plan-col-featured">
+                    <span class="cell-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                      Included
+                    </span>
+                  </div>
+                </div>
+                
+                <div class="pricing-row">
+                  <div class="pricing-col feature-col">
+                    <span class="feature-name">JSON-to-PowerPoint API</span>
+                    <span class="feature-desc">Programmatic slide generation</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-x">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    </span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-x">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    </span>
+                  </div>
+                  <div class="pricing-col plan-col plan-col-featured">
+                    <span class="cell-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                      Included
+                    </span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Section: Data & Security -->
+              <div class="pricing-section">
+                <div class="section-title-row">
+                  <div class="section-title-content">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <span>Data & Security</span>
+                  </div>
+                </div>
+                
+                <div class="pricing-row">
+                  <div class="pricing-col feature-col">
+                    <span class="feature-name">Data at Rest Location</span>
+                    <span class="feature-desc">Where your files are stored</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-value">Worldwide</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-value">Worldwide</span>
+                  </div>
+                  <div class="pricing-col plan-col plan-col-featured">
+                    <span class="cell-value cell-highlight">EU (Sovereign provider)</span>
+                  </div>
+                </div>
+                
+                <div class="pricing-row">
+                  <div class="pricing-col feature-col">
+                    <span class="feature-name">AI Model Location</span>
+                    <span class="feature-desc">Where AI processing happens</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-value">Worldwide</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-value">Worldwide</span>
+                  </div>
+                  <div class="pricing-col plan-col plan-col-featured">
+                    <span class="cell-value cell-highlight">EU (US Provider)</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Section: Support -->
+              <div class="pricing-section">
+                <div class="section-title-row">
+                  <div class="section-title-content">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                    <span>Support</span>
+                  </div>
+                </div>
+                
+                <div class="pricing-row">
+                  <div class="pricing-col feature-col">
+                    <span class="feature-name">Community & Chat</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                      Free
+                    </span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                      Free
+                    </span>
+                  </div>
+                  <div class="pricing-col plan-col plan-col-featured">
+                    <span class="cell-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                      Free
+                    </span>
+                  </div>
+                </div>
+                
+                <div class="pricing-row">
+                  <div class="pricing-col feature-col">
+                    <span class="feature-name">Premium Support</span>
+                    <span class="feature-desc">Senior consulting team</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-x">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+                    </span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-value price-value" data-eur="220 EUR / hour" data-chf="200 CHF / hour">220 EUR / hour</span>
+                  </div>
+                  <div class="pricing-col plan-col plan-col-featured">
+                    <span class="cell-value price-value" data-eur="220 EUR / hour" data-chf="200 CHF / hour">220 EUR / hour</span>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+            <!-- Mobile Pricing Cards (shown only on mobile) -->
+            <div class="pricing-cards-mobile">
+              
+              <!-- Pay-As-You-Go Card -->
+              <div class="pricing-card-mobile">
+                <div class="pricing-card-mobile-header">
+                  <h3>Pay-As-You-Go</h3>
+                  <p class="plan-tagline">Occasional use</p>
+                  <div class="plan-price">
+                    <span class="price-main">Free</span>
+                    <span class="price-period">to start</span>
+                  </div>
+                  <a href="/alpha-release/" class="plan-cta plan-cta-outline">Get Started</a>
+                </div>
+                <div class="pricing-card-mobile-features">
+                  <div class="mobile-section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+                    <span>Core Features</span>
+                  </div>
+                  <div class="mobile-feature-row">
+                    <span class="mobile-feature-name">Slide Deck Diffs</span>
+                    <span class="mobile-feature-value price-value" data-eur="5 EUR / deck" data-chf="5 CHF / deck">5 EUR / deck</span>
+                  </div>
+                  <div class="mobile-feature-row">
+                    <span class="mobile-feature-name">Translations</span>
+                    <span class="mobile-feature-value price-value" data-eur="5 EUR (10 slides)" data-chf="5 CHF (10 slides)">5 EUR (10 slides)</span>
+                  </div>
+                  <div class="mobile-feature-row">
+                    <span class="mobile-feature-name">Transform to Template</span>
+                    <span class="mobile-feature-value price-value" data-eur="5 EUR (10 slides)" data-chf="5 CHF (10 slides)">5 EUR (10 slides)</span>
+                  </div>
+                  
+                  <div class="mobile-section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/><circle cx="12" cy="15" r="2"/></svg>
+                    <span>AI-Powered Creation</span>
+                  </div>
+                  <div class="mobile-feature-row">
+                    <span class="mobile-feature-name">AI Slide Creation</span>
+                    <span class="mobile-feature-value"><span class="cell-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></span></span>
+                  </div>
+                  <div class="mobile-feature-row">
+                    <span class="mobile-feature-name">AI Tokens</span>
+                    <span class="mobile-feature-value"><span class="cell-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></span></span>
+                  </div>
+                  
+                  <div class="mobile-section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <span>Workspaces</span>
+                  </div>
+                  <div class="mobile-feature-row">
+                    <span class="mobile-feature-name">Workspaces</span>
+                    <span class="mobile-feature-value"><span class="cell-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg></span></span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Personal Card -->
+              <div class="pricing-card-mobile">
+                <div class="pricing-card-mobile-header">
+                  <span class="early-adopter-badge">-50% EARLY ADOPTERS</span>
+                  <h3>Personal</h3>
+                  <p class="plan-tagline">For Private Use</p>
+                  <div class="plan-price has-discount">
+                    <span class="price-original price-value" data-eur="22" data-chf="20">22</span>
+                    <span class="price-main price-value" data-eur="11" data-chf="10">11</span>
+                    <span class="price-currency price-value" data-eur="EUR" data-chf="CHF">EUR</span>
+                    <span class="price-period">/ month</span>
+                  </div>
+                  <a href="/alpha-release/" class="plan-cta plan-cta-primary">Start Free Trial</a>
+                </div>
+                <div class="pricing-card-mobile-features">
+                  <div class="mobile-section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+                    <span>Core Features</span>
+                  </div>
+                  <div class="mobile-feature-row">
+                    <span class="mobile-feature-name">Slide Deck Diffs</span>
+                    <span class="mobile-feature-value"><span class="cell-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Included</span></span>
+                  </div>
+                  <div class="mobile-feature-row">
+                    <span class="mobile-feature-name">Translations</span>
+                    <span class="mobile-feature-value"><span class="cell-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Included</span></span>
+                  </div>
+                  <div class="mobile-feature-row">
+                    <span class="mobile-feature-name">Transform to Template</span>
+                    <span class="mobile-feature-value"><span class="cell-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Included</span></span>
+                  </div>
+                  
+                  <div class="mobile-section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/><circle cx="12" cy="15" r="2"/></svg>
+                    <span>AI-Powered Creation</span>
+                  </div>
+                  <div class="mobile-feature-row">
+                    <span class="mobile-feature-name">AI Slide Creation</span>
+                    <span class="mobile-feature-value">100 slides / month</span>
+                  </div>
+                  <div class="mobile-feature-row">
+                    <span class="mobile-feature-name">AI Tokens</span>
+                    <span class="mobile-feature-value">5M / month</span>
+                  </div>
+                  
+                  <div class="mobile-section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <span>Workspaces</span>
+                  </div>
+                  <div class="mobile-feature-row">
+                    <span class="mobile-feature-name">Workspaces</span>
+                    <span class="mobile-feature-value">1 personal</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Business Card (Featured) -->
+              <div class="pricing-card-mobile featured">
+                <div class="pricing-card-mobile-header">
+                  <span class="mobile-featured-label">Best for Teams</span>
+                  <span class="early-adopter-badge">-50% EARLY ADOPTERS</span>
+                  <h3>Business</h3>
+                  <p class="plan-tagline">For teams & enterprises</p>
+                  <div class="plan-price has-discount">
+                    <span class="price-original price-value" data-eur="110" data-chf="100">110</span>
+                    <span class="price-main price-value" data-eur="55" data-chf="50">55</span>
+                    <span class="price-currency price-value" data-eur="EUR" data-chf="CHF">EUR</span>
+                    <span class="price-period">/ month per user</span>
+                  </div>
+                </div>
+                <div class="pricing-card-mobile-features">
+                  <div class="mobile-section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+                    <span>Core Features</span>
+                  </div>
+                  <div class="mobile-feature-row">
+                    <span class="mobile-feature-name">Slide Deck Diffs</span>
+                    <span class="mobile-feature-value"><span class="cell-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Included</span></span>
+                  </div>
+                  <div class="mobile-feature-row">
+                    <span class="mobile-feature-name">Translations</span>
+                    <span class="mobile-feature-value"><span class="cell-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Included</span></span>
+                  </div>
+                  <div class="mobile-feature-row">
+                    <span class="mobile-feature-name">Transform to Template</span>
+                    <span class="mobile-feature-value"><span class="cell-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Included</span></span>
+                  </div>
+                  
+                  <div class="mobile-section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z"/><circle cx="12" cy="15" r="2"/></svg>
+                    <span>AI-Powered Creation</span>
+                  </div>
+                  <div class="mobile-feature-row">
+                    <span class="mobile-feature-name">AI Slide Creation</span>
+                    <span class="mobile-feature-value">500 slides / month</span>
+                  </div>
+                  <div class="mobile-feature-row">
+                    <span class="mobile-feature-name">AI Tokens</span>
+                    <span class="mobile-feature-value">20M / month</span>
+                  </div>
+                  
+                  <div class="mobile-section-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <span>Workspaces</span>
+                  </div>
+                  <div class="mobile-feature-row">
+                    <span class="mobile-feature-name">Workspaces</span>
+                    <span class="mobile-feature-value">Unlimited shared</span>
+                  </div>
+                  <div class="mobile-feature-row">
+                    <span class="mobile-feature-name">Enterprise Add-ons</span>
+                    <span class="mobile-feature-value"><span class="cell-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Available</span></span>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 3: Enterprise Options (Business only) -->
+      <section class="section-container enterprise-section" id="enterprise">
+        <div class="container-fluid section-padding">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <div class="enterprise-container">
+                <div class="enterprise-header">
+                  <div class="enterprise-header-content">
+                    <span class="pill-badge pill-badge-orange">Business Plan Add-ons</span>
+                    <h2>Enterprise & Deployment Options</h2>
+                    <p>Need enhanced data sovereignty, private cloud, or on-premise deployment? These options are available exclusively for Business plan subscribers.</p>
+                  </div>
+                </div>
+                
+                <div class="enterprise-grid">
+                  
+                  <!-- Managed Private Cloud EU -->
+                  <div class="enterprise-option">
+                    <div class="option-header">
+                      <span class="option-badge">Managed Cloud</span>
+                      <h4>EU Private Cloud</h4>
+                      <p>Data at rest hosted on a dedicated EU cloud instance</p>
+                    </div>
+                    <div class="option-price">
+                      <span class="option-amount price-value" data-eur="2,200 EUR" data-chf="2,000 CHF">2,200 EUR</span>
+                      <span class="option-period">/ year</span>
+                    </div>
+                    <div class="option-bonus">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+                      <span>Early adopter rebate: Free 2h support</span>
+                    </div>
+                  </div>
+                  
+                  <!-- Managed Private Cloud CH -->
+                  <div class="enterprise-option">
+                    <div class="option-header">
+                      <span class="option-badge">Managed Cloud</span>
+                      <h4>Swiss Private Cloud</h4>
+                      <p>Data at rest hosted on a dedicated Swiss cloud instance</p>
+                    </div>
+                    <div class="option-price">
+                      <span class="option-amount price-value" data-eur="5,500 EUR" data-chf="5,000 CHF">5,500 EUR</span>
+                      <span class="option-period">/ year</span>
+                    </div>
+                    <div class="option-bonus">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+                      <span>Early adopter rebate: Free 5h support</span>
+                    </div>
+                  </div>
+                  
+                  <!-- Managed AI Model CH at US Provider -->
+                  <div class="enterprise-option">
+                    <div class="option-header">
+                      <span class="option-badge">AI Model</span>
+                      <h4>Swiss-Hosted AI (US Provider)</h4>
+                      <p>AI model hosted in Switzerland via US cloud provider</p>
+                    </div>
+                    <div class="option-price">
+                      <span class="option-amount price-value" data-eur="5,500 EUR" data-chf="5,000 CHF">5,500 EUR</span>
+                      <span class="option-period">/ year</span>
+                    </div>
+                    <div class="option-bonus">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+                      <span>Early adopter rebate: Free 5h support</span>
+                    </div>
+                  </div>
+                  
+                  <!-- Managed AI Model EU/CH Sovereign -->
+                  <div class="enterprise-option">
+                    <div class="option-header">
+                      <span class="option-badge">AI Model</span>
+                      <h4>Sovereign AI (EU/CH)</h4>
+                      <p>AI model at a sovereign (non-US) provider in EU or CH</p>
+                    </div>
+                    <div class="option-price">
+                      <span class="option-amount">On request</span>
+                    </div>
+                  </div>
+                  
+                  <!-- On-Premise -->
+                  <div class="enterprise-option enterprise-option-highlight">
+                    <div class="option-header">
+                      <span class="option-badge highlight">On-Premise</span>
+                      <h4>Full On-Premise Deployment</h4>
+                      <p>Deploy Octigen entirely within your own infrastructure with optional on-premise AI</p>
+                    </div>
+                    <div class="option-price">
+                      <span class="option-amount price-value" data-eur="22,000 EUR" data-chf="20,000 CHF">22,000 EUR</span>
+                      <span class="option-period">/ year</span>
+                    </div>
+                    <div class="option-bonus">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+                      <span>Early adopter rebate: Free 20h support</span>
+                    </div>
+                  </div>
+                  
+                </div>
+                
+                <div class="enterprise-note">
+                  <p>All enterprise options require an active Business plan subscription and a minimum 1-year contract.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 4: FAQ (renumbered) -->
+      <section class="section-container faq-section" id="faq">
+        <div class="container-fluid section-padding">
+          <div class="row justify-content-center mb-4">
+            <div class="col-lg-8 text-center">
+              <h2>Frequently Asked Questions</h2>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="faq-list">
+                <div class="faq-item">
+                  <button class="faq-question" aria-expanded="false">
+                    <span>What are AI tokens?</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="faq-answer">
+                    <p>
+                      AI tokens are the units used by our AI assistants to generate content.
+                      They're consumed when you use AI-generated content creation.
+                      1 million tokens roughly equals 750,000 words of content.
+                      With Octigen, you have the flexibility to choose whether or not to use
+                      AI-powered content creation for the production of your presentations.
+                    </p>
+                  </div>
+                </div>
+                <div class="faq-item">
+                  <button class="faq-question" aria-expanded="false">
+                    <span>What is a workspace?</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="faq-answer">
+                    <p>A workspace is your dedicated environment for organizing templates, workflows, and presentations. Business plan users can share workspaces with team members for collaborative work.</p>
+                  </div>
+                </div>
+                <div class="faq-item">
+                  <button class="faq-question" aria-expanded="false">
+                    <span>Can I upgrade or downgrade my plan?</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="faq-answer">
+                    <p>Yes, you can change your plan at any time. Upgrades take effect immediately, and downgrades apply at the start of your next billing cycle. Your data and templates are preserved when switching plans.
+                      Previously available features not included in the downgraded plan (for example, collaborative workspaces)will be removed.</p>
+                  </div>
+                </div>
+                <div class="faq-item">
+                  <button class="faq-question" aria-expanded="false">
+                    <span>Is there a free trial?</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="faq-answer">
+                    <p>Yes! You can start with our Pay-As-You-Go plan for free and pay only for what you use. Personal and Business plans also include a trial period so you can explore all features before committing.</p>
+                  </div>
+                </div>
+                <div class="faq-item">
+                  <button class="faq-question" aria-expanded="false">
+                    <span>What payment methods do you accept?</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                  </button>
+                  <div class="faq-answer">
+                    <p>We accept all major credit cards, Twint, and bank transfers for annual enterprise contracts.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- SECTION 5: Contact Sales -->
+      <section class="section-container contact-section" id="contact-sales">
+        <div class="container-fluid section-padding">
+          <div class="contact-wrapper">
+            <div class="row g-0">
+              <!-- Left: Content & Value Props -->
+              <div class="col-lg-5">
+                <div class="contact-info-side">
+                  <span class="pill-badge pill-badge-blue">Contact Sales</span>
+                  <h2>Let's discuss your needs</h2>
+                  <p class="contact-intro">
+                    Need a custom enterprise solution or have questions about our plans? Our team is here to help you find the perfect fit.
+                  </p>
+                  
+                  <div class="contact-benefits">
+                    <div class="contact-benefit">
+                      <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                      </div>
+                      <div class="benefit-text">
+                        <strong>Quick Response</strong>
+                        <span>We typically reply within 24 hours</span>
+                      </div>
+                    </div>
+                    <div class="contact-benefit">
+                      <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                      </div>
+                      <div class="benefit-text">
+                        <strong>Custom Quotes</strong>
+                        <span>Tailored pricing for your specific needs</span>
+                      </div>
+                    </div>
+                    <div class="contact-benefit">
+                      <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                      </div>
+                      <div class="benefit-text">
+                        <strong>Free Consultation</strong>
+                        <span>No obligation, just answers</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Right: Form -->
+              <div class="col-lg-7">
+                <div class="contact-form-side">
+                  <form
+                    action="https://formspree.io/f/xrbelbzl"
+                    id="contact-form"
+                    method="POST"
+                    class="contact-form-enhanced"
+                  >
+                    <div class="form-row-2col">
+                      <div class="form-group">
+                        <label for="contact-name">Name</label>
+                        <input
+                          name="name"
+                          id="contact-name"
+                          type="text"
+                          placeholder="John Smith"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="contact-email">Work Email</label>
+                        <input
+                          name="email"
+                          id="contact-email"
+                          type="email"
+                          placeholder="john@company.com"
+                          required
+                        />
+                      </div>
+                    </div>
+                    
+                    <div class="form-row-2col">
+                      <div class="form-group">
+                        <label for="contact-company">Company</label>
+                        <input
+                          name="company"
+                          id="contact-company"
+                          type="text"
+                          placeholder="Acme Capital"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="contact-interest">I'm interested in...</label>
+                        <select name="interest" id="contact-interest">
+                          <option value="">Select...</option>
+                          <option value="personal-plan">Personal Plan</option>
+                          <option value="business-plan">Business Plan</option>
+                          <option value="enterprise">Enterprise Deployment</option>
+                          <option value="custom-pricing">Custom Pricing</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <div class="form-group">
+                      <label for="contact-message">How can we help?</label>
+                      <textarea
+                        name="message"
+                        id="contact-message"
+                        placeholder="E.g., I'd like to understand the difference between Personal and Business plans..."
+                        rows="4"
+                        required
+                      ></textarea>
+                    </div>
+                    
+                    <input type="hidden" name="source" value="pricing-page" />
+                    
+                    <div class="form-footer">
+                      <div class="form-consent">
+                        <input
+                          name="gdpr-consent"
+                          type="checkbox"
+                          id="gdpr-checkbox"
+                          required
+                        />
+                        <label for="gdpr-checkbox">
+                          I agree to the <a href="/privacy_policy.html" target="_blank">privacy policy</a>
+                        </label>
+                      </div>
+                      
+                      <button type="submit" id="contact-form-button" class="contact-submit-btn">
+                        <span class="btn-text">Send Message</span>
+                        <span class="btn-arrow">→</span>
+                      </button>
+                    </div>
+                    
+                    <div id="contact-form-status" class="form-status"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Footer -->
+      <div id="footer-container"></div>
+      
+    </main>
+
+    <!-- Interactive Scripts -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Currency Toggle
+        const currencyBtns = document.querySelectorAll('.currency-btn');
+        const priceValues = document.querySelectorAll('.price-value');
+        
+        // Check for saved preference
+        const savedCurrency = localStorage.getItem('octigen-currency') || 'eur';
+        setCurrency(savedCurrency);
+        
+        currencyBtns.forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            const currency = btn.getAttribute('data-currency');
+            setCurrency(currency);
+            localStorage.setItem('octigen-currency', currency);
+          });
+        });
+        
+        function setCurrency(currency) {
+          // Update button states
+          currencyBtns.forEach(function(btn) {
+            if (btn.getAttribute('data-currency') === currency) {
+              btn.classList.add('active');
+            } else {
+              btn.classList.remove('active');
+            }
+          });
+          
+          // Update all price values
+          priceValues.forEach(function(el) {
+            const value = el.getAttribute('data-' + currency);
+            if (value) {
+              el.textContent = value;
+            }
+          });
+        }
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-question');
+        faqItems.forEach(function(item) {
+          item.addEventListener('click', function() {
+            const isExpanded = item.getAttribute('aria-expanded') === 'true';
+            
+            // Close all other FAQ items
+            faqItems.forEach(function(otherItem) {
+              otherItem.setAttribute('aria-expanded', 'false');
+              otherItem.closest('.faq-item').classList.remove('expanded');
+            });
+            
+            // Toggle current item
+            if (!isExpanded) {
+              item.setAttribute('aria-expanded', 'true');
+              item.closest('.faq-item').classList.add('expanded');
+            }
+          });
+        });
+      });
+    </script>
+
+  </body>
+</html>
