@@ -1019,6 +1019,13 @@
    Responsive - Mobile
    =========================================== */
 
+@media (max-width: 991px) {
+    /* Add extra top padding for hero on mobile/tablet to match other pages */
+    .hero-section {
+        padding-top: 6rem;
+    }
+}
+
 @media (max-width: 768px) {
     .currency-toggle-container {
         flex-direction: column;
@@ -1084,6 +1091,10 @@
         position: relative;
     }
     
+    .pricing-card-mobile-header p {
+        text-align: center !important;
+    }
+    
     .pricing-card-mobile.featured .pricing-card-mobile-header {
         background: linear-gradient(180deg, rgba(30, 79, 226, 0.08), rgba(30, 79, 226, 0.02));
     }
@@ -1122,6 +1133,7 @@
         font-size: 0.85rem;
         color: var(--theme-text-tertiary);
         margin: 0 0 1rem 0;
+        text-align: center;
     }
     
     .pricing-card-mobile-header .plan-price {
