@@ -11,7 +11,6 @@
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
-    margin-bottom: 1.5rem;
 }
 
 .currency-label {
@@ -108,7 +107,7 @@
    =========================================== */
 
 .pricing-table-section {
-    padding-top: 2rem !important;
+    padding-top: 0rem !important;
     padding-bottom: 4rem !important;
 }
 
@@ -145,10 +144,13 @@
     justify-content: flex-end;
 }
 
-/* First cell (row 1, col 1) - invisible but with bottom border to connect to section below */
+/* First cell (row 1, col 1) - styled same as plan columns */
 .pricing-table-header .feature-col {
-    background: transparent;
+    background: var(--theme-glass-bg);
+    border: 1px solid var(--theme-glass-border);
+    border-right: none;
     border-bottom: 1px solid var(--theme-glass-border);
+    border-top-left-radius: 20px;
 }
 
 .feature-col {
@@ -168,9 +170,9 @@
     border-bottom: 1px solid var(--theme-glass-border);
 }
 
-/* First plan column (Pay-As-You-Go) - round top-left corner */
+/* First plan column (Pay-As-You-Go) - no special rounding needed, first feature-col has top-left */
 .pricing-table-header > .pricing-col:nth-child(2) {
-    border-top-left-radius: 20px;
+    /* No border radius - connects to feature-col */
 }
 
 /* Last plan column (Business) - round top-right corner */
