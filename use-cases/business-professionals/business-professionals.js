@@ -1,10 +1,10 @@
 /**
- * Financial Professionals Landing Page Scripts
- * Comparison data and render functions for /use-cases/financial-professionals/
+ * Business Professionals Landing Page Scripts
+ * Comparison data and render functions for /use-cases/business-professionals/
  */
 
 /**
- * Comparison Data for Financial Professionals Page
+ * Comparison Data for Business Professionals Page
  * Octigen vs Generic AI Tools vs Manual Work
  */
 const comparisonData = [
