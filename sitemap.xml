@@ -36,6 +36,46 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- Use Case: Fund Reporting -->
+    <url>
+        <loc>https://octigen.com/use-cases/fund-reporting/</loc>
+        <lastmod>2026-01-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Use Case: Business Professionals -->
+    <url>
+        <loc>https://octigen.com/use-cases/business-professionals/</loc>
+        <lastmod>2026-01-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Use Case: Sales Professionals -->
+    <url>
+        <loc>https://octigen.com/use-cases/sales-professionals/</loc>
+        <lastmod>2026-01-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Features -->
+    <url>
+        <loc>https://octigen.com/features/</loc>
+        <lastmod>2026-01-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Pricing -->
+    <url>
+        <loc>https://octigen.com/pricing/</loc>
+        <lastmod>2026-01-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- About Us -->
     <url>
         <loc>https://octigen.com/about/</loc>
