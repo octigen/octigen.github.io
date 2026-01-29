@@ -219,7 +219,7 @@
               <div class="template-injection-visual">
                 <!-- Top Row: Template + Data Sources -->
                 <div class="injection-top-row">
-                  <!-- Source Template -->
+                  <!-- Source Template - same structure as output, placeholder text -->
                   <div class="injection-source">
                     <div class="source-header">
                       <span class="source-dot red"></span>
@@ -229,23 +229,24 @@
                     </div>
                     <div class="source-slide">
                       <div class="slide-accent"></div>
-                      <div class="placeholder-box title">
-                        <span class="placeholder-label">{{fund_name}}</span>
+                      <div class="filled-box title">
+                        <span class="filled-value">Your Fund Name</span>
                       </div>
-                      <div class="placeholder-row">
-                        <div class="placeholder-box small">
-                          <span class="placeholder-label">{{nav}}</span>
+                      <div class="filled-row">
+                        <div class="filled-box small">
+                          <span class="filled-label">NAV</span>
+                          <span class="filled-value">€XXXX.XX</span>
                         </div>
-                        <div class="placeholder-box small">
-                          <span class="placeholder-label">{{ytd}}</span>
+                        <div class="filled-box small highlight">
+                          <span class="filled-label">YTD</span>
+                          <span class="filled-value">+XX.X%</span>
                         </div>
                       </div>
-                      <div class="placeholder-box chart">
-                        <span class="placeholder-label">{{chart}}</span>
-                        <div class="chart-placeholder-bars">
-                          <div class="bar"></div>
-                          <div class="bar"></div>
-                          <div class="bar"></div>
+                      <div class="filled-box chart">
+                        <div class="filled-chart-bars">
+                          <div class="bar" style="height: 85%;"></div>
+                          <div class="bar" style="height: 60%;"></div>
+                          <div class="bar" style="height: 40%;"></div>
                         </div>
                       </div>
                     </div>
