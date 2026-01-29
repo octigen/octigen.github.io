@@ -385,6 +385,15 @@
     display: table;
 }
 
+/* "By Example" style - solid boxes with real content look */
+.slide-shape.example {
+    background: var(--theme-bg-elevated);
+    border: 1px solid var(--theme-border-secondary);
+    color: var(--theme-text-primary);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+}
+
 .slide-shape.title-shape {
     font-size: 0.7rem;
     padding: 0.4rem;
@@ -423,6 +432,11 @@
 .mini-bars .bar:nth-child(1) { height: 40%; }
 .mini-bars .bar:nth-child(2) { height: 70%; }
 .mini-bars .bar:nth-child(3) { height: 55%; }
+
+/* Solid bars for "by example" style */
+.slide-shape.example .mini-bars .bar {
+    background: var(--octigen-blue);
+}
 
 .template-analysis {
     display: flex;
