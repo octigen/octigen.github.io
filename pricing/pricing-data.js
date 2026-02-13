@@ -113,12 +113,12 @@ const PRICING_DATA = {
             personal: { 
               type: "value", 
               text: "1M tokens / month",
-              sub: { eur: "+11 EUR / 1M extra", chf: "+10 CHF / 1M extra" }
+              sub: { eur: "+5.50 EUR / 1M extra", chf: "+5 CHF / 1M extra" }
             },
             business: { 
               type: "value", 
               text: "5M tokens / month",
-              sub: { eur: "+11 EUR / 1M extra", chf: "+10 CHF / 1M extra" }
+              sub: { eur: "+5.50 EUR / 1M extra", chf: "+5 CHF / 1M extra" }
             }
           }
         }
