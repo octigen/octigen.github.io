@@ -13,26 +13,27 @@ const PRICING_DATA = {
         period: "to start"
       },
     },
-    personal: {
-      name: "Personal",
+    solo: {
+      name: "solo",
       tagline: "For Private Use",
       earlyAdopterDiscount: true,
       price: {
-        original: { eur: "22", chf: "20" },
-        main: { eur: "11", chf: "10" },
+        monthly: { eur: "22", chf: "20" },
+        annual: { eur: "11", chf: "10" },
         currency: { eur: "EUR", chf: "CHF" },
         period: "/ month"
       },
     },
-    business: {
-      name: "Business",
+    team: {
+      name: "team",
       tagline: "For teams & enterprises",
       featured: true,
       featuredLabel: "Best for Teams",
+      comingSoon: true,
       earlyAdopterDiscount: true,
       price: {
-        original: { eur: "110", chf: "100" },
-        main: { eur: "55", chf: "50" },
+        monthly: { eur: "110", chf: "100" },
+        annual: { eur: "55", chf: "50" },
         currency: { eur: "EUR", chf: "CHF" },
         period: "/ month per user"
       },
@@ -50,8 +51,8 @@ const PRICING_DATA = {
           description: "Compare two PowerPoint presentations",
           values: {
             payAsYouGo: { type: "price", eur: "5 EUR / deck", chf: "5 CHF / deck" },
-            personal: { type: "included" },
-            business: { type: "included" }
+            solo: { type: "included" },
+            team: { type: "included" }
           }
         },
         translations: {
@@ -64,8 +65,8 @@ const PRICING_DATA = {
               chf: "5 CHF (up to 10 slides)",
               sub: { eur: "+0.50 EUR / extra slide", chf: "+0.50 CHF / extra slide" }
             },
-            personal: { type: "included" },
-            business: { type: "included" }
+            solo: { type: "included" },
+            team: { type: "included" }
           }
         },
         updateBranding: {
@@ -78,8 +79,8 @@ const PRICING_DATA = {
               chf: "5 CHF (up to 10 slides)",
               sub: { eur: "+0.50 EUR / extra slide", chf: "+0.50 CHF / extra slide" }
             },
-            personal: { type: "included" },
-            business: { type: "included" }
+            solo: { type: "included" },
+            team: { type: "included" }
           }
         }
       }
@@ -93,12 +94,12 @@ const PRICING_DATA = {
           description: "Generate slides from templates with AI",
           values: {
             payAsYouGo: { type: "unavailable" },
-            personal: { 
+            solo: { 
               type: "value", 
               text: "100 slides / month",
               sub: { eur: "+0.11 EUR / extra", chf: "+0.10 CHF / extra" }
             },
-            business: { 
+            team: { 
               type: "value", 
               text: "500 slides / month",
               sub: { eur: "+0.11 EUR / extra", chf: "+0.10 CHF / extra" }
@@ -110,12 +111,12 @@ const PRICING_DATA = {
           description: "For AI-generated content creation",
           values: {
             payAsYouGo: { type: "unavailable" },
-            personal: { 
+            solo: { 
               type: "value", 
               text: "1M tokens / month",
               sub: { eur: "+5.50 EUR / 1M extra", chf: "+5 CHF / 1M extra" }
             },
-            business: { 
+            team: { 
               type: "value", 
               text: "5M tokens / month",
               sub: { eur: "+5.50 EUR / 1M extra", chf: "+5 CHF / 1M extra" }
@@ -133,8 +134,8 @@ const PRICING_DATA = {
           description: "Organize templates and workflows",
           values: {
             payAsYouGo: { type: "unavailable" },
-            personal: { type: "value", text: "1 workspace" },
-            business: { 
+            solo: { type: "value", text: "1 workspace" },
+            team: { 
               type: "value", 
               text: "1 workspace included",
               sub: { eur: "+110 EUR / extra", chf: "+100 CHF / extra" }
@@ -146,8 +147,8 @@ const PRICING_DATA = {
           description: "Share workspaces with team members",
           values: {
             payAsYouGo: { type: "unavailable" },
-            personal: { type: "unavailable" },
-            business: { type: "included" }
+            solo: { type: "unavailable" },
+            team: { type: "included" }
           }
         },
         jsonApi: {
@@ -155,8 +156,8 @@ const PRICING_DATA = {
           description: "Programmatic slide generation",
           values: {
             payAsYouGo: { type: "unavailable" },
-            personal: { type: "unavailable" },
-            business: { type: "included" }
+            solo: { type: "unavailable" },
+            team: { type: "included" }
           }
         }
       }
@@ -170,8 +171,8 @@ const PRICING_DATA = {
           description: "Where your files are stored",
           values: {
             payAsYouGo: { type: "value", text: "Worldwide" },
-            personal: { type: "value", text: "Worldwide" },
-            business: { type: "value", text: "EU (Sovereign provider)", highlight: true }
+            solo: { type: "value", text: "Worldwide" },
+            team: { type: "value", text: "EU (Sovereign provider)", highlight: true }
           }
         },
         aiLocation: {
@@ -179,8 +180,8 @@ const PRICING_DATA = {
           description: "Where AI processing happens",
           values: {
             payAsYouGo: { type: "value", text: "Worldwide" },
-            personal: { type: "value", text: "Worldwide" },
-            business: { type: "value", text: "EU (US Provider)", highlight: true }
+            solo: { type: "value", text: "Worldwide" },
+            team: { type: "value", text: "EU (US Provider)", highlight: true }
           }
         }
       }
@@ -194,8 +195,8 @@ const PRICING_DATA = {
           description: "",
           values: {
             payAsYouGo: { type: "included", text: "Free" },
-            personal: { type: "included", text: "Free" },
-            business: { type: "included", text: "Free" }
+            solo: { type: "included", text: "Free" },
+            team: { type: "included", text: "Free" }
           }
         },
         premiumSupport: {
@@ -203,15 +204,15 @@ const PRICING_DATA = {
           description: "Senior consulting team",
           values: {
             payAsYouGo: { type: "unavailable" },
-            personal: { type: "price", eur: "220 EUR / hour", chf: "200 CHF / hour" },
-            business: { type: "price", eur: "220 EUR / hour", chf: "200 CHF / hour" }
+            solo: { type: "price", eur: "220 EUR / hour", chf: "200 CHF / hour" },
+            team: { type: "price", eur: "220 EUR / hour", chf: "200 CHF / hour" }
           }
         }
       }
     }
   },
 
-  // Enterprise add-ons (Business plan only)
+  // Enterprise add-ons (team plan only)
   enterprise: {
     euPrivateCloud: {
       badge: "Managed Cloud",
@@ -286,7 +287,7 @@ const PRICING_DATA = {
         }
       ]
     },
-    personal: {
+    solo: {
       sections: [
         {
           title: "Core Features",
@@ -314,7 +315,7 @@ const PRICING_DATA = {
         }
       ]
     },
-    business: {
+    team: {
       sections: [
         {
           title: "Core Features",

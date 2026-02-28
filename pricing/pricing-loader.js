@@ -127,8 +127,9 @@
   }
 
   // Generate mobile cards HTML
-  function generateMobileCards(currency) {
+  function generateMobileCards(currency, billingPeriod) {
     const plans = PRICING_DATA.plans;
+    const billing = billingPeriod || 'annual';
     let html = '';
     
     // Pay-As-You-Go Card
@@ -147,44 +148,49 @@
         </div>
       </div>`;
     
-    // Personal Card
-    const personalPrice = plans.personal.price;
+    // Solo Card
+    const soloPrice = plans.solo.price;
+    const soloIsAnnual = billing === 'annual';
+    const soloDisplayPrice = soloPrice[billing] || soloPrice.annual;
     html += `
       <div class="pricing-card-mobile">
         <div class="pricing-card-mobile-header">
-          <span class="early-adopter-badge">-50% EARLY ADOPTERS</span>
-          <h3>${plans.personal.name}</h3>
-          <p class="plan-tagline">${plans.personal.tagline}</p>
-          <div class="plan-price has-discount">
-            <span class="price-original price-value" data-eur="${personalPrice.original.eur}" data-chf="${personalPrice.original.chf}">${personalPrice.original[currency]}</span>
-            <span class="price-main price-value" data-eur="${personalPrice.main.eur}" data-chf="${personalPrice.main.chf}">${personalPrice.main[currency]}</span>
-            <span class="price-currency price-value" data-eur="${personalPrice.currency.eur}" data-chf="${personalPrice.currency.chf}">${personalPrice.currency[currency]}</span>
-            <span class="price-period">${personalPrice.period}</span>
+          ${soloIsAnnual ? '<span class="early-adopter-badge">-50% EARLY ADOPTERS</span>' : ''}
+          <h3>${plans.solo.name}</h3>
+          <p class="plan-tagline">${plans.solo.tagline}</p>
+          <div class="plan-price${soloIsAnnual ? ' has-discount' : ''}">
+            ${soloIsAnnual ? `<span class="price-original price-value" data-eur="${soloPrice.monthly.eur}" data-chf="${soloPrice.monthly.chf}">${soloPrice.monthly[currency]}</span>` : ''}
+            <span class="price-main price-value" data-eur="${soloDisplayPrice.eur}" data-chf="${soloDisplayPrice.chf}">${soloDisplayPrice[currency]}</span>
+            <span class="price-currency price-value" data-eur="${soloPrice.currency.eur}" data-chf="${soloPrice.currency.chf}">${soloPrice.currency[currency]}</span>
+            <span class="price-period">${soloPrice.period}</span>
           </div>
         </div>
         <div class="pricing-card-mobile-features">
-          ${generateMobileCardFeatures('personal', currency)}
+          ${generateMobileCardFeatures('solo', currency)}
         </div>
       </div>`;
     
-    // Business Card (Featured)
-    const businessPrice = plans.business.price;
+    // Team Card (Featured, Coming Soon)
+    const teamPrice = plans.team.price;
+    const teamIsAnnual = billing === 'annual';
+    const teamDisplayPrice = teamPrice[billing] || teamPrice.annual;
     html += `
       <div class="pricing-card-mobile featured">
         <div class="pricing-card-mobile-header">
-          <span class="mobile-featured-label">${plans.business.featuredLabel}</span>
-          <span class="early-adopter-badge">-50% EARLY ADOPTERS</span>
-          <h3>${plans.business.name}</h3>
-          <p class="plan-tagline">${plans.business.tagline}</p>
-          <div class="plan-price has-discount">
-            <span class="price-original price-value" data-eur="${businessPrice.original.eur}" data-chf="${businessPrice.original.chf}">${businessPrice.original[currency]}</span>
-            <span class="price-main price-value" data-eur="${businessPrice.main.eur}" data-chf="${businessPrice.main.chf}">${businessPrice.main[currency]}</span>
-            <span class="price-currency price-value" data-eur="${businessPrice.currency.eur}" data-chf="${businessPrice.currency.chf}">${businessPrice.currency[currency]}</span>
-            <span class="price-period">${businessPrice.period}</span>
+          <span class="mobile-featured-label">${plans.team.featuredLabel}</span>
+          ${plans.team.comingSoon ? '<span class="coming-soon-badge">COMING SOON</span>' : ''}
+          ${teamIsAnnual ? '<span class="early-adopter-badge">-50% EARLY ADOPTERS</span>' : ''}
+          <h3>${plans.team.name}</h3>
+          <p class="plan-tagline">${plans.team.tagline}</p>
+          <div class="plan-price${teamIsAnnual ? ' has-discount' : ''}">
+            ${teamIsAnnual ? `<span class="price-original price-value" data-eur="${teamPrice.monthly.eur}" data-chf="${teamPrice.monthly.chf}">${teamPrice.monthly[currency]}</span>` : ''}
+            <span class="price-main price-value" data-eur="${teamDisplayPrice.eur}" data-chf="${teamDisplayPrice.chf}">${teamDisplayPrice[currency]}</span>
+            <span class="price-currency price-value" data-eur="${teamPrice.currency.eur}" data-chf="${teamPrice.currency.chf}">${teamPrice.currency[currency]}</span>
+            <span class="price-period">${teamPrice.period}</span>
           </div>
         </div>
         <div class="pricing-card-mobile-features">
-          ${generateMobileCardFeatures('business', currency)}
+          ${generateMobileCardFeatures('team', currency)}
         </div>
       </div>`;
     
@@ -194,11 +200,12 @@
   // Initialize pricing
   function initPricing() {
     const savedCurrency = localStorage.getItem('octigen-currency') || 'eur';
+    const savedBilling = localStorage.getItem('octigen-billing') || 'annual';
     
     // Generate mobile cards
     const mobileContainer = document.querySelector('.pricing-cards-mobile');
     if (mobileContainer) {
-      mobileContainer.innerHTML = generateMobileCards(savedCurrency);
+      mobileContainer.innerHTML = generateMobileCards(savedCurrency, savedBilling);
     }
     
     // Update all price values based on saved currency
@@ -223,13 +230,13 @@
     initPricing();
   }
 
-  // Expose for currency toggle
+  // Expose for currency/billing toggles
   window.PricingLoader = {
     updateCurrency: updateCurrency,
-    regenerateMobileCards: function(currency) {
+    regenerateMobileCards: function(currency, billingPeriod) {
       const mobileContainer = document.querySelector('.pricing-cards-mobile');
       if (mobileContainer) {
-        mobileContainer.innerHTML = generateMobileCards(currency);
+        mobileContainer.innerHTML = generateMobileCards(currency, billingPeriod);
       }
     }
   };
