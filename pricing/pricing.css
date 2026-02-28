@@ -67,8 +67,115 @@
 }
 
 /* ===========================================
+   Pricing Controls (billing + currency row)
+   =========================================== */
+
+.pricing-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+/* ===========================================
+   Billing Toggle
+   =========================================== */
+
+.billing-toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.billing-toggle {
+    display: flex;
+    position: relative;
+    background: var(--theme-glass-bg);
+    border: 1px solid var(--theme-glass-border);
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.billing-btn {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--theme-text-tertiary);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    border-radius: 7px;
+}
+
+.billing-btn:hover {
+    color: var(--theme-text-secondary);
+}
+
+.billing-btn.active {
+    color: white;
+}
+
+.billing-toggle-slider {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    background: linear-gradient(135deg, var(--octigen-blue), #1a45c7);
+    border-radius: 7px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(30, 79, 226, 0.3);
+}
+
+.billing-btn[data-billing="monthly"].active ~ .billing-toggle-slider {
+    transform: translateX(100%);
+}
+
+.billing-savings-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.75rem;
+    background: linear-gradient(135deg, rgba(30, 79, 226, 0.12), rgba(30, 79, 226, 0.06));
+    border: 1px solid rgba(30, 79, 226, 0.25);
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--octigen-blue);
+    letter-spacing: 0.02em;
+}
+
+/* ===========================================
+   Coming Soon Badge (Team Plan)
+   =========================================== */
+
+.coming-soon-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.15), rgba(255, 107, 53, 0.08));
+    border: 1px solid rgba(255, 107, 53, 0.35);
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--octigen-orange);
+    letter-spacing: 0.06em;
+    margin-bottom: 0.4rem;
+}
+
+/* ===========================================
    Hero Section
    =========================================== */
+
+.hero-section {
+    min-height: auto;
+    padding-top: 9rem !important;
+    padding-bottom: 7rem !important;
+}
 
 .pricing-hero-subtitle {
     font-size: 1.15rem;
@@ -1027,8 +1134,22 @@
 }
 
 @media (max-width: 768px) {
-    .currency-toggle-container {
+    .pricing-controls {
         flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .billing-toggle-container {
+        gap: 0.5rem;
+    }
+
+    .billing-btn {
+        padding: 0.45rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .currency-toggle-container {
+        flex-direction: row;
         gap: 0.5rem;
     }
     

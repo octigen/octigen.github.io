@@ -81,12 +81,21 @@
               <p class="pricing-hero-subtitle">
                 Choose the plan that fits your workflow. Start free with pay-as-you-go, or unlock more with our subscription plans.
               </p>
-              <div class="currency-toggle-container">
-                <span class="currency-label">Display prices in:</span>
-                <div class="currency-toggle">
-                  <button class="currency-btn active" data-currency="eur">EUR</button>
-                  <button class="currency-btn" data-currency="chf">CHF</button>
-                  <div class="currency-toggle-slider"></div>
+              <div class="pricing-controls">
+                <div class="billing-toggle-container">
+                  <div class="billing-toggle">
+                    <button class="billing-btn active" data-billing="annual">Annual</button>
+                    <button class="billing-btn" data-billing="monthly">Monthly</button>
+                    <div class="billing-toggle-slider"></div>
+                  </div>
+                </div>
+                <div class="currency-toggle-container">
+                  <span class="currency-label">in:</span>
+                  <div class="currency-toggle">
+                    <button class="currency-btn active" data-currency="eur">EUR</button>
+                    <button class="currency-btn" data-currency="chf">CHF</button>
+                    <div class="currency-toggle-slider"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -126,111 +135,32 @@
                 </div>
                 <div class="pricing-col plan-col">
                   <div class="plan-header">
-                    <span class="early-adopter-badge">-50% EARLY ADOPTERS</span>
-                    <h3>Personal</h3>
-                    <p class="plan-tagline">For Private Use</p>
-                    <div class="plan-price has-discount">
-                      <span class="price-original price-value" data-eur="22" data-chf="20">22</span>
-                      <span class="price-main price-value" data-eur="11" data-chf="10">11</span>
+                    <span class="early-adopter-badge billing-annual-only">-50% EARLY ADOPTERS</span>
+                    <h3>Solo</h3>
+                    <p class="plan-tagline">For Solo Use</p>
+                    <div class="plan-price has-discount" id="solo-price-display">
+                      <span class="price-original price-value billing-annual-only" data-eur="22" data-chf="20">22</span>
+                      <span class="price-main price-value" data-eur-annual="11" data-eur-monthly="22" data-chf-annual="10" data-chf-monthly="20">11</span>
                       <span class="price-currency price-value" data-eur="EUR" data-chf="CHF">EUR</span>
                       <span class="price-period">/ month</span>
                     </div>
                   </div>
                 </div>
                 <div class="pricing-col plan-col plan-col-featured">
-                  <div class="featured-label">Best for Teams</div>
                   <div class="plan-header">
-                    <span class="early-adopter-badge">-50% EARLY ADOPTERS</span>
-                    <h3>Business</h3>
+                    <span class="coming-soon-badge">COMING SOON</span>
+                    <span class="early-adopter-badge billing-annual-only">-50% EARLY ADOPTERS</span>
+                    <h3>Team</h3>
                     <p class="plan-tagline">For teams & enterprises</p>
-                    <div class="plan-price has-discount">
-                      <span class="price-original price-value" data-eur="110" data-chf="100">110</span>
-                      <span class="price-main price-value" data-eur="55" data-chf="50">55</span>
+                    <div class="plan-price has-discount" id="team-price-display">
+                      <span class="price-original price-value billing-annual-only" data-eur="110" data-chf="100">110</span>
+                      <span class="price-main price-value" data-eur-annual="55" data-eur-monthly="110" data-chf-annual="50" data-chf-monthly="100">55</span>
                       <span class="price-currency price-value" data-eur="EUR" data-chf="CHF">EUR</span>
                       <span class="price-period">/ month per user</span>
                     </div>
                   </div>
                 </div>
               </div>
-              
-              <!-- Section: Slide Services -->
-              <div class="pricing-section">
-                <div class="section-title-row">
-                  <div class="section-title-content">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
-                    <span>Slide Services</span>
-                  </div>
-                </div>
-                
-                <div class="pricing-row">
-                  <div class="pricing-col feature-col">
-                    <span class="feature-name">Slide Diffing</span>
-                    <span class="feature-desc">Compare two PowerPoint presentations</span>
-                  </div>
-                  <div class="pricing-col plan-col">
-                    <span class="cell-value price-value" data-eur="5 EUR / deck" data-chf="5 CHF / deck">5 EUR / deck</span>
-                  </div>
-                  <div class="pricing-col plan-col">
-                    <span class="cell-check">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                      Included
-                    </span>
-                  </div>
-                  <div class="pricing-col plan-col plan-col-featured">
-                    <span class="cell-check">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                      Included
-                    </span>
-                  </div>
-                </div>
-                
-                <div class="pricing-row">
-                  <div class="pricing-col feature-col">
-                    <span class="feature-name">Slide Deck Translations</span>
-                    <span class="feature-desc">Translate PowerPoint presentations to any language</span>
-                  </div>
-                  <div class="pricing-col plan-col">
-                    <span class="cell-value price-value" data-eur="5 EUR (up to 10 slides)" data-chf="5 CHF (up to 10 slides)">5 EUR (up to 10 slides)</span>
-                    <span class="cell-sub price-value" data-eur="+0.50 EUR / extra slide" data-chf="+0.50 CHF / extra slide">+0.50 EUR / extra slide</span>
-                  </div>
-                  <div class="pricing-col plan-col">
-                    <span class="cell-check">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                      Included
-                    </span>
-                  </div>
-                  <div class="pricing-col plan-col plan-col-featured">
-                    <span class="cell-check">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                      Included
-                    </span>
-                  </div>
-                </div>
-                
-                <div class="pricing-row">
-                  <div class="pricing-col feature-col">
-                    <span class="feature-name">Update Branding of Deck</span>
-                    <span class="feature-desc">Update the branding of a PowerPoint deck to your company's brand</span>
-                  </div>
-                  <div class="pricing-col plan-col">
-                    <span class="cell-value price-value" data-eur="5 EUR (up to 10 slides)" data-chf="5 CHF (up to 10 slides)">5 EUR (up to 10 slides)</span>
-                    <span class="cell-sub price-value" data-eur="+0.50 EUR / extra slide" data-chf="+0.50 CHF / extra slide">+0.50 EUR / extra slide</span>
-                  </div>
-                  <div class="pricing-col plan-col">
-                    <span class="cell-check">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                      Included
-                    </span>
-                  </div>
-                  <div class="pricing-col plan-col plan-col-featured">
-                    <span class="cell-check">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-                      Included
-                    </span>
-                  </div>
-                </div>
-              </div>
-              
               <!-- Section: AI Features -->
               <div class="pricing-section">
                 <div class="section-title-row">
@@ -304,8 +234,8 @@
                     <span class="cell-value">1 workspace</span>
                   </div>
                   <div class="pricing-col plan-col plan-col-featured">
-                    <span class="cell-value">1 workspace included</span>
-                    <span class="cell-sub price-value" data-eur="+110 EUR / extra" data-chf="+100 CHF / extra">+110 EUR / extra</span>
+                    <span class="cell-value">1 workspace</span>
+                    <span class="cell-sub price-value" data-eur="+110 EUR" data-chf="+100 CHF per month">+110 EUR per month</span>
                   </div>
                 </div>
                 
@@ -394,6 +324,84 @@
                   </div>
                   <div class="pricing-col plan-col plan-col-featured">
                     <span class="cell-value cell-highlight">EU (US Provider)</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Section: Slide Services -->
+              <div class="pricing-section">
+                <div class="section-title-row">
+                  <div class="section-title-content">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg>
+                    <span>Slide Services (Coming Soon)</span>
+                  </div>
+                </div>
+                
+                <div class="pricing-row">
+                  <div class="pricing-col feature-col">
+                    <span class="feature-name">Slide Diffing</span>
+                    <span class="feature-desc">Compare two PowerPoint presentations</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-value price-value" data-eur="5 EUR / deck" data-chf="5 CHF / deck">5 EUR / deck</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                      Included
+                    </span>
+                  </div>
+                  <div class="pricing-col plan-col plan-col-featured">
+                    <span class="cell-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                      Included
+                    </span>
+                  </div>
+                </div>
+                
+                <div class="pricing-row">
+                  <div class="pricing-col feature-col">
+                    <span class="feature-name">Slide Deck Translations</span>
+                    <span class="feature-desc">Translate PowerPoint presentations to any language</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-value price-value" data-eur="5 EUR (up to 10 slides)" data-chf="5 CHF (up to 10 slides)">5 EUR (up to 10 slides)</span>
+                    <span class="cell-sub price-value" data-eur="+0.50 EUR / extra slide" data-chf="+0.50 CHF / extra slide">+0.50 EUR / extra slide</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                      Included
+                    </span>
+                  </div>
+                  <div class="pricing-col plan-col plan-col-featured">
+                    <span class="cell-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                      Included
+                    </span>
+                  </div>
+                </div>
+                
+                <div class="pricing-row">
+                  <div class="pricing-col feature-col">
+                    <span class="feature-name">Update Branding of Deck</span>
+                    <span class="feature-desc">Update the branding of a PowerPoint deck to your company's brand</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-value price-value" data-eur="5 EUR (up to 10 slides)" data-chf="5 CHF (up to 10 slides)">5 EUR (up to 10 slides)</span>
+                    <span class="cell-sub price-value" data-eur="+0.50 EUR / extra slide" data-chf="+0.50 CHF / extra slide">+0.50 EUR / extra slide</span>
+                  </div>
+                  <div class="pricing-col plan-col">
+                    <span class="cell-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                      Included
+                    </span>
+                  </div>
+                  <div class="pricing-col plan-col plan-col-featured">
+                    <span class="cell-check">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+                      Included
+                    </span>
                   </div>
                 </div>
               </div>
@@ -787,13 +795,54 @@
     <!-- Interactive Scripts -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        // Currency Toggle
+        let currentCurrency = localStorage.getItem('octigen-currency') || 'eur';
+        let currentBilling = localStorage.getItem('octigen-billing') || 'annual';
+
+        // ── Billing Toggle ──────────────────────────────────────────────
+        const billingBtns = document.querySelectorAll('.billing-btn');
+
+        billingBtns.forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            const billing = btn.getAttribute('data-billing');
+            setBilling(billing);
+            localStorage.setItem('octigen-billing', billing);
+          });
+        });
+
+        function setBilling(billing) {
+          currentBilling = billing;
+
+          // Update button states
+          billingBtns.forEach(function(btn) {
+            btn.classList.toggle('active', btn.getAttribute('data-billing') === billing);
+          });
+
+          // Show/hide annual-only elements (early adopter badge, original price strikethrough)
+          document.querySelectorAll('.billing-annual-only').forEach(function(el) {
+            el.style.display = billing === 'annual' ? '' : 'none';
+          });
+
+          // Toggle has-discount on plan-price containers that support discounts
+          document.querySelectorAll('#solo-price-display, #team-price-display').forEach(function(el) {
+            el.classList.toggle('has-discount', billing === 'annual');
+          });
+
+          // Update plan header prices (use data-{currency}-{billing} attributes)
+          document.querySelectorAll('.price-value[data-eur-annual]').forEach(function(el) {
+            const key = 'data-' + currentCurrency + '-' + billing;
+            const value = el.getAttribute(key);
+            if (value) el.textContent = value;
+          });
+
+          // Regenerate mobile cards
+          if (window.PricingLoader) {
+            window.PricingLoader.regenerateMobileCards(currentCurrency, billing);
+          }
+        }
+
+        // ── Currency Toggle ─────────────────────────────────────────────
         const currencyBtns = document.querySelectorAll('.currency-btn');
-        
-        // Check for saved preference
-        const savedCurrency = localStorage.getItem('octigen-currency') || 'eur';
-        setCurrency(savedCurrency);
-        
+
         currencyBtns.forEach(function(btn) {
           btn.addEventListener('click', function() {
             const currency = btn.getAttribute('data-currency');
@@ -801,45 +850,49 @@
             localStorage.setItem('octigen-currency', currency);
           });
         });
-        
+
         function setCurrency(currency) {
+          currentCurrency = currency;
+
           // Update button states
           currencyBtns.forEach(function(btn) {
-            if (btn.getAttribute('data-currency') === currency) {
-              btn.classList.add('active');
-            } else {
-              btn.classList.remove('active');
-            }
+            btn.classList.toggle('active', btn.getAttribute('data-currency') === currency);
           });
-          
-          // Regenerate mobile cards with new currency (from pricing-loader.js)
-          if (window.PricingLoader) {
-            window.PricingLoader.regenerateMobileCards(currency);
-          }
-          
-          // Update all price values (including desktop table)
-          const priceValues = document.querySelectorAll('.price-value');
-          priceValues.forEach(function(el) {
+
+          // Update static price-value elements (data-eur / data-chf)
+          document.querySelectorAll('.price-value:not([data-eur-annual])').forEach(function(el) {
             const value = el.getAttribute('data-' + currency);
-            if (value) {
-              el.textContent = value;
-            }
+            if (value) el.textContent = value;
           });
+
+          // Update billing-period-aware plan prices
+          document.querySelectorAll('.price-value[data-eur-annual]').forEach(function(el) {
+            const key = 'data-' + currency + '-' + currentBilling;
+            const value = el.getAttribute(key);
+            if (value) el.textContent = value;
+          });
+
+          // Regenerate mobile cards with new currency
+          if (window.PricingLoader) {
+            window.PricingLoader.regenerateMobileCards(currency, currentBilling);
+          }
         }
-        
-        // FAQ Accordion
+
+        // Apply saved preferences on load
+        setBilling(currentBilling);
+        setCurrency(currentCurrency);
+
+        // ── FAQ Accordion ───────────────────────────────────────────────
         const faqItems = document.querySelectorAll('.faq-question');
         faqItems.forEach(function(item) {
           item.addEventListener('click', function() {
             const isExpanded = item.getAttribute('aria-expanded') === 'true';
-            
-            // Close all other FAQ items
+
             faqItems.forEach(function(otherItem) {
               otherItem.setAttribute('aria-expanded', 'false');
               otherItem.closest('.faq-item').classList.remove('expanded');
             });
-            
-            // Toggle current item
+
             if (!isExpanded) {
               item.setAttribute('aria-expanded', 'true');
               item.closest('.faq-item').classList.add('expanded');
