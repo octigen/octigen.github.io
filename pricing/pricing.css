@@ -397,6 +397,7 @@
 
 .plan-cta {
     display: inline-block;
+    margin-top: 1rem;
     padding: 0.6rem 1.25rem;
     border-radius: 8px;
     font-size: 0.85rem;
@@ -427,6 +428,12 @@
     border-color: var(--octigen-blue);
     color: var(--octigen-blue);
     background: rgba(30, 79, 226, 0.05);
+}
+
+.plan-cta-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
 }
 
 /* Pricing sections container */
@@ -746,8 +753,8 @@
     border: 1px solid var(--theme-glass-border);
     border-radius: 12px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 0.5rem;
     gap: 1rem;
     flex-wrap: wrap;
 }
@@ -762,6 +769,16 @@
 /* ===========================================
    FAQ Section
    =========================================== */
+
+.subscribe-cta-section {
+    padding-top: 0 !important;
+    padding-bottom: 3rem !important;
+}
+
+.subscribe-cta-btn {
+    font-size: 1rem;
+    padding: 0.85rem 2.5rem;
+}
 
 .faq-section {
     padding-top: 0 !important;

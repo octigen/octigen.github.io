@@ -142,6 +142,7 @@
             <span class="price-main">${plans.payAsYouGo.price.main}</span>
             <span class="price-period">${plans.payAsYouGo.price.period}</span>
           </div>
+          <a href="https://cloud.octigen.com/subscribe" class="plan-cta plan-cta-outline" target="_blank" rel="noopener">Subscribe</a>
         </div>
         <div class="pricing-card-mobile-features">
           ${generateMobileCardFeatures('payAsYouGo', currency)}
@@ -164,6 +165,7 @@
             <span class="price-currency price-value" data-eur="${soloPrice.currency.eur}" data-chf="${soloPrice.currency.chf}">${soloPrice.currency[currency]}</span>
             <span class="price-period">${soloPrice.period}</span>
           </div>
+          <a href="https://cloud.octigen.com/subscribe" class="plan-cta plan-cta-primary" target="_blank" rel="noopener">Subscribe</a>
         </div>
         <div class="pricing-card-mobile-features">
           ${generateMobileCardFeatures('solo', currency)}
@@ -188,6 +190,7 @@
             <span class="price-currency price-value" data-eur="${teamPrice.currency.eur}" data-chf="${teamPrice.currency.chf}">${teamPrice.currency[currency]}</span>
             <span class="price-period">${teamPrice.period}</span>
           </div>
+          <a class="plan-cta plan-cta-outline plan-cta-disabled">Coming Soon</a>
         </div>
         <div class="pricing-card-mobile-features">
           ${generateMobileCardFeatures('team', currency)}
