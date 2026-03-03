@@ -110,7 +110,6 @@
     </script>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://player.vimeo.com/api/player.js"></script>
     <script src="/ai_slides_progress/particles.js" defer></script>
     <script src="/form.js" defer></script>
     <script src="/assets/mobile-nav.js" defer></script>
@@ -150,67 +149,61 @@
     
     <main class="landing-hero">
       
-      <!-- SECTION 1: Hero - Heading + Video -->
-      <section class="section-container hero-section">
+      <!-- SECTION 1: Hero -->
+      <section class="section-container hero-section" id="hero-carousel">
         <div class="container-fluid section-padding">
           <div class="row align-items-center g-5">
-            <!-- Left: Heading + Text + Buttons -->
-            <div class="col-lg-6">
+            <!-- Left: Heading + Text + Feature List -->
+            <div class="col-lg-5">
               <div class="hero-content">
                 <span class="pill-badge pill-badge-blue">Deck Creation, Reimagined</span>
-                <h1>From idea to<br>deck <span style="color: var(--octigen-blue);">in minutes</span></h1>
-                <p>
-                  Stop wrestling with slides. Octigen connects your data sources to PowerPoint templates and generates polished, branded reports automatically.
-                  <br><br>
-                  AI assists where it matters. You stay in control.
-                </p>
-                <div class="hero-buttons">
-                  <a href="#use-cases" class="section-btn section-btn-primary pulse-waves">
-                    Explore Use Cases
-                  </a>
-                  <a href="/features/" class="section-btn section-btn-outline">
-                    Features Overview
-                  </a>
-                </div>
+                <h1>Corporate slide decks...<br><span style="color: var(--octigen-blue);">Ever wondered why they take so long to make?</span></h1>
+                <p>We know how frustrating it can be to <span style="font-weight: 600;">align your ideas</span> with the <span style="font-weight: 600;">corporate design</span> and to <span style="font-weight: 600;">hunt and gather all the data</span>. That's where Octigen comes in.</p>
+                <ol class="hero-feature-list">
+                  <li class="hero-feature-item active" data-index="0">
+                    <span class="hero-feature-number">01</span>
+                    <span class="hero-feature-text">Upload your PowerPoint templates</span>
+                  </li>
+                  <li class="hero-feature-item" data-index="1">
+                    <span class="hero-feature-number">02</span>
+                    <span class="hero-feature-text">Provide your content or use Octi AI to generate it</span>
+                  </li>
+                  <li class="hero-feature-item" data-index="2">
+                    <span class="hero-feature-number">03</span>
+                    <span class="hero-feature-text">Connect your data sources and let Octi AI inject them</span>
+                  </li>
+                  <li class="hero-feature-item" data-index="3">
+                    <span class="hero-feature-number">04</span>
+                    <span class="hero-feature-text">With workflows, create repeatable decks for your recurring reports</span>
+                  </li>
+                </ol>
               </div>
             </div>
-            <!-- Right: Video -->
-            <div class="col-lg-6">
-              <div class="video-container" id="video-wrapper">
-                <!-- Thumbnail with Play Button -->
-                <div class="video-thumbnail" id="video-thumbnail">
-                  <img src="https://vumbnail.com/1110967026.jpg" alt="Watch Demo Video">
-                  <button class="video-play-btn" id="play-video-btn" aria-label="Play video">
-                    <div class="play-btn-circle">
-                      <svg class="play-btn-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
-                    </div>
-                  </button>
+            <!-- Right: Video Carousel -->
+            <div class="col-lg-7">
+              <div class="carousel-viewport">
+                <video class="carousel-video active" src="/videos/video_1.mp4" poster="/assets/images/video1-poster.jpg" autoplay loop muted playsinline></video>
+                <video class="carousel-video" src="/videos/video_2.mp4" poster="/assets/images/video2-poster.jpg" loop muted playsinline preload="none"></video>
+                <video class="carousel-video" src="/videos/video_3.mp4" poster="/assets/images/video3-poster.jpg" loop muted playsinline preload="none"></video>
+                <video class="carousel-video" src="/videos/video_4.mp4" poster="/assets/images/video4-poster.jpg" loop muted playsinline preload="none"></video>
+                <div class="carousel-pause-indicator" id="carousel-pause-indicator">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4h4v16H6zm8 0h4v16h-4z"/></svg>
                 </div>
-                <!-- Video iframe (hidden initially) -->
-                <iframe 
-                  id="video-player"
-                  src="about:blank"
-                  title="Octigen Demo Video" 
-                  allowfullscreen
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  style="display: none;">
-                </iframe>
-                <!-- Expand Button -->
-                <button class="video-expand-btn" id="expand-video-btn" aria-label="Expand video" title="Watch larger">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/>
-                  </svg>
-                </button>
+              </div>
+              <div class="carousel-controls">
+                <div class="carousel-dots">
+                  <button class="carousel-dot active" data-index="0" aria-label="Slide 1"></button>
+                  <button class="carousel-dot" data-index="1" aria-label="Slide 2"></button>
+                  <button class="carousel-dot" data-index="2" aria-label="Slide 3"></button>
+                  <button class="carousel-dot" data-index="3" aria-label="Slide 4"></button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
       
-      <!-- SECTION 2: Feature 1 - Template to Data Injection -->
+            <!-- SECTION 2: Feature 1 - Template to Data Injection -->
       <section class="section-container feature-section" id="automation">
         <div class="container-fluid section-padding">
           <div class="row align-items-center g-5">
@@ -864,26 +857,6 @@
       </div>
     </div>
 
-    <!-- Expanded Video Modal -->
-    <div class="video-modal-overlay" id="video-modal">
-      <div class="video-modal-content">
-        <button class="video-modal-close" id="close-video-modal" aria-label="Close">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 6L6 18M6 6l12 12"/>
-          </svg>
-        </button>
-        <div class="video-modal-wrapper">
-          <iframe 
-            id="modal-video-player"
-            src="about:blank"
-            title="Octigen Demo Video" 
-            allowfullscreen
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-            referrerpolicy="strict-origin-when-cross-origin">
-          </iframe>
-        </div>
-      </div>
-    </div>
 
     <!-- Auto-close modals when links are clicked -->
     <script>
@@ -900,119 +873,57 @@
       });
     </script>
 
-    <!-- Video Play & Expand Script -->
+    <!-- Hero Carousel Script -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        const thumbnail = document.getElementById('video-thumbnail');
-        const videoPlayerEl = document.getElementById('video-player');
-        const playBtn = document.getElementById('play-video-btn');
-        const expandBtn = document.getElementById('expand-video-btn');
-        const videoModal = document.getElementById('video-modal');
-        const modalPlayerEl = document.getElementById('modal-video-player');
-        const closeModalBtn = document.getElementById('close-video-modal');
-        
-        const videoId = '1110967026';
-        const baseUrl = `https://player.vimeo.com/video/${videoId}?badge=0&autopause=0&player_id=0&app_id=58479`;
-        
-        let inlinePlayer = null;
-        let modalPlayer = null;
-        let currentTime = 0;
-        
-        // Play inline video
-        if (thumbnail && videoPlayerEl && playBtn) {
-          playBtn.addEventListener('click', function() {
-            thumbnail.classList.add('hidden');
-            videoPlayerEl.src = baseUrl + '&autoplay=1';
-            videoPlayerEl.style.display = 'block';
-            
-            // Initialize Vimeo player after iframe loads
-            setTimeout(() => {
-              inlinePlayer = new Vimeo.Player(videoPlayerEl);
-              // Track time continuously
-              inlinePlayer.on('timeupdate', function(data) {
-                currentTime = data.seconds;
-              });
-            }, 500);
+        var hero = document.getElementById('hero-carousel');
+        if (!hero) return;
+
+        var videos = hero.querySelectorAll('.carousel-video');
+        var items = hero.querySelectorAll('.hero-feature-item');
+        var dots = hero.querySelectorAll('.carousel-dot');
+        var pauseIndicator = document.getElementById('carousel-pause-indicator');
+        var currentIndex = 0;
+
+        function goTo(index) {
+          videos[currentIndex].classList.remove('active');
+          videos[currentIndex].pause();
+          videos[currentIndex].currentTime = 0;
+          items[currentIndex].classList.remove('active');
+          dots[currentIndex].classList.remove('active');
+
+          currentIndex = index;
+
+          videos[currentIndex].classList.add('active');
+          videos[currentIndex].play();
+          items[currentIndex].classList.add('active');
+          dots[currentIndex].classList.add('active');
+          pauseIndicator.classList.remove('visible');
+        }
+
+        items.forEach(function(item) {
+          item.addEventListener('click', function() {
+            goTo(parseInt(this.dataset.index));
           });
-        }
-        
-        // Expand video to modal
-        if (expandBtn && videoModal && modalPlayerEl) {
-          expandBtn.addEventListener('click', async function() {
-            // Get current time from inline player
-            if (inlinePlayer) {
-              try {
-                currentTime = await inlinePlayer.getCurrentTime();
-                inlinePlayer.pause();
-              } catch (e) {}
-            }
-            
-            // Show modal and load video at current time
-            videoModal.classList.add('active');
-            modalPlayerEl.src = baseUrl + '&autoplay=1#t=' + currentTime + 's';
-            document.body.style.overflow = 'hidden';
-            
-            // Initialize modal player
-            setTimeout(() => {
-              modalPlayer = new Vimeo.Player(modalPlayerEl);
-              modalPlayer.setCurrentTime(currentTime);
-              modalPlayer.on('timeupdate', function(data) {
-                currentTime = data.seconds;
-              });
-            }, 500);
+        });
+
+        dots.forEach(function(dot) {
+          dot.addEventListener('click', function() {
+            goTo(parseInt(this.dataset.index));
           });
-        }
-        
-        // Close modal
-        async function closeModal() {
-          // Get current time from modal player
-          if (modalPlayer) {
-            try {
-              currentTime = await modalPlayer.getCurrentTime();
-              modalPlayer.pause();
-            } catch (e) {}
-          }
-          
-          videoModal.classList.remove('active');
-          modalPlayerEl.src = 'about:blank';
-          document.body.style.overflow = '';
-          
-          // Resume inline video at current time
-          if (thumbnail && thumbnail.classList.contains('hidden')) {
-            videoPlayerEl.src = baseUrl + '&autoplay=1#t=' + currentTime + 's';
-            videoPlayerEl.style.display = 'block';
-            
-            setTimeout(() => {
-              inlinePlayer = new Vimeo.Player(videoPlayerEl);
-              inlinePlayer.setCurrentTime(currentTime);
-              inlinePlayer.on('timeupdate', function(data) {
-                currentTime = data.seconds;
-              });
-            }, 500);
-          }
-        }
-        
-        if (closeModalBtn) {
-          closeModalBtn.addEventListener('click', closeModal);
-        }
-        
-        // Close on overlay click
-        if (videoModal) {
-          videoModal.addEventListener('click', function(e) {
-            if (e.target === videoModal) {
-              closeModal();
-            }
-          });
-        }
-        
-        // Close on Escape key
-        document.addEventListener('keydown', function(e) {
-          if (e.key === 'Escape' && videoModal.classList.contains('active')) {
-            closeModal();
+        });
+
+        hero.querySelector('.carousel-viewport').addEventListener('click', function() {
+          var v = videos[currentIndex];
+          if (v.paused) {
+            v.play();
+            pauseIndicator.classList.remove('visible');
+          } else {
+            v.pause();
+            pauseIndicator.classList.add('visible');
           }
         });
       });
     </script>
 
       </body>
-</html>
