@@ -132,7 +132,7 @@
     const billing = billingPeriod || 'annual';
     let html = '';
     
-    // Pay-As-You-Go Card
+    // Pay As You Go Card
     html += `
       <div class="pricing-card-mobile">
         <div class="pricing-card-mobile-header">
@@ -142,7 +142,7 @@
             <span class="price-main">${plans.payAsYouGo.price.main}</span>
             <span class="price-period">${plans.payAsYouGo.price.period}</span>
           </div>
-          <a href="https://cloud.octigen.com/subscribe" class="plan-cta plan-cta-outline" target="_blank" rel="noopener">Subscribe</a>
+          <a href="https://cloud.octigen.com/login" class="plan-cta plan-cta-outline" target="_blank" rel="noopener">Get Started</a>
         </div>
         <div class="pricing-card-mobile-features">
           ${generateMobileCardFeatures('payAsYouGo', currency)}

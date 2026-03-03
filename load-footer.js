@@ -15,6 +15,12 @@ async function loadFooter() {
     
     if (footerContainer) {
       footerContainer.innerHTML = footerHTML;
+
+      footerContainer.querySelectorAll('.footer-address[data-u]').forEach(function(el) {
+        var e = el.dataset.u + ' [at] ' + el.dataset.d;
+        var p = el.dataset.pa + ' ' + el.dataset.pb;
+        el.textContent = e + ' \u00b7 ' + p;
+      });
       
       // Ensure translations work after footer is loaded
       if (typeof loadLanguage === 'function') {

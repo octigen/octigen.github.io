@@ -6,7 +6,7 @@ const PRICING_DATA = {
   // Plan base prices
   plans: {
     payAsYouGo: {
-      name: "Pay-As-You-Go",
+      name: "Pay As You Go",
       tagline: "Occasional use",
       price: {
         main: "Free",

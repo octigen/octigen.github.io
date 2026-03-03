@@ -277,7 +277,7 @@
     border-bottom: 1px solid var(--theme-glass-border);
 }
 
-/* First plan column (Pay-As-You-Go) - no special rounding needed, first feature-col has top-left */
+/* First plan column (Pay As You Go) - no special rounding needed, first feature-col has top-left */
 .pricing-table-header > .pricing-col:nth-child(2) {
     /* No border radius - connects to feature-col */
 }
