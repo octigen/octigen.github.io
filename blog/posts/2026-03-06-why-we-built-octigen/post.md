@@ -40,10 +40,12 @@ Whether your numbers live in an Excel file, a database, an API, or an SFTP feed,
 **3. Recurring reports, configured once.**
 
 For the quarterly fund report, the monthly investor update, the weekly sales deck - you define the structure once: which slide types appear, in what order, with what tone and instructions. That becomes a reusable workflow. The next time you need to run it, you don't rebuild anything. You just run it.
+This is particularly powerful for [automated fund reporting](/use-cases/fund-reporting/) and [sales deck automation](/use-cases/sales-professionals/).
 
 **4. AI that handles the mechanical work.**
 
 When you're creating something new from scratch, Octigen's AI takes your content - research, notes, raw data - organises it into a logical slide sequence, fills the placeholders, and fits the text. You set the direction and review the output. The AI handles the part that used to cost countless hours.
+Explore the full [AI PowerPoint reporting platform features](/features/) to see what's possible.
 
 The result, in every case, is a native PowerPoint file: fully editable, pixel-perfect, ready to send.
 
