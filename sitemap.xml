@@ -84,6 +84,22 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- Blog Listing -->
+    <url>
+        <loc>https://octigen.com/blog/</loc>
+        <lastmod>2026-03-06</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Blog Post: Why We Built Octigen -->
+    <url>
+        <loc>https://octigen.com/blog/posts/2026-03-06-why-we-built-octigen/</loc>
+        <lastmod>2026-03-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- Privacy Policy -->
     <url>
         <loc>https://octigen.com/privacy_policy.html</loc>
