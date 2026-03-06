@@ -345,6 +345,10 @@
     margin: 0 auto;
 }
 
+.blog-post-hero-content .blog-tag {
+    margin-bottom: 1rem;
+}
+
 .blog-post-hero h1 {
     font-size: 2.75rem;
     font-weight: 200;
@@ -716,6 +720,10 @@
 
     .blog-post-hero h1 {
         font-size: 1.75rem;
+    }
+
+    .blog-post-hero-content .blog-tag {
+        margin-bottom: 1rem;
     }
 
     .blog-post-content {
