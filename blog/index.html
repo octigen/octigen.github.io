@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Theme Initialization (must be first to prevent flash of wrong theme) -->
+    <script>
+      (function() {
+        var stored = localStorage.getItem('octigen-theme');
+        var theme = stored || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+
+    <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/assets/favicon/site.webmanifest" />
+
+    <title>Blog - Octigen | AI Reporting & Startup Insights</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Insights on AI-powered reporting, the future of business intelligence, and the story of building Octigen — written by the founders." />
+    <meta name="keywords" content="Octigen blog, AI reporting, PowerPoint automation, Swiss startup, reporting insights, finance technology" />
+    <link rel="canonical" href="https://octigen.com/blog/" />
+    <meta name="author" content="Octigen GmbH" />
+    <meta property="og:title" content="Blog - Octigen | AI Reporting & Startup Insights" />
+    <meta property="og:description" content="Insights on AI-powered reporting, the future of business intelligence, and the story of building Octigen." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://octigen.com/blog/" />
+    <meta property="og:site_name" content="Octigen" />
+    <meta property="og:image" content="https://octigen.com/assets/images/octigen.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://octigen.com/assets/images/octigen.png" />
+    <meta name="twitter:title" content="Blog - Octigen" />
+    <meta name="twitter:description" content="Insights on AI-powered reporting and building a startup from scratch." />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Octigen Blog",
+      "url": "https://octigen.com/blog/",
+      "description": "Insights on AI-powered reporting, the future of business intelligence, and the story of building Octigen.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Octigen GmbH",
+        "logo": "https://octigen.com/assets/images/logo_octigen_white.png"
+      }
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/ai_slides_progress/particles.js" defer></script>
+    <script src="/assets/mobile-nav.js" defer></script>
+    <script src="/main.js" defer></script>
+    <script src="/load-footer.js" defer></script>
+    <script src="/assets/effects.js" defer></script>
+    <!-- Blog scripts -->
+    <script src="/blog/blog-data.js"></script>
+    <script src="/blog/blog-loader.js" defer></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet" rel="preconnect" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <!-- Theme CSS must be loaded FIRST -->
+    <link rel="stylesheet" href="/assets/theme.css" />
+    <link rel="stylesheet" href="/assets/main.css" />
+    <link rel="stylesheet" href="/landing.css" />
+    <link rel="stylesheet" href="/assets/footer.css" />
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="/blog/blog.css" />
+    <!-- Cookie Consent -->
+    <link rel="stylesheet" href="/assets/cookie-consent.css">
+    <script src="/assets/cookie-consent.js" defer></script>
+  </head>
+  <body class="d-flex flex-column" data-page="blog">
+    <!-- Particle Canvas Background -->
+    <canvas id="particles-canvas" class="particles-background"></canvas>
+
+    <!-- Navigation -->
+    <div id="navbar-container"></div>
+
+    <main class="landing-hero">
+
+      <!-- Hero Section -->
+      <section class="section-container blog-hero">
+        <div class="container-fluid section-padding">
+          <div class="blog-hero-content">
+            <span class="pill-badge pill-badge-blue">Our Blog</span>
+            <h1>Ideas, updates &amp; the<br>story behind Octigen</h1>
+            <p class="lead">
+              Insights on AI-powered reporting, the future of business intelligence,
+              and what it takes to build a product from scratch.
+            </p>
+            <!-- Tag Filters -->
+            <div class="blog-filter-bar">
+              <button class="blog-filter-btn active" data-tag="all">All</button>
+              <button class="blog-filter-btn" data-tag="product">
+                <span class="filter-dot"></span> Product
+              </button>
+              <button class="blog-filter-btn" data-tag="industry">
+                <span class="filter-dot"></span> Industry
+              </button>
+              <button class="blog-filter-btn" data-tag="tutorial">
+                <span class="filter-dot"></span> Tutorial
+              </button>
+              <button class="blog-filter-btn" data-tag="startup-life">
+                <span class="filter-dot"></span> Startup Life
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog Listing -->
+      <section class="section-container blog-listing-section">
+        <div class="container-fluid section-padding">
+          <!-- Posts injected here by blog-loader.js -->
+          <div id="blog-grid-wrap" class="blog-grid"></div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <div id="footer-container"></div>
+
+    </main>
+
+  </body>
+</html>
