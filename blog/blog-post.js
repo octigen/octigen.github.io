@@ -30,7 +30,99 @@
   }
 
   function postURL(slug) {
-    return `/blog/posts/${slug}/`;
+    return `/blog/post/?slug=${encodeURIComponent(slug)}`;
+  }
+
+  function getPostBySlug(slug) {
+    return BLOG_POSTS.find(p => p.slug === slug) || null;
+  }
+
+  function getDisplayDate(isoDate) {
+    if (!isoDate) return "";
+    return formatDate(isoDate);
+  }
+
+  function renderHero(post) {
+    const target = document.getElementById("blog-post-hero-content");
+    if (!target || !post) return;
+
+    const tag = BLOG_TAGS[post.tag] || {};
+    const author = BLOG_AUTHORS[post.author] || {};
+
+    target.innerHTML = `
+      <span class="blog-tag ${tag.cssClass || ""}">${tag.label || ""}</span>
+      <h1>${post.title}</h1>
+      <div class="blog-post-hero-meta">
+        <span>${author.name || ""}</span>
+        <span class="meta-divider">·</span>
+        <span>${getDisplayDate(post.date)}</span>
+        <span class="meta-divider">·</span>
+        <span>${post.readTime} read</span>
+      </div>`;
+  }
+
+  function renderCover(post) {
+    const target = document.getElementById("blog-post-cover-wrap");
+    if (!target || !post) return;
+
+    if (post.coverImage) {
+      target.innerHTML = `
+        <img
+          src="${post.coverImage}"
+          alt="${post.coverAlt || post.title}"
+          class="blog-post-cover-img"
+          width="1200"
+          height="654"
+          loading="eager"
+        />`;
+      return;
+    }
+
+    target.innerHTML = `
+      <div class="blog-post-cover-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.75">
+          <rect x="3" y="3" width="18" height="18" rx="3"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <path d="M21 15l-5-5L5 21"/>
+        </svg>
+        <span>Cover image</span>
+      </div>`;
+  }
+
+  function setMetaByName(name, content) {
+    if (!content) return;
+    const el = document.querySelector(`meta[name="${name}"]`);
+    if (el) el.setAttribute("content", content);
+  }
+
+  function setMetaByProperty(property, content) {
+    if (!content) return;
+    const el = document.querySelector(`meta[property="${property}"]`);
+    if (el) el.setAttribute("content", content);
+  }
+
+  function setCanonical(url) {
+    const el = document.querySelector('link[rel="canonical"]');
+    if (el && url) el.setAttribute("href", url);
+  }
+
+  function applySeoMetadata(post) {
+    if (!post) return;
+    const postUrl = `https://octigen.com/blog/post/?slug=${encodeURIComponent(post.slug)}`;
+    const imageUrl = post.coverImage
+      ? `https://octigen.com${post.coverImage}`
+      : "https://octigen.com/assets/images/octigen.png";
+
+    document.title = `${post.title} - Octigen Blog`;
+    setCanonical(postUrl);
+    setMetaByName("description", post.excerpt || "");
+    setMetaByName("twitter:title", post.title);
+    setMetaByName("twitter:description", post.excerpt || "");
+    setMetaByName("twitter:image", imageUrl);
+    setMetaByProperty("og:title", post.title);
+    setMetaByProperty("og:description", post.excerpt || "");
+    setMetaByProperty("og:url", postUrl);
+    setMetaByProperty("og:image", imageUrl);
   }
 
   /* -------------------------------------------------------
@@ -150,8 +242,16 @@
   ------------------------------------------------------- */
   document.addEventListener("DOMContentLoaded", () => {
     const body = document.body;
-    const slug = body.dataset.postSlug;
-    const authorKey = body.dataset.postAuthor;
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("slug") || body.dataset.postSlug;
+    const post = slug ? getPostBySlug(slug) : null;
+    const authorKey = body.dataset.postAuthor || (post && post.author);
+
+    if (post) {
+      renderHero(post);
+      renderCover(post);
+      applySeoMetadata(post);
+    }
 
     if (slug) renderMarkdown(slug);
     if (authorKey) renderAuthorCard(authorKey);

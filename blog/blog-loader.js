@@ -29,7 +29,7 @@
   }
 
   function postURL(slug) {
-    return `/blog/posts/${slug}/`;
+    return `/blog/post/?slug=${encodeURIComponent(slug)}`;
   }
 
   function coverImageHTML(post) {
