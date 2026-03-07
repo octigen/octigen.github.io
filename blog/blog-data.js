@@ -3,7 +3,7 @@
  *
  * To add a new post:
  *   1. Create the folder: blog/posts/YYYY-MM-DD-your-slug/
- *   2. Create the post file: blog/posts/YYYY-MM-DD-your-slug/index.html
+ *   2. Create the post file: blog/posts/YYYY-MM-DD-your-slug/post.md
  *   3. Add an entry to the blogPosts array below (newest post first).
  *   4. Update sitemap.xml with the new post URL.
  */
@@ -49,6 +49,18 @@ const BLOG_TAGS = {
  *   featured    {boolean}  If true, shown as the large hero card at the top
  */
 const BLOG_POSTS = [
+  {
+    title: "Where European Tech Sovereignty Fails: The Payment Nightmare",
+    slug: "2026-03-07-payment-nightmare",
+    date: "2026-03-07",
+    excerpt: "We wanted a Swiss-first payment stack for Octigen. After paper forms, delays, and a rejection, Stripe went live in a day.",
+    coverImage: "/blog/posts/2026-03-07-payment-nightmare/cover.jpg",
+    coverAlt: "A stressed startup founder comparing payment providers and compliance requirements",
+    tag: "industry",
+    author: "michel",
+    readTime: "5 min",
+    featured: true
+  },
   {
     title: "Why We Built Octigen: From Spreadsheets to AI-Powered Reports",
     slug: "2026-03-06-why-we-built-octigen",

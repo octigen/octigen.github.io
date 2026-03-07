@@ -99,6 +99,13 @@
         <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
+
+    <!-- Blog Post: Payment Nightmare -->
+    <url>
+        <loc>https://octigen.com/blog/posts/2026-03-07-payment-nightmare/</loc>
+        <lastmod>2026-03-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
     </url>
 
     <!-- Privacy Policy -->
