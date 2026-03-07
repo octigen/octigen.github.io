@@ -16,9 +16,9 @@ While our tech stack uses Next.js and serverless edge functions, our payment onb
 2.  **A Data Black Hole:** They seemingly lost the data. We entered a loop of email ping-pong with support.
 3.  **Paperwork:** We were asked to *print out* physical forms, sign them, and scan them back. For a digital SaaS product.
 
-After wasting a week jumping through hoops, we finally received a generic rejection letter. The reason? "Internal acceptance policy regarding your industry."
+After **wasting a week jumping through hoops**, we finally received a **generic rejection letter**. The reason? "Internal acceptance policy regarding your industry." How about telling us that right at the start of the onboarding process?
 
-Apparently, a standard B2B SaaS platform generating slides is considered "too high risk" for traditional Swiss acquiring banks.
+Apparently, a **standard B2B SaaS platform** generating slides is considered **"too high risk"** for traditional Swiss acquiring banks.
 
 ### Stripe's Experience: Live in 24 Hours
 Out of options and out of patience, we grudgingly turned to the US giant: **Stripe**.
