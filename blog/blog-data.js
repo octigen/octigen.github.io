@@ -50,11 +50,11 @@ const BLOG_TAGS = {
  */
 const BLOG_POSTS = [
   {
-    title: "Where European Tech Sovereignty Fails: The Payment Nightmare",
-    slug: "2026-03-07-payment-nightmare",
-    date: "2026-03-07",
+    title: "A Swiss Paperwork Massacre: Why We Fled to Stripe",
+    slug: "2026-03-09-payment-nightmare",
+    date: "2026-03-09",
     excerpt: "We wanted a Swiss-first payment stack for Octigen. After paper forms, delays, and a rejection, Stripe went live in a day.",
-    coverImage: "/blog/posts/2026-03-07-payment-nightmare/cover.jpg",
+    coverImage: "/blog/posts/2026-03-09-payment-nightmare/cover.jpg",
     coverAlt: "A stressed startup founder comparing payment providers and compliance requirements",
     tag: "industry",
     author: "michel",
