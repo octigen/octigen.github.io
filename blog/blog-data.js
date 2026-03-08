@@ -19,7 +19,7 @@ const BLOG_AUTHORS = {
     name: "Michel Müller",
     role: "Co-Founder & CEO",
     image: "/assets/images/michel_muller.png",
-    bio: "PhD in high-performance computing from Tokyo Tech, 15+ years of software architecture experience. Co-founder of Octigen."
+    bio: "Data architect and engineer in finance. Deeply cares about building the right tools for the job. MSc ETH Zurich & Dr. Eng. from Tokyo Tech. Co-founder of Octigen."
   }
 };
 
@@ -50,11 +50,11 @@ const BLOG_TAGS = {
  */
 const BLOG_POSTS = [
   {
-    title: "Where European Tech Sovereignty Fails: The Payment Nightmare",
-    slug: "2026-03-07-payment-nightmare",
-    date: "2026-03-07",
+    title: "A Swiss Paperwork Massacre: Why We Fled to Stripe",
+    slug: "2026-03-09-payment-nightmare",
+    date: "2026-03-09",
     excerpt: "We wanted a Swiss-first payment stack for Octigen. After paper forms, delays, and a rejection, Stripe went live in a day.",
-    coverImage: "/blog/posts/2026-03-07-payment-nightmare/cover.jpg",
+    coverImage: "/blog/posts/2026-03-09-payment-nightmare/cover.jpg",
     coverAlt: "A stressed startup founder comparing payment providers and compliance requirements",
     tag: "industry",
     author: "michel",
