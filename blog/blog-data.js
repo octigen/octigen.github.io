@@ -19,7 +19,7 @@ const BLOG_AUTHORS = {
     name: "Michel Müller",
     role: "Co-Founder & CEO",
     image: "/assets/images/michel_muller.png",
-    bio: "PhD in high-performance computing from Tokyo Tech, 15+ years of software architecture experience. Co-founder of Octigen."
+    bio: "Data architect and engineer in finance. Deeply cares about building the right tools for the job. MSc ETH Zurich & Dr. Eng. from Tokyo Tech. Co-founder of Octigen."
   }
 };
 
