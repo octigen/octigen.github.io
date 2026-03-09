@@ -18,7 +18,14 @@ While our tech stack uses Next.js and serverless edge functions, our payment onb
 
 After **wasting a week jumping through hoops**, we finally received a **generic rejection letter**. The reason? "Internal acceptance policy regarding your industry." How about telling us that right at the start of the onboarding process?
 
-Apparently, a **standard B2B SaaS platform** generating slides is considered **"too high risk"** for traditional Swiss acquiring banks.
+> "After careful review, we regret to inform you that we are unable to consider your request at this time.
+> Our internal acceptance policy excludes cooperation with companies operating in your field/industry.
+> Please note that this decision is final and no further explanation can be provided." (...) <br>
+> <br>
+> Your Wallee Team <br>
+> — Rejection email (translated from German)
+
+Apparently, a **standard B2B SaaS platform** generating slides is considered **"too high risk"** for the traditional Swiss acquiring banks that underwrite local payment gateways.
 
 ### Stripe's Experience: Live in 24 Hours
 Out of options and out of patience, we grudgingly turned to the US giant: **Stripe**.
@@ -40,7 +47,7 @@ In Stripe, you flip a toggle when creating the live environment - that's it. Lat
 ### The One Thing Wallee Did Better
 To be fair, there was *one* technical aspect where the Swiss approach felt more transparent.
 
-In Wallee, enforcing a specific billing address (crucial for VAT logic) via API was straightforward. Stripe makes this surprisingly difficult. They seemingly obscure the ability to "lock" a billing address pre-checkout, likely to upsell you to their automated **Stripe Tax** product (which adds 0.5% per transaction).
+In Wallee, enforcing a specific billing address (crucial for VAT logic) via API was straightforward. Stripe makes this surprisingly difficult. They seemingly obscure the ability to "lock" a billing address pre-checkout, likely to upsell you to their automated **Stripe Tax** product (which adds 0.5% per transaction on top of Stripe's already hefty fees).
 
 We managed to architect around this to enforce our tax rules without the extra fee, but it felt like the only part of the Stripe experience that was "hostile" by design.
 
