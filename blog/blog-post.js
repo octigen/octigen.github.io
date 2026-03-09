@@ -30,7 +30,7 @@
   }
 
   function postURL(slug) {
-    return `/blog/post/?slug=${encodeURIComponent(slug)}`;
+    return `/blog/posts/${encodeURIComponent(slug)}/`;
   }
 
   function getPostBySlug(slug) {
@@ -108,7 +108,7 @@
 
   function applySeoMetadata(post) {
     if (!post) return;
-    const postUrl = `https://octigen.com/blog/post/?slug=${encodeURIComponent(post.slug)}`;
+    const postUrl = `https://octigen.com/blog/posts/${encodeURIComponent(post.slug)}/`;
     const imageUrl = post.coverImage
       ? `https://octigen.com${post.coverImage}`
       : "https://octigen.com/assets/images/octigen.png";
