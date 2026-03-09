@@ -56,8 +56,20 @@ const BLOG_POSTS = [
     excerpt: "We wanted a Swiss-first payment stack for Octigen. After paper forms, delays, and a rejection, Stripe went live in a day.",
     coverImage: "/blog/posts/2026-03-09-payment-nightmare/cover.jpg",
     coverAlt: "A stressed startup founder comparing payment providers and compliance requirements",
-    tag: "industry",
+    tag: "startup-life",
     author: "michel",
+    readTime: "5 min",
+    featured: true
+  },
+  {
+    title: "Why AI-Generated Slides Lose Your Branding... And What We Do About It",
+    slug: "2026-03-07-pptx-style-inheritance",
+    date: "2026-03-07",
+    excerpt: "AI PowerPoint tools often produce slides that almost match your template — but not quite. Here's why brand consistency is so hard to get right, and how Octigen solves it.",
+    coverImage: "/blog/posts/2026-03-07-pptx-style-inheritance/cover.jpg",
+    coverAlt: "A PowerPoint template with a logo, a background, and a set of slides",
+    tag: "industry",
+    author: "kevin",
     readTime: "5 min",
     featured: true
   },
