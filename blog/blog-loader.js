@@ -29,6 +29,9 @@
   }
 
   function postURL(slug) {
+    const host = window.location.hostname;
+    const isLocal = host === "localhost" || host === "127.0.0.1";
+    if (isLocal) return `/blog/post/?slug=${encodeURIComponent(slug)}`;
     return `/blog/posts/${encodeURIComponent(slug)}/`;
   }
 

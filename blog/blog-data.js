@@ -5,7 +5,8 @@
  *   1. Create the folder: blog/posts/YYYY-MM-DD-your-slug/
  *   2. Create the post file: blog/posts/YYYY-MM-DD-your-slug/post.md
  *   3. Add an entry to the blogPosts array below (newest post first).
- *   4. Update sitemap.xml with the new post URL.
+ *   4. Run npm run build:blog to generate blog/posts/.../index.html.
+ *   5. Update sitemap.xml with the new post URL.
  */
 
 const BLOG_AUTHORS = {

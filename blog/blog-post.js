@@ -1,8 +1,8 @@
 /**
  * Blog Post Helper
  *
- * 1. Fetches post.md from the same directory as index.html
- * 2. Renders it to HTML using marked.js (must be loaded before this script)
+ * 1. Uses pre-rendered HTML when available (SEO-friendly static pages)
+ * 2. Falls back to loading post.md and rendering it with marked.js
  * 3. Injects the result into #blog-post-content
  * 4. Renders the author card into #blog-author-card
  * 5. Renders related posts into #blog-related-wrap
@@ -11,7 +11,8 @@
  *   data-post-slug   — matches slug in BLOG_POSTS (blog-data.js)
  *   data-post-author — key in BLOG_AUTHORS (blog-data.js)
  *
- * Depends on: marked.js and blog-data.js loaded before this script.
+ * Depends on: blog-data.js loaded before this script.
+ * marked.js is only required for markdown fallback pages (e.g. /blog/post/?slug=...).
  */
 
 (function () {
@@ -30,6 +31,9 @@
   }
 
   function postURL(slug) {
+    const host = window.location.hostname;
+    const isLocal = host === "localhost" || host === "127.0.0.1";
+    if (isLocal) return `/blog/post/?slug=${encodeURIComponent(slug)}`;
     return `/blog/posts/${encodeURIComponent(slug)}/`;
   }
 
@@ -131,6 +135,9 @@
   function renderMarkdown(slug) {
     const target = document.getElementById("blog-post-content");
     if (!target) return;
+
+    // If build step already embedded HTML, keep it (better for SEO + no flash).
+    if (target.innerHTML.trim()) return;
 
     // Show loading state
     target.innerHTML = '<p style="opacity:0.4">Loading...</p>';
@@ -243,6 +250,7 @@
   document.addEventListener("DOMContentLoaded", () => {
     const body = document.body;
     const params = new URLSearchParams(window.location.search);
+    const isPreviewRoute = window.location.pathname === "/blog/post/" || window.location.pathname === "/blog/post";
     const slug = params.get("slug") || body.dataset.postSlug;
     const post = slug ? getPostBySlug(slug) : null;
     const authorKey = body.dataset.postAuthor || (post && post.author);
@@ -250,7 +258,7 @@
     if (post) {
       renderHero(post);
       renderCover(post);
-      applySeoMetadata(post);
+      if (isPreviewRoute) applySeoMetadata(post);
     }
 
     if (slug) renderMarkdown(slug);
