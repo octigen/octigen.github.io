@@ -1,0 +1,11 @@
+{
+  "name": "octigen-web",
+  "private": true,
+  "scripts": {
+    "build:blog": "node scripts/build-blog.js",
+    "build": "npm run build:blog"
+  },
+  "dependencies": {
+    "marked": "latest"
+  }
+}
