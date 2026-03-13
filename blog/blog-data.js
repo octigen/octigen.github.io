@@ -51,6 +51,18 @@ const BLOG_TAGS = {
  */
 const BLOG_POSTS = [
   {
+    title: "Octigen vs Gamma: Why Native PowerPoint Matters More Than You Think",
+    slug: "2026-03-13-gamma-alternative",
+    date: "2026-03-13",
+    excerpt: "Looking for a Gamma alternative? Gamma is great for quick web-first decks, but when you need native PowerPoint fidelity, real data injection, and recurring reports, Octigen is built for the job.",
+    coverImage: "/blog/posts/2026-03-13-gamma-alternative/cover.jpg",
+    coverAlt: "An Octigen-branded F1 car facing off against a Gamma-branded tuner car in a neon-lit garage",
+    tag: "product",
+    author: "kevin",
+    readTime: "7 min",
+    featured: true
+  },
+  {
     title: "A Swiss Paperwork Massacre: Why We Fled to Stripe",
     slug: "2026-03-09-payment-nightmare",
     date: "2026-03-09",

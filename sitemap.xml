@@ -87,9 +87,17 @@
     <!-- Blog Listing -->
     <url>
         <loc>https://octigen.com/blog/</loc>
-        <lastmod>2026-03-09</lastmod>
+        <lastmod>2026-03-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
+    </url>
+
+    <!-- Blog Post: Octigen vs Gamma -->
+    <url>
+        <loc>https://octigen.com/blog/posts/2026-03-13-gamma-alternative/</loc>
+        <lastmod>2026-03-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
     </url>
 
     <!-- Blog Post: Why AI-Generated Slides Lose Your Branding -->
