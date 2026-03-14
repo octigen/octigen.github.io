@@ -4,11 +4,12 @@
 const fs = require("fs/promises");
 const path = require("path");
 const { marked } = require("marked");
-const { BLOG_POSTS } = require("../blog/blog-data.js");
+const { PUBLISHED_POSTS } = require("../blog/blog-data.js");
 
 const ROOT = path.resolve(__dirname, "..");
 const BLOG_ROOT = path.join(ROOT, "blog");
 const TEMPLATE_PATH = path.join(BLOG_ROOT, "POST_TEMPLATE.html");
+const SITEMAP_PATH = path.join(ROOT, "sitemap.xml");
 const SITE_URL = "https://octigen.com";
 
 marked.use({
@@ -67,12 +68,54 @@ async function renderPost(post, template) {
   await fs.writeFile(htmlPath, nextHtml, "utf8");
 }
 
+function buildSitemapBlock(posts) {
+  const latestDate = posts.length ? posts[0].date : new Date().toISOString().slice(0, 10);
+
+  let xml = `    <url>\n`;
+  xml += `        <loc>${SITE_URL}/blog/</loc>\n`;
+  xml += `        <lastmod>${latestDate}</lastmod>\n`;
+  xml += `        <changefreq>weekly</changefreq>\n`;
+  xml += `        <priority>0.8</priority>\n`;
+  xml += `    </url>\n`;
+
+  for (const post of posts) {
+    xml += `\n    <url>\n`;
+    xml += `        <loc>${SITE_URL}/blog/posts/${encodeURIComponent(post.slug)}/</loc>\n`;
+    xml += `        <lastmod>${post.date}</lastmod>\n`;
+    xml += `        <changefreq>monthly</changefreq>\n`;
+    xml += `        <priority>0.75</priority>\n`;
+    xml += `    </url>\n`;
+  }
+
+  return xml;
+}
+
+async function updateSitemap(posts) {
+  const sitemap = await fs.readFile(SITEMAP_PATH, "utf8");
+
+  const startMarker = "<!-- BLOG_POSTS:START";
+  const endMarker = "<!-- BLOG_POSTS:END -->";
+  const startIdx = sitemap.indexOf(startMarker);
+  const endIdx = sitemap.indexOf(endMarker);
+
+  if (startIdx === -1 || endIdx === -1) {
+    throw new Error("Missing BLOG_POSTS markers in sitemap.xml");
+  }
+
+  const before = sitemap.slice(0, sitemap.indexOf("\n", startIdx) + 1);
+  const after = sitemap.slice(endIdx);
+  const block = buildSitemapBlock(posts);
+
+  await fs.writeFile(SITEMAP_PATH, before + block + "    " + after, "utf8");
+}
+
 async function main() {
   const template = await fs.readFile(TEMPLATE_PATH, "utf8");
-  for (const post of BLOG_POSTS) {
+  for (const post of PUBLISHED_POSTS) {
     await renderPost(post, template);
   }
-  console.log(`Built ${BLOG_POSTS.length} static blog post page(s) from template.`);
+  await updateSitemap(PUBLISHED_POSTS);
+  console.log(`Built ${PUBLISHED_POSTS.length} blog page(s) and updated sitemap.xml.`);
 }
 
 main().catch((err) => {
