@@ -213,6 +213,30 @@ document.addEventListener("DOMContentLoaded", loadNavbar);
 // Do NOT duplicate footer loading here!
 
 // ===========================================
+// CTA Click Tracking
+// ===========================================
+document.addEventListener('click', function(e) {
+  const link = e.target.closest('a[href*="cloud.octigen.com"]');
+  if (!link) return;
+
+  const href = link.getAttribute('href') || '';
+  if (href.includes('/terms')) return;
+
+  const destination = new URL(href).pathname.replace(/^\//, ''); // 'login' | 'subscribe'
+  const location = link.getAttribute('data-cta-location') ||
+    (window.location.pathname.startsWith('/blog/') ? 'blog' : 'unknown');
+
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: 'cta_click',
+    cta_destination: destination,
+    cta_location: location,
+    cta_text: link.innerText.trim(),
+    page_path: window.location.pathname
+  });
+});
+
+// ===========================================
 // Contact Link Handler
 // ===========================================
 // If current page has #contact, scroll to it. Otherwise, go to homepage.
