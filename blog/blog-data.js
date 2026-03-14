@@ -4,9 +4,11 @@
  * To add a new post:
  *   1. Create the folder: blog/posts/YYYY-MM-DD-your-slug/
  *   2. Create the post file: blog/posts/YYYY-MM-DD-your-slug/post.md
- *   3. Add an entry to the blogPosts array below (newest post first).
- *   4. Run npm run build:blog to generate blog/posts/.../index.html.
- *   5. Update sitemap.xml with the new post URL.
+ *   3. Add an entry to the BLOG_POSTS array below (newest post first).
+ *   4. Run npm run build to generate HTML pages and update the sitemap.
+ *
+ * To keep a post as a draft, set `draft: true` — it will be excluded from
+ * the listing page, the build output, and the sitemap.
  */
 
 const BLOG_AUTHORS = {
@@ -48,8 +50,22 @@ const BLOG_TAGS = {
  *   author      {string}   One of the keys in BLOG_AUTHORS
  *   readTime    {string}   e.g. "5 min"
  *   featured    {boolean}  If true, shown as the large hero card at the top
+ *   draft       {boolean}  (optional) If true, post is hidden from listing, build, and sitemap
  */
 const BLOG_POSTS = [
+  {
+    title: "Octigen vs Gamma: Why Native PowerPoint Matters More Than You Think",
+    slug: "2026-03-13-gamma-alternative",
+    date: "2026-03-13",
+    excerpt: "Looking for a Gamma alternative? Gamma is great for quick web-first decks, but when you need native PowerPoint fidelity, real data injection, and recurring reports, Octigen is built for the job.",
+    coverImage: "/blog/posts/2026-03-13-gamma-alternative/cover.jpg",
+    coverAlt: "An Octigen-branded F1 car facing off against a Gamma-branded tuner car in a neon-lit garage",
+    tag: "product",
+    author: "kevin",
+    readTime: "7 min",
+    featured: false,
+    draft: true
+  },
   {
     title: "A Swiss Paperwork Massacre: Why We Fled to Stripe",
     slug: "2026-03-09-payment-nightmare",
@@ -87,7 +103,9 @@ const BLOG_POSTS = [
   }
 ];
 
+const PUBLISHED_POSTS = BLOG_POSTS.filter(p => !p.draft);
+
 // Export for module environments (Node, bundlers); no-op in browsers.
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { BLOG_POSTS, BLOG_AUTHORS, BLOG_TAGS };
+  module.exports = { BLOG_POSTS, PUBLISHED_POSTS, BLOG_AUTHORS, BLOG_TAGS };
 }

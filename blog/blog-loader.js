@@ -95,8 +95,8 @@
   let activeTag = "all";
 
   function getFilteredPosts() {
-    if (activeTag === "all") return BLOG_POSTS;
-    return BLOG_POSTS.filter(p => p.tag === activeTag);
+    if (activeTag === "all") return PUBLISHED_POSTS;
+    return PUBLISHED_POSTS.filter(p => p.tag === activeTag);
   }
 
   /* -------------------------------------------------------
@@ -129,7 +129,7 @@
 
     // Count posts per tag
     const counts = {};
-    BLOG_POSTS.forEach(p => {
+    PUBLISHED_POSTS.forEach(p => {
       counts[p.tag] = (counts[p.tag] || 0) + 1;
     });
 
